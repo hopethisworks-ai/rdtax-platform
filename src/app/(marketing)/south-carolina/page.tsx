@@ -21,7 +21,6 @@ export default function SouthCarolinaPage() {
             <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900">About</Link>
             <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">Contact</Link>
             <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
           </div>
           <Link href="/contact" className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">Free Assessment</Link>
         </div>
