@@ -16,7 +16,6 @@ export default function HomePage() {
             <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900">About</Link>
             <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">Contact</Link>
             <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
           </div>
           <div className="flex items-center gap-3">
             <Link href="/login" className="text-sm text-slate-600 hidden sm:block">Sign In</Link>
