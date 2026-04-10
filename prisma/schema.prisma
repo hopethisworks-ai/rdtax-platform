@@ -1,0 +1,880 @@
+// ──────────────────────────────────────────────────────────────────────────────
+// R&D Tax Credit Platform – Complete Prisma Schema
+// Every calculation is tied to a specific ruleset version.
+// All overrides are logged. All audit events are immutable.
+// ──────────────────────────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ── Enums ─────────────────────────────────────────────────────────────────────
+
+enum UserRole {
+  PUBLIC
+  CLIENT
+  ANALYST
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  PROPOSAL_SENT
+  SIGNED
+  LOST
+}
+
+enum EngagementStatus {
+  INTAKE
+  DATA_COLLECTION
+  ANALYSIS
+  CALCULATION
+  REVIEW
+  DOCUMENTATION
+  FINAL_REPORT
+  DELIVERED
+  ARCHIVED
+}
+
+enum DocumentStatus {
+  UPLOADED
+  NEEDS_REVIEW
+  MAPPED
+  ACCEPTED
+  REJECTED
+  MISSING_FOLLOW_UP
+}
+
+enum DocumentCategory {
+  PAYROLL_EXPORT
+  GENERAL_LEDGER
+  TRIAL_BALANCE
+  CONTRACTOR_INVOICE
+  CONTRACTOR_AGREEMENT
+  ORG_CHART
+  TAX_RETURN
+  PRIOR_STUDY
+  PROJECT_LIST
+  TECHNICAL_DOCUMENT
+  FINANCIAL_STATEMENT
+  OTHER
+}
+
+enum CalculationMethod {
+  ASC
+  REGULAR
+}
+
+enum JobStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum LegalSourceType {
+  IRS_INSTRUCTION
+  REGULATION
+  ATG
+  IRM
+  DIRECTIVE
+  COURT_CASE
+  STATE_GUIDANCE
+}
+
+enum OverrideApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  VOID
+}
+
+enum QuestionnaireSection {
+  BUSINESS_OVERVIEW
+  PROJECT_QUALIFICATION
+  FOUR_PART_TEST
+  WAGE_ALLOCATION
+  CONTRACTOR_QUALIFICATION
+  SUPPLY_QUALIFICATION
+  CONTROLLED_GROUP
+  PRIOR_YEAR_QRE
+  GROSS_RECEIPTS
+  STATE_NEXUS
+  PAYROLL_TAX_OFFSET
+  PRIOR_CLAIMS
+}
+
+enum ReportType {
+  PRELIMINARY_ESTIMATE
+  WORKPAPER_SUMMARY
+  FINAL_PACKAGE
+  INDIVIDUAL_MEMO
+}
+
+// ── Users & Auth ──────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  name          String?
+  role          UserRole  @default(CLIENT)
+  passwordHash       String?
+  resetToken         String?
+  resetTokenExpiry   DateTime?
+  mfaEnabled    Boolean   @default(false)
+  mfaSecret     String?
+  active        Boolean   @default(true)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  client        Client?
+  overrides     CalculationOverride[]
+  auditLogs     AuditLog[]
+  legalUpdates  LegalUpdateRecord[]
+  notifications Notification[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ── Leads ─────────────────────────────────────────────────────────────────────
+
+model Lead {
+  id                  String        @id @default(cuid())
+  companyName         String
+  contactName         String
+  email               String
+  phone               String?
+  industry            String?
+  state               String?
+  revenueBand         String?
+  employeeCount       Int?
+  leadSource          String?
+  referringCpaName    String?
+  referringCpaFirm    String?
+  referringCpaEmail   String?
+  notes               String?       @db.Text
+  status              LeadStatus    @default(NEW)
+  estimatorRun        EstimatorRun?
+  convertedToClientId String?       @unique
+  client              Client?       @relation(fields: [convertedToClientId], references: [id])
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([status])
+  @@index([state])
+  @@index([industry])
+}
+
+model EstimatorRun {
+  id                 String   @id @default(cuid())
+  leadId             String?  @unique
+  lead               Lead?    @relation(fields: [leadId], references: [id])
+  companyName        String
+  contactName        String
+  email              String
+  phone              String?
+  industry           String?
+  state              String?
+  revenueBand        String?
+  employeeCount      Int?
+  technicalEmployees Int?
+  annualPayroll      Decimal  @db.Decimal(15, 2)
+  contractorSpend    Decimal  @db.Decimal(15, 2)
+  supplySpend        Decimal  @db.Decimal(15, 2)
+  priorCreditClaimed Boolean  @default(false)
+  estimateLow        Decimal  @db.Decimal(15, 2)
+  estimateHigh       Decimal  @db.Decimal(15, 2)
+  multipliersVersion String // version ID of EstimatorConfig used
+  createdAt          DateTime @default(now())
+}
+
+model EstimatorConfig {
+  id                   String   @id @default(cuid())
+  version              String   @unique
+  wageMultiplier       Decimal  @db.Decimal(5, 4) // e.g. 0.65
+  contractorMultiplier Decimal  @db.Decimal(5, 4) // e.g. 0.35
+  supplyMultiplier     Decimal  @db.Decimal(5, 4) // e.g. 0.50
+  federalCreditRate    Decimal  @db.Decimal(5, 4) // e.g. 0.20 for rough estimate
+  scCreditRate         Decimal  @db.Decimal(5, 4) // e.g. 0.05
+  notes                String?  @db.Text
+  active               Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+// ── Clients & Legal Entities ──────────────────────────────────────────────────
+
+model Client {
+  id          String    @id @default(cuid())
+  userId      String?   @unique
+  user        User?     @relation(fields: [userId], references: [id])
+  companyName String
+  contactName String
+  email       String    @unique
+  phone       String?
+  industry    String?
+  address     String?
+  city        String?
+  state       String?
+  zip         String?
+  ein         String? // encrypted at app layer
+  active      Boolean   @default(true)
+  invitedAt   DateTime?
+  onboardedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  lead          Lead?
+  legalEntities LegalEntity[]
+  engagements   Engagement[]
+  invoices      Invoice[]
+  uploadedFiles UploadedFile[]
+
+  @@index([state])
+}
+
+model LegalEntity {
+  id           String        @id @default(cuid())
+  clientId     String
+  client       Client        @relation(fields: [clientId], references: [id])
+  name         String
+  ein          String? // encrypted
+  entityType   String // C-Corp, S-Corp, LLC, Partnership, etc.
+  taxYear      Int
+  state        String?
+  isParent     Boolean       @default(false)
+  parentId     String?
+  parent       LegalEntity?  @relation("EntityHierarchy", fields: [parentId], references: [id])
+  subsidiaries LegalEntity[] @relation("EntityHierarchy")
+  ownershipPct                        Decimal? @db.Decimal(5, 2)
+  // SC state credit inputs – whether the entity has SC operations and the
+  // fraction of QRE attributable to SC activities and remaining SC tax liability.
+  operatesInSC                        Boolean   @default(false)
+  stateSourceQrePct                   Decimal? @db.Decimal(5, 4) // e.g. 0.8500 = 85 %
+  stateTaxLiabilityAfterOtherCredits  Decimal? @db.Decimal(15, 2)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  engagements Engagement[]
+  employees   Employee[]
+  supplies    SupplyItem[]
+  contractors ContractorItem[]
+
+  @@index([clientId])
+}
+
+// ── Tax Rules & Legal Update Registries ───────────────────────────────────────
+
+model TaxRuleVersion {
+  id                     String    @id @default(cuid())
+  version                String    @unique // e.g. "2024.1.0"
+  taxYear                Int
+  federalRuleVersion     String
+  stateRuleVersion       String?
+  formVersion            String // e.g. "Form 6765 (2024)"
+  creditRates            Json // { asc: 0.14, regular: 0.20, sc: 0.05, ... }
+  carryforwardRules      Json // { federal: 20, sc: 10, ... }
+  payrollOffsetCap       Decimal   @db.Decimal(15, 2) // annual cap
+  c280cPresentationLogic Json // how to compute reduced credit
+  groupReportingLogic    Json // controlled-group aggregation rules
+  disclosureRequirements Json
+  ascFallbackRules       Json // for no-base-period situations
+  deprecated             Boolean   @default(false)
+  effectiveFrom          DateTime
+  effectiveTo            DateTime?
+  notes                  String?   @db.Text
+  approvedBy             String?
+  approvedAt             DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  calculations Calculation[]
+  reports      Report[]
+  Engagement   Engagement[]
+
+  @@index([taxYear])
+}
+
+model LegalUpdateRecord {
+  id              String          @id @default(cuid())
+  sourceType      LegalSourceType
+  sourceTitle     String
+  jurisdiction    String // "federal" | state code
+  citation        String?
+  effectiveDate   DateTime?
+  summary         String          @db.Text
+  impactedModules String[] // e.g. ["contractor_qre", "funded_research"]
+  isMandatory     Boolean         @default(false)
+  implemented     Boolean         @default(false)
+  implementedById String?
+  implementedBy   User?           @relation(fields: [implementedById], references: [id])
+  implementedDate DateTime?
+  notes           String?         @db.Text
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@index([implemented])
+  @@index([jurisdiction])
+}
+
+// ── Engagements ───────────────────────────────────────────────────────────────
+
+model Engagement {
+  id             String           @id @default(cuid())
+  clientId       String
+  client         Client           @relation(fields: [clientId], references: [id])
+  legalEntityId  String?
+  legalEntity    LegalEntity?     @relation(fields: [legalEntityId], references: [id])
+  taxYear        Int
+  status         EngagementStatus @default(INTAKE)
+  ruleVersionId  String?
+  ruleVersion    TaxRuleVersion?  @relation(fields: [ruleVersionId], references: [id])
+  engagementType String           @default("standard") // standard | amended | audit_support
+  assignedTo     String? // analyst user ID
+  referralSource String? // "direct" | "cpa-partner" | "estimator" | "web"
+  referringCpaName String?
+  referringCpaFirm String?
+  referringCpaEmail String?
+  referralFeeStructure String? // "flat" | "percentage"
+  referralFeeAmount Decimal? @db.Decimal(10,2)
+  referralFeePaid Boolean @default(false)
+  referralFeePaidAt DateTime?
+  internalNotes  String?          @db.Text
+  lockedAt       DateTime? // when calculation was locked
+  lockedBy       String?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  projects             Project[]
+  questionnaires       QuestionnaireAssignment[]
+  uploadedFiles        UploadedFile[]
+  calculations         Calculation[]
+  reports              Report[]
+  invoices             Invoice[]
+  auditLogs            AuditLog[]
+  documentRequirements DocumentRequirement[]
+
+  @@index([clientId])
+  @@index([taxYear])
+  @@index([status])
+}
+
+// ── Projects / Business Components ────────────────────────────────────────────
+
+model Project {
+  id                       String     @id @default(cuid())
+  engagementId             String
+  engagement               Engagement @relation(fields: [engagementId], references: [id])
+  name                     String
+  description              String?    @db.Text
+  businessComponent        String? // product, process, software, formula, technique, invention
+  objective                String?    @db.Text
+  // Four-Part Test flags
+  permittedPurpose         Boolean?
+  technologicalInformation Boolean?
+  processOfExperimentation Boolean?
+  qualifiedResearch        Boolean?
+  uncertaintyNarrative     String?    @db.Text
+  alternativesConsidered   String?    @db.Text
+  experimentationNarrative String?    @db.Text
+  outcome                  String?    @db.Text
+  // Qualification
+  qualified                Boolean    @default(false)
+  qualificationNotes       String?    @db.Text
+  excludedReason           String?
+  internalUseSoftware      Boolean    @default(false) // triggers Higher Threshold of Innovation test
+  iusInnovative             Boolean? // HToI: software is innovative
+  iusSignificantEconomicRisk Boolean? // HToI: involves significant economic risk
+  iusNotCommerciallyAvailable Boolean? // HToI: not commercially available
+  fundedResearch           Boolean    @default(false) // excludes from QREs if true
+  parentProjectId          String?
+  shrinkBackApplied        Boolean    @default(false)
+  shrinkBackNarrative      String?    @db.Text
+  createdAt                DateTime   @default(now())
+  updatedAt                DateTime   @updatedAt
+
+  employees        Employee[]
+  supplies         SupplyItem[]
+  contractors      ContractorItem[]
+  supportCitations SupportCitation[]
+  subComponents    Project[]  @relation("ProjectHierarchy")
+  parentProject    Project?   @relation("ProjectHierarchy", fields: [parentProjectId], references: [id])
+
+  @@index([engagementId])
+  @@index([parentProjectId])
+}
+
+// ── Employees / Wage QRE ──────────────────────────────────────────────────────
+
+model Employee {
+  id                   String      @id @default(cuid())
+  legalEntityId        String
+  legalEntity          LegalEntity @relation(fields: [legalEntityId], references: [id])
+  projectId            String?
+  project              Project?    @relation(fields: [projectId], references: [id])
+  name                 String
+  title                String?
+  employeeId           String? // internal payroll ID
+  compensation         Decimal     @db.Decimal(15, 2)
+  bonus                Decimal?    @db.Decimal(15, 2)
+  bonusIncluded        Boolean     @default(false)
+  qualifiedActivityPct Decimal     @db.Decimal(5, 4) // 0.0 – 1.0
+  qreAmount            Decimal?    @db.Decimal(15, 2) // computed
+  methodologyBasis     String? // "time-tracking" | "project-estimate" | "survey" | "interview"
+  supportSource        String? // reference to uploaded file
+  excluded             Boolean     @default(false)
+  excludedReason       String?
+  sourceFileId         String?
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
+
+  @@index([legalEntityId])
+  @@index([projectId])
+}
+
+// ── Supplies QRE ──────────────────────────────────────────────────────────────
+
+model SupplyItem {
+  id                    String      @id @default(cuid())
+  legalEntityId         String
+  legalEntity           LegalEntity @relation(fields: [legalEntityId], references: [id])
+  projectId             String?
+  project               Project?    @relation(fields: [projectId], references: [id])
+  description           String
+  glAccount             String?
+  amount                Decimal     @db.Decimal(15, 2)
+  qualified             Boolean     @default(false)
+  // Validation flags per IRS ATG
+  isDepreciableProperty Boolean     @default(false)
+  isLandOrImprovement   Boolean     @default(false)
+  isOverheadItem        Boolean     @default(false)
+  qualificationStatus   String      @default("pending") // pending | qualified | excluded
+  supportSource         String?
+  excludedReason        String?
+  sourceFileId          String?
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  @@index([legalEntityId])
+}
+
+// ── Contractor QRE ────────────────────────────────────────────────────────────
+
+model ContractorItem {
+  id                        String      @id @default(cuid())
+  legalEntityId             String
+  legalEntity               LegalEntity @relation(fields: [legalEntityId], references: [id])
+  projectId                 String?
+  project                   Project?    @relation(fields: [projectId], references: [id])
+  vendorName                String
+  amount                    Decimal     @db.Decimal(15, 2)
+  usBasedFlag               Boolean     @default(true)
+  contractReference         String?
+  // Contractor/Funded-Research Analysis (IRS ATG, Populous, etc.)
+  qualifiedFlag             Boolean     @default(false)
+  substantialRightsRetained Boolean? // taxpayer retained substantial rights?
+  successContingentPayment  Boolean? // payment contingent on success?
+  economicRiskBorne         Boolean? // taxpayer bore economic risk?
+  arrangedBeforeWork        Boolean? // contract pre-existed the research?
+  performedOnBehalf         Boolean? // work performed on behalf of taxpayer?
+  fundedResearchFlag        Boolean     @default(false)
+  contractReviewRequired    Boolean     @default(true)
+  contractReviewComplete    Boolean     @default(false)
+  contractReviewNotes       String?     @db.Text
+  qualifiedAmount           Decimal?    @db.Decimal(15, 2) // 65% of amount if qualified
+  excludedReason            String?
+  sourceFileId              String?
+  contractFileId            String?
+  createdAt                 DateTime    @default(now())
+  updatedAt                 DateTime    @updatedAt
+
+  @@index([legalEntityId])
+}
+
+// ── File Uploads ──────────────────────────────────────────────────────────────
+
+model UploadedFile {
+  id                String           @id @default(cuid())
+  clientId          String
+  client            Client           @relation(fields: [clientId], references: [id])
+  engagementId      String?
+  engagement        Engagement?      @relation(fields: [engagementId], references: [id])
+  originalName      String
+  storagePath       String // object storage key
+  mimeType          String
+  sizeBytes         Int
+  category          DocumentCategory
+  status            DocumentStatus   @default(UPLOADED)
+  tags              String[]
+  uploadedBy        String // user ID
+  reviewedBy        String?
+  reviewedAt        DateTime?
+  reviewNotes       String?
+  mappingTemplateId String?
+  mappingTemplate   MappingTemplate? @relation(fields: [mappingTemplateId], references: [id])
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  @@index([clientId])
+  @@index([engagementId])
+  @@index([status])
+}
+
+model DocumentRequirement {
+  id             String           @id @default(cuid())
+  engagementId   String
+  engagement     Engagement       @relation(fields: [engagementId], references: [id])
+  category       DocumentCategory
+  description    String
+  required       Boolean          @default(true)
+  fulfilled      Boolean          @default(false)
+  followUpSentAt DateTime?
+  notes          String?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model MappingTemplate {
+  id             String   @id @default(cuid())
+  name           String
+  fileType       String // payroll | gl | contractor | gross_receipts | prior_qre
+  columnMappings Json // { sourceColumn: targetField }
+  requiredFields String[]
+  createdBy      String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  uploadedFiles UploadedFile[]
+}
+
+// ── Questionnaires ────────────────────────────────────────────────────────────
+
+model Questionnaire {
+  id        String               @id @default(cuid())
+  title     String
+  section   QuestionnaireSection
+  version   String               @default("1.0")
+  questions Json // array of { id, type, text, options, required, helpText, conditionalOn }
+  active    Boolean              @default(true)
+  createdAt DateTime             @default(now())
+  updatedAt DateTime             @updatedAt
+
+  assignments QuestionnaireAssignment[]
+}
+
+model QuestionnaireAssignment {
+  id              String        @id @default(cuid())
+  engagementId    String
+  engagement      Engagement    @relation(fields: [engagementId], references: [id])
+  questionnaireId String
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  completedAt     DateTime?
+  responses       Json? // { questionId: answer }
+  notes           String?       @db.Text
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@unique([engagementId, questionnaireId])
+}
+
+// ── Calculations ──────────────────────────────────────────────────────────────
+
+model Calculation {
+  id                    String            @id @default(cuid())
+  engagementId          String
+  engagement            Engagement        @relation(fields: [engagementId], references: [id])
+  taxYear               Int
+  ruleVersionId         String
+  ruleVersion           TaxRuleVersion    @relation(fields: [ruleVersionId], references: [id])
+  method                CalculationMethod
+  // Snapshots (immutable once locked)
+  inputSnapshot         Json // all input data at time of run
+  assumptionsSnapshot   Json // all assumptions applied
+  resultsSnapshot       Json // full calculation results
+  // Wage QRE
+  totalWageQre          Decimal           @db.Decimal(15, 2)
+  // Supply QRE
+  totalSupplyQre        Decimal           @db.Decimal(15, 2)
+  // Contractor QRE
+  totalContractorQre    Decimal           @db.Decimal(15, 2)
+  // Total QRE
+  totalQre              Decimal           @db.Decimal(15, 2)
+  // Federal ASC
+  ascCredit             Decimal?          @db.Decimal(15, 2)
+  ascBase               Decimal?          @db.Decimal(15, 2)
+  ascPrior3YearAvgQre   Decimal?          @db.Decimal(15, 2)
+  ascFallbackUsed       Boolean           @default(false)
+  // Federal Regular
+  regularCredit         Decimal?          @db.Decimal(15, 2)
+  regularBase           Decimal?          @db.Decimal(15, 2)
+  fixedBasePct          Decimal?          @db.Decimal(5, 4)
+  // Recommended method
+  recommendedMethod     CalculationMethod
+  methodRationale       String?           @db.Text
+  // 280C
+  c280cElectionMade     Boolean           @default(false)
+  grossCredit           Decimal?          @db.Decimal(15, 2)
+  reducedCredit         Decimal?          @db.Decimal(15, 2)
+  // Payroll Tax Offset
+  payrollOffsetEligible Boolean           @default(false)
+  payrollOffsetElected  Boolean           @default(false)
+  payrollOffsetAmount   Decimal?          @db.Decimal(15, 2)
+  carryforwardReduction Decimal?          @db.Decimal(15, 2)
+  // SC State Credit
+  scQre                 Decimal?          @db.Decimal(15, 2)
+  scGrossCredit         Decimal?          @db.Decimal(15, 2)
+  scLiabilityLimit      Decimal?          @db.Decimal(15, 2)
+  scAllowedCredit       Decimal?          @db.Decimal(15, 2)
+  scCarryforward        Decimal?          @db.Decimal(15, 2)
+  // Controlled group
+  isConsolidated        Boolean           @default(false)
+  consolidatedQre       Decimal?          @db.Decimal(15, 2)
+  // Meta
+  calculationNotes      String?           @db.Text
+  lockedAt              DateTime?
+  lockedBy              String?
+  runBy                 String
+  runAt                 DateTime          @default(now())
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+
+  overrides CalculationOverride[]
+  reports   Report[]
+
+  @@index([engagementId])
+  @@index([taxYear])
+}
+
+model CalculationOverride {
+  id             String                 @id @default(cuid())
+  calculationId  String
+  calculation    Calculation            @relation(fields: [calculationId], references: [id])
+  field          String // what was changed
+  previousValue  Json
+  newValue       Json
+  reason         String                 @db.Text
+  userId         String
+  user           User                   @relation(fields: [userId], references: [id])
+  ruleVersionId  String
+  approvalStatus OverrideApprovalStatus @default(PENDING)
+  approvedBy     String?
+  approvedAt     DateTime?
+  reversedAt     DateTime?
+  reversedBy     String?
+  createdAt      DateTime               @default(now())
+
+  @@index([calculationId])
+}
+
+// ── Prior-Year Data ───────────────────────────────────────────────────────────
+
+model PriorYearQre {
+  id           String   @id @default(cuid())
+  engagementId String
+  taxYear      Int
+  entityId     String?
+  qreAmount    Decimal  @db.Decimal(15, 2)
+  sourceFileId String?
+  createdAt    DateTime @default(now())
+
+  @@index([engagementId])
+}
+
+model GrossReceiptsHistory {
+  id           String   @id @default(cuid())
+  engagementId String
+  taxYear      Int
+  entityId     String?
+  amount       Decimal  @db.Decimal(15, 2)
+  sourceFileId String?
+  createdAt    DateTime @default(now())
+
+  @@index([engagementId])
+}
+
+// ── Documents / Reports ───────────────────────────────────────────────────────
+
+model Report {
+  id            String          @id @default(cuid())
+  engagementId  String
+  engagement    Engagement      @relation(fields: [engagementId], references: [id])
+  calculationId String?
+  calculation   Calculation?    @relation(fields: [calculationId], references: [id])
+  ruleVersionId String?
+  ruleVersion   TaxRuleVersion? @relation(fields: [ruleVersionId], references: [id])
+  reportType    ReportType
+  title         String
+  storagePath   String? // PDF/DOCX path in object storage
+  xlsxPath      String?
+  publishedAt   DateTime?
+  publishedBy   String?
+  version       Int             @default(1)
+  notes         String?         @db.Text
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([engagementId])
+}
+
+model DocumentTemplate {
+  id           String   @id @default(cuid())
+  name         String
+  templateType String // project_narrative | methodology_memo | reconciliation_memo | controlled_group_memo | support_index
+  content      String   @db.Text // Handlebars/Mustache template
+  version      String   @default("1.0")
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ── Support Citations ─────────────────────────────────────────────────────────
+
+model SupportCitation {
+  id          String   @id @default(cuid())
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id])
+  category    String // "wage" | "supply" | "contractor"
+  description String
+  fileId      String?
+  citation    String?
+  relevance   String?
+  createdAt   DateTime @default(now())
+}
+
+// ── Invoices & Billing ────────────────────────────────────────────────────────
+
+model Invoice {
+  id              String        @id @default(cuid())
+  clientId        String
+  client          Client        @relation(fields: [clientId], references: [id])
+  engagementId    String?
+  engagement      Engagement?   @relation(fields: [engagementId], references: [id])
+  stripeInvoiceId String?       @unique
+  status          InvoiceStatus @default(DRAFT)
+  engagementFee   Decimal       @db.Decimal(15, 2)
+  contingencyFee  Decimal?      @db.Decimal(15, 2)
+  auditSupportFee Decimal?      @db.Decimal(15, 2)
+  totalAmount     Decimal       @db.Decimal(15, 2)
+  currency        String        @default("usd")
+  dueDate         DateTime?
+  paidAt          DateTime?
+  notes           String?       @db.Text
+  lineItems       Json // array of { description, amount }
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([clientId])
+  @@index([status])
+}
+
+// ── Audit Logging (immutable) ─────────────────────────────────────────────────
+
+model AuditLog {
+  id           String      @id @default(cuid())
+  userId       String?
+  user         User?       @relation(fields: [userId], references: [id])
+  engagementId String?
+  engagement   Engagement? @relation(fields: [engagementId], references: [id])
+  action       String // CREATE_LEAD | UPLOAD_FILE | RUN_CALCULATION | LOCK_CALCULATION | etc.
+  entityType   String // Lead | Engagement | Calculation | etc.
+  entityId     String?
+  metadata     Json? // additional context
+  ipAddress    String?
+  userAgent    String?
+  createdAt    DateTime    @default(now())
+
+  // Immutable – no updatedAt
+  @@index([userId])
+  @@index([engagementId])
+  @@index([action])
+  @@index([createdAt])
+}
+
+// ── Notifications ─────────────────────────────────────────────────────────────
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  type      String // new_lead | client_invited | upload_received | etc.
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  emailSent Boolean  @default(false)
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([read])
+}
+
+// ── Background Jobs ───────────────────────────────────────────────────────────
+
+model BackgroundJob {
+  id          String    @id @default(cuid())
+  type        String // PARSE_FILE | GENERATE_REPORT | RECALCULATE | SEND_EMAIL
+  status      JobStatus @default(PENDING)
+  payload     Json
+  result      Json?
+  error       String?   @db.Text
+  attempts    Int       @default(0)
+  startedAt   DateTime?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([status])
+  @@index([type])
+}

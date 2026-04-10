@@ -1,0 +1,147 @@
+# R&D Tax Credit Platform – Architecture
+
+## Overview
+
+A production-ready, audit-defensible workflow platform for R&D tax credit consulting engagements. Built on Next.js (App Router), PostgreSQL via Prisma, and a separately testable credit calculation engine.
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         NEXT.JS APPLICATION                         │
+│                                                                     │
+│  ┌──────────────────┐  ┌────────────────────┐  ┌────────────────┐  │
+│  │  Marketing Site   │  │   Client Portal    │  │ Admin Dashboard│  │
+│  │  /  /estimator   │  │  /portal/**        │  │ /admin/**      │  │
+│  │  /contact /about │  │                    │  │                │  │
+│  └──────────────────┘  └────────────────────┘  └────────────────┘  │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │                       API LAYER                              │   │
+│  │  /api/leads  /api/clients  /api/engagements                 │   │
+│  │  /api/calculations  /api/uploads  /api/reports              │   │
+│  │  /api/rules  /api/rules/legal-updates  /api/stripe         │   │
+│  │  /api/auth/[...nextauth]  /api/audit                       │   │
+│  └─────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────┘
+         │                    │                      │
+         ▼                    ▼                      ▼
+┌──────────────┐   ┌──────────────────┐   ┌─────────────────────┐
+│  CALCULATION  │   │  POSTGRESQL DB   │   │  OBJECT STORAGE     │
+│  ENGINE       │   │  (Prisma ORM)    │   │  (S3 / Supabase)    │
+│  src/engine/  │   │                  │   │  Signed URLs Only   │
+│               │   │  All models:     │   │                     │
+│  - wage-qre   │   │  leads, clients  │   │  clients/{id}/      │
+│  - supply-qre │   │  engagements     │   │  engagements/{id}/  │
+│  - contractor │   │  calculations    │   │  reports/{id}/      │
+│  - asc/regular│   │  audit logs      │   │                     │
+│  - sc-credit  │   │  tax rules       │   │                     │
+│               │   │  legal updates   │   │                     │
+│  NO DB access │   │                  │   │                     │
+│  NO HTTP      │   └──────────────────┘   └─────────────────────┘
+│  Pure input   │            │
+│  → output     │            ▼
+└──────────────┘   ┌──────────────────┐   ┌─────────────────────┐
+                   │  BACKGROUND JOBS  │   │  EMAIL (Resend)     │
+                   │  BullMQ + Redis   │   │                     │
+                   │                  │   │  new_lead           │
+                   │  parse_file      │   │  client_invited     │
+                   │  generate_report │   │  upload_received    │
+                   │  recalculate     │   │  estimate_ready     │
+                   │  send_email      │   │  report_published   │
+                   └──────────────────┘   └─────────────────────┘
+```
+
+## Key Design Decisions
+
+### 1. Calculation Engine Isolation
+`src/engine/` is a pure TypeScript module with **zero** side effects:
+- No database access
+- No HTTP calls
+- No filesystem access
+- Accepts typed `CalculationInput` → returns typed `CalculationResult`
+- Independently testable (`jest --testPathPattern=engine`)
+- Reproducible: same inputs + ruleConfig → identical outputs
+
+### 2. Tax Rule Versioning
+Every calculation is linked to a `TaxRuleVersion` record:
+- Credit rates stored as JSON (not hardcoded in engine)
+- Engine reads rates from config at runtime
+- Old engagements can be re-run under historical rulesets
+- Super admin approves ruleset changes before production use
+
+### 3. Immutable Audit Log
+`AuditLog` table:
+- Never updated or deleted by application code
+- Every significant action creates a new record
+- Includes userId, engagementId, action type, entity, metadata, IP
+- Required for compliance and audit defense
+
+### 4. Client Isolation
+- Each client's files stored under `clients/{clientId}/`
+- Signed URLs expire in 15 minutes
+- Row-level isolation: CLIENT role can only see their own records
+- Enforced in every API route that returns client data
+
+### 5. Override Tracking
+Every analyst override requires:
+- Reason text
+- User ID + timestamp
+- Affected ruleset version
+- Approval status for material changes
+- Reversibility: original value preserved
+
+## Directory Structure
+
+```
+rdtax-platform/
+├── prisma/
+│   ├── schema.prisma          # Complete data model
+│   ├── seed.ts                # Demo data
+│   └── migrations/            # Auto-generated by Prisma
+├── src/
+│   ├── app/
+│   │   ├── (marketing)/       # Public website routes
+│   │   ├── (portal)/          # Client portal routes
+│   │   ├── (admin)/           # Admin dashboard routes
+│   │   └── api/               # API route handlers
+│   ├── engine/                # Credit calculation engine (isolated)
+│   │   ├── index.ts           # Orchestrator
+│   │   ├── types.ts           # Input/output types
+│   │   ├── wage-qre.ts        # Wage QRE calculator
+│   │   ├── supply-qre.ts      # Supply QRE calculator
+│   │   ├── contractor-qre.ts  # Contractor QRE + funded-research
+│   │   ├── federal-credit.ts  # ASC, Regular, 280C, payroll offset
+│   │   └── sc-credit.ts       # South Carolina module
+│   ├── lib/
+│   │   ├── prisma.ts          # Prisma client singleton
+│   │   ├── auth.ts            # NextAuth config
+│   │   ├── rbac.ts            # Role-based access control
+│   │   ├── audit.ts           # Immutable audit logging
+│   │   ├── encryption.ts      # AES-256-GCM for PII
+│   │   ├── storage.ts         # S3/Supabase abstraction
+│   │   ├── email.ts           # Transactional email (Resend)
+│   │   └── document-generator.ts # PDF generation
+│   ├── jobs/
+│   │   ├── queue.ts           # BullMQ queue definitions
+│   │   └── workers/           # Background job workers
+│   └── __tests__/
+│       └── engine/            # Unit + integration tests
+```
+
+## Environments
+
+| Environment | Database | Storage | Email | Background Jobs |
+|-------------|----------|---------|-------|-----------------|
+| Local | PostgreSQL (local) | S3 dev bucket | Resend test | Redis (local Docker) |
+| Staging | Supabase staging | S3 staging | Resend test | Redis Cloud |
+| Production | Supabase prod | S3 production | Resend prod | Redis Cloud |
+
+## Security Architecture
+
+- **HTTPS only** — enforced at hosting layer
+- **Session**: JWT, 8-hour expiry, HttpOnly cookies via NextAuth
+- **MFA**: Architecture supports TOTP (mfaSecret stored, UI hookable)
+- **Encryption**: AES-256-GCM for EINs and sensitive identifiers
+- **File access**: Signed URLs, 15-min expiry, no public bucket access
+- **RBAC**: PUBLIC < CLIENT < ANALYST < ADMIN < SUPER_ADMIN hierarchy
+- **Row-level isolation**: Clients cannot access other clients' data
+- **Audit logging**: Immutable, all writes logged with user + timestamp
