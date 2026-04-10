@@ -10,21 +10,23 @@ const UpdateLeadSchema = z.object({
   assignedTo: z.string().optional(),
 });
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const { error, session } = await requireAuth("ANALYST", req);
   if (error) return error;
-  const lead = await prisma.lead.findUnique({ where: { id: params.id }, include: { estimatorRun: true } });
+  const lead = await prisma.lead.findUnique({ where: { id }, include: { estimatorRun: true } });
   if (!lead) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json({ lead });
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const { error, session } = await requireAuth("ANALYST", req);
   if (error) return error;
   const body = await req.json();
   const parsed = UpdateLeadSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
-  const lead = await prisma.lead.update({ where: { id: params.id }, data: parsed.data });
+  const lead = await prisma.lead.update({ where: { id }, data: parsed.data });
   await logAudit({
     userId: (session!.user as { id?: string }).id,
     action: "UPDATE_LEAD",
@@ -35,10 +37,11 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json({ lead });
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const { error, session } = await requireAuth("ADMIN", req);
   if (error) return error;
-  await prisma.lead.delete({ where: { id: params.id } });
-  await logAudit({ userId: (session!.user as { id?: string }).id, action: "UPDATE_LEAD", entityType: "Lead", entityId: params.id, metadata: { deleted: true } });
+  await prisma.lead.delete({ where: { id } });
+  await logAudit({ userId: (session!.user as { id?: string }).id, action: "UPDATE_LEAD", entityType: "Lead", entityId: id, metadata: { deleted: true } });
   return NextResponse.json({ success: true });
 }

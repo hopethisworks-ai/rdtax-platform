@@ -3,12 +3,13 @@ import { prisma } from "@/lib/prisma";
 import { requireAuth } from "@/lib/rbac";
 import { getSignedDownloadUrl } from "@/lib/storage";
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const { error, session } = await requireAuth("CLIENT", req);
   if (error) return error;
 
   const report = await prisma.report.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: { engagement: { include: { client: true } } },
   });
 

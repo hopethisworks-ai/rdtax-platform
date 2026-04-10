@@ -4,11 +4,12 @@ import { prisma } from "@/lib/prisma";
 import { logAudit } from "@/lib/audit";
 import { requireAuth } from "@/lib/rbac";
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const { error, session } = await requireAuth("ANALYST", req);
   if (error) return error;
   const engagement = await prisma.engagement.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       client: true,
       legalEntity: true,
@@ -26,12 +27,13 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
   return NextResponse.json({ engagement });
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const { error, session } = await requireAuth("ANALYST", req);
   if (error) return error;
   const body = await req.json();
   const engagement = await prisma.engagement.update({
-    where: { id: params.id },
+    where: { id },
     data: {
       ...(body.status && { status: body.status }),
       ...(body.internalNotes !== undefined && { internalNotes: body.internalNotes }),
