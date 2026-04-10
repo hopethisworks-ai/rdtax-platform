@@ -4,14 +4,15 @@ import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default async function EngagementDetailPage({ params }: { params: { id: string } }) {
+export default async function EngagementDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const session = await getServerSession(authOptions);
   const userId = (session?.user as { id?: string }).id;
   const client = await prisma.client.findFirst({ where: { userId } });
   if (!client) redirect("/portal");
 
   const engagement = await prisma.engagement.findFirst({
-    where: { id: params.id, clientId: client.id },
+    where: { id, clientId: client.id },
     include: {
       documentRequirements: true,
       uploadedFiles: { orderBy: { createdAt: "desc" } },
@@ -78,7 +79,7 @@ export default async function EngagementDetailPage({ params }: { params: { id: s
               ))}
             </ul>
           )}
-          <Link href={`/portal/engagements/${params.id}/upload`} className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">
+          <Link href={`/portal/engagements/${id}/upload`} className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">
             Upload Files
           </Link>
         </div>
@@ -99,7 +100,7 @@ export default async function EngagementDetailPage({ params }: { params: { id: s
                     <span className="text-gray-700">{qa.questionnaire.title}</span>
                   </div>
                   {!qa.completedAt && (
-                    <Link href={`/portal/engagements/${params.id}/questionnaires/${qa.id}`} className="text-xs text-blue-600 hover:underline">Complete</Link>
+                    <Link href={`/portal/engagements/${id}/questionnaires/${qa.id}`} className="text-xs text-blue-600 hover:underline">Complete</Link>
                   )}
                 </li>
               ))}
