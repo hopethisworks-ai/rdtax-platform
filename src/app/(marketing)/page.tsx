@@ -4,25 +4,6 @@ import AssessmentForm from "@/components/AssessmentForm";
 export default function HomePage() {
   return (
     <div className="bg-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-slate-900 text-lg">CreditPath</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/how-it-works" className="text-sm text-slate-600 hover:text-slate-900">How It Works</Link>
-            <Link href="/industries" className="text-sm text-slate-600 hover:text-slate-900">Industries</Link>
-            <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900">About</Link>
-            <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">Contact</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link href="/login" className="text-sm text-slate-600 hidden sm:block">Sign In</Link>
-            <Link href="/contact" className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">Free Assessment</Link>
-          </div>
-        </div>
-      </nav>
       <section className="pt-32 pb-24 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6 max-w-4xl">Your Business Is Sitting On <span className="text-blue-400">Unclaimed Tax Credits.</span></h1>
@@ -115,19 +96,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <footer className="bg-slate-950 py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-10 mb-12">
-            <div><div className="flex items-center gap-2 mb-4"><div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div><span className="font-bold text-white">CreditPath</span></div><p className="text-slate-500 text-sm">South Carolina R&D Tax Credit specialists.</p></div>
-            <div><h4 className="text-white font-semibold text-sm mb-4">Company</h4><div className="space-y-2"><Link href="/about" className="block text-slate-500 text-sm">About</Link><Link href="/how-it-works" className="block text-slate-500 text-sm">How It Works</Link><Link href="/contact" className="block text-slate-500 text-sm">Contact</Link><Link href="/login" className="block text-slate-500 text-sm">Client Login</Link></div></div>
-            <div><h4 className="text-white font-semibold text-sm mb-4">Industries</h4><div className="space-y-2"><Link href="/industries" className="block text-slate-500 text-sm">Manufacturing</Link><Link href="/industries" className="block text-slate-500 text-sm">Software</Link><Link href="/industries" className="block text-slate-500 text-sm">Construction</Link><Link href="/industries" className="block text-slate-500 text-sm">Biotech</Link></div></div>
-          </div>
-          <div className="border-t border-slate-800 pt-8 flex justify-between items-center">
-            <p className="text-slate-600 text-xs">2025 CreditPath. All rights reserved.</p>
-            <div className="flex gap-6"><Link href="/privacy" className="text-slate-600 text-xs">Privacy</Link><Link href="/terms" className="text-slate-600 text-xs">Terms</Link><span className="text-slate-600 text-xs flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>256-bit encrypted</span></div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

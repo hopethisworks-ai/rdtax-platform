@@ -39,30 +39,46 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email.toLowerCase() },
-        });
+        try {
+          const user = await prisma.user.findUnique({
+            where: { email: credentials.email.toLowerCase() },
+          });
 
-        if (!user || !user.passwordHash || !user.active) return null;
+          if (!user || !user.passwordHash || !user.active) {
+            console.error("[Auth] Login failed: user not found, no password hash, or inactive", {
+              email: credentials.email.toLowerCase(),
+              found: !!user,
+              hasHash: !!user?.passwordHash,
+              active: user?.active,
+            });
+            return null;
+          }
 
-        const valid = await bcrypt.compare(
-          credentials.password,
-          user.passwordHash
-        );
-        if (!valid) return null;
+          const valid = await bcrypt.compare(
+            credentials.password,
+            user.passwordHash
+          );
+          if (!valid) {
+            console.error("[Auth] Login failed: password mismatch for", credentials.email.toLowerCase());
+            return null;
+          }
 
-        // Update last login
-        await prisma.user.update({
-          where: { id: user.id },
-          data: { lastLoginAt: new Date() },
-        });
+          // Update last login
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { lastLoginAt: new Date() },
+          });
 
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role,
-        };
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            role: user.role,
+          };
+        } catch (err) {
+          console.error("[Auth] Login error – likely database connection failure:", err);
+          throw new Error("DatabaseConnectionError");
+        }
       },
     }),
   ],

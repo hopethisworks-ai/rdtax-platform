@@ -2,10 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { writeFile, mkdir } from "fs/promises";
+import { uploadFile, generateStorageKey } from "@/lib/storage";
 import { sendUploadReceived } from "@/lib/email";
 import { notifyAdmins } from "@/lib/notify";
-import path from "path";
 
 export async function POST(req: NextRequest) {
   try {
@@ -26,21 +25,25 @@ export async function POST(req: NextRequest) {
     const maxSize = 50 * 1024 * 1024; // 50MB
     if (file.size > maxSize) return NextResponse.json({ error: "File too large. Maximum size is 50MB." }, { status: 400 });
 
-    const allowedTypes = ["application/pdf", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "text/csv", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "image/jpeg", "image/png"];
-    if (!allowedTypes.includes(file.type)) return NextResponse.json({ error: "File type not allowed. Please upload PDF, Excel, CSV, Word, or image files." }, { status: 400 });
+    const allowedTypes = [
+      "application/pdf",
+      "application/vnd.ms-excel",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "text/csv",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "image/jpeg",
+      "image/png",
+    ];
+    if (!allowedTypes.includes(file.type)) {
+      return NextResponse.json({ error: "File type not allowed. Please upload PDF, Excel, CSV, Word, or image files." }, { status: 400 });
+    }
 
-    const timestamp = Date.now();
-    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const fileName = `${timestamp}_${safeName}`;
-    const uploadDir = path.join(process.cwd(), "public", "uploads", client.id);
-
-    await mkdir(uploadDir, { recursive: true });
-
+    // Upload to cloud storage (S3 or Supabase)
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    await writeFile(path.join(uploadDir, fileName), buffer);
-
-    const storagePath = `/uploads/${client.id}/${fileName}`;
+    const storageKey = generateStorageKey(client.id, engagementId || "general", file.name);
+    const storagePath = await uploadFile(storageKey, buffer, file.type);
 
     const uploaded = await prisma.uploadedFile.create({
       data: {

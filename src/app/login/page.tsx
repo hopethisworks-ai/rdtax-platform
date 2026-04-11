@@ -18,7 +18,11 @@ export default function LoginPage() {
     const result = await signIn("credentials", { email, password, redirect: false });
     setLoading(false);
     if (result?.error) {
-      setError("Invalid email or password");
+      if (result.error === "DatabaseConnectionError") {
+        setError("Unable to connect to the server. Please try again in a moment.");
+      } else {
+        setError("Invalid email or password");
+      }
     } else {
       window.location.href = "/portal";
     }
