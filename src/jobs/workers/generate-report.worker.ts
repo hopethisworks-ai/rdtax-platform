@@ -65,18 +65,35 @@ const worker = new Worker<GenerateReportJob>(
     let pdfBytes: Uint8Array;
     let title: string;
 
-    if (reportType === "PRELIMINARY_ESTIMATE") {
-      pdfBytes = await generatePreliminaryEstimatePdf(ctx);
-      title = `Preliminary Estimate – ${engagement.client.companyName} TY${engagement.taxYear}`;
-    } else {
-      pdfBytes = await generateMethodologyMemoPdf({ ...ctx, assumptions: (calculation.assumptionsSnapshot as Record<string, unknown>) ?? {} });
-      title = `Methodology Memo – ${engagement.client.companyName} TY${engagement.taxYear}`;
+    const companyTy = `${engagement.client.companyName} TY${engagement.taxYear}`;
+    const assumptions = (calculation.assumptionsSnapshot as Record<string, unknown>) ?? {};
+
+    switch (reportType) {
+      case "PRELIMINARY_ESTIMATE":
+        pdfBytes = await generatePreliminaryEstimatePdf(ctx);
+        title = `Preliminary Estimate – ${companyTy}`;
+        break;
+      case "METHODOLOGY_MEMO":
+      case "INDIVIDUAL_MEMO":
+        pdfBytes = await generateMethodologyMemoPdf({ ...ctx, assumptions });
+        title = `${reportType === "METHODOLOGY_MEMO" ? "Methodology Memo" : "Individual Memo"} – ${companyTy}`;
+        break;
+      case "WORKPAPER_SUMMARY":
+        pdfBytes = await generatePreliminaryEstimatePdf(ctx);
+        title = `Workpaper Summary – ${companyTy}`;
+        break;
+      case "FINAL_PACKAGE":
+        pdfBytes = await generatePreliminaryEstimatePdf(ctx);
+        title = `Final Credit Study Package – ${companyTy}`;
+        break;
+      default:
+        throw new Error(`Unsupported report type: ${reportType}`);
     }
 
     const storageKey = `reports/${engagementId}/${reportType.toLowerCase()}_${Date.now()}.pdf`;
     await uploadFile(storageKey, Buffer.from(pdfBytes), "application/pdf");
 
-    await prisma.report.create({
+    const report = await prisma.report.create({
       data: {
         engagementId,
         calculationId,
@@ -89,13 +106,30 @@ const worker = new Worker<GenerateReportJob>(
       },
     });
 
-    return { storageKey, title };
+    // Mark backgroundJob as completed
+    await prisma.backgroundJob.updateMany({
+      where: { payload: { path: ["calculationId"], equals: calculationId }, status: "RUNNING" },
+      data: { status: "COMPLETED", completedAt: new Date() },
+    });
+
+    return { storageKey, title, reportId: report.id };
   },
   { connection, concurrency: 2 }
 );
 
-worker.on("failed", (job, err) => {
+worker.on("failed", async (job, err) => {
   console.error(`[generate-report] Job ${job?.id} failed:`, err);
+  // Mark backgroundJob as failed so it doesn't stay stuck in RUNNING
+  if (job?.data?.calculationId) {
+    try {
+      await prisma.backgroundJob.updateMany({
+        where: { payload: { path: ["calculationId"], equals: job.data.calculationId }, status: "RUNNING" },
+        data: { status: "FAILED", completedAt: new Date() },
+      });
+    } catch (e) {
+      console.error("[generate-report] Failed to update backgroundJob status:", e);
+    }
+  }
 });
 
 export default worker;

@@ -190,7 +190,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
             CreditPath conducted interviews with key technical personnel, reviewed payroll records, contractor agreements, and project documentation. All {qualifiedProjects.length} qualified business components were evaluated under the four-part test as required by IRC Section 41(d). Employee time allocations were documented using contemporaneous records or reconstructed records consistent with Cohan v. Commissioner, 39 F.2d 540 (2d Cir. 1930) and Suder v. Commissioner, T.C. Memo 2014-201.
           </p>
           <p className="text-slate-600 leading-relaxed mb-6">
-            Qualified research expenses of {fmt(serializedCalc?.totalQre)} were identified, consisting of {fmt(serializedCalc?.totalWageQre)} in wage expenses, {fmt(serializedCalc?.totalSupplyQre)} in supply expenses, and {fmt(serializedCalc?.totalContractorQre)} in contractor expenses. Using the {serializedCalc?.method === "ASC" ? "Alternative Simplified Credit method under IRC Section 41(c)(5)" : "Regular Credit method under IRC Section 41(c)(1)"}, the federal credit is {fmt(federalCredit)}. Stacked with the South Carolina research credit under SC Code Section 12-6-3415, the total combined credit available to {client.companyName} is {fmt(totalCredit)}.
+            Qualified research expenses of {fmt(serializedCalc?.totalQre)} were identified, consisting of {fmt(serializedCalc?.totalWageQre)} in wage expenses, {fmt(serializedCalc?.totalSupplyQre)} in supply expenses, and {fmt(serializedCalc?.totalContractorQre)} in contractor expenses. Using the {serializedCalc?.method === "ASC" ? "Alternative Simplified Credit method under IRC Section 41(c)(5)" : "Regular Credit method under IRC Section 41(c)(1)"}, the federal credit is {fmt(federalCredit)}. Stacked with the South Carolina research credit under SC Code Section 12-6-3375, the total combined credit available to {client.companyName} is {fmt(totalCredit)}.
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
             <p className="text-xs font-bold text-blue-800 uppercase tracking-wide mb-3">Credit Summary</p>
@@ -640,7 +640,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
                 <h3 className="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wide">Section D -- Summary</h3>
                 <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
                   <div className="flex justify-between"><span className="text-sm text-slate-600">Federal Credit (Form 6765)</span><span className="font-black text-slate-900">{fmt(serializedCalc.reducedCredit ?? serializedCalc.grossCredit)}</span></div>
-                  <div className="flex justify-between"><span className="text-sm text-slate-600">SC Credit (SC I-335)</span><span className="font-black text-slate-900">{fmt(serializedCalc.scAllowedCredit)}</span></div>
+                  <div className="flex justify-between"><span className="text-sm text-slate-600">SC Credit (SC I-319)</span><span className="font-black text-slate-900">{fmt(serializedCalc.scAllowedCredit)}</span></div>
                   <div className="flex justify-between border-t border-slate-200 pt-3"><span className="font-bold text-slate-900">Total Credits</span><span className="font-black text-blue-700 text-lg">{fmt(totalCredit)}</span></div>
                 </div>
                 <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -648,7 +648,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
                   <ul className="text-xs text-blue-700 space-y-1 list-disc list-inside">
                     <li>Attach Form 6765 to federal return</li>
                     <li>Report federal credit on Form 3800</li>
-                    <li>File SC I-335 with state return</li>
+                    <li>File SC I-319 with state return</li>
                     <li>Retain all documentation for 7 years</li>
                     <li>Credit carries forward 20 years (federal)</li>
                   </ul>
@@ -730,7 +730,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
                 ["IRC Section 41(d)","Definition of qualified research -- four-part test"],
                 ["IRC Section 41(d)(4)(H)","Funded research exclusion"],
                 ["IRC Section 280C(c)","Election to claim reduced credit"],
-                ["SC Code 12-6-3415","South Carolina research activities credit (5%)"],
+                ["SC Code 12-6-3375","South Carolina research activities credit (5%)"],
               ]},
               { category: "Regulatory Authority", items: [
                 ["Treas. Reg. 1.41-4","Qualified research requirements and definitions"],

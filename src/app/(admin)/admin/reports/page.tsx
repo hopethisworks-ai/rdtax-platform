@@ -1,19 +1,32 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
-export default async function ReportsPage() {
-  const reports = await prisma.report.findMany({
-    orderBy: { createdAt: "desc" },
-    include: {
-      engagement: { include: { client: { select: { companyName: true } } } },
-    },
-  });
+const PAGE_SIZE = 25;
+
+export default async function ReportsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+  const { page: pageParam } = await searchParams;
+  const currentPage = Math.max(1, parseInt(pageParam ?? "1", 10) || 1);
+
+  const [reports, totalCount] = await Promise.all([
+    prisma.report.findMany({
+      orderBy: { createdAt: "desc" },
+      skip: (currentPage - 1) * PAGE_SIZE,
+      take: PAGE_SIZE,
+      include: {
+        engagement: { include: { client: { select: { companyName: true } } } },
+      },
+    }),
+    prisma.report.count(),
+  ]);
+
+  const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
 
   const typeColors: Record<string, string> = {
     PRELIMINARY_ESTIMATE: "bg-slate-100 text-slate-600",
     WORKPAPER_SUMMARY: "bg-blue-100 text-blue-700",
     FINAL_PACKAGE: "bg-green-100 text-green-700",
     INDIVIDUAL_MEMO: "bg-purple-100 text-purple-700",
+    METHODOLOGY_MEMO: "bg-amber-100 text-amber-700",
   };
 
   return (
@@ -21,7 +34,7 @@ export default async function ReportsPage() {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-slate-900">Reports</h1>
-          <p className="text-slate-500 mt-1">{reports.length} report{reports.length !== 1 ? "s" : ""} generated</p>
+          <p className="text-slate-500 mt-1">{totalCount} report{totalCount !== 1 ? "s" : ""} generated</p>
         </div>
       </div>
       <div className="bg-white rounded-xl border border-slate-200 overflow-x-auto">
@@ -63,6 +76,21 @@ export default async function ReportsPage() {
           <div className="p-12 text-center text-slate-400 text-sm">No reports yet. Generate one from an engagement.</div>
         )}
       </div>
+      {totalPages > 1 && (
+        <div className="flex items-center justify-between mt-6">
+          <p className="text-sm text-slate-500">
+            Showing {(currentPage - 1) * PAGE_SIZE + 1}–{Math.min(currentPage * PAGE_SIZE, totalCount)} of {totalCount}
+          </p>
+          <div className="flex gap-2">
+            {currentPage > 1 && (
+              <Link href={`/admin/reports?page=${currentPage - 1}`} className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50">Previous</Link>
+            )}
+            {currentPage < totalPages && (
+              <Link href={`/admin/reports?page=${currentPage + 1}`} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Next</Link>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

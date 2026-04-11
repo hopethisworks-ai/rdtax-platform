@@ -34,15 +34,6 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
   const lowEstimate = Math.round(totalCredit * 0.85);
   const highEstimate = Math.round(totalCredit * 1.15);
 
-  const qualifyingActivities = [
-    "Development of new or improved software, algorithms, or technical systems",
-    "Engineering design, prototype development, and testing activities",
-    "Process improvement and manufacturing efficiency research",
-    "Computer vision, machine learning, and AI model development",
-    "Custom tooling, fixture, and equipment design",
-    "Quality control system development and validation testing",
-  ];
-
   const qualifiedComponents = projects.filter(p => p.qualified);
 
   return (
@@ -75,7 +66,7 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
             <p className="text-xs text-green-600 mt-1">{calc?.method === "ASC" ? "Alternative Simplified Credit Method" : "Regular Credit Method"}</p>
           </div>
           <div className="border border-purple-200 bg-purple-50 rounded-xl p-5">
-            <p className="text-xs text-purple-600 font-bold uppercase tracking-wide mb-1">SC State Credit (SC Code 12-6-3415)</p>
+            <p className="text-xs text-purple-600 font-bold uppercase tracking-wide mb-1">SC State Credit (SC Code 12-6-3375)</p>
             <p className="text-3xl font-black text-purple-900">{fmt(scCredit)}</p>
             <p className="text-xs text-purple-600 mt-1">5% of qualified research expenses</p>
           </div>
@@ -108,15 +99,8 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
             })}
           </div>
         ) : (
-          <div className="space-y-2 mb-6">
-            {qualifyingActivities.map((a, i) => (
-              <div key={i} className="flex items-start gap-3 p-3 border border-slate-200 rounded-lg">
-                <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                </div>
-                <p className="text-sm text-slate-700">{a}</p>
-              </div>
-            ))}
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+            <p className="text-sm text-amber-700">No qualified business components have been identified yet. Complete the business component analysis to populate this section with the client&apos;s specific qualifying activities.</p>
           </div>
         )}
       </section>

@@ -60,7 +60,7 @@ export interface ParseFileJob {
 export interface GenerateReportJob {
   engagementId: string;
   calculationId: string;
-  reportType: "PRELIMINARY_ESTIMATE" | "WORKPAPER_SUMMARY" | "FINAL_PACKAGE";
+  reportType: "PRELIMINARY_ESTIMATE" | "WORKPAPER_SUMMARY" | "FINAL_PACKAGE" | "INDIVIDUAL_MEMO" | "METHODOLOGY_MEMO";
   requestedBy: string;
 }
 

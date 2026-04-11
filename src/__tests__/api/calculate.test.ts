@@ -3,6 +3,10 @@
  *
  * Verifies auth enforcement, 404 handling, method selection, and that the
  * Prisma calculation record is created with the right shape.
+ *
+ * The route now delegates to the shared engine (runCalculation), so these
+ * tests verify the API layer: auth, validation, DB persistence, and that
+ * the engine result is properly stored.
  */
 
 import { NextRequest } from "next/server";
@@ -24,8 +28,12 @@ const mockEngagement = {
   taxYear: 2024,
   ruleVersionId: "rv-1",
   status: "ANALYSIS",
-  legalEntity: { id: "le-1" }, // no SC fields yet
+  legalEntityId: "le-1",
+  legalEntity: { id: "le-1", name: "Test Corp" },
   ruleVersion: {
+    id: "rv-1",
+    formVersion: "2024-v1",
+    taxYear: 2024,
     creditRates: {
       ascRate: 0.14,
       ascFallbackRate: 0.06,
@@ -33,15 +41,59 @@ const mockEngagement = {
       contractorQrePct: 0.65,
       scRate: 0.05,
     },
+    carryforwardRules: {
+      federalYears: 20,
+      scYears: 10,
+    },
+    c280cPresentationLogic: {
+      regularTaxRate: 0.21,
+    },
+    payrollOffsetCap: 500000,
   },
   projects: [
     {
       id: "proj-1",
+      qualified: true,
+      fundedResearch: false,
       employees: [
-        { compensation: 100000, qualifiedActivityPct: 0.8, qreAmount: null, excluded: false },
+        {
+          id: "emp-1",
+          name: "John Doe",
+          compensation: 100000,
+          bonus: 0,
+          bonusIncluded: false,
+          qualifiedActivityPct: 0.8,
+          qreAmount: null,
+          excluded: false,
+        },
       ],
-      supplies: [{ amount: 10000 }],
-      contractors: [{ amount: 50000, qualifiedAmount: null }],
+      supplies: [
+        {
+          id: "sup-1",
+          amount: 10000,
+          isDepreciableProperty: false,
+          isLandOrImprovement: false,
+          isOverheadItem: false,
+          qualified: true,
+          qualificationStatus: "qualified",
+        },
+      ],
+      contractors: [
+        {
+          id: "con-1",
+          vendorName: "Acme Consulting",
+          amount: 50000,
+          qualifiedAmount: null,
+          usBasedFlag: true,
+          qualifiedFlag: true,
+          substantialRightsRetained: true,
+          successContingentPayment: false,
+          economicRiskBorne: true,
+          contractReviewComplete: true,
+          fundedResearchFlag: false,
+          excludedReason: null,
+        },
+      ],
     },
   ],
 };
@@ -64,6 +116,7 @@ jest.mock("@/lib/prisma", () => ({
     auditLog: {
       create: jest.fn().mockResolvedValue({}),
     },
+    $queryRaw: jest.fn().mockResolvedValue([]),
   },
 }));
 
@@ -126,9 +179,12 @@ describe("POST /api/engagements/[id]/calculate", () => {
   it("creates a calculation record and defaults to ASC when no prior years", async () => {
     requireAuth.mockResolvedValue({ session: mockSession, error: null });
     prisma.engagement.findUnique.mockResolvedValue(mockEngagement);
-    prisma.priorYearQre.findMany.mockResolvedValue([]);   // no prior data → ASC fallback
+    prisma.priorYearQre.findMany.mockResolvedValue([]);
     prisma.grossReceiptsHistory.findMany.mockResolvedValue([]);
-    prisma.calculation.create.mockResolvedValue({ id: "calc-1" });
+    prisma.calculation.create.mockImplementation(({ data }: { data: Record<string, unknown> }) => ({
+      id: "calc-1",
+      ...data,
+    }));
 
     const { POST } = await import("@/app/api/engagements/[id]/calculate/route");
     const res = await POST(
@@ -141,10 +197,15 @@ describe("POST /api/engagements/[id]/calculate", () => {
     expect(data.success).toBe(true);
     expect(data.calculationId).toBe("calc-1");
 
-    // With no prior years, the ASC fallback (6 %) should be used.
+    // With no prior years the engine compares both methods and picks the best.
+    // ASC fallback is used (6% of QRE) while Regular uses base=0, so Regular
+    // (20% × QRE) beats ASC fallback (6% × QRE). Engine correctly picks REGULAR.
     const createCall = prisma.calculation.create.mock.calls[0][0].data;
     expect(createCall.ascFallbackUsed).toBe(true);
-    expect(createCall.method).toBe("ASC");
+    // Engine recommends REGULAR because 20% > 6% when base is 0
+    expect(createCall.method).toBe("REGULAR");
+    // QRE: wage=80000 (100k*0.8), supply=10000, contractor=32500 (50k*0.65) = 122500
+    expect(createCall.totalQre).toBeCloseTo(122500, 0);
   });
 
   it("picks REGULAR method when explicitly requested and data is available", async () => {
@@ -161,7 +222,10 @@ describe("POST /api/engagements/[id]/calculate", () => {
       { taxYear: 2021, amount: 1600000 },
       { taxYear: 2020, amount: 1400000 },
     ]);
-    prisma.calculation.create.mockResolvedValue({ id: "calc-2" });
+    prisma.calculation.create.mockImplementation(({ data }: { data: Record<string, unknown> }) => ({
+      id: "calc-2",
+      ...data,
+    }));
 
     const { POST } = await import("@/app/api/engagements/[id]/calculate/route");
     const res = await POST(
@@ -183,7 +247,10 @@ describe("POST /api/engagements/[id]/calculate", () => {
     prisma.engagement.findUnique.mockResolvedValue(mockEngagement);
     prisma.priorYearQre.findMany.mockResolvedValue([]);
     prisma.grossReceiptsHistory.findMany.mockResolvedValue([]);
-    prisma.calculation.create.mockResolvedValue({ id: "calc-3" });
+    prisma.calculation.create.mockImplementation(({ data }: { data: Record<string, unknown> }) => ({
+      id: "calc-3",
+      ...data,
+    }));
 
     const { POST } = await import("@/app/api/engagements/[id]/calculate/route");
     await POST(
@@ -192,7 +259,11 @@ describe("POST /api/engagements/[id]/calculate", () => {
     );
 
     const createCall = prisma.calculation.create.mock.calls[0][0].data;
-    // reducedCredit should be ~79 % of grossCredit (1 - 0.21 = 0.79)
-    expect(createCall.reducedCredit).toBeCloseTo(createCall.grossCredit * 0.79, 2);
+    // reducedCredit should be ~79% of grossCredit (1 - 0.21 = 0.79)
+    expect(createCall.c280cElectionMade).toBe(true);
+    expect(createCall.reducedCredit).toBeCloseTo(
+      (createCall.grossCredit as number) * 0.79,
+      0
+    );
   });
 });

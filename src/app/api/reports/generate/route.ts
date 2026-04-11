@@ -8,7 +8,7 @@ import { logAudit } from "@/lib/audit";
 const GenerateReportSchema = z.object({
   engagementId: z.string(),
   calculationId: z.string(),
-  reportType: z.enum(["PRELIMINARY_ESTIMATE","WORKPAPER_SUMMARY","FINAL_PACKAGE"]),
+  reportType: z.enum(["PRELIMINARY_ESTIMATE","WORKPAPER_SUMMARY","FINAL_PACKAGE","INDIVIDUAL_MEMO","METHODOLOGY_MEMO"]),
 });
 
 export async function POST(req: NextRequest) {

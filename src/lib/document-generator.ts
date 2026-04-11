@@ -43,7 +43,7 @@ function fmt(n: number | null | undefined): string {
 
 export async function generatePreliminaryEstimatePdf(ctx: DocumentContext): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
-  const page = doc.addPage(PageSizes.Letter);
+  let page = doc.addPage(PageSizes.Letter);
   const { width, height } = page.getSize();
   const boldFont = await doc.embedFont(StandardFonts.HelveticaBold);
   const font = await doc.embedFont(StandardFonts.Helvetica);
@@ -52,13 +52,22 @@ export async function generatePreliminaryEstimatePdf(ctx: DocumentContext): Prom
   const DARK = rgb(0.1, 0.1, 0.1);
   const GRAY = rgb(0.4, 0.4, 0.4);
 
+  const MARGIN_BOTTOM = 100; // reserve space for disclaimer
+
   // Header bar
   page.drawRectangle({ x: 0, y: height - 80, width, height: 80, color: BLUE });
   page.drawText("CreditPath R&D", { x: 40, y: height - 30, size: 18, font: boldFont, color: rgb(1,1,1) });
   page.drawText("Preliminary R&D Tax Credit Estimate", { x: 40, y: height - 55, size: 12, font, color: rgb(0.8,0.9,1) });
 
   let y = height - 110;
+  const ensureSpace = (needed: number) => {
+    if (y - needed < MARGIN_BOTTOM) {
+      page = doc.addPage(PageSizes.Letter);
+      y = height - 40;
+    }
+  };
   const line = (text: string, size: number = 10, f = font, color = DARK) => {
+    ensureSpace(size + 6);
     page.drawText(text, { x: 40, y, size, font: f, color });
     y -= size + 6;
   };
@@ -114,14 +123,15 @@ export async function generatePreliminaryEstimatePdf(ctx: DocumentContext): Prom
   }
 
   gap(30);
-  // Disclaimer at bottom — rendered in reading order, stacked upward from page bottom
+  // Disclaimer at bottom of the last page
+  const lastPage = doc.getPages()[doc.getPageCount() - 1];
   const disclaimerLines = DISCLAIMER.match(/.{1,95}/g) ?? [];
-  const disclaimerBlockHeight = disclaimerLines.length * 8 + 14; // lines + separator gap
-  let dy = 40 + disclaimerBlockHeight; // start high enough to fit all lines above y=40
-  page.drawLine({ start: { x: 40, y: dy }, end: { x: width - 40, y: dy }, thickness: 0.5, color: GRAY });
+  const disclaimerBlockHeight = disclaimerLines.length * 8 + 14;
+  let dy = 40 + disclaimerBlockHeight;
+  lastPage.drawLine({ start: { x: 40, y: dy }, end: { x: width - 40, y: dy }, thickness: 0.5, color: GRAY });
   dy -= 10;
   for (const dl of disclaimerLines) {
-    page.drawText(dl, { x: 40, y: dy, size: 6, font, color: GRAY });
+    lastPage.drawText(dl, { x: 40, y: dy, size: 6, font, color: GRAY });
     dy -= 8;
   }
 
@@ -133,7 +143,7 @@ export async function generateMethodologyMemoPdf(ctx: DocumentContext & {
   legalUpdateBaseline?: string;
 }): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
-  const page = doc.addPage(PageSizes.Letter);
+  let page = doc.addPage(PageSizes.Letter);
   const { width, height } = page.getSize();
   const boldFont = await doc.embedFont(StandardFonts.HelveticaBold);
   const font = await doc.embedFont(StandardFonts.Helvetica);
@@ -141,13 +151,21 @@ export async function generateMethodologyMemoPdf(ctx: DocumentContext & {
   const DARK = rgb(0.1, 0.1, 0.1);
   const GRAY = rgb(0.4, 0.4, 0.4);
 
+  const MARGIN_BOTTOM = 100;
+
   page.drawRectangle({ x: 0, y: height - 80, width, height: 80, color: BLUE });
   page.drawText("CreditPath R&D – Methodology Memorandum", { x: 40, y: height - 30, size: 14, font: boldFont, color: rgb(1,1,1) });
   page.drawText(`${ctx.client.companyName} | Tax Year ${ctx.engagement.taxYear}`, { x: 40, y: height - 55, size: 10, font, color: rgb(0.8,0.9,1) });
 
   let y = height - 110;
+  const ensureSpace = (needed: number) => {
+    if (y - needed < MARGIN_BOTTOM) {
+      page = doc.addPage(PageSizes.Letter);
+      y = height - 40;
+    }
+  };
   const line = (text: string, size = 10, f = font, color = DARK) => {
-    if (y < 80) return; // prevent overflow
+    ensureSpace(size + 6);
     page.drawText(text, { x: 40, y, size, font: f, color });
     y -= size + 6;
   };
@@ -184,13 +202,14 @@ export async function generateMethodologyMemoPdf(ctx: DocumentContext & {
   line("This memorandum reflects analysis as of the date of delivery under the rule version noted above.", 9, font, GRAY);
   line("Results may differ under amended returns or subsequent IRS examinations.", 9, font, GRAY);
 
+  const lastPage2 = doc.getPages()[doc.getPageCount() - 1];
   const disclaimerLines2 = DISCLAIMER.match(/.{1,95}/g) ?? [];
   const disclaimerBlockHeight2 = disclaimerLines2.length * 8 + 14;
   let dy2 = 40 + disclaimerBlockHeight2;
-  page.drawLine({ start: { x: 40, y: dy2 }, end: { x: width - 40, y: dy2 }, thickness: 0.5, color: GRAY });
+  lastPage2.drawLine({ start: { x: 40, y: dy2 }, end: { x: width - 40, y: dy2 }, thickness: 0.5, color: GRAY });
   dy2 -= 10;
   for (const dl of disclaimerLines2) {
-    page.drawText(dl, { x: 40, y: dy2, size: 6, font, color: GRAY });
+    lastPage2.drawText(dl, { x: 40, y: dy2, size: 6, font, color: GRAY });
     dy2 -= 8;
   }
 

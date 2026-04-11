@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const REPORT_TYPES = [
   { value: "PRELIMINARY_ESTIMATE", label: "Preliminary Estimate" },
   { value: "WORKPAPER_SUMMARY", label: "Workpaper Summary" },
   { value: "FINAL_PACKAGE", label: "Final Package" },
   { value: "INDIVIDUAL_MEMO", label: "Individual Memo" },
+  { value: "METHODOLOGY_MEMO", label: "Methodology Memo" },
 ];
 
 export default function ReportGenerator({ engagementId, calculationId, clientName, taxYear }: {
@@ -14,6 +16,7 @@ export default function ReportGenerator({ engagementId, calculationId, clientNam
   clientName: string;
   taxYear: number;
 }) {
+  const router = useRouter();
   const [reportType, setReportType] = useState("FINAL_PACKAGE");
   const [title, setTitle] = useState(`${clientName} -- ${taxYear} R&D Tax Credit Study`);
   const [notes, setNotes] = useState("");
@@ -26,14 +29,21 @@ export default function ReportGenerator({ engagementId, calculationId, clientNam
     setSaving(true);
     setError("");
     try {
+      // Create the report metadata record
       const res = await fetch("/api/engagements/" + engagementId + "/reports", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ reportType, title, notes, calculationId, publishNow: publish }),
       });
       if (res.ok) {
+        // Also enqueue the PDF generation job so the report gets a downloadable file
+        await fetch("/api/reports/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ engagementId, calculationId, reportType }),
+        }).catch(() => { /* PDF generation is non-blocking; metadata record already created */ });
         setDone(true);
-        setTimeout(() => { setDone(false); window.location.reload(); }, 1500);
+        setTimeout(() => { setDone(false); router.refresh(); }, 1500);
       } else {
         const d = await res.json();
         setError(d.error ?? "Failed to generate report");

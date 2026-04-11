@@ -125,6 +125,7 @@ enum ReportType {
   WORKPAPER_SUMMARY
   FINAL_PACKAGE
   INDIVIDUAL_MEMO
+  METHODOLOGY_MEMO
 }
 
 // ── Users & Auth ──────────────────────────────────────────────────────────────

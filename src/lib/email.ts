@@ -8,6 +8,16 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM = process.env.EMAIL_FROM ?? "noreply@rdtaxplatform.com";
 const APP_URL = process.env.APP_URL ?? "http://localhost:3001";
 
+/** Escape user-supplied values before interpolation into HTML templates */
+function esc(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 async function send(to: string, subject: string, html: string): Promise<void> {
   const { error } = await resend.emails.send({ from: FROM, to, subject, html });
   if (error) {
@@ -25,8 +35,8 @@ export async function sendClientInvite(
   await send(
     to,
     "You have been invited to the R&D Tax Credit Portal",
-    `<p>Hello ${name},</p>
-     <p>You have been invited to access your secure R&D Tax Credit engagement portal.</p>
+    `<p>Hello ${esc(name)},</p>
+     <p>You have been invited to access your secure R&amp;D Tax Credit engagement portal.</p>
      <p><a href="${url}" style="background:#2563eb;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;">Accept Invitation</a></p>
      <p>This link expires in 48 hours.</p>`
   );
@@ -41,8 +51,8 @@ export async function sendEstimateReady(
   await send(
     to,
     "Your R&D Credit Estimate is Ready",
-    `<p>Hello ${name},</p>
-     <p>Your preliminary R&D tax credit estimate has been prepared and is ready for review.</p>
+    `<p>Hello ${esc(name)},</p>
+     <p>Your preliminary R&amp;D tax credit estimate has been prepared and is ready for review.</p>
      <p><a href="${url}">View Estimate</a></p>`
   );
 }
@@ -56,8 +66,8 @@ export async function sendReportPublished(
   await send(
     to,
     "Your Final R&D Credit Report is Ready",
-    `<p>Hello ${name},</p>
-     <p>Your final R&D tax credit documentation package has been published.</p>
+    `<p>Hello ${esc(name)},</p>
+     <p>Your final R&amp;D tax credit documentation package has been published.</p>
      <p><a href="${url}">Download Reports</a></p>`
   );
 }
@@ -72,7 +82,7 @@ export async function sendNewLeadAlert(
     adminEmail,
     `New Lead: ${companyName}`,
     `<p>A new lead has been submitted.</p>
-     <p>Company: <strong>${companyName}</strong></p>
+     <p>Company: <strong>${esc(companyName)}</strong></p>
      <p><a href="${url}">View Lead</a></p>`
   );
 }
@@ -85,8 +95,8 @@ export async function sendUploadReceived(
   await send(
     to,
     "File Upload Received",
-    `<p>Hello ${name},</p>
-     <p>We received your uploaded file: <strong>${filename}</strong>. Our team will review it shortly.</p>`
+    `<p>Hello ${esc(name)},</p>
+     <p>We received your uploaded file: <strong>${esc(filename)}</strong>. Our team will review it shortly.</p>`
   );
 }
 
@@ -95,11 +105,11 @@ export async function sendMissingFileReminder(
   name: string,
   missingDocs: string[]
 ): Promise<void> {
-  const list = missingDocs.map((d) => `<li>${d}</li>`).join("");
+  const list = missingDocs.map((d) => `<li>${esc(d)}</li>`).join("");
   await send(
     to,
     "Action Required: Missing Documents",
-    `<p>Hello ${name},</p>
+    `<p>Hello ${esc(name)},</p>
      <p>The following documents are still needed to complete your engagement:</p>
      <ul>${list}</ul>
      <p><a href="${APP_URL}/portal">Log in to upload</a></p>`
@@ -116,9 +126,9 @@ export async function sendInvoiceDue(
   await send(
     to,
     "Invoice Due",
-    `<p>Hello ${name},</p>
+    `<p>Hello ${esc(name)},</p>
      <p>An invoice of <strong>$${amount.toLocaleString()}</strong> is due.</p>
-     <p><a href="${url}">View & Pay Invoice</a></p>`
+     <p><a href="${url}">View &amp; Pay Invoice</a></p>`
   );
 }
 

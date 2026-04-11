@@ -33,6 +33,6 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     }
   }
 
-  const url = await getSignedDownloadUrl(report.storagePath, 900);
+  const url = await getSignedDownloadUrl(report.storagePath, 3600); // 1 hour expiry
   return NextResponse.redirect(url);
 }
