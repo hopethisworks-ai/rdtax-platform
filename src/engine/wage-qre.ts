@@ -41,8 +41,9 @@ export function calculateWageQre(employees: EmployeeInput[]): {
     const pct = Math.min(1, Math.max(0, emp.qualifiedActivityPct));
 
     // Eligible wage base = base comp + bonus if included
-    const eligibleWageBase =
-      emp.compensation + (emp.bonusIncluded ? emp.bonus : 0);
+    const eligibleWageBase = round2(
+      emp.compensation + (emp.bonusIncluded ? emp.bonus : 0)
+    );
 
     if (eligibleWageBase < 0) {
       warnings.push(`Employee ${emp.name}: negative wage base; skipped.`);

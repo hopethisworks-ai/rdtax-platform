@@ -38,11 +38,15 @@ export function calculateScCredit(
   }
   const pct = Math.min(1, Math.max(0, stateSourceQrePct));
 
-  const scQre = round2(totalQre * pct);
+  // Guard against negative inputs
+  const safeTotalQre = Math.max(0, totalQre);
+  const safeLiability = Math.max(0, stateTaxLiabilityAfterOtherCredits);
+
+  const scQre = round2(safeTotalQre * pct);
   const scGrossCredit = round2(scQre * scRate);
 
   // 50% of remaining state tax liability after other credits
-  const scLiabilityLimit = round2(stateTaxLiabilityAfterOtherCredits * 0.5);
+  const scLiabilityLimit = round2(safeLiability * 0.5);
   const scAllowedCredit = Math.min(scGrossCredit, scLiabilityLimit);
   const scCarryforward = round2(scGrossCredit - scAllowedCredit);
 

@@ -75,4 +75,50 @@ describe("calculateContractorQre", () => {
     const { totalContractorQre } = calculateContractorQre([baseContractor({ excluded: true })]);
     expect(totalContractorQre).toBe(0);
   });
+
+  it("excludes qualified contractor when funded research AND no substantial rights", () => {
+    const { totalContractorQre, details, warnings } = calculateContractorQre([
+      baseContractor({
+        qualifiedFlag: true,
+        fundedResearchFlag: true,
+        substantialRightsRetained: false,
+      }),
+    ]);
+    expect(totalContractorQre).toBe(0);
+    expect(details[0].qualifiedAmount).toBe(0);
+    expect(details[0].fundedResearchWarning).toBe(true);
+    expect(details[0].substantialRightsWarning).toBe(true);
+    expect(warnings.some((w) => w.includes("QRE excluded despite qualified flag"))).toBe(true);
+  });
+
+  it("includes qualified contractor with funded research when substantial rights retained", () => {
+    const { totalContractorQre, details } = calculateContractorQre([
+      baseContractor({
+        qualifiedFlag: true,
+        fundedResearchFlag: true,
+        substantialRightsRetained: true,
+      }),
+    ]);
+    expect(totalContractorQre).toBe(65000); // still qualifies
+    expect(details[0].qualifiedAmount).toBe(65000);
+    expect(details[0].fundedResearchWarning).toBe(true);
+  });
+
+  it("warns but includes QRE when funded research with unknown substantial rights", () => {
+    const { totalContractorQre, warnings } = calculateContractorQre([
+      baseContractor({
+        qualifiedFlag: true,
+        fundedResearchFlag: true,
+        substantialRightsRetained: null,
+      }),
+    ]);
+    expect(totalContractorQre).toBe(65000);
+    expect(warnings.some((w) => w.includes("substantial rights status unknown"))).toBe(true);
+  });
+
+  it("handles negative contractor amount gracefully", () => {
+    const { totalContractorQre } = calculateContractorQre([baseContractor({ amount: -5000 })]);
+    // Negative amount * 0.65 = negative qualified amount; total should be 0 since filter checks > 0
+    expect(totalContractorQre).toBe(0);
+  });
 });

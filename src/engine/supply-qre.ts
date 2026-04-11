@@ -89,7 +89,7 @@ export function calculateSupplyQre(supplies: SupplyInput[]): {
 
     details.push({
       supplyId: s.id,
-      amount: s.amount,
+      amount: round2(s.amount),
       qualified: true,
       excluded: false,
     });

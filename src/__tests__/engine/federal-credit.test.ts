@@ -150,9 +150,9 @@ describe("calculatePayrollOffset", () => {
     expect(result.eligible).toBe(false);
   });
 
-  it("returns not-elected when elected is false", () => {
+  it("returns eligible but not elected when elected is false", () => {
     const result = calculatePayrollOffset(200000, false, eligibleInputs, defaultConfig);
-    expect(result.eligible).toBe(false);
+    expect(result.eligible).toBe(true);  // eligible is determined independently
     expect(result.elected).toBe(false);
     expect(result.amount).toBe(0);
   });
@@ -160,5 +160,82 @@ describe("calculatePayrollOffset", () => {
   it("carryforward reduction equals elected amount", () => {
     const result = calculatePayrollOffset(200000, true, eligibleInputs, defaultConfig);
     expect(result.carryforwardReduction).toBe(result.amount);
+  });
+
+  it("includes prior carryforward in available credit pool", () => {
+    const result = calculatePayrollOffset(
+      100000,
+      true,
+      { ...eligibleInputs, priorCarryforward: 200000 },
+      defaultConfig
+    );
+    // availableCredit = 100000 + 200000 = 300000; capped at 500000
+    expect(result.amount).toBe(300000);
+  });
+
+  it("caps prior carryforward + gross credit at annual limit", () => {
+    const result = calculatePayrollOffset(
+      400000,
+      true,
+      { ...eligibleInputs, priorCarryforward: 300000 },
+      defaultConfig
+    );
+    // availableCredit = 400000 + 300000 = 700000; capped at 500000
+    expect(result.amount).toBe(500000);
+  });
+
+  it("ignores negative prior carryforward", () => {
+    const result = calculatePayrollOffset(
+      200000,
+      true,
+      { ...eligibleInputs, priorCarryforward: -50000 },
+      defaultConfig
+    );
+    // Math.max(0, -50000) = 0; availableCredit = 200000
+    expect(result.amount).toBe(200000);
+  });
+});
+
+describe("calculateAsc – edge cases", () => {
+  it("returns 0 for negative QRE", () => {
+    const result = calculateAsc(-100000, [], defaultConfig);
+    expect(result.credit).toBe(0);
+    expect(result.fallbackUsed).toBe(false);
+  });
+
+  it("returns 0 for zero QRE", () => {
+    const result = calculateAsc(0, [], defaultConfig);
+    expect(result.credit).toBe(0);
+  });
+
+  it("uses half_of_three_pct_qre fallback when configured", () => {
+    const altConfig = { ...defaultConfig, ascFallbackLogic: "half_of_three_pct_qre" as const };
+    const result = calculateAsc(400000, [], altConfig);
+    // 400000 * 0.03 * 0.5 = 6000
+    expect(result.credit).toBe(6000);
+    expect(result.fallbackUsed).toBe(true);
+  });
+});
+
+describe("calculateRegularCredit – edge cases", () => {
+  it("returns 0 for negative QRE", () => {
+    const result = calculateRegularCredit(-100000, [], [], undefined, defaultConfig);
+    expect(result.credit).toBe(0);
+  });
+
+  it("warns when all gross receipts are zero", () => {
+    const result = calculateRegularCredit(400000, [], [], undefined, defaultConfig);
+    expect(result.warnings.some((w) => w.includes("zero or missing"))).toBe(true);
+  });
+
+  it("returns warnings array even when no issues", () => {
+    const grossReceipts: GrossReceiptsInput[] = [
+      { taxYear: 2023, amount: 10000000 },
+      { taxYear: 2022, amount: 9000000 },
+      { taxYear: 2021, amount: 8000000 },
+      { taxYear: 2020, amount: 7000000 },
+    ];
+    const result = calculateRegularCredit(400000, [], grossReceipts, 0.05, defaultConfig);
+    expect(Array.isArray(result.warnings)).toBe(true);
   });
 });

@@ -37,6 +37,11 @@ export function calculateAsc(
   const { ascRate, ascFallbackRate } = ruleConfig.creditRates;
   const taxYear = ruleConfig.taxYear;
 
+  // Guard against negative QRE
+  if (currentQre <= 0) {
+    return { credit: 0, base: 0, prior3YearAvg: 0, fallbackUsed: false };
+  }
+
   const prior3 = [1, 2, 3]
     .map((offset) => {
       const yr = priorYearQre.find((p) => p.taxYear === taxYear - offset);
@@ -46,8 +51,16 @@ export function calculateAsc(
   const anyPrior = prior3.some((v) => v > 0);
 
   if (!anyPrior) {
-    // Fallback: 6% of current QRE
-    const credit = round2(currentQre * ascFallbackRate);
+    // Fallback: no meaningful base period (all zeroes or missing)
+    // Respect the ascFallbackLogic setting from the rule config
+    let credit: number;
+    if (ruleConfig.ascFallbackLogic === "half_of_three_pct_qre") {
+      // Alternative: 50% × 3% × current QRE (half the startup rate)
+      credit = round2(currentQre * 0.03 * 0.5);
+    } else {
+      // Default: 6% of current QRE per IRC §41(c)(5)(B)(ii)
+      credit = round2(currentQre * ascFallbackRate);
+    }
     return { credit, base: 0, prior3YearAvg: 0, fallbackUsed: true };
   }
 
@@ -65,9 +78,15 @@ export function calculateRegularCredit(
   grossReceipts: GrossReceiptsInput[],
   fixedBasePct: number | undefined,
   ruleConfig: TaxRuleConfig
-): { credit: number; base: number; fixedBasePct: number } {
+): { credit: number; base: number; fixedBasePct: number; warnings: string[] } {
   const { regularRate } = ruleConfig.creditRates;
   const taxYear = ruleConfig.taxYear;
+  const warnings: string[] = [];
+
+  // Guard against negative QRE
+  if (currentQre <= 0) {
+    return { credit: 0, base: 0, fixedBasePct: fixedBasePct ?? 0.03, warnings };
+  }
 
   // Average gross receipts for prior 4 years
   const prior4Receipts = [1, 2, 3, 4].map((offset) => {
@@ -76,6 +95,14 @@ export function calculateRegularCredit(
   });
   const avgGrossReceipts =
     prior4Receipts.reduce((s, v) => s + v, 0) / 4;
+
+  // Warn if all gross receipts are zero — regular credit base may be unreliable
+  const allZeroReceipts = prior4Receipts.every((v) => v === 0);
+  if (allZeroReceipts && currentQre > 0) {
+    warnings.push(
+      "All prior 4-year gross receipts are zero or missing; regular credit base defaults to 50% of current QRE. Consider using ASC method instead."
+    );
+  }
 
   // Fixed-base percentage
   // For established companies: QRE 1984-1988 / GR 1984-1988 (capped at 16%)
@@ -93,7 +120,7 @@ export function calculateRegularCredit(
   const excess = Math.max(0, currentQre - base);
   const credit = round2(excess * regularRate);
 
-  return { credit, base, fixedBasePct: fbPct };
+  return { credit, base, fixedBasePct: fbPct, warnings };
 }
 
 export function apply280c(
@@ -108,7 +135,7 @@ export function apply280c(
 
 export function buildFederalResult(
   ascResult: ReturnType<typeof calculateAsc>,
-  regularResult: ReturnType<typeof calculateRegularCredit>,
+  regularResult: Omit<ReturnType<typeof calculateRegularCredit>, "warnings">,
   elect280c: boolean,
   method: "ASC" | "REGULAR" | "RECOMMEND",
   ruleConfig: TaxRuleConfig
@@ -161,10 +188,32 @@ export function calculatePayrollOffset(
   const warnings: string[] = [];
   const { payrollOffsetRules } = ruleConfig;
 
-  if (!elected) {
+  // ── Determine eligibility first, independent of election ──
+  let eligible = true;
+
+  if (!inputs.isQualifiedSmallBusiness) {
+    warnings.push("Taxpayer is not a qualified small business; payroll offset not available.");
+    eligible = false;
+  } else if (
+    inputs.grossReceiptsCurrentYear >
+    payrollOffsetRules.qualifiedSmallBusinessMaxGrossReceipts
+  ) {
+    warnings.push(
+      `Gross receipts $${fmt(inputs.grossReceiptsCurrentYear)} exceed the $${fmt(payrollOffsetRules.qualifiedSmallBusinessMaxGrossReceipts)} limit; payroll offset not available.`
+    );
+    eligible = false;
+  } else if (inputs.yearsOrganized > payrollOffsetRules.maxYearsSinceOrganized) {
+    warnings.push(
+      `Taxpayer has been organized for ${inputs.yearsOrganized} years; payroll offset limited to ${payrollOffsetRules.maxYearsSinceOrganized} years.`
+    );
+    eligible = false;
+  }
+
+  // If not eligible or not elected, return early
+  if (!eligible || !elected) {
     return {
-      eligible: false,
-      elected: false,
+      eligible,
+      elected: eligible && elected,
       amount: 0,
       cappedAt: 0,
       carryforwardReduction: 0,
@@ -172,31 +221,10 @@ export function calculatePayrollOffset(
     };
   }
 
-  // Eligibility
-  if (!inputs.isQualifiedSmallBusiness) {
-    warnings.push("Taxpayer is not a qualified small business; payroll offset not available.");
-    return { eligible: false, elected: false, amount: 0, cappedAt: 0, carryforwardReduction: 0, warnings };
-  }
-
-  if (
-    inputs.grossReceiptsCurrentYear >
-    payrollOffsetRules.qualifiedSmallBusinessMaxGrossReceipts
-  ) {
-    warnings.push(
-      `Gross receipts $${fmt(inputs.grossReceiptsCurrentYear)} exceed the $${fmt(payrollOffsetRules.qualifiedSmallBusinessMaxGrossReceipts)} limit; payroll offset not available.`
-    );
-    return { eligible: false, elected: false, amount: 0, cappedAt: 0, carryforwardReduction: 0, warnings };
-  }
-
-  if (inputs.yearsOrganized > payrollOffsetRules.maxYearsSinceOrganized) {
-    warnings.push(
-      `Taxpayer has been organized for ${inputs.yearsOrganized} years; payroll offset limited to ${payrollOffsetRules.maxYearsSinceOrganized} years.`
-    );
-    return { eligible: false, elected: false, amount: 0, cappedAt: 0, carryforwardReduction: 0, warnings };
-  }
-
   const cappedAt = payrollOffsetRules.cap;
-  const amount = Math.min(grossCredit, cappedAt);
+  // Include prior carryforward in the available credit pool
+  const availableCredit = grossCredit + Math.max(0, inputs.priorCarryforward);
+  const amount = Math.min(availableCredit, cappedAt);
   // Carryforward is reduced by the payroll offset amount
   const carryforwardReduction = amount;
 

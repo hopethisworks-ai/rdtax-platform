@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAuth } from "@/lib/rbac";
 import { logAudit } from "@/lib/audit";
+import { runCalculation } from "@/engine/index";
+import type { CalculationInput, EntityInput, TaxRuleConfig } from "@/engine/types";
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { error, session } = await requireAuth("ANALYST", req);
@@ -11,11 +13,12 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     const { id } = await params;
     const body = await req.json();
     const {
-      c280cElection,
+      c280cElection = false,
       method: preferredMethod,
-      c280cRate: submittedC280cRate,
       applyScCredit = false,
       acknowledgedFundedResearchContractorIds = [] as string[],
+      electPayrollOffset = false,
+      payrollOffsetEligibilityInputs,
     } = body;
 
     const engagement = await prisma.engagement.findUnique({
@@ -26,9 +29,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
         projects: {
           where: { qualified: true, fundedResearch: false },
           include: {
-            employees: { where: { excluded: false } },
-            supplies: { where: { qualified: true } },
-            contractors: true, // include all so funded-research gate can check every contractor
+            employees: true,
+            supplies: true,
+            contractors: true,
           },
         },
       },
@@ -49,94 +52,46 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       }, { status: 400 });
     }
 
-    const rates = engagement.ruleVersion.creditRates as {
-      scRate: number; ascRate: number; regularRate: number;
-      ascFallbackRate: number; contractorQrePct: number;
+    // ── Build TaxRuleConfig from the stored rule version ──
+    const rateConfig = engagement.ruleVersion.creditRates as Record<string, number>;
+    const carryConfig = engagement.ruleVersion.carryforwardRules as Record<string, number>;
+    const payrollConfig = engagement.ruleVersion.c280cPresentationLogic as Record<string, unknown>;
+
+    const ruleConfig: TaxRuleConfig = {
+      ruleVersionId: engagement.ruleVersion.id,
+      taxYear: engagement.taxYear,
+      formVersion: engagement.ruleVersion.formVersion,
+      creditRates: {
+        ascRate: rateConfig.ascRate ?? 0.14,
+        ascFallbackRate: rateConfig.ascFallbackRate ?? 0.06,
+        regularRate: rateConfig.regularRate ?? 0.20,
+        contractorQrePct: rateConfig.contractorQrePct ?? 0.65,
+        scRate: rateConfig.scRate ?? 0.05,
+      },
+      carryforwardRules: {
+        federalYears: carryConfig.federalYears ?? 20,
+        scYears: carryConfig.scYears ?? 10,
+      },
+      payrollOffsetRules: {
+        cap: (engagement.ruleVersion.payrollOffsetCap as unknown as number) ?? 500000,
+        qualifiedSmallBusinessMaxGrossReceipts: 5000000,
+        maxYearsSinceOrganized: 5,
+      },
+      c280cRules: {
+        regularTaxRate: (payrollConfig as Record<string, number>).regularTaxRate ?? 0.21,
+      },
+      ascFallbackLogic: "six_percent",
     };
 
-    // Sum QREs from qualified business components
-    let totalWageQre = 0;
-    let totalSupplyQre = 0;
-    let totalContractorQre = 0;
-
-    for (const project of engagement.projects) {
-      for (const emp of project.employees) {
-        totalWageQre += Number(emp.qreAmount ?? (Number(emp.compensation) * Number(emp.qualifiedActivityPct)));
-      }
-      for (const sup of project.supplies) {
-        totalSupplyQre += Number(sup.amount);
-      }
-      for (const con of project.contractors.filter(c => c.qualifiedFlag && !c.excludedReason)) {
-        totalContractorQre += Number(con.qualifiedAmount ?? (Number(con.amount) * rates.contractorQrePct));
-      }
-    }
-
-    const totalQre = totalWageQre + totalSupplyQre + totalContractorQre;
-
-    // Get prior year QREs for ASC method — load all available, then extract specific years
-    const priorYearQres = await prisma.priorYearQre.findMany({
+    // ── Load prior-year QRE and gross receipts ──
+    const priorQre = await prisma.priorYearQre.findMany({
       where: { engagementId: id },
-      orderBy: { taxYear: "desc" },
     });
-
-    const taxYear = engagement.taxYear;
-    // ASC requires the 3 immediately preceding years (IRC §41(c)(5))
-    const prior3 = [1, 2, 3].map((offset) => {
-      const match = priorYearQres.find((q) => q.taxYear === taxYear - offset);
-      return match ? Number(match.qreAmount) : 0;
-    });
-    // Fallback applies when NONE of the 3 required years have data
-    const ascFallbackUsed = prior3.every((v) => v === 0);
-    // Average always divided by 3; missing years count as 0 (IRC-consistent)
-    const avgPrior3YearQre = prior3.reduce((s, v) => s + v, 0) / 3;
-
-    // ASC Method: 14% x (currentQRE - 50% of avg prior 3yr QRE)
-    const ascBase = round2(avgPrior3YearQre * 0.5);
-    const ascIncrementalQre = Math.max(0, totalQre - ascBase);
-    const ascCredit = round2(ascIncrementalQre * rates.ascRate);
-
-    const ascFallbackCredit = round2(totalQre * rates.ascFallbackRate);
-    const finalAscCredit = ascFallbackUsed ? ascFallbackCredit : ascCredit;
-
-    // Regular Method: requires fixed base percentage
-    // Using simplified calculation - actual requires gross receipts history
     const grossReceipts = await prisma.grossReceiptsHistory.findMany({
       where: { engagementId: id },
-      orderBy: { taxYear: "desc" },
-      take: 4,
     });
 
-    let regularCredit = 0;
-    let regularBase = 0;
-    let fixedBasePct = 0;
-
-    if (grossReceipts.length >= 4 && !prior3.every((v) => v === 0)) {
-      const avgGrossReceipts = grossReceipts.reduce((s, g) => s + Number(g.amount), 0) / 4;
-      const avgHistoricalQre = prior3.reduce((s, v) => s + v, 0) / 3;
-      // Fixed-base % = historical QRE / historical GR, floored at 3% and capped at 16% (IRC §41(c)(1))
-      fixedBasePct = Math.min(0.16, Math.max(0.03, avgHistoricalQre / avgGrossReceipts));
-      regularBase = round2(fixedBasePct * avgGrossReceipts);
-      // Minimum base = 50% of current QRE (IRC §41(c)(2))
-      const minBase = round2(totalQre * 0.5);
-      if (regularBase < minBase) regularBase = minBase;
-      const regularIncrementalQre = Math.max(0, totalQre - regularBase);
-      regularCredit = round2(regularIncrementalQre * rates.regularRate);
-    }
-
-    // Pick better method
-    const recommendedMethod = finalAscCredit >= regularCredit ? "ASC" : "REGULAR";
-    const chosenMethod = preferredMethod ?? recommendedMethod;
-    const grossCredit = chosenMethod === "ASC" ? finalAscCredit : regularCredit;
-
-    // 280C election: use submitted rate (pass-through) or default to 21% (C-corp)
-    // Rate is validated: must be between 0.01 and 0.50 when election is made
-    const c280cRateDecimal = c280cElection
-      ? Math.min(0.50, Math.max(0.01, Number(submittedC280cRate ?? 0.21)))
-      : 0.21;
-    const reducedCredit = c280cElection ? round2(grossCredit * (1 - c280cRateDecimal)) : grossCredit;
-
-    // SC State Credit (§12-6-3375): only applies when analyst toggled SC on for this run.
-    // Read the stored QRE % and liability from the legal entity via raw query.
+    // ── Load SC data from legal entity if applicable ──
     type ScRow = { stateSourceQrePct: string | null; stateTaxLiabilityAfterOtherCredits: string | null };
     const scRows = applyScCredit && engagement.legalEntityId
       ? await prisma.$queryRaw<ScRow[]>`
@@ -146,66 +101,137 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       : [];
     const stateSourceQrePct = applyScCredit ? Number(scRows[0]?.stateSourceQrePct ?? 0) : 0;
     const stateTaxLiability = applyScCredit ? Number(scRows[0]?.stateTaxLiabilityAfterOtherCredits ?? 0) : 0;
-    const scQre = Math.round(totalQre * stateSourceQrePct * 100) / 100;
-    const scGrossCredit = Math.round(scQre * rates.scRate * 100) / 100;
-    const scLiabilityLimit = Math.round(stateTaxLiability * 0.5 * 100) / 100;
-    const scAllowedCredit = Math.min(scGrossCredit, scLiabilityLimit);
-    const scCarryforward = Math.round((scGrossCredit - scAllowedCredit) * 100) / 100;
 
-    // Payroll offset eligibility (startups with <$5M revenue)
-    const latestGrossReceipts = grossReceipts[0];
-    const payrollOffsetEligible = latestGrossReceipts
-      ? Number(latestGrossReceipts.amount) < 5000000
-      : false;
+    // ── Build EntityInput from projects ──
+    // This engagement route flattens all projects into a single entity
+    const allEmployees = engagement.projects.flatMap(p =>
+      p.employees.map((e) => ({
+        id: e.id,
+        name: e.name,
+        compensation: Number(e.compensation),
+        bonus: Number(e.bonus ?? 0),
+        bonusIncluded: e.bonusIncluded,
+        qualifiedActivityPct: Number(e.qualifiedActivityPct),
+        excluded: e.excluded,
+      }))
+    );
+    const allSupplies = engagement.projects.flatMap(p =>
+      p.supplies.map((s) => ({
+        id: s.id,
+        amount: Number(s.amount),
+        isDepreciableProperty: s.isDepreciableProperty,
+        isLandOrImprovement: s.isLandOrImprovement,
+        isOverheadItem: s.isOverheadItem,
+        qualified: s.qualified,
+        excluded: s.qualificationStatus === "excluded",
+      }))
+    );
+    const allContractors = engagement.projects.flatMap(p =>
+      p.contractors.filter(c => !c.excludedReason).map((c) => ({
+        id: c.id,
+        amount: Number(c.amount),
+        usBasedFlag: c.usBasedFlag,
+        qualifiedFlag: c.qualifiedFlag,
+        substantialRightsRetained: c.substantialRightsRetained,
+        successContingentPayment: c.successContingentPayment,
+        economicRiskBorne: c.economicRiskBorne,
+        contractReviewComplete: c.contractReviewComplete,
+        fundedResearchFlag: c.fundedResearchFlag,
+        excluded: false,
+      }))
+    );
 
-    // Save calculation
+    const entityId = engagement.legalEntityId ?? engagement.id;
+    const entityName = engagement.legalEntity?.name ?? "Primary Entity";
+
+    const entities: EntityInput[] = [{
+      entityId,
+      entityName,
+      employees: allEmployees,
+      supplies: allSupplies,
+      contractors: allContractors,
+      priorYearQre: priorQre.map((p) => ({
+        taxYear: p.taxYear,
+        amount: Number(p.qreAmount),
+      })),
+      grossReceipts: grossReceipts.map((g) => ({
+        taxYear: g.taxYear,
+        amount: Number(g.amount),
+      })),
+      stateSourceQrePct,
+      stateTaxLiabilityAfterOtherCredits: stateTaxLiability,
+    }];
+
+    // ── Determine payroll offset eligibility ──
+    const latestGrossReceipts = grossReceipts.sort((a, b) => b.taxYear - a.taxYear)[0];
+    const defaultPayrollInputs = {
+      isQualifiedSmallBusiness: latestGrossReceipts
+        ? Number(latestGrossReceipts.amount) < 5000000
+        : false,
+      grossReceiptsCurrentYear: latestGrossReceipts
+        ? Number(latestGrossReceipts.amount)
+        : 0,
+      yearsOrganized: payrollOffsetEligibilityInputs?.yearsOrganized ?? 10,
+      priorCarryforward: payrollOffsetEligibilityInputs?.priorCarryforward ?? 0,
+    };
+
+    // ── Build CalculationInput and run the engine ──
+    const calcInput: CalculationInput = {
+      engagementId: id,
+      taxYear: engagement.taxYear,
+      ruleConfig,
+      entities,
+      isControlledGroup: false,
+      method: preferredMethod ?? "RECOMMEND",
+      elect280c: c280cElection,
+      electPayrollOffset,
+      payrollOffsetEligibilityInputs: payrollOffsetEligibilityInputs ?? defaultPayrollInputs,
+      assumptions: {
+        acknowledgedFundedResearchContractorIds,
+        applyScCredit,
+      },
+    };
+
+    const result = runCalculation(calcInput);
+
+    // ── Persist to DB ──
     const calculation = await prisma.calculation.create({
       data: {
         engagementId: id,
         taxYear: engagement.taxYear,
         ruleVersionId: engagement.ruleVersionId as string,
-        method: chosenMethod as "ASC" | "REGULAR",
-        inputSnapshot: {
-          totalWageQre, totalSupplyQre, totalContractorQre,
-          projectCount: engagement.projects.length,
-          priorYearQres: [1, 2, 3].map((offset) => ({ taxYear: taxYear - offset, amount: prior3[offset - 1] })),
-        },
-        assumptionsSnapshot: {
-          rates, c280cElection, c280cRateDecimal, preferredMethod, ascFallbackUsed,
-          avgPrior3YearQre, fixedBasePct,
-          acknowledgedFundedResearchContractorIds,
-        },
-        resultsSnapshot: {
-          ascCredit: finalAscCredit, regularCredit, grossCredit, reducedCredit,
-          scGrossCredit, recommendedMethod,
-        },
-        totalWageQre,
-        totalSupplyQre,
-        totalContractorQre,
-        totalQre,
-        ascCredit: finalAscCredit,
-        ascBase,
-        ascPrior3YearAvgQre: avgPrior3YearQre,
-        ascFallbackUsed,
-        regularCredit,
-        regularBase,
-        fixedBasePct,
-        recommendedMethod: recommendedMethod as "ASC" | "REGULAR",
-        methodRationale: `${recommendedMethod} method yields higher credit ($${Math.round(finalAscCredit).toLocaleString()} ASC vs $${Math.round(regularCredit).toLocaleString()} Regular)`,
-        c280cElectionMade: c280cElection ?? false,
-        grossCredit,
-        reducedCredit,
-        payrollOffsetEligible,
-        payrollOffsetElected: false,
-        payrollOffsetAmount: 0,
-        carryforwardReduction: 0,
-        consolidatedQre: totalQre,
-        scQre,
-        scGrossCredit,
-        scLiabilityLimit,
-        scAllowedCredit,
-        scCarryforward,
+        method: result.method,
+        inputSnapshot: JSON.parse(JSON.stringify(calcInput)),
+        assumptionsSnapshot: JSON.parse(JSON.stringify(calcInput.assumptions)),
+        resultsSnapshot: JSON.parse(JSON.stringify(result)),
+        totalWageQre: result.entityResults.reduce((s, e) => s + e.totalWageQre, 0),
+        totalSupplyQre: result.entityResults.reduce((s, e) => s + e.totalSupplyQre, 0),
+        totalContractorQre: result.entityResults.reduce((s, e) => s + e.totalContractorQre, 0),
+        totalQre: result.consolidatedQre,
+        ascCredit: result.consolidatedFederalCredit.ascResult,
+        ascBase: result.entityResults[0]?.ascBase ?? 0,
+        ascPrior3YearAvgQre: result.entityResults[0]?.ascPrior3YearAvgQre ?? 0,
+        ascFallbackUsed: result.entityResults.some((e) => e.ascFallbackUsed),
+        regularCredit: result.consolidatedFederalCredit.regularResult,
+        regularBase: result.entityResults[0]?.regularBase ?? 0,
+        fixedBasePct: result.entityResults[0]?.fixedBasePct ?? 0,
+        recommendedMethod: result.consolidatedFederalCredit.recommendedMethod,
+        methodRationale: result.consolidatedFederalCredit.methodRationale,
+        c280cElectionMade: result.consolidatedFederalCredit.c280cElected,
+        grossCredit: result.consolidatedFederalCredit.grossCredit,
+        reducedCredit: result.consolidatedFederalCredit.reducedCredit,
+        payrollOffsetEligible: result.payrollOffset.eligible,
+        payrollOffsetElected: result.payrollOffset.elected,
+        payrollOffsetAmount: result.payrollOffset.amount,
+        carryforwardReduction: result.payrollOffset.carryforwardReduction,
+        scQre: result.entityResults.reduce((s, e) => s + e.scQre, 0),
+        scGrossCredit: result.consolidatedScCredit.grossCredit,
+        scLiabilityLimit: result.entityResults[0]?.scLiabilityLimit ?? 0,
+        scAllowedCredit: result.consolidatedScCredit.allowedCredit,
+        scCarryforward: result.consolidatedScCredit.carryforward,
         isConsolidated: false,
+        consolidatedQre: result.consolidatedQre,
+        calculationNotes: result.warnings.join("\n"),
         runBy: (session!.user as { id?: string }).id ?? "system",
       },
     });
@@ -222,17 +248,24 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       action: "RUN_CALCULATION",
       entityType: "Calculation",
       entityId: calculation.id,
-      metadata: { method: chosenMethod, totalQre, grossCredit, reducedCredit },
+      metadata: {
+        method: result.method,
+        totalQre: result.consolidatedQre,
+        grossCredit: result.consolidatedFederalCredit.grossCredit,
+        reducedCredit: result.consolidatedFederalCredit.reducedCredit,
+      },
     });
 
     return NextResponse.json({
-      success: true, calculationId: calculation.id, calculation,
+      success: true,
+      calculationId: calculation.id,
+      calculation,
+      result,
     });
   } catch (err: unknown) {
-    return NextResponse.json({ error: err instanceof Error ? err.message : "error" }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Calculation failed" },
+      { status: 500 }
+    );
   }
-}
-
-function round2(n: number): number {
-  return Math.round(n * 100) / 100;
 }

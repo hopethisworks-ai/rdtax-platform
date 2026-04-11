@@ -111,6 +111,32 @@ export function calculateContractorQre(
       continue;
     }
 
+    // Even if qualifiedFlag is true, funded research or loss of substantial
+    // rights should zero-out QRE — these are disqualifying under §41(d)(4)(H)
+    if (c.fundedResearchFlag && c.substantialRightsRetained === false) {
+      warnings.push(
+        `Contractor ${c.id}: funded research with no substantial rights retained; QRE excluded despite qualified flag.`
+      );
+      details.push({
+        contractorId: c.id,
+        grossAmount: c.amount,
+        qualifiedAmount: 0,
+        excluded: false,
+        exclusionReason: "Funded research exclusion: taxpayer did not retain substantial rights",
+        substantialRightsWarning: true,
+        fundedResearchWarning: true,
+      });
+      continue;
+    }
+
+    // If funded research flag is set but substantial rights status is unknown,
+    // still allow QRE but with a strong warning
+    if (c.fundedResearchFlag && c.substantialRightsRetained === null) {
+      warnings.push(
+        `Contractor ${c.id}: funded-research flag set but substantial rights status unknown. QRE included pending review.`
+      );
+    }
+
     const qualifiedAmount = round2(c.amount * contractorQrePct);
 
     details.push({

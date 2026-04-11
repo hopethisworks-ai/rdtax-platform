@@ -68,4 +68,18 @@ describe("calculateScCredit", () => {
     expect(result.scQre).toBe(1000000); // clamped to 1.0
     expect(result.warnings.some((w) => w.includes("out of range"))).toBe(true);
   });
+
+  it("guards against negative totalQre", () => {
+    const result = calculateScCredit(-500000, 1.0, 100000, config);
+    expect(result.scQre).toBe(0);
+    expect(result.scGrossCredit).toBe(0);
+    expect(result.scAllowedCredit).toBe(0);
+  });
+
+  it("guards against negative state tax liability", () => {
+    const result = calculateScCredit(1000000, 1.0, -50000, config);
+    expect(result.scLiabilityLimit).toBe(0);
+    expect(result.scAllowedCredit).toBe(0);
+    expect(result.scCarryforward).toBe(50000); // full credit carried forward
+  });
 });

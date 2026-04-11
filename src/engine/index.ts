@@ -55,13 +55,16 @@ export function runCalculation(input: CalculationInput): CalculationResult {
     consolidatedPriorQre,
     input.ruleConfig
   );
-  const regularResult = calculateRegularCredit(
+  const regularResultFull = calculateRegularCredit(
     consolidatedQre,
     consolidatedPriorQre,
     consolidatedGrossReceipts,
     consolidatedFixedBasePct,
     input.ruleConfig
   );
+  // Surface regular credit warnings (e.g., zero gross receipts)
+  warnings.push(...regularResultFull.warnings);
+  const { warnings: _regWarn, ...regularResult } = regularResultFull;
 
   const consolidatedFederal = buildFederalResult(
     ascResult,
@@ -157,13 +160,14 @@ function calculateEntity(
   const totalQre = round2(totalWageQre + totalSupplyQre + totalContractorQre);
 
   const ascResult = calculateAsc(totalQre, entity.priorYearQre, ruleConfig);
-  const regularResult = calculateRegularCredit(
+  const regularResultFull = calculateRegularCredit(
     totalQre,
     entity.priorYearQre,
     entity.grossReceipts,
     entity.fixedBasePct,
     ruleConfig
   );
+  const { warnings: regWarnings, ...regularResult } = regularResultFull;
 
   const scResult = calculateScCredit(
     totalQre,
@@ -176,6 +180,7 @@ function calculateEntity(
     ...wageWarnings,
     ...supplyWarnings,
     ...contractorWarnings,
+    ...regWarnings,
     ...scResult.warnings,
   ];
 
