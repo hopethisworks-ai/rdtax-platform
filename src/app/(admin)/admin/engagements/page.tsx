@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import CreateEngagementButton from "./CreateEngagementButton";
 
 export default async function EngagementsPage({ searchParams }: { searchParams: Promise<{ status?: string; taxYear?: string }> }) {
   const { status, taxYear } = await searchParams;
@@ -33,6 +34,7 @@ export default async function EngagementsPage({ searchParams }: { searchParams: 
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Engagements</h1>
+        <CreateEngagementButton />
       </div>
       <div className="bg-white rounded-xl border border-gray-200 overflow-x-auto">
         <table className="w-full text-sm">

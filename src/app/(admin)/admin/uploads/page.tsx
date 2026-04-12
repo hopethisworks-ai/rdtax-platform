@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import FileReviewActions from "./FileReviewActions";
+import DownloadFileButton from "@/components/DownloadFileButton";
 
 export default async function UploadsPage({ searchParams }: { searchParams: Promise<{ status?: string }> }) {
   const { status } = await searchParams;
@@ -65,7 +66,7 @@ export default async function UploadsPage({ searchParams }: { searchParams: Prom
             {files.map((f) => (
               <tr key={f.id} className="hover:bg-slate-50 transition-colors">
                 <td className="px-4 py-3">
-                  <div className="font-medium text-slate-800 truncate max-w-xs">{f.originalName}</div>
+                  <DownloadFileButton fileId={f.id} fileName={f.originalName} className="font-medium text-blue-600 hover:text-blue-700 truncate max-w-xs block text-left text-sm disabled:opacity-50" />
                   <div className="text-xs text-slate-400 mt-0.5">{f.mimeType}</div>
                 </td>
                 <td className="px-4 py-3">

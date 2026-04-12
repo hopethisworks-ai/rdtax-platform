@@ -3,6 +3,7 @@ import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import UploadForm from "./UploadForm";
+import DownloadFileButton from "@/components/DownloadFileButton";
 import { notFound, redirect } from "next/navigation";
 
 export default async function PortalUploadPage({ params }: { params: Promise<{ id: string }> }) {
@@ -79,10 +80,16 @@ export default async function PortalUploadPage({ params }: { params: Promise<{ i
               <div className="space-y-2">
                 {engagement.uploadedFiles.map(f => (
                   <div key={f.id} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
-                    <p className="text-sm text-slate-700">{f.originalName}</p>
-                    <span className={"text-xs px-2 py-1 rounded-full font-medium " + (f.status === "ACCEPTED" ? "bg-green-100 text-green-700" : f.status === "NEEDS_REVIEW" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-600")}>
-                      {f.status.replace(/_/g, " ")}
-                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm text-slate-700 truncate">{f.originalName}</p>
+                      <p className="text-xs text-slate-400 mt-0.5">{new Date(f.createdAt).toLocaleDateString()}</p>
+                    </div>
+                    <div className="flex items-center gap-2 ml-3">
+                      <span className={"text-xs px-2 py-1 rounded-full font-medium " + (f.status === "ACCEPTED" ? "bg-green-100 text-green-700" : f.status === "NEEDS_REVIEW" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-600")}>
+                        {f.status.replace(/_/g, " ")}
+                      </span>
+                      <DownloadFileButton fileId={f.id} />
+                    </div>
                   </div>
                 ))}
               </div>

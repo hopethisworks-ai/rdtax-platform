@@ -1,18 +1,29 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
-export default async function CalculationsPage() {
-  const calculations = await prisma.calculation.findMany({
-    orderBy: { runAt: "desc" },
-    include: {
-      engagement: {
-        include: { client: { select: { companyName: true } } },
+const PAGE_SIZE = 25;
+
+export default async function CalculationsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+  const { page: pageParam } = await searchParams;
+  const currentPage = Math.max(1, parseInt(pageParam ?? "1", 10) || 1);
+
+  const [calculations, totalCount] = await Promise.all([
+    prisma.calculation.findMany({
+      orderBy: { runAt: "desc" },
+      skip: (currentPage - 1) * PAGE_SIZE,
+      take: PAGE_SIZE,
+      include: {
+        engagement: {
+          include: { client: { select: { companyName: true } } },
+        },
+        ruleVersion: { select: { version: true } },
+        overrides: { select: { id: true } },
       },
-      ruleVersion: { select: { version: true } },
-      overrides: { select: { id: true } },
-    },
-    take: 100,
-  });
+    }),
+    prisma.calculation.count(),
+  ]);
+
+  const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
 
   const methodColors: Record<string, string> = {
     ASC: "bg-blue-100 text-blue-700",
@@ -23,8 +34,10 @@ export default async function CalculationsPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Calculations</h1>
-        <span className="text-sm text-gray-500">{calculations.length} most recent</span>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Calculations</h1>
+          <p className="text-gray-500 mt-1">{totalCount} calculation{totalCount !== 1 ? "s" : ""} total</p>
+        </div>
       </div>
       <div className="bg-white rounded-xl border border-gray-200 overflow-x-auto">
         <table className="w-full text-sm">
@@ -65,6 +78,21 @@ export default async function CalculationsPage() {
         </table>
         {calculations.length === 0 && <div className="p-8 text-center text-gray-500">No calculations found.</div>}
       </div>
+      {totalPages > 1 && (
+        <div className="flex items-center justify-between mt-6">
+          <p className="text-sm text-gray-500">
+            Showing {(currentPage - 1) * PAGE_SIZE + 1}–{Math.min(currentPage * PAGE_SIZE, totalCount)} of {totalCount}
+          </p>
+          <div className="flex gap-2">
+            {currentPage > 1 && (
+              <Link href={`/admin/calculations?page=${currentPage - 1}`} className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50">Previous</Link>
+            )}
+            {currentPage < totalPages && (
+              <Link href={`/admin/calculations?page=${currentPage + 1}`} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Next</Link>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

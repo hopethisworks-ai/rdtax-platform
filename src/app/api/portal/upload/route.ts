@@ -22,6 +22,16 @@ export async function POST(req: NextRequest) {
 
     if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 });
 
+    // Verify the engagement belongs to this client
+    if (engagementId) {
+      const engagement = await prisma.engagement.findFirst({
+        where: { id: engagementId, clientId: client.id },
+      });
+      if (!engagement) {
+        return NextResponse.json({ error: "Engagement not found" }, { status: 403 });
+      }
+    }
+
     const maxSize = 50 * 1024 * 1024; // 50MB
     if (file.size > maxSize) return NextResponse.json({ error: "File too large. Maximum size is 50MB." }, { status: 400 });
 

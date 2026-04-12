@@ -1,47 +1,36 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { requireAuth } from "@/lib/rbac";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // Health check requires ADMIN role — no sensitive info leaked to public
+  const { error } = await requireAuth("ADMIN", req);
+  if (error) {
+    // Return a minimal public health check (no sensitive details)
+    return NextResponse.json({ status: "ok" });
+  }
+
   const checks: Record<string, string> = {};
 
-  // 1. Check critical env vars
-  checks.NEXTAUTH_URL = process.env.NEXTAUTH_URL ? `SET (${process.env.NEXTAUTH_URL})` : "MISSING";
-  checks.NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET ? `SET (${process.env.NEXTAUTH_SECRET.length} chars)` : "MISSING";
+  // Only show presence (SET/MISSING), never values or lengths
+  checks.NEXTAUTH_URL = process.env.NEXTAUTH_URL ? "SET" : "MISSING";
+  checks.NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET ? "SET" : "MISSING";
   checks.DATABASE_URL = process.env.DATABASE_URL ? "SET" : "MISSING";
-  checks.ENCRYPTION_KEY = process.env.ENCRYPTION_KEY ? `SET (${process.env.ENCRYPTION_KEY.length} chars)` : "MISSING";
-  checks.STORAGE_PROVIDER = process.env.STORAGE_PROVIDER ?? "NOT SET";
+  checks.ENCRYPTION_KEY = process.env.ENCRYPTION_KEY ? "SET" : "MISSING";
+  checks.STORAGE_PROVIDER = process.env.STORAGE_PROVIDER ? "SET" : "MISSING";
   checks.SUPABASE_URL = process.env.SUPABASE_URL ? "SET" : "MISSING";
   checks.SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ? "SET" : "MISSING";
   checks.RESEND_API_KEY = process.env.RESEND_API_KEY ? "SET" : "MISSING";
-  checks.APP_URL = process.env.APP_URL ?? "NOT SET";
 
-  // 2. Check database connection
+  // Check database connection (no counts or user details)
   try {
-    const userCount = await prisma.user.count();
-    checks.database = `CONNECTED (${userCount} users)`;
+    await prisma.$queryRaw`SELECT 1`;
+    checks.database = "CONNECTED";
   } catch (err) {
-    checks.database = `FAILED: ${err instanceof Error ? err.message : "Unknown error"}`;
+    checks.database = "FAILED";
   }
 
-  // 3. Check admin user specifically
-  try {
-    const admin = await prisma.user.findUnique({
-      where: { email: "admin@rdtaxdemo.com" },
-      select: { id: true, role: true, active: true, passwordHash: true },
-    });
-    if (admin) {
-      checks.adminUser = `FOUND (role: ${admin.role}, active: ${admin.active}, hasPassword: ${!!admin.passwordHash})`;
-    } else {
-      checks.adminUser = "NOT FOUND";
-    }
-  } catch (err) {
-    checks.adminUser = `ERROR: ${err instanceof Error ? err.message : "Unknown"}`;
-  }
+  const allGood = !Object.values(checks).some(v => v === "MISSING" || v === "FAILED");
 
-  const allGood = !Object.values(checks).some(v => v.includes("MISSING") || v.includes("FAILED") || v === "NOT FOUND");
-
-  return NextResponse.json({
-    status: allGood ? "healthy" : "issues_detected",
-    checks,
-  });
+  return NextResponse.json({ status: allGood ? "healthy" : "issues_detected", checks });
 }

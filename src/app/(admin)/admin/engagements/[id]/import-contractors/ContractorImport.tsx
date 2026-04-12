@@ -105,7 +105,7 @@ export default function ContractorImport({ engagementId }: { engagementId: strin
           <div className="px-6 py-4 border-t border-slate-100 flex justify-between items-center">
             <p className="text-slate-500 text-sm">{rows.filter(r=>r.valid).length} rows will be imported</p>
             <button onClick={handleImport} disabled={status==="loading"||rows.filter(r=>r.valid).length===0} className="bg-blue-600 text-white font-bold px-8 py-3 rounded-xl disabled:opacity-50 hover:bg-blue-700">
-              {status==="loading"?"Importing...":"Import Supplies"}
+              {status==="loading"?"Importing...":"Import Contractors"}
             </button>
           </div>
         </div>

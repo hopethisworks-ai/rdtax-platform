@@ -31,15 +31,7 @@ export default function ContactPage() {
 
   if (done) return (
     <div className="bg-white min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-slate-900 text-lg">CreditPath</span>
-          </Link>
-        </div>
-      </nav>
-      <div className="pt-32 pb-24 px-6 flex items-center justify-center min-h-screen">
+      <div className="pt-16 pb-24 px-6 flex items-center justify-center min-h-screen">
         <div className="text-center max-w-lg">
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -57,22 +49,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-slate-900 text-lg">CreditPath</span>
-          </Link>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/how-it-works" className="text-sm text-slate-600 hover:text-slate-900">How It Works</Link>
-            <Link href="/industries" className="text-sm text-slate-600 hover:text-slate-900">Industries</Link>
-            <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900">About</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-          </div>
-          <Link href="/estimator" className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">Free Estimate</Link>
-        </div>
-      </nav>
-      <div className="pt-24 pb-24 px-6">
+      <div className="pt-8 pb-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div className="pt-8">
             <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-4">Get In Touch</p>
@@ -166,21 +143,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <footer className="bg-slate-950 py-12 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-white">CreditPath</span>
-            <span className="text-slate-500 text-sm ml-2">South Carolina R&D Tax Credit Specialists</span>
-          </div>
-          <div className="flex gap-6">
-            <Link href="/" className="text-slate-600 text-xs">Home</Link>
-            <Link href="/about" className="text-slate-600 text-xs">About</Link>
-            <Link href="/cpa-partners" className="text-slate-600 text-xs">CPA Partners</Link>
-            <Link href="/privacy" className="text-slate-600 text-xs">Privacy</Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

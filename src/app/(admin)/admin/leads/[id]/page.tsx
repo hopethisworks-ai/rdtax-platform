@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ConvertLeadButton from "@/components/ConvertLeadButton";
+import LeadStatusEditor from "@/components/LeadStatusEditor";
 
 export default async function LeadDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -77,6 +78,12 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
           </div>
         )}
       </div>
+
+      <LeadStatusEditor
+        leadId={lead.id}
+        currentStatus={lead.status}
+        currentNotes={lead.notes}
+      />
     </div>
   );
 }

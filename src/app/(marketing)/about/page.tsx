@@ -9,23 +9,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-slate-900 text-lg">CreditPath</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/how-it-works" className="text-sm text-slate-600 hover:text-slate-900">How It Works</Link>
-            <Link href="/industries" className="text-sm text-slate-600 hover:text-slate-900">Industries</Link>
-            <Link href="/about" className="text-sm text-blue-600 font-semibold">About</Link>
-            <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">Contact</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-          </div>
-          <Link href="/contact" className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">Free Assessment</Link>
-        </div>
-      </nav>
-      <section className="pt-32 pb-16 px-6 border-b border-slate-100">
+      <section className="pt-16 pb-16 px-6 border-b border-slate-100">
         <div className="max-w-4xl mx-auto">
           <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-4">About Us</p>
           <h1 className="text-5xl font-black text-slate-900 leading-tight mb-6">We Help South Carolina Businesses Claim What They Have Already Earned.</h1>
@@ -124,12 +108,6 @@ export default function AboutPage() {
           <AssessmentForm />
         </div>
       </section>
-      <footer className="bg-slate-950 py-12 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2"><div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div><span className="font-bold text-white">CreditPath</span><span className="text-slate-500 text-sm ml-2">South Carolina R&D Tax Credit Specialists</span></div>
-          <div className="flex gap-6"><Link href="/" className="text-slate-600 text-xs">Home</Link><Link href="/how-it-works" className="text-slate-600 text-xs">How It Works</Link><Link href="/contact" className="text-slate-600 text-xs">Contact</Link><Link href="/privacy" className="text-slate-600 text-xs">Privacy</Link></div>
-        </div>
-      </footer>
     </div>
   );
 }

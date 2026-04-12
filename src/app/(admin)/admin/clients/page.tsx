@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import CreateClientButton from "./CreateClientButton";
 
 export default async function ClientsPage() {
   const clients = await prisma.client.findMany({
@@ -14,7 +15,10 @@ export default async function ClientsPage() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Clients</h1>
-        <span className="text-sm text-gray-500">{clients.length} total</span>
+        <div className="flex items-center gap-4">
+          <span className="text-sm text-gray-500">{clients.length} total</span>
+          <CreateClientButton />
+        </div>
       </div>
       <div className="bg-white rounded-xl border border-gray-200 overflow-x-auto">
         <table className="w-full text-sm">
