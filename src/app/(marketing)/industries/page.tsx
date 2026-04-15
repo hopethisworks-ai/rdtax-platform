@@ -46,7 +46,7 @@ export default function IndustriesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-white py-24">
+      <section className="bg-white pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-4">
             <p className="text-sm font-semibold text-emerald-600 uppercase tracking-widest">
@@ -63,7 +63,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Cards Section */}
-      <section className="bg-gray-50 py-24">
+      <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {industries.map((industry) => (
@@ -101,7 +101,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Qualification Section */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Products Column */}
@@ -162,7 +162,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-emerald-600 py-20">
+      <section className="bg-emerald-600 py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Not Sure If You Qualify?

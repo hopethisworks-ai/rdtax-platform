@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="py-24 px-6">
+      <section className="pt-20 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-4">About Us</p>
           <h1 className="text-5xl font-black text-slate-900 leading-tight mb-6">We Help Businesses Claim What They've Already Earned.</h1>
@@ -40,7 +40,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-4">Our Mission</p>
@@ -71,10 +71,10 @@ export default function AboutPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-4 text-center">Our Process</p>
-          <h2 className="text-4xl font-black text-slate-900 mb-16 text-center leading-tight">How We Work</h2>
+          <h2 className="text-4xl font-black text-slate-900 mb-12 text-center leading-tight">How We Work</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="border-l-4 border-emerald-600 pl-6">
               <div className="text-emerald-600 font-black text-lg mb-2">01</div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-emerald-600">
+      <section className="py-16 px-6 bg-emerald-600">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             <h2 className="text-4xl font-black text-white mb-6 leading-tight">Ready to Find Out What You Qualify For?</h2>

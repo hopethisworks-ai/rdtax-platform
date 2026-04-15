@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* 1. Hero Section */}
-      <section className="py-32 px-6 bg-white">
+      <section className="pt-20 pb-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-6">
@@ -42,11 +42,11 @@ export default function HomePage() {
       </section>
 
       {/* 2. Stats/Growth Section */}
-      <section className="py-32 px-6 bg-blue-600">
+      <section className="py-20 px-6 bg-blue-600">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-16">
+          <div className="mb-12">
             <span className="text-blue-200 text-sm font-semibold uppercase tracking-widest">Proven Results</span>
-            <h2 className="text-5xl md:text-5xl font-black text-white mt-4 mb-4">R&D Credits Fuel Growth</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-4">R&D Credits Fuel Growth</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               Our automated platform turns your innovation into cash flow. We've helped SC businesses recover millions in credits they didn't know existed.
             </p>
@@ -69,7 +69,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Problem/Solution Section */}
-      <section className="py-32 px-6 bg-white">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">The Challenge</span>
@@ -119,9 +119,9 @@ export default function HomePage() {
       </section>
 
       {/* 4. Industries Section */}
-      <section className="py-32 px-6 bg-slate-50">
+      <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Serving</span>
             <h2 className="text-5xl font-black text-slate-900 mt-4 mb-4">Who Qualifies?</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -159,9 +159,9 @@ export default function HomePage() {
       </section>
 
       {/* 5. How It Works Section */}
-      <section className="py-32 px-6 bg-white">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Our Process</span>
             <h2 className="text-5xl font-black text-slate-900 mt-4">A Smarter Way to Claim R&D</h2>
           </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Testimonial/Trust Section */}
-      <section className="py-32 px-6 bg-gradient-to-br from-emerald-50 to-blue-50">
+      <section className="py-20 px-6 bg-gradient-to-br from-emerald-50 to-blue-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl font-black text-slate-900 mb-12">Easy Process. Real Value.</h2>
           <div className="bg-white rounded-2xl p-10 shadow-lg mb-8">
@@ -211,9 +211,9 @@ export default function HomePage() {
       </section>
 
       {/* 7. FAQ Section */}
-      <section className="py-32 px-6 bg-slate-50">
+      <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Questions?</span>
             <h2 className="text-5xl font-black text-slate-900 mt-4">Frequently Asked Questions</h2>
           </div>
@@ -282,7 +282,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. Final CTA Section */}
-      <section className="py-32 px-6 bg-emerald-600">
+      <section className="py-16 px-6 bg-emerald-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6">Stop Leaving Money on the Table</h2>
           <p className="text-xl text-emerald-100 mb-12">

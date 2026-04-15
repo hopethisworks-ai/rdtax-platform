@@ -49,13 +49,13 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <div className="pt-16 pb-24 px-6">
+      <div className="pt-16 pb-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
           {/* Left Column: Info */}
           <div>
-            <p className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-6">Get In Touch</p>
-            <h1 className="text-5xl font-black text-slate-900 leading-tight mb-8">Let's Talk About Your R&D Credit Opportunity.</h1>
-            <p className="text-slate-600 text-lg leading-relaxed mb-12">Schedule a free 30-minute consultation and we will tell you exactly what your business qualifies for. No obligation, no upfront cost.</p>
+            <p className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-4">Get In Touch</p>
+            <h1 className="text-5xl font-black text-slate-900 leading-tight mb-6">Let's Talk About Your R&D Credit Opportunity.</h1>
+            <p className="text-slate-600 text-lg leading-relaxed mb-10">Schedule a free 30-minute consultation and we will tell you exactly what your business qualifies for. No obligation, no upfront cost.</p>
 
             {/* Feature Rows */}
             <div className="space-y-8 mb-12">
