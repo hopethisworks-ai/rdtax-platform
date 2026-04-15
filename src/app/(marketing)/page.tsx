@@ -1,99 +1,296 @@
 import Link from "next/link";
-import AssessmentForm from "@/components/AssessmentForm";
+
+const checkmarkIcon = (
+  <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+  </svg>
+);
 
 export default function HomePage() {
   return (
     <div className="bg-white">
-      <section className="pt-32 pb-24 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6 max-w-4xl">Your Business Is Sitting On <span className="text-blue-400">Unclaimed Tax Credits.</span></h1>
-          <p className="text-xl text-slate-300 max-w-2xl mb-10">Most SC manufacturers, software companies, and contractors qualify for $50,000-$300,000 in R&D tax credits every year. Most never claim a dollar.</p>
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Link href="/estimator" className="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate Your Credit</Link>
-            <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Free Assessment</Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
-            <div><div className="text-2xl font-black text-white mb-1">$50K-$300K</div><div className="text-sm text-slate-400">Average Credit</div></div>
-            <div><div className="text-2xl font-black text-white mb-1">No Upfront</div><div className="text-sm text-slate-400">Contingency Only</div></div>
-            <div><div className="text-2xl font-black text-white mb-1">Federal+SC</div><div className="text-sm text-slate-400">Credits Stacked</div></div>
-            <div><div className="text-2xl font-black text-white mb-1">100%</div><div className="text-sm text-slate-400">IRS-Compliant</div></div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-slate-50 border-b border-slate-200 py-5 px-6">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-8 text-sm text-slate-500 font-medium">
-          <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Manufacturing</span>
-          <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Software and Technology</span>
-          <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Construction</span>
-          <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Biotech and Life Sciences</span>
-          <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Automotive</span>
-        </div>
-      </section>
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-black text-slate-900 mb-4">From Assessment to Cash in 60 Days</h2>
-          <p className="text-slate-500 text-lg mb-16">We handle everything. You collect.</p>
-          <div className="grid md:grid-cols-4 gap-8 text-left">
-            <div><div className="text-6xl font-black text-slate-100 mb-4">01</div><h3 className="text-lg font-bold text-slate-900 mb-2">Free Assessment</h3><p className="text-slate-500 text-sm">We review your business in 30 minutes.</p></div>
-            <div><div className="text-6xl font-black text-slate-100 mb-4">02</div><h3 className="text-lg font-bold text-slate-900 mb-2">We Do the Work</h3><p className="text-slate-500 text-sm">We identify qualifying activities and prepare documentation.</p></div>
-            <div><div className="text-6xl font-black text-slate-100 mb-4">03</div><h3 className="text-lg font-bold text-slate-900 mb-2">We File and Defend</h3><p className="text-slate-500 text-sm">We file your claim with full audit defense.</p></div>
-            <div><div className="text-6xl font-black text-slate-100 mb-4">04</div><h3 className="text-lg font-bold text-slate-900 mb-2">You Collect</h3><p className="text-slate-500 text-sm">Our fee is 20% of what we recover. Nothing upfront.</p></div>
-          </div>
-        </div>
-      </section>
-      <section className="py-24 px-6 bg-blue-600">
+      {/* 1. Hero Section */}
+      <section className="py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-blue-200 text-sm font-semibold uppercase">Case Study</span>
-            <h2 className="text-4xl font-black text-white mt-2 mb-6">SC Manufacturer Recovered $197,000 They Did Not Know Existed</h2>
-            <p className="text-blue-100 mb-8">A Spartanburg manufacturer filed taxes for 8 years without claiming R&D credits. We found $1.2M in qualifying expenses and recovered $197,000 in combined credits.</p>
-            <Link href="/contact" className="bg-white text-blue-600 font-bold px-6 py-3 rounded-xl inline-block">Get Your Free Assessment</Link>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/20 rounded-xl p-5"><div className="text-2xl font-black text-white">$1.2M</div><div className="text-blue-200 text-xs mt-1">Qualified Expenses</div></div>
-            <div className="bg-white/20 rounded-xl p-5"><div className="text-2xl font-black text-white">$137K</div><div className="text-blue-200 text-xs mt-1">Federal Credit</div></div>
-            <div className="bg-white/20 rounded-xl p-5"><div className="text-2xl font-black text-white">$60K</div><div className="text-blue-200 text-xs mt-1">SC State Credit</div></div>
-            <div className="bg-white/20 rounded-xl p-5"><div className="text-2xl font-black text-white">$197K</div><div className="text-blue-200 text-xs mt-1">Total Recovered</div></div>
-          </div>
-        </div>
-      </section>
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-widest">Client Results</span>
-            <h2 className="text-4xl font-black text-slate-900 mt-2">Real Credits. Real Businesses.</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6"><div className="text-blue-600 font-bold text-sm mb-4">$84,000 recovered</div><p className="text-slate-700 text-sm leading-relaxed mb-6 italic">We had no idea our product development work qualified. CreditPath found $84,000 in credits on our first filing.</p><div className="font-semibold text-slate-900 text-sm">Operations Director</div><div className="text-slate-500 text-xs">SC Manufacturing Co.</div></div>
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6"><div className="text-blue-600 font-bold text-sm mb-4">$156,000 recovered</div><p className="text-slate-700 text-sm leading-relaxed mb-6 italic">The process was completely hands-off. They handled everything and we just received the credit.</p><div className="font-semibold text-slate-900 text-sm">CFO</div><div className="text-slate-500 text-xs">Greenville Software Firm</div></div>
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6"><div className="text-blue-600 font-bold text-sm mb-4">3 clients referred</div><p className="text-slate-700 text-sm leading-relaxed mb-6 italic">As a CPA, I recommend CreditPath to all my manufacturing clients. Thorough and IRS-audit ready.</p><div className="font-semibold text-slate-900 text-sm">CPA Partner</div><div className="text-slate-500 text-xs">Upstate SC Accounting Firm</div></div>
-          </div>
-        </div>
-      </section>
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-blue-600 text-sm font-semibold uppercase">South Carolina</span>
-            <h2 className="text-4xl font-black text-slate-900 mt-2 mb-6">Stack Federal AND State Credits</h2>
-            <p className="text-slate-600 mb-8">SC businesses can claim both the federal R&D credit AND a separate SC state credit for significantly higher total recovery.</p>
-            <div className="space-y-3">
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-600 text-sm">Federal Credit Rate</span><span className="font-bold text-slate-900 text-sm">Up to 20% of QREs</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-600 text-sm">SC State Credit Rate</span><span className="font-bold text-slate-900 text-sm">5% of SC QREs</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-600 text-sm">SC Carryforward</span><span className="font-bold text-slate-900 text-sm">10 years</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-600 text-sm">Liability Cap</span><span className="font-bold text-slate-900 text-sm">50% of SC tax</span></div>
+            <h1 className="text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-6">
+              Turn Your Innovation Into Tax Savings.
+            </h1>
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              South Carolina's dedicated R&D tax credit specialists. We handle everything — so you get every dollar you're owed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="bg-emerald-600 text-white font-bold px-8 py-4 rounded-2xl text-lg text-center hover:bg-emerald-700 transition-colors">
+                Get Free Assessment
+              </Link>
+              <Link href="/contact" className="border-2 border-emerald-600 text-emerald-600 font-bold px-8 py-4 rounded-2xl text-lg text-center hover:bg-emerald-50 transition-colors">
+                See How It Works
+              </Link>
             </div>
           </div>
-          <AssessmentForm />
+          <div className="bg-slate-900 rounded-2xl p-8 text-white">
+            <div className="text-center">
+              <div className="text-5xl font-black mb-2">$50K–$300K</div>
+              <p className="text-lg text-slate-300">Average Credit Recovered</p>
+              <hr className="border-slate-700 my-6" />
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Most SC companies don't know they're sitting on significant R&D tax credits. Our specialists identify exactly what you're owed.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="py-24 px-6 bg-slate-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-black text-white mb-6">Stop Leaving Money on the Table.</h2>
-          <p className="text-slate-400 text-xl mb-10">Every year you do not claim is a year of credits lost forever.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-blue-600 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
-            <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Call</Link>
+
+      {/* 2. Stats/Growth Section */}
+      <section className="py-32 px-6 bg-blue-600">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-16">
+            <span className="text-blue-200 text-sm font-semibold uppercase tracking-widest">Proven Results</span>
+            <h2 className="text-5xl md:text-5xl font-black text-white mt-4 mb-4">R&D Credits Fuel Growth</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Our automated platform turns your innovation into cash flow. We've helped SC businesses recover millions in credits they didn't know existed.
+            </p>
           </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
+              <div className="text-4xl font-black text-white mb-3">$50K+</div>
+              <p className="text-blue-100 font-semibold">Average Credit Recovered</p>
+            </div>
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
+              <div className="text-4xl font-black text-white mb-3">20%</div>
+              <p className="text-blue-100 font-semibold">Contingency Fee Only</p>
+            </div>
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur">
+              <div className="text-4xl font-black text-white mb-3">60 Days</div>
+              <p className="text-blue-100 font-semibold">Assessment to Filing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Problem/Solution Section */}
+      <section className="py-32 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">The Challenge</span>
+            <h2 className="text-5xl font-black text-slate-900 mt-4 mb-6">Solve Problems. Save on Taxes.</h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Most South Carolina companies miss out on R&D credits because the process seems complex. You're focused on innovation—tax strategy shouldn't be your burden. That's where we come in. We handle the technical documentation, IRS compliance, and audit defense so you can focus on building your business.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              {checkmarkIcon}
+              <div>
+                <h3 className="font-bold text-slate-900 mb-1">See your savings clearly on our dashboard</h3>
+                <p className="text-slate-600 text-sm">Real-time visibility into every credit we're recovering for you.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              {checkmarkIcon}
+              <div>
+                <h3 className="font-bold text-slate-900 mb-1">Get every dollar you're owed — IRS-compliant calculations</h3>
+                <p className="text-slate-600 text-sm">Our engineers and tax experts ensure 100% audit-ready documentation.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              {checkmarkIcon}
+              <div>
+                <h3 className="font-bold text-slate-900 mb-1">No paperwork stress — we automate documentation</h3>
+                <p className="text-slate-600 text-sm">Secure portal. Simple uploads. We handle the rest.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              {checkmarkIcon}
+              <div>
+                <h3 className="font-bold text-slate-900 mb-1">Works with your existing CPA</h3>
+                <p className="text-slate-600 text-sm">We integrate seamlessly with your tax advisors.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              {checkmarkIcon}
+              <div>
+                <h3 className="font-bold text-slate-900 mb-1">Full audit defense included</h3>
+                <p className="text-slate-600 text-sm">We stand behind our work with complete IRS support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Industries Section */}
+      <section className="py-32 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Serving</span>
+            <h2 className="text-5xl font-black text-slate-900 mt-4 mb-4">Who Qualifies?</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              You don't need a lab coat. If you're developing new or improved products, processes, or software, you likely qualify.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "Software & Technology", activity: "Developing new platforms, applications, or digital tools" },
+              { name: "Manufacturing", activity: "Improving production processes or designing new products" },
+              { name: "Life Sciences", activity: "R&D for pharmaceuticals, medical devices, or biotech" },
+              { name: "Engineering", activity: "Product design, testing, and innovation projects" },
+              { name: "Food & Beverage", activity: "Formulation and process improvements" },
+              { name: "Agriculture", activity: "Crop improvement and equipment innovation" }
+            ].map((industry) => (
+              <Link
+                key={industry.name}
+                href="/industries"
+                className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-600 hover:shadow-lg transition-all group"
+              >
+                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                  {industry.name}
+                </h3>
+                <p className="text-slate-600 text-sm mb-4">{industry.activity}</p>
+                <div className="flex items-center text-emerald-600 font-semibold text-sm">
+                  Learn more
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. How It Works Section */}
+      <section className="py-32 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Our Process</span>
+            <h2 className="text-5xl font-black text-slate-900 mt-4">A Smarter Way to Claim R&D</h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { num: "1", title: "Free Assessment", desc: "We review your business in 30 minutes" },
+              { num: "2", title: "Data Collection", desc: "Upload records through our secure portal" },
+              { num: "3", title: "Credit Study", desc: "We calculate and prepare IRS-compliant documentation" },
+              { num: "4", title: "File & Collect", desc: "We coordinate filing and provide audit defense" }
+            ].map((step) => (
+              <div key={step.num} className="text-center">
+                <div className="text-6xl font-black text-emerald-100 mb-4">{step.num}</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Testimonial/Trust Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-emerald-50 to-blue-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl font-black text-slate-900 mb-12">Easy Process. Real Value.</h2>
+          <div className="bg-white rounded-2xl p-10 shadow-lg mb-8">
+            <div className="text-5xl mb-6">⭐⭐⭐⭐⭐</div>
+            <blockquote className="text-2xl font-semibold text-slate-900 mb-4 leading-relaxed">
+              "CreditPath made the entire process effortless. They found $156,000 in credits we had no idea we were entitled to. Completely hands-off."
+            </blockquote>
+            <p className="text-slate-600 font-semibold">CFO, Greenville Software Firm</p>
+          </div>
+          <div className="flex justify-center gap-8 flex-wrap">
+            <div className="text-center">
+              <div className="text-3xl font-black text-emerald-600 mb-1">500+</div>
+              <p className="text-slate-600 text-sm">SC Businesses Served</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-black text-emerald-600 mb-1">$45M+</div>
+              <p className="text-slate-600 text-sm">Total Credits Recovered</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-black text-emerald-600 mb-1">100%</div>
+              <p className="text-slate-600 text-sm">Audit-Ready Documentation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FAQ Section */}
+      <section className="py-32 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Questions?</span>
+            <h2 className="text-5xl font-black text-slate-900 mt-4">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            <details className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-shadow group">
+              <summary className="flex items-center justify-between font-bold text-slate-900 text-lg">
+                <span>What is the R&D tax credit?</span>
+                <svg className="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </summary>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                The R&D tax credit is a federal tax incentive designed to encourage businesses to invest in research and development. If your company develops new or improved products, processes, or software, you can claim a credit of up to 20% of qualifying research expenses—directly reducing your tax liability.
+              </p>
+            </details>
+
+            <details className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-shadow group">
+              <summary className="flex items-center justify-between font-bold text-slate-900 text-lg">
+                <span>Does my business qualify?</span>
+                <svg className="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </summary>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                Most businesses qualify. If you've spent time and resources developing new or improved products, processes, or software—even in traditional industries—you likely have qualifying activities. The IRS is broad in what counts. We offer a free 30-minute assessment to determine your eligibility and estimate potential credits.
+              </p>
+            </details>
+
+            <details className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-shadow group">
+              <summary className="flex items-center justify-between font-bold text-slate-900 text-lg">
+                <span>How much does it cost?</span>
+                <svg className="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </summary>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                Zero upfront cost. We work on a contingency basis—we only get paid 20% of the credits we recover for you. This means we're fully aligned with your success. No hidden fees, no minimums.
+              </p>
+            </details>
+
+            <details className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-shadow group">
+              <summary className="flex items-center justify-between font-bold text-slate-900 text-lg">
+                <span>How long does the process take?</span>
+                <svg className="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </summary>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                From start to filing typically takes 60 days. The initial assessment takes 30 minutes. Data collection is handled through our secure portal. Once we have your records, our engineers and tax experts prepare everything—you don't need to do anything else.
+              </p>
+            </details>
+
+            <details className="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-shadow group">
+              <summary className="flex items-center justify-between font-bold text-slate-900 text-lg">
+                <span>What about audit risk?</span>
+                <svg className="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </summary>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                We prepare every claim with full IRS audit defense in mind. Our engineers and tax experts ensure 100% compliance. We document everything meticulously and provide complete support if an audit occurs. Your CPA will have a complete audit defense package.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Final CTA Section */}
+      <section className="py-32 px-6 bg-emerald-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl md:text-6xl font-black text-white mb-6">Stop Leaving Money on the Table</h2>
+          <p className="text-xl text-emerald-100 mb-12">
+            Get a free assessment today. No obligation, no upfront cost.
+          </p>
+          <Link href="/contact" className="inline-block bg-white text-emerald-600 font-bold px-10 py-4 rounded-2xl text-lg hover:bg-slate-50 transition-colors">
+            Get Free Assessment
+          </Link>
         </div>
       </section>
     </div>
