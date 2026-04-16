@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ contactName:"", email:"", companyName:"", phone:"", notes:"", consultType:"book_call" });
@@ -49,13 +50,29 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <div className="pt-16 pb-20 px-6">
+      {/* Top accent bar with image */}
+      <div className="relative h-48 md:h-56 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80"
+          alt="Modern office space"
+          width={1400}
+          height={400}
+          className="object-cover w-full h-full"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <span className="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Get In Touch</span>
+            <h1 className="text-3xl md:text-4xl font-black text-white">Let&apos;s Talk About Your R&amp;D Credit Opportunity</h1>
+          </div>
+        </div>
+      </div>
+      <div className="pt-12 pb-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
           {/* Left Column: Info */}
           <div>
-            <p className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-4">Get In Touch</p>
-            <h1 className="text-5xl font-black text-slate-900 leading-tight mb-6">Let's Talk About Your R&D Credit Opportunity.</h1>
-            <p className="text-slate-600 text-lg leading-relaxed mb-10">Schedule a free 30-minute consultation and we will tell you exactly what your business qualifies for. No obligation, no upfront cost.</p>
+            <p className="text-slate-600 text-lg leading-relaxed mb-8">Schedule a free 30-minute consultation and we&apos;ll tell you exactly what your business qualifies for. No obligation, no upfront cost.</p>
 
             {/* Feature Rows */}
             <div className="space-y-8 mb-12">
