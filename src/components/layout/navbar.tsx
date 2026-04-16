@@ -33,13 +33,19 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             <Link href="/how-it-works" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
-              How It Works
+              Services
             </Link>
             <Link href="/industries" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
               Industries
             </Link>
+            <Link href="/cpa-partners" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
+              CPA Partners
+            </Link>
             <Link href="/about" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
               About
+            </Link>
+            <Link href="/#faq" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
+              FAQ
             </Link>
             <Link href="/contact" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
               Contact
@@ -78,13 +84,19 @@ export function Navbar() {
         {open && (
           <div className="md:hidden py-4 border-t border-gray-100 flex flex-col gap-3">
             <Link href="/how-it-works" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
-              How It Works
+              Services
             </Link>
             <Link href="/industries" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               Industries
             </Link>
+            <Link href="/cpa-partners" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+              CPA Partners
+            </Link>
             <Link href="/about" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               About
+            </Link>
+            <Link href="/#faq" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+              FAQ
             </Link>
             <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               Contact
