@@ -9,33 +9,17 @@ export const metadata = {
 export default function ConstructionPage() {
   return (
     <div className="bg-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-slate-900 text-lg">CreditPath</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/how-it-works" className="text-sm text-slate-600 hover:text-slate-900">How It Works</Link>
-            <Link href="/industries" className="text-sm text-slate-600 hover:text-slate-900">Industries</Link>
-            <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900">About</Link>
-            <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">Contact</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-          </div>
-          <Link href="/contact" className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">Free Assessment</Link>
-        </div>
-      </nav>
-      <section className="pt-32 pb-24 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
+      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
               Construction Industry
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Construction Firms Qualify for <span className="text-blue-400">R&D Credits Too.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Construction Firms Qualify for <span className="text-emerald-400">R&D Credits Too.</span></h1>
             <p className="text-lg text-slate-300 mb-8">If your team develops innovative methods, solves structural challenges, or designs complex systems, you likely qualify for significant R&D tax credits.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/estimator" className="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
+              <Link href="/estimator" className="bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
               <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Free Consultation</Link>
             </div>
           </div>
@@ -76,7 +60,7 @@ export default function ConstructionPage() {
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Qualifying Expenses</span><span className="font-bold text-slate-900 text-sm">$680,000</span></div>
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Federal Credit</span><span className="font-bold text-slate-900 text-sm">$55,000</span></div>
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">SC State Credit</span><span className="font-bold text-slate-900 text-sm">$34,000</span></div>
-              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-blue-600 text-xl">$89,000</span></div>
+              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-emerald-600 text-xl">$89,000</span></div>
             </div>
           </div>
           <div className="space-y-4">
@@ -101,17 +85,11 @@ export default function ConstructionPage() {
           <h2 className="text-4xl font-black text-white mb-4">Get Your Free Construction R&D Assessment</h2>
           <p className="text-slate-400 text-lg mb-10">Find out exactly what your construction company qualifies for. No upfront cost. No obligation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-blue-600 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
+            <Link href="/estimator" className="bg-emerald-600 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
             <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Call</Link>
           </div>
         </div>
       </section>
-      <footer className="bg-slate-950 py-12 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2"><div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div><span className="font-bold text-white">CreditPath</span><span className="text-slate-500 text-sm ml-2">R&D Tax Credit Specialists</span></div>
-          <div className="flex gap-6"><Link href="/" className="text-slate-600 text-xs">Home</Link><Link href="/industries" className="text-slate-600 text-xs">Industries</Link><Link href="/contact" className="text-slate-600 text-xs">Contact</Link></div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Industries We Serve | CreditPath R&D Tax Credit",
+  description:
+    "R&D tax credits for manufacturing, software, engineering, biotech, food & beverage, and agriculture. CreditPath helps SC businesses in every industry claim their credits.",
+};
+
 export default function IndustriesPage() {
   const industries = [
     {

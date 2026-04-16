@@ -3,37 +3,27 @@ import EligibilityQuiz from "@/components/EligibilityQuiz";
 
 export const metadata = {
   title: "Am I Eligible for the R&D Tax Credit? | CreditPath",
-  description: "Take our free 2-minute quiz to find out if your South Carolina business qualifies for federal and state R&D tax credits. No obligation.",
+  description:
+    "Take our free 2-minute quiz to find out if your South Carolina business qualifies for federal and state R&D tax credits. No obligation.",
 };
 
 export default function EligibilityPage() {
   return (
-    <div className="bg-white min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div>
-            <span className="font-bold text-slate-900 text-lg">CreditPath</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/how-it-works" className="text-sm text-slate-600 hover:text-slate-900">How It Works</Link>
-            <Link href="/industries" className="text-sm text-slate-600 hover:text-slate-900">Industries</Link>
-            <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900">About</Link>
-            <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">Contact</Link>
-            <Link href="/cpa-partners" className="text-sm text-slate-600 hover:text-slate-900">CPA Partners</Link>
-          </div>
-          <Link href="/contact" className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">Free Assessment</Link>
-        </div>
-      </nav>
-      <section className="pt-32 pb-24 px-6">
+    <div className="bg-white">
+      <section className="py-16 md:py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+            <span className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
               Free 2-Minute Quiz
-            </div>
-            <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Does Your Business Qualify for R&D Tax Credits?</h1>
-            <p className="text-slate-500 text-lg">Answer 5 quick questions and find out instantly. No obligation, no sales pitch — just answers.</p>
+            </span>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
+              Does Your Business Qualify for R&amp;D Tax Credits?
+            </h1>
+            <p className="text-slate-500 text-lg">
+              Answer 5 quick questions and find out instantly. No obligation, no sales pitch — just
+              answers.
+            </p>
           </div>
           <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
             <EligibilityQuiz />
@@ -52,14 +42,29 @@ export default function EligibilityPage() {
               <div className="text-slate-500 text-xs mt-1">Results</div>
             </div>
           </div>
+
+          {/* CTA */}
+          <div className="mt-12 bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center">
+            <p className="text-slate-700 text-sm font-medium mb-4">
+              Prefer to talk to someone? Get a free 30-minute assessment.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/contact"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
+              >
+                Schedule Free Consultation
+              </Link>
+              <Link
+                href="/estimator"
+                className="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-2.5 rounded-lg text-sm text-center hover:bg-slate-50 transition-colors"
+              >
+                Calculate My Credit
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-      <footer className="bg-slate-950 py-12 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2"><div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center"><span className="text-white font-bold text-xs">CP</span></div><span className="font-bold text-white">CreditPath</span><span className="text-slate-500 text-sm ml-2">R&D Tax Credit Specialists</span></div>
-          <div className="flex gap-6"><Link href="/" className="text-slate-600 text-xs">Home</Link><Link href="/contact" className="text-slate-600 text-xs">Contact</Link></div>
-        </div>
-      </footer>
     </div>
   );
 }
