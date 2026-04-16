@@ -32,7 +32,7 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            <Link href="/how-it-works" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
+            <Link href="/services" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
               Services
             </Link>
             <Link href="/industries" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
@@ -83,7 +83,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         {open && (
           <div className="md:hidden py-4 border-t border-gray-100 flex flex-col gap-3">
-            <Link href="/how-it-works" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+            <Link href="/services" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               Services
             </Link>
             <Link href="/industries" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
