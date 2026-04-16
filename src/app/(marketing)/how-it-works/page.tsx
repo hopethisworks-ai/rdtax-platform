@@ -99,7 +99,9 @@ export default function HowItWorksPage() {
                     {step.items.map((item) => (
                       <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
                         <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <span className="text-green-600 text-xs">✓</span>
+                          <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
                         </div>
                         {item}
                       </div>
@@ -119,32 +121,56 @@ export default function HowItWorksPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <div className="text-2xl mb-3">📋</div>
+              <div className="mb-3">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
               <h3 className="font-bold text-slate-900 mb-2">Complete Credit Study</h3>
               <p className="text-slate-500 text-sm leading-relaxed">A fully documented credit study including project narratives, methodology memo, and Form 6765 support — ready for your CPA to file.</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <div className="text-2xl mb-3">🛡️</div>
+              <div className="mb-3">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7.5-4.5A9 9 0 1121 12a9 9 0 01-9.5-9.5z" />
+                </svg>
+              </div>
               <h3 className="font-bold text-slate-900 mb-2">Full Audit Defense</h3>
               <p className="text-slate-500 text-sm leading-relaxed">If the IRS ever questions your credit, we defend it. Our documentation is built from day one to withstand IRS scrutiny.</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <div className="text-2xl mb-3">💻</div>
+              <div className="mb-3">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
               <h3 className="font-bold text-slate-900 mb-2">Secure Client Portal</h3>
               <p className="text-slate-500 text-sm leading-relaxed">Upload documents, track your engagement status, and communicate with your analyst — all through your secure CreditPath portal.</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <div className="text-2xl mb-3">🤝</div>
+              <div className="mb-3">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0zM4.318 20H2v-2a3 3 0 015.856-1.487M15 10h.01" />
+                </svg>
+              </div>
               <h3 className="font-bold text-slate-900 mb-2">CPA Coordination</h3>
               <p className="text-slate-500 text-sm leading-relaxed">We work directly with your CPA to ensure seamless filing. We handle the R&D specialty work — they handle the rest of your return.</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <div className="text-2xl mb-3">📊</div>
+              <div className="mb-3">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
               <h3 className="font-bold text-slate-900 mb-2">Federal and SC Credits</h3>
               <p className="text-slate-500 text-sm leading-relaxed">We claim both the federal R&D credit and the SC state credit simultaneously, stacking them for maximum total recovery.</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <div className="text-2xl mb-3">🔄</div>
+              <div className="mb-3">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
               <h3 className="font-bold text-slate-900 mb-2">Amended Returns</h3>
               <p className="text-slate-500 text-sm leading-relaxed">If you have not claimed credits in prior years, we can file amended returns going back 3 years to recover credits you have already missed.</p>
             </div>
@@ -157,10 +183,10 @@ export default function HowItWorksPage() {
             <h2 className="text-4xl font-black text-white mb-6">Ready to Get Started?</h2>
             <p className="text-blue-100 leading-relaxed mb-8">The free assessment takes 30 minutes and costs nothing. We will tell you exactly what your business qualifies for and walk you through the entire process.</p>
             <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3"><span className="text-blue-200">✓</span><span className="text-blue-100 text-sm">Free 30-minute assessment call</span></div>
-              <div className="flex items-center gap-3"><span className="text-blue-200">✓</span><span className="text-blue-100 text-sm">No upfront cost — 20% contingency only</span></div>
-              <div className="flex items-center gap-3"><span className="text-blue-200">✓</span><span className="text-blue-100 text-sm">Federal and SC state credits combined</span></div>
-              <div className="flex items-center gap-3"><span className="text-blue-200">✓</span><span className="text-blue-100 text-sm">Full audit defense on every claim</span></div>
+              <div className="flex items-center gap-3"><svg className="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg><span className="text-blue-100 text-sm">Free 30-minute assessment call</span></div>
+              <div className="flex items-center gap-3"><svg className="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg><span className="text-blue-100 text-sm">No upfront cost — 20% contingency only</span></div>
+              <div className="flex items-center gap-3"><svg className="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg><span className="text-blue-100 text-sm">Federal and SC state credits combined</span></div>
+              <div className="flex items-center gap-3"><svg className="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg><span className="text-blue-100 text-sm">Full audit defense on every claim</span></div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/estimator" className="bg-white text-blue-600 font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>

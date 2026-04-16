@@ -90,13 +90,13 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { title: "SC Focused", desc: "We are local specialists who understand SC industries, tax rules, and businesses.", icon: "📍" },
-              { title: "Audit-Ready", desc: "Every credit study is built to withstand IRS scrutiny. We follow ATG guidelines.", icon: "🛡️" },
-              { title: "No Upfront Cost", desc: "Pure contingency. 20% of credits recovered. No credits, no fee.", icon: "💰" },
-              { title: "CPA Friendly", desc: "We work alongside your CPA — not instead of them. Seamless collaboration.", icon: "🤝" },
+              { title: "SC Focused", desc: "We are local specialists who understand SC industries, tax rules, and businesses.", icon: <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg> },
+              { title: "Audit-Ready", desc: "Every credit study is built to withstand IRS scrutiny. We follow ATG guidelines.", icon: <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg> },
+              { title: "No Upfront Cost", desc: "Pure contingency. 20% of credits recovered. No credits, no fee.", icon: <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg> },
+              { title: "CPA Friendly", desc: "We work alongside your CPA — not instead of them. Seamless collaboration.", icon: <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg> },
             ].map((card) => (
               <div key={card.title} className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div className="text-2xl mb-3">{card.icon}</div>
+                <div className="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center mb-3">{card.icon}</div>
                 <h3 className="font-bold text-slate-900 mb-2">{card.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{card.desc}</p>
               </div>

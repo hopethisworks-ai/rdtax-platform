@@ -75,7 +75,7 @@ export default function EstimatorPage() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-6">
-              <span className="text-green-500">✓</span> Your Estimate Is Ready
+              <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg> Your Estimate Is Ready
             </div>
             <h1 className="text-4xl font-black text-slate-900 mb-3">Your Estimated R&D Tax Credit</h1>
             <p className="text-slate-500 text-lg">Based on the financial information you provided</p>
@@ -143,7 +143,7 @@ export default function EstimatorPage() {
             <p className="text-slate-500 text-lg">Get a preliminary estimate in under 2 minutes. No account required.</p>
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 flex items-start gap-3">
-            <span className="text-blue-500 text-lg mt-0.5">💡</span>
+            <svg className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5h.01" /></svg>
             <div>
               <p className="text-blue-800 font-semibold text-sm">SC businesses get more</p>
               <p className="text-blue-700 text-xs">South Carolina businesses can stack the federal credit with an additional 5% SC state credit. Select SC as your state to see your full estimate.</p>

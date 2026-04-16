@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 
 export function Navbar() {
@@ -8,12 +8,13 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { data: session } = useSession();
 
-  // Add scroll listener for subtle shadow effect
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
+  useEffect(() => {
+    function onScroll() {
       setScrolled(window.scrollY > 0);
-    }, { passive: true });
-  }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <nav className={`bg-white sticky top-0 z-50 transition-shadow duration-200 ${
@@ -37,11 +38,11 @@ export function Navbar() {
             <Link href="/industries" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
               Industries
             </Link>
-            <Link href="/pricing" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
-              Pricing
-            </Link>
             <Link href="/about" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
               About
+            </Link>
+            <Link href="/contact" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors rounded-md hover:bg-gray-50">
+              Contact
             </Link>
           </div>
 
@@ -56,7 +57,7 @@ export function Navbar() {
                 Sign In
               </Link>
             )}
-            <Link href="/estimator" className="px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium hover:bg-emerald-700 transition-colors shadow-sm hover:shadow-md">
+            <Link href="/contact" className="px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium hover:bg-emerald-700 transition-colors shadow-sm hover:shadow-md">
               Get Free Assessment
             </Link>
           </div>
@@ -76,29 +77,29 @@ export function Navbar() {
         {/* Mobile Menu */}
         {open && (
           <div className="md:hidden py-4 border-t border-gray-100 flex flex-col gap-3">
-            <Link href="/how-it-works" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+            <Link href="/how-it-works" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               How It Works
             </Link>
-            <Link href="/industries" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+            <Link href="/industries" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               Industries
             </Link>
-            <Link href="/pricing" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/about" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+            <Link href="/about" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
               About
+            </Link>
+            <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+              Contact
             </Link>
             <div className="pt-2 border-t border-gray-100 flex flex-col gap-3">
               {session ? (
-                <Link href="/portal" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                <Link href="/portal" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
                   Portal
                 </Link>
               ) : (
-                <Link href="/login" className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                <Link href="/login" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
                   Sign In
                 </Link>
               )}
-              <Link href="/estimator" className="px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium text-center hover:bg-emerald-700 transition-colors">
+              <Link href="/contact" onClick={() => setOpen(false)} className="px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium text-center hover:bg-emerald-700 transition-colors">
                 Get Free Assessment
               </Link>
             </div>
