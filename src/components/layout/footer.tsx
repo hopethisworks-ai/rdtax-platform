@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center shadow-sm">
                 <span className="text-white font-bold text-sm">AB</span>
               </div>
               <span className="font-semibold text-white text-base">Alexander &amp; Blake</span>

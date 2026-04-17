@@ -34,14 +34,14 @@ export default function ContactPage() {
     <div className="bg-white min-h-screen">
       <div className="pt-16 pb-24 px-6 flex items-center justify-center min-h-screen">
         <div className="text-center max-w-lg">
-          <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-8">
-            <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+          <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg className="w-10 h-10 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
           </div>
           <h2 className="text-4xl font-black text-slate-900 mb-4">Thank You for Your Inquiry</h2>
           <p className="text-slate-600 text-lg mb-10 leading-relaxed">A member of our team will respond within one business day. In the meantime, you may estimate your credit or assess your eligibility.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl transition-colors">Calculate My Credit</Link>
-            <Link href="/eligibility" className="bg-slate-100 border border-slate-200 text-slate-900 font-semibold px-8 py-3 rounded-xl hover:bg-slate-50 transition-colors">Check Eligibility</Link>
+            <Link href="/estimator" className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-xl transition-colors">Calculate My Credit</Link>
+            <Link href="/eligibility" className="bg-slate-100 border border-slate-200 text-slate-900 font-semibold px-8 py-3 rounded-xl hover:bg-stone-50 transition-colors">Check Eligibility</Link>
           </div>
         </div>
       </div>
@@ -60,10 +60,10 @@ export default function ContactPage() {
           className="object-cover w-full h-full"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/50 to-slate-800/70" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <span className="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Get In Touch</span>
+            <span className="inline-block bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Get In Touch</span>
             <h1 className="text-3xl md:text-4xl font-black text-white">Schedule a Consultation</h1>
           </div>
         </div>
@@ -77,8 +77,8 @@ export default function ContactPage() {
             {/* Feature Rows */}
             <div className="space-y-8 mb-12">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-base">30-Minute Complimentary Assessment</p>
@@ -87,8 +87,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-base">Contingency-Based Engagement</p>
@@ -97,8 +97,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-base">One Business Day Response</p>
@@ -107,8 +107,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-base">South Carolina Focus</p>
@@ -118,11 +118,11 @@ export default function ContactPage() {
             </div>
 
             {/* Bottom Card */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+            <div className="bg-stone-50 border border-slate-200 rounded-2xl p-8">
               <p className="text-slate-700 text-sm font-medium mb-5">Not ready to talk? Start with a free estimate.</p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/estimator" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm text-center transition-colors">Calculate My Credit</Link>
-                <Link href="/eligibility" className="bg-white border border-slate-300 text-slate-900 font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-slate-50 transition-colors">Check Eligibility</Link>
+                <Link href="/estimator" className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm text-center transition-colors">Calculate My Credit</Link>
+                <Link href="/eligibility" className="bg-white border border-slate-300 text-slate-900 font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-stone-50 transition-colors">Check Eligibility</Link>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                     required
                     value={form.contactName}
                     onChange={e=>{setForm({...form,contactName:e.target.value})}}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                     placeholder="John Smith"
                   />
                 </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                     required
                     value={form.companyName}
                     onChange={e=>{setForm({...form,companyName:e.target.value})}}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                     placeholder="Acme Manufacturing"
                   />
                 </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     type="email"
                     value={form.email}
                     onChange={e=>{setForm({...form,email:e.target.value})}}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                     placeholder="john@acme.com"
                   />
                 </div>
@@ -173,7 +173,7 @@ export default function ContactPage() {
                   <input
                     value={form.phone}
                     onChange={e=>{setForm({...form,phone:e.target.value})}}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                     placeholder="(864) 555-0100"
                   />
                 </div>
@@ -185,7 +185,7 @@ export default function ContactPage() {
                 <select
                   value={form.consultType}
                   onChange={e=>{setForm({...form,consultType:e.target.value})}}
-                  className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                  className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                 >
                   <option value="book_call">Schedule a free consultation call</option>
                   <option value="start_intake">Start the engagement process now</option>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                   rows={4}
                   value={form.notes}
                   onChange={e=>{setForm({...form,notes:e.target.value})}}
-                  className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent resize-none"
+                  className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent resize-none"
                   placeholder="What does your company make or develop? How many employees? Any prior R&D credits claimed?"
                 />
               </div>
@@ -210,7 +210,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-8"
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-8"
               >
                 {loading ? "Submitting..." : "Request Consultation"}
               </button>

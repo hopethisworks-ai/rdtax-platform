@@ -13,8 +13,8 @@ export default function EligibilityPage() {
       <section className="py-16 md:py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+            <span className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
               Free 2-Minute Quiz
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
@@ -28,35 +28,35 @@ export default function EligibilityPage() {
             <EligibilityQuiz />
           </div>
           <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-            <div className="bg-slate-50 rounded-xl p-4">
+            <div className="bg-stone-50 rounded-xl p-4">
               <div className="text-2xl font-black text-slate-900">2 min</div>
               <div className="text-slate-500 text-xs mt-1">To complete</div>
             </div>
-            <div className="bg-slate-50 rounded-xl p-4">
+            <div className="bg-stone-50 rounded-xl p-4">
               <div className="text-2xl font-black text-slate-900">Free</div>
               <div className="text-slate-500 text-xs mt-1">No cost ever</div>
             </div>
-            <div className="bg-slate-50 rounded-xl p-4">
+            <div className="bg-stone-50 rounded-xl p-4">
               <div className="text-2xl font-black text-slate-900">Instant</div>
               <div className="text-slate-500 text-xs mt-1">Results</div>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="mt-12 bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center">
+          <div className="mt-12 bg-stone-50 border border-slate-200 rounded-2xl p-8 text-center">
             <p className="text-slate-700 text-sm font-medium mb-4">
               Prefer to talk to someone? Get a free 30-minute assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
+                className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
               >
                 Schedule Free Consultation
               </Link>
               <Link
                 href="/estimator"
-                className="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-2.5 rounded-lg text-sm text-center hover:bg-slate-50 transition-colors"
+                className="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-2.5 rounded-lg text-sm text-center hover:bg-stone-50 transition-colors"
               >
                 Calculate My Credit
               </Link>

@@ -17,7 +17,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
     CONTACTED: "bg-yellow-100 text-yellow-700",
     QUALIFIED: "bg-green-100 text-green-700",
     PROPOSAL_SENT: "bg-purple-100 text-purple-700",
-    SIGNED: "bg-emerald-100 text-emerald-700",
+    SIGNED: "bg-teal-100 text-teal-700",
     LOST: "bg-red-100 text-red-700",
   };
 

@@ -28,13 +28,13 @@ export default function SouthCarolinaPage() {
         <div className="relative max-w-6xl mx-auto px-6 py-20">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+              <span className="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 bg-teal-400 rounded-full" />
                 South Carolina R&amp;D Tax Credit
               </span>
               <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
                 The SC R&amp;D Tax Credit:{" "}
-                <span className="text-emerald-400">What Your Business Is Owed.</span>
+                <span className="text-teal-400">What Your Business Is Owed.</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
                 South Carolina offers a 5% R&amp;D tax credit on top of the federal credit. The majority of qualifying SC businesses have never claimed it. Alexander &amp; Blake changes that.
@@ -42,7 +42,7 @@ export default function SouthCarolinaPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/estimator"
-                  className="bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center hover:bg-emerald-700 transition-colors"
+                  className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center hover:bg-teal-700 transition-colors"
                 >
                   Calculate My Credit
                 </Link>
@@ -63,7 +63,7 @@ export default function SouthCarolinaPage() {
               ].map((item) => (
                 <div key={item.stat} className="bg-white/10 rounded-xl p-6 border border-white/10">
                   <div className="text-3xl font-black text-white mb-1">{item.stat}</div>
-                  <div className="text-emerald-200 text-sm">{item.label}</div>
+                  <div className="text-teal-200 text-sm">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -74,10 +74,10 @@ export default function SouthCarolinaPage() {
       {/* ═══════════════════════════════════════════
           KEY FACTS
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-slate-50">
+      <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">
+            <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Key Facts
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
@@ -126,7 +126,7 @@ export default function SouthCarolinaPage() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">
+            <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Local Expertise
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
@@ -148,7 +148,7 @@ export default function SouthCarolinaPage() {
             ].map((city) => (
               <div
                 key={city}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center"
+                className="bg-stone-50 border border-slate-200 rounded-xl p-4 text-center"
               >
                 <div className="font-semibold text-slate-800 text-sm">{city}</div>
                 <div className="text-slate-400 text-xs mt-1">South Carolina</div>
@@ -170,17 +170,17 @@ export default function SouthCarolinaPage() {
             height={800}
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-emerald-900/90" />
+          <div className="absolute inset-0 bg-teal-800/80" />
         </div>
         <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-emerald-300 text-xs font-bold uppercase tracking-widest">
+            <span className="text-teal-300 text-xs font-bold uppercase tracking-widest">
               Illustrative Example
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-6">
               SC Manufacturer Recovered Combined Credits
             </h2>
-            <p className="text-emerald-100 mb-8 leading-relaxed">
+            <p className="text-teal-100 mb-8 leading-relaxed">
               A Spartanburg-area manufacturing company had filed taxes for years without ever claiming
               R&amp;D credits. After a free assessment, qualifying research expenses were identified
               and both federal and SC state credits were recovered.
@@ -195,27 +195,27 @@ export default function SouthCarolinaPage() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="flex justify-between py-2 border-b border-emerald-700/50"
+                  className="flex justify-between py-2 border-b border-teal-700/50"
                 >
-                  <span className="text-emerald-200 text-sm">{label}</span>
+                  <span className="text-teal-200 text-sm">{label}</span>
                   <span className="text-white font-semibold text-sm">{value}</span>
                 </div>
               ))}
             </div>
-            <p className="text-emerald-300/60 text-xs mt-4">
+            <p className="text-teal-300/60 text-xs mt-4">
               This example is illustrative. Actual results depend on qualifying activities and
               expenses.
             </p>
           </div>
           <div className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl p-8 text-center">
             <h3 className="text-white font-bold text-lg mb-4">See What You Could Recover</h3>
-            <p className="text-emerald-100 text-sm mb-6">
+            <p className="text-teal-100 text-sm mb-6">
               Get a free estimate in under 2 minutes — no obligation, no upfront cost.
             </p>
             <div className="flex flex-col gap-3">
               <Link
                 href="/estimator"
-                className="bg-white text-emerald-700 font-bold px-8 py-4 rounded-xl text-center hover:bg-slate-50 transition-colors"
+                className="bg-white text-teal-700 font-bold px-8 py-4 rounded-xl text-center hover:bg-stone-50 transition-colors"
               >
                 Calculate My Credit
               </Link>
@@ -233,10 +233,10 @@ export default function SouthCarolinaPage() {
       {/* ═══════════════════════════════════════════
           FAQ
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-slate-50">
+      <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">
+            <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Common Questions
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
@@ -273,7 +273,7 @@ export default function SouthCarolinaPage() {
                 <summary className="flex items-center justify-between font-bold text-slate-900">
                   <span>{faq.q}</span>
                   <svg
-                    className="w-5 h-5 text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0 ml-4"
+                    className="w-5 h-5 text-teal-600 group-open:rotate-180 transition-transform flex-shrink-0 ml-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -291,26 +291,25 @@ export default function SouthCarolinaPage() {
       {/* ═══════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════ */}
-      <section className="py-16 px-6 bg-emerald-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+      <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">
             Ready to Claim Your SC R&amp;D Credits?
           </h2>
-          <p className="text-lg text-emerald-100 mb-8">
+          <p className="text-lg text-slate-500 mb-8">
             Free assessment from South Carolina&apos;s R&amp;D tax credit specialists. No upfront
             cost. No obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-white text-emerald-600 font-bold px-10 py-4 rounded-xl text-lg hover:bg-slate-50 transition-colors shadow-lg"
+              className="bg-teal-600 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-teal-700 transition-colors shadow-md"
             >
               Schedule Free Assessment
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-white/40 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-white/10 transition-colors"
+              className="border-2 border-stone-300 text-slate-700 font-bold px-10 py-4 rounded-xl text-lg hover:border-teal-600 hover:text-teal-600 transition-colors"
             >
               Estimate My Credit
             </Link>

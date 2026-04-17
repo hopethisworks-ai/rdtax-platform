@@ -47,7 +47,7 @@ export default function AssessmentForm() {
           <option>Automotive</option>
           <option>Other</option>
         </select>
-        <button type="submit" disabled={status === "loading"} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg text-sm transition-colors disabled:opacity-50">
+        <button type="submit" disabled={status === "loading"} className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-lg text-sm transition-colors disabled:opacity-50">
           {status === "loading" ? "Submitting..." : "Get My Free Assessment"}
         </button>
         {status === "error" && <p className="text-red-500 text-xs text-center">Something went wrong. Please try again.</p>}

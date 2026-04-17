@@ -9,17 +9,17 @@ export const metadata = {
 export default function SoftwarePage() {
   return (
     <div className="bg-white">
-      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900">
+      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-teal-400 rounded-full"></span>
               Software and Technology Industry
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Your Code Is Worth <span className="text-emerald-400">More Than You Think.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Your Code Is Worth <span className="text-teal-400">More Than You Think.</span></h1>
             <p className="text-lg text-slate-300 mb-8">Software companies routinely miss out on R&D tax credits for work they are already doing — custom development, new algorithms, platform building, and internal tools all qualify.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/estimator" className="bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
+              <Link href="/estimator" className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
               <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Free Consultation</Link>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function SoftwarePage() {
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Qualifying Expenses</span><span className="font-bold text-slate-900 text-sm">$800,000</span></div>
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Federal Credit</span><span className="font-bold text-slate-900 text-sm">$116,000</span></div>
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">SC State Credit</span><span className="font-bold text-slate-900 text-sm">$40,000</span></div>
-              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-emerald-600 text-xl">$156,000</span></div>
+              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-teal-600 text-xl">$156,000</span></div>
             </div>
           </div>
           <div className="space-y-4">
@@ -85,7 +85,7 @@ export default function SoftwarePage() {
           <h2 className="text-4xl font-black text-white mb-4">Get Your Free Software R&D Assessment</h2>
           <p className="text-slate-400 text-lg mb-10">Find out how much your development work qualifies for. No upfront cost. No obligation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-emerald-600 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
+            <Link href="/estimator" className="bg-teal-600 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
             <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Call</Link>
           </div>
         </div>

@@ -71,10 +71,10 @@ export default function IndustriesPage() {
             className="object-cover w-full h-full"
             priority
           />
-          <div className="absolute inset-0 bg-slate-900/75" />
+          <div className="absolute inset-0 bg-slate-800/70" />
         </div>
         <div className="relative max-w-4xl mx-auto px-6 py-20 text-center">
-          <span className="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+          <span className="inline-block bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
             Industries We Serve
           </span>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
@@ -87,7 +87,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Cards Section */}
-      <section className="py-20 px-6 bg-slate-50">
+      <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
             {industries.map((industry) => (
@@ -109,14 +109,14 @@ export default function IndustriesPage() {
                   <ul className="space-y-2 mb-5">
                     {industry.activities.map((activity) => (
                       <li key={activity} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         <span className="text-slate-600 text-sm">{activity}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact" className="inline-flex items-center text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors">
+                  <Link href="/contact" className="inline-flex items-center text-teal-600 font-semibold text-sm hover:text-teal-700 transition-colors">
                     Get assessed →
                   </Link>
                 </div>
@@ -130,16 +130,16 @@ export default function IndustriesPage() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">Qualifying Activities</span>
+            <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Qualifying Activities</span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">What Counts as R&amp;D?</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-slate-50 rounded-xl p-8 border-l-4 border-emerald-600">
+            <div className="bg-stone-50 rounded-xl p-8 border-l-4 border-teal-600">
               <h3 className="text-xl font-bold text-slate-900 mb-5">New or Improved Products</h3>
               <ul className="space-y-3">
                 {qualifications.products.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-slate-700 text-sm">{item}</span>
@@ -147,12 +147,12 @@ export default function IndustriesPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-slate-50 rounded-xl p-8 border-l-4 border-emerald-600">
+            <div className="bg-stone-50 rounded-xl p-8 border-l-4 border-teal-600">
               <h3 className="text-xl font-bold text-slate-900 mb-5">New or Improved Processes</h3>
               <ul className="space-y-3">
                 {qualifications.processes.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-slate-700 text-sm">{item}</span>
@@ -165,14 +165,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 bg-emerald-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Not Sure If You Qualify?</h2>
-          <p className="text-lg text-emerald-100 mb-8">
+      <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">Not Sure If You Qualify?</h2>
+          <p className="text-lg text-slate-500 mb-8">
             Get a free assessment — we&apos;ll tell you in 30 minutes.
           </p>
-          <Link href="/contact" className="inline-block bg-white text-emerald-600 font-bold px-10 py-4 rounded-xl text-lg hover:bg-slate-50 transition-colors shadow-lg">
+          <Link href="/contact" className="inline-block bg-teal-600 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-teal-700 transition-colors shadow-md">
             Get Free Assessment →
           </Link>
         </div>

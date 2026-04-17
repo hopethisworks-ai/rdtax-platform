@@ -94,10 +94,10 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-emerald-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-teal-50">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               What We Do
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
@@ -110,13 +110,13 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/25"
+                className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/25"
               >
                 Get Free Assessment
               </Link>
               <Link
                 href="/how-it-works"
-                className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-emerald-600 hover:text-emerald-600 transition-colors"
+                className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-teal-600 hover:text-teal-600 transition-colors"
               >
                 See Our Process
               </Link>
@@ -131,7 +131,7 @@ export default function ServicesPage() {
       {services.map((svc, i) => (
         <section
           key={svc.title}
-          className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+          className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-stone-50"}`}
         >
           <div className="max-w-6xl mx-auto">
             <div
@@ -140,7 +140,7 @@ export default function ServicesPage() {
               }`}
             >
               <div>
-                <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">
+                <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
                   {svc.subtitle}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-2 mb-4">
@@ -150,7 +150,7 @@ export default function ServicesPage() {
                 <div className="space-y-3">
                   {svc.items.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckIcon className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <CheckIcon className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700 text-sm">{item}</span>
                     </div>
                   ))}
@@ -173,38 +173,38 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           PRICING MODEL
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-slate-900">
+      <section className="py-20 px-6 bg-stone-50 border-y border-stone-200">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">
+          <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
             Our Pricing
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mt-3 mb-4">
             Aligned Incentives. No Upfront Cost.
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
             We operate on a contingency basis — 20% of credits successfully identified and recovered. If
             we identify no qualifying credits, there is no charge.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left">
-              <div className="text-3xl font-black text-emerald-400 mb-2">$0</div>
-              <div className="text-white font-bold text-sm mb-2">Upfront Cost</div>
-              <p className="text-slate-400 text-sm leading-relaxed">
+            <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
+              <div className="text-3xl font-black text-teal-600 mb-2">$0</div>
+              <div className="text-slate-800 font-bold text-sm mb-2">Upfront Cost</div>
+              <p className="text-slate-500 text-sm leading-relaxed">
                 No retainers, no hourly fees, no deposits. The initial assessment is complimentary and the engagement begins at zero cost.
               </p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left">
-              <div className="text-3xl font-black text-emerald-400 mb-2">20%</div>
-              <div className="text-white font-bold text-sm mb-2">Contingency Fee</div>
-              <p className="text-slate-400 text-sm leading-relaxed">
+            <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
+              <div className="text-3xl font-black text-teal-600 mb-2">20%</div>
+              <div className="text-slate-800 font-bold text-sm mb-2">Contingency Fee</div>
+              <p className="text-slate-500 text-sm leading-relaxed">
                 We earn 20% of the credits we identify. Paid only after your credit is filed and
                 approved. Our incentives are aligned with yours.
               </p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left">
-              <div className="text-3xl font-black text-emerald-400 mb-2">100%</div>
-              <div className="text-white font-bold text-sm mb-2">Audit Defense</div>
-              <p className="text-slate-400 text-sm leading-relaxed">
+            <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
+              <div className="text-3xl font-black text-teal-600 mb-2">100%</div>
+              <div className="text-slate-800 font-bold text-sm mb-2">Audit Defense</div>
+              <p className="text-slate-500 text-sm leading-relaxed">
                 Full IRS audit representation is included with every credit study at no additional
                 cost. We stand behind our work.
               </p>
@@ -216,26 +216,25 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════ */}
-      <section className="py-16 px-6 bg-emerald-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+      <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">
             Not Sure Which Services Apply to You?
           </h2>
-          <p className="text-lg text-emerald-100 mb-8">
+          <p className="text-lg text-slate-500 mb-8">
             Our free 30-minute assessment covers everything. We&apos;ll identify exactly which credits
             and services apply to your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-white text-emerald-600 font-bold px-10 py-4 rounded-xl text-lg hover:bg-slate-50 transition-colors shadow-lg"
+              className="bg-teal-600 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-teal-700 transition-colors shadow-md"
             >
               Schedule Free Assessment
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-white/40 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-white/10 transition-colors"
+              className="border-2 border-stone-300 text-slate-700 font-bold px-10 py-4 rounded-xl text-lg hover:border-teal-600 hover:text-teal-600 transition-colors"
             >
               Estimate My Credit
             </Link>
