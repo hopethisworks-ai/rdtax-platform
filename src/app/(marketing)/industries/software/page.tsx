@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function SoftwarePage() {
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-amber-950 to-slate-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>

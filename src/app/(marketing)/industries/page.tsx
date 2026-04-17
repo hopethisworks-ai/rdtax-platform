@@ -59,7 +59,7 @@ export default function IndustriesPage() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* Hero Section with background image */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -87,7 +87,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Cards Section */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
             {industries.map((industry) => (
@@ -127,14 +127,14 @@ export default function IndustriesPage() {
       </section>
 
       {/* Qualification Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Qualifying Activities</span>
             <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">What Counts as R&amp;D?</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-stone-50 rounded-xl p-8 border-l-4 border-amber-700">
+            <div className="bg-cream-200 rounded-xl p-8 border-l-4 border-amber-700">
               <h3 className="text-xl font-bold text-slate-900 mb-5">New or Improved Products</h3>
               <ul className="space-y-3">
                 {qualifications.products.map((item) => (
@@ -147,7 +147,7 @@ export default function IndustriesPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-stone-50 rounded-xl p-8 border-l-4 border-amber-700">
+            <div className="bg-cream-200 rounded-xl p-8 border-l-4 border-amber-700">
               <h3 className="text-xl font-bold text-slate-900 mb-5">New or Improved Processes</h3>
               <ul className="space-y-3">
                 {qualifications.processes.map((item) => (

@@ -21,6 +21,12 @@ const config: Config = {
           700: "#78350f",
           900: "#451a03",
         },
+        cream: {
+          DEFAULT: "#FAF8F5",
+          50: "#FDFCFA",
+          100: "#FAF8F5",
+          200: "#F5F0EB",
+        },
       },
     },
   },

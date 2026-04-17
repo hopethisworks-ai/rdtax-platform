@@ -96,7 +96,7 @@ export default function EstimatorPage() {
 
   if (result)
     return (
-      <div className="bg-white">
+      <div className="bg-cream">
         <div className="py-16 md:py-20 px-6">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
@@ -189,7 +189,7 @@ export default function EstimatorPage() {
     );
 
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       <div className="py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">

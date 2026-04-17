@@ -31,7 +31,7 @@ export default function ContactPage() {
   }
 
   if (done) return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-cream min-h-screen">
       <div className="pt-16 pb-24 px-6 flex items-center justify-center min-h-screen">
         <div className="text-center max-w-lg">
           <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-8">
@@ -41,7 +41,7 @@ export default function ContactPage() {
           <p className="text-slate-600 text-lg mb-10 leading-relaxed">A member of our team will respond within one business day. In the meantime, you may estimate your credit or assess your eligibility.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/estimator" className="bg-amber-700 hover:bg-amber-800 text-white font-bold px-8 py-3 rounded-xl transition-colors">Calculate My Credit</Link>
-            <Link href="/eligibility" className="bg-slate-100 border border-slate-200 text-slate-900 font-semibold px-8 py-3 rounded-xl hover:bg-stone-50 transition-colors">Check Eligibility</Link>
+            <Link href="/eligibility" className="bg-slate-100 border border-slate-200 text-slate-900 font-semibold px-8 py-3 rounded-xl hover:bg-cream-200 transition-colors">Check Eligibility</Link>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-cream min-h-screen">
       {/* Top accent bar with image */}
       <div className="relative h-48 md:h-56 overflow-hidden">
         <Image
@@ -118,11 +118,11 @@ export default function ContactPage() {
             </div>
 
             {/* Bottom Card */}
-            <div className="bg-stone-50 border border-slate-200 rounded-2xl p-8">
+            <div className="bg-cream-200 border border-slate-200 rounded-2xl p-8">
               <p className="text-slate-700 text-sm font-medium mb-5">Not ready to talk? Start with a free estimate.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/estimator" className="bg-amber-700 hover:bg-amber-800 text-white font-semibold px-5 py-2.5 rounded-lg text-sm text-center transition-colors">Calculate My Credit</Link>
-                <Link href="/eligibility" className="bg-white border border-slate-300 text-slate-900 font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-stone-50 transition-colors">Check Eligibility</Link>
+                <Link href="/eligibility" className="bg-white border border-slate-300 text-slate-900 font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-cream-200 transition-colors">Check Eligibility</Link>
               </div>
             </div>
           </div>

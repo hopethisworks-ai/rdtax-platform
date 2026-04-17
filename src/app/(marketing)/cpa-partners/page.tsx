@@ -33,11 +33,11 @@ const ArrowRight = () => (
 
 export default function CpaPartnersPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-amber-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-amber-50">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -82,7 +82,7 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           KEY STATS
       ═══════════════════════════════════════════ */}
-      <section className="py-10 px-6 bg-stone-50 border-y border-stone-200">
+      <section className="py-10 px-6 bg-cream-200 border-y border-stone-200">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-3xl font-black text-slate-800 mb-1">$50K+</div>
@@ -106,7 +106,7 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           WHY PARTNER
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
@@ -176,7 +176,7 @@ export default function CpaPartnersPage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-stone-50 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow"
+                className="bg-cream-200 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow"
               >
                 <div className="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
                   {card.icon}
@@ -192,7 +192,7 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           HOW IT WORKS — 3-step CPA flow
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
@@ -233,7 +233,7 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           WHO QUALIFIES — referral checklist
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>

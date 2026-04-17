@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* Hero Section with image */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-amber-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-amber-50">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-10 px-6 bg-stone-50 border-y border-stone-200">
+      <section className="py-10 px-6 bg-cream-200 border-y border-stone-200">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { stat: "$50K+", label: "Avg credit per client" },
@@ -82,7 +82,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Cards */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Why Alexander &amp; Blake</span>
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Our Process</span>

@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function SouthCarolinaPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
@@ -74,7 +74,7 @@ export default function SouthCarolinaPage() {
       {/* ═══════════════════════════════════════════
           KEY FACTS
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
@@ -123,7 +123,7 @@ export default function SouthCarolinaPage() {
       {/* ═══════════════════════════════════════════
           SC CITIES
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
@@ -148,7 +148,7 @@ export default function SouthCarolinaPage() {
             ].map((city) => (
               <div
                 key={city}
-                className="bg-stone-50 border border-slate-200 rounded-xl p-4 text-center"
+                className="bg-cream-200 border border-slate-200 rounded-xl p-4 text-center"
               >
                 <div className="font-semibold text-slate-800 text-sm">{city}</div>
                 <div className="text-slate-400 text-xs mt-1">South Carolina</div>
@@ -215,7 +215,7 @@ export default function SouthCarolinaPage() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/estimator"
-                className="bg-white text-amber-800 font-bold px-8 py-4 rounded-xl text-center hover:bg-stone-50 transition-colors"
+                className="bg-white text-amber-800 font-bold px-8 py-4 rounded-xl text-center hover:bg-cream-200 transition-colors"
               >
                 Calculate My Credit
               </Link>
@@ -233,7 +233,7 @@ export default function SouthCarolinaPage() {
       {/* ═══════════════════════════════════════════
           FAQ
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">

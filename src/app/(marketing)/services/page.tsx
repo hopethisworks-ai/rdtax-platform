@@ -90,11 +90,11 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-amber-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-amber-50">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="max-w-3xl">
             <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
@@ -131,7 +131,7 @@ export default function ServicesPage() {
       {services.map((svc, i) => (
         <section
           key={svc.title}
-          className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-stone-50"}`}
+          className={`py-20 px-6 ${i % 2 === 0 ? "bg-cream" : "bg-cream-200"}`}
         >
           <div className="max-w-6xl mx-auto">
             <div
@@ -173,7 +173,7 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           PRICING MODEL
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-stone-50 border-y border-stone-200">
+      <section className="py-20 px-6 bg-cream-200 border-y border-stone-200">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
             Our Pricing

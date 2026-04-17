@@ -29,12 +29,12 @@ const ArrowRight = () => (
 
 export default function HomePage() {
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* ═══════════════════════════════════════════
           SECTION 1 — HERO
           Headline + subhead + dual CTA + proof strip
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-stone-50/50 to-amber-50/60">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-stone-50/50 to-amber-50/60">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(180,83,9,0.08),transparent)]" />
         <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -87,7 +87,7 @@ export default function HomePage() {
           SECTION 2 — WHO WE HELP
           Three audience cards
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Who We Help</span>
@@ -126,7 +126,7 @@ export default function HomePage() {
           SECTION 3 — HOW IT WORKS
           5-step process matching spec
       ═══════════════════════════════════════════ */}
-      <section id="how-it-works" className="py-24 px-6 bg-white">
+      <section id="how-it-works" className="py-24 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Our Process</span>
@@ -155,7 +155,7 @@ export default function HomePage() {
           SECTION 4 — SERVICES
           Federal, State, Amended, Payroll Offset, Audit
       ═══════════════════════════════════════════ */}
-      <section className="py-24 px-6 bg-stone-50">
+      <section className="py-24 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">What We Do</span>
@@ -186,7 +186,7 @@ export default function HomePage() {
           SECTION 5 — WHY CHOOSE US
           Specialized, Defensible, Streamlined, CPA-friendly
       ═══════════════════════════════════════════ */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-cream">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <Image
@@ -223,7 +223,7 @@ export default function HomePage() {
           SECTION 6 — PROOF
           Anonymized outcomes (honest, with disclaimer)
       ═══════════════════════════════════════════ */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Results</span>
@@ -236,7 +236,7 @@ export default function HomePage() {
               { amount: "$142K", type: "Software Company", detail: "Three-year amended returns recovered credits from open tax years. 40 engineers on staff.", period: "3-year lookback" },
               { amount: "$63K", type: "Engineering Firm", detail: "Prototype development and simulation activities. Study completed in 45 days.", period: "Current year" },
             ].map((study) => (
-              <div key={study.type} className="bg-stone-50 border border-stone-200 rounded-2xl p-8">
+              <div key={study.type} className="bg-cream-200 border border-stone-200 rounded-2xl p-8">
                 <div className="text-3xl font-black text-amber-700 mb-1">{study.amount}</div>
                 <div className="text-slate-800 font-bold text-sm mb-3">{study.type}</div>
                 <p className="text-slate-500 text-sm leading-relaxed mb-4">{study.detail}</p>
@@ -252,7 +252,7 @@ export default function HomePage() {
           SECTION 7 — FAQ
           Matches spec questions
       ═══════════════════════════════════════════ */}
-      <section id="faq" className="py-24 px-6 bg-stone-50">
+      <section id="faq" className="py-24 px-6 bg-cream-200">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Common Questions</span>

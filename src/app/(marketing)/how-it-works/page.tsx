@@ -74,11 +74,11 @@ export default function HowItWorksPage() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-amber-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-amber-50">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -123,7 +123,7 @@ export default function HowItWorksPage() {
       {/* ═══════════════════════════════════════════
           KEY STATS BAR
       ═══════════════════════════════════════════ */}
-      <section className="py-10 px-6 bg-stone-50 border-y border-stone-200">
+      <section className="py-10 px-6 bg-cream-200 border-y border-stone-200">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-3xl font-black text-slate-800 mb-1">30 min</div>
@@ -147,7 +147,7 @@ export default function HowItWorksPage() {
       {/* ═══════════════════════════════════════════
           TIMELINE — 5 steps
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-cream">
         <div className="max-w-4xl mx-auto space-y-0">
           {steps.map((step, i) => (
             <div key={step.number} className="flex gap-8 relative">
@@ -165,7 +165,7 @@ export default function HowItWorksPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 mb-4 leading-relaxed">{step.desc}</p>
-                <div className="bg-stone-50 border border-slate-200 rounded-xl p-4">
+                <div className="bg-cream-200 border border-slate-200 rounded-xl p-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {step.items.map((item) => (
                       <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
@@ -198,7 +198,7 @@ export default function HowItWorksPage() {
       {/* ═══════════════════════════════════════════
           WHAT YOU GET — deliverables grid
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-stone-50">
+      <section className="py-20 px-6 bg-cream-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
