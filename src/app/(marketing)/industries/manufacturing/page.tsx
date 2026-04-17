@@ -9,17 +9,17 @@ export const metadata = {
 export default function ManufacturingPage() {
   return (
     <div className="bg-white">
-      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900">
+      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-amber-950 to-slate-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-teal-400 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 bg-amber-600/20 border border-amber-500/30 text-amber-200 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
               Manufacturing Industry
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">SC Manufacturers Qualify for <span className="text-teal-400">Significant R&D Credits.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">SC Manufacturers Qualify for <span className="text-amber-500">Significant R&D Credits.</span></h1>
             <p className="text-lg text-slate-300 mb-8">If your team improves processes, develops new products, or solves engineering problems, you are likely leaving thousands in unclaimed tax credits on the table every year.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/estimator" className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
+              <Link href="/estimator" className="bg-amber-700 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
               <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Free Consultation</Link>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function ManufacturingPage() {
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Qualifying Expenses</span><span className="font-bold text-slate-900 text-sm">$1,200,000</span></div>
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Federal Credit</span><span className="font-bold text-slate-900 text-sm">$137,000</span></div>
               <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">SC State Credit</span><span className="font-bold text-slate-900 text-sm">$60,000</span></div>
-              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-teal-600 text-xl">$197,000</span></div>
+              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-amber-700 text-xl">$197,000</span></div>
             </div>
           </div>
           <div className="space-y-4">
@@ -85,7 +85,7 @@ export default function ManufacturingPage() {
           <h2 className="text-4xl font-black text-white mb-4">Get Your Free Manufacturing R&D Assessment</h2>
           <p className="text-slate-400 text-lg mb-10">Find out exactly what your manufacturing company qualifies for. No upfront cost. No obligation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-teal-600 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
+            <Link href="/estimator" className="bg-amber-700 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
             <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Call</Link>
           </div>
         </div>

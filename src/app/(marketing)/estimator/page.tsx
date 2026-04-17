@@ -100,8 +100,8 @@ export default function EstimatorPage() {
         <div className="py-16 md:py-20 px-6">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                <svg className="w-5 h-5 text-teal-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 Your Estimate Is Ready
@@ -113,8 +113,8 @@ export default function EstimatorPage() {
                 Based on the financial information you provided
               </p>
             </div>
-            <div className="bg-teal-600 rounded-2xl p-10 text-center mb-6">
-              <p className="text-teal-100 text-sm font-semibold uppercase tracking-widest mb-3">
+            <div className="bg-amber-700 rounded-2xl p-10 text-center mb-6">
+              <p className="text-amber-100 text-sm font-semibold uppercase tracking-widest mb-3">
                 Federal R&amp;D Tax Credit Estimate
               </p>
               <div className="text-6xl font-black text-white mb-2">
@@ -157,7 +157,7 @@ export default function EstimatorPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-teal-700 transition-colors"
+                  className="bg-amber-700 text-white font-bold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-amber-800 transition-colors"
                 >
                   Schedule Free Consultation
                 </Link>
@@ -193,7 +193,7 @@ export default function EstimatorPage() {
       <div className="py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-teal-600 font-semibold text-sm uppercase tracking-widest mb-3 block">
+            <span className="text-amber-700 font-semibold text-sm uppercase tracking-widest mb-3 block">
               Free R&amp;D Credit Calculator
             </span>
             <h1 className="text-4xl font-black text-slate-900 mb-3">
@@ -203,13 +203,13 @@ export default function EstimatorPage() {
               Get a preliminary estimate in under 2 minutes. No account required.
             </p>
           </div>
-          <div className="bg-teal-50 border border-teal-200 rounded-xl p-4 mb-8 flex items-start gap-3">
-            <svg className="w-6 h-6 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex items-start gap-3">
+            <svg className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5h.01" />
             </svg>
             <div>
-              <p className="text-teal-800 font-semibold text-sm">SC businesses get more</p>
-              <p className="text-teal-700 text-xs">
+              <p className="text-amber-900 font-semibold text-sm">SC businesses get more</p>
+              <p className="text-amber-800 text-xs">
                 South Carolina businesses can stack the federal credit with an additional 5% SC state
                 credit. Select SC as your state to see your full estimate.
               </p>
@@ -232,7 +232,7 @@ export default function EstimatorPage() {
                     required
                     value={form.companyName}
                     onChange={(e) => setForm({ ...form, companyName: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -243,7 +243,7 @@ export default function EstimatorPage() {
                     required
                     value={form.contactName}
                     onChange={(e) => setForm({ ...form, contactName: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -255,7 +255,7 @@ export default function EstimatorPage() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -263,7 +263,7 @@ export default function EstimatorPage() {
                   <input
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -278,7 +278,7 @@ export default function EstimatorPage() {
                   <select
                     value={form.industry}
                     onChange={(e) => setForm({ ...form, industry: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   >
                     <option value="">Select industry</option>
                     {INDUSTRIES.map((i) => (
@@ -291,7 +291,7 @@ export default function EstimatorPage() {
                   <select
                     value={form.state}
                     onChange={(e) => setForm({ ...form, state: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   >
                     {US_STATES.map((s) => (
                       <option key={s}>{s}</option>
@@ -305,7 +305,7 @@ export default function EstimatorPage() {
                   <select
                     value={form.revenueBand}
                     onChange={(e) => setForm({ ...form, revenueBand: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                   >
                     <option value="">Select range</option>
                     {REVENUE_BANDS.map((r) => (
@@ -322,7 +322,7 @@ export default function EstimatorPage() {
                     min="0"
                     value={form.employeeCount}
                     onChange={(e) => setForm({ ...form, employeeCount: e.target.value })}
-                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                    className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                     placeholder="e.g. 50"
                   />
                 </div>
@@ -349,7 +349,7 @@ export default function EstimatorPage() {
                       placeholder="2,000,000"
                       value={form.annualPayroll}
                       onChange={(e) => setForm({ ...form, annualPayroll: e.target.value })}
-                      className="w-full border border-slate-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                      className="w-full border border-slate-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                     />
                   </div>
                   <p className="text-slate-400 text-xs mt-1">Total wages paid to US employees</p>
@@ -366,7 +366,7 @@ export default function EstimatorPage() {
                       placeholder="500,000"
                       value={form.contractorSpend}
                       onChange={(e) => setForm({ ...form, contractorSpend: e.target.value })}
-                      className="w-full border border-slate-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                      className="w-full border border-slate-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                     />
                   </div>
                   <p className="text-slate-400 text-xs mt-1">R&amp;D-related contractor costs</p>
@@ -383,7 +383,7 @@ export default function EstimatorPage() {
                       placeholder="100,000"
                       value={form.supplySpend}
                       onChange={(e) => setForm({ ...form, supplySpend: e.target.value })}
-                      className="w-full border border-slate-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                      className="w-full border border-slate-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 focus:border-transparent"
                     />
                   </div>
                   <p className="text-slate-400 text-xs mt-1">Materials used in R&amp;D activities</p>
@@ -394,7 +394,7 @@ export default function EstimatorPage() {
                     id="prior"
                     checked={form.priorCreditClaimed}
                     onChange={(e) => setForm({ ...form, priorCreditClaimed: e.target.checked })}
-                    className="w-4 h-4 text-teal-600 rounded"
+                    className="w-4 h-4 text-amber-700 rounded"
                   />
                   <label htmlFor="prior" className="text-sm text-slate-700">
                     We have claimed the R&amp;D tax credit in a prior year
@@ -410,7 +410,7 @@ export default function EstimatorPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50"
+              className="w-full bg-amber-700 hover:bg-amber-800 text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50"
             >
               {loading ? "Calculating Your Estimate..." : "Calculate My R&D Credit"}
             </button>

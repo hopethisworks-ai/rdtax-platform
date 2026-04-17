@@ -94,10 +94,10 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-teal-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-amber-50">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               What We Do
             </span>
             <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
@@ -110,13 +110,13 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/25"
+                className="bg-amber-700 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-amber-800 transition-colors shadow-lg shadow-amber-700/25"
               >
                 Get Free Assessment
               </Link>
               <Link
                 href="/how-it-works"
-                className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-teal-600 hover:text-teal-600 transition-colors"
+                className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-amber-700 hover:text-amber-700 transition-colors"
               >
                 See Our Process
               </Link>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
               }`}
             >
               <div>
-                <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
+                <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
                   {svc.subtitle}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-2 mb-4">
@@ -150,7 +150,7 @@ export default function ServicesPage() {
                 <div className="space-y-3">
                   {svc.items.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckIcon className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                      <CheckIcon className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700 text-sm">{item}</span>
                     </div>
                   ))}
@@ -175,7 +175,7 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-stone-50 border-y border-stone-200">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
+          <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
             Our Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-4">
@@ -187,14 +187,14 @@ export default function ServicesPage() {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-teal-600 mb-2">$0</div>
+              <div className="text-3xl font-black text-amber-700 mb-2">$0</div>
               <div className="text-slate-800 font-bold text-sm mb-2">Upfront Cost</div>
               <p className="text-slate-500 text-sm leading-relaxed">
                 No retainers, no hourly fees, no deposits. The initial assessment is complimentary and the engagement begins at zero cost.
               </p>
             </div>
             <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-teal-600 mb-2">20%</div>
+              <div className="text-3xl font-black text-amber-700 mb-2">20%</div>
               <div className="text-slate-800 font-bold text-sm mb-2">Contingency Fee</div>
               <p className="text-slate-500 text-sm leading-relaxed">
                 We earn 20% of the credits we identify. Paid only after your credit is filed and
@@ -202,7 +202,7 @@ export default function ServicesPage() {
               </p>
             </div>
             <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-teal-600 mb-2">100%</div>
+              <div className="text-3xl font-black text-amber-700 mb-2">100%</div>
               <div className="text-slate-800 font-bold text-sm mb-2">Audit Defense</div>
               <p className="text-slate-500 text-sm leading-relaxed">
                 Full IRS audit representation is included with every credit study at no additional
@@ -216,7 +216,7 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
+      <section className="py-20 px-6 bg-amber-50 border-t border-amber-100">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">
             Not Sure Which Services Apply to You?
@@ -228,13 +228,13 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-teal-600 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-teal-700 transition-colors shadow-md"
+              className="bg-amber-700 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-amber-800 transition-colors shadow-md"
             >
               Schedule Free Assessment
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-stone-300 text-slate-700 font-bold px-10 py-4 rounded-xl text-lg hover:border-teal-600 hover:text-teal-600 transition-colors"
+              className="border-2 border-stone-300 text-slate-700 font-bold px-10 py-4 rounded-xl text-lg hover:border-amber-700 hover:text-amber-700 transition-colors"
             >
               Estimate My Credit
             </Link>

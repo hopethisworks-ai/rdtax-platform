@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
     CALCULATION: "bg-violet-50 text-violet-700",
     REVIEW: "bg-orange-50 text-orange-700",
     DOCUMENTATION: "bg-indigo-50 text-indigo-700",
-    FINAL_REPORT: "bg-teal-50 text-teal-700",
+    FINAL_REPORT: "bg-amber-50 text-amber-800",
     DELIVERED: "bg-green-50 text-green-700",
   };
 

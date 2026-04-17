@@ -38,7 +38,7 @@ export default async function ClientDetailPage({ params }: { params: Promise<{ i
     CALCULATION: "bg-purple-100 text-purple-700",
     REVIEW: "bg-orange-100 text-orange-700",
     DOCUMENTATION: "bg-indigo-100 text-indigo-700",
-    FINAL_REPORT: "bg-teal-100 text-teal-700",
+    FINAL_REPORT: "bg-amber-100 text-amber-800",
     DELIVERED: "bg-green-100 text-green-700",
     ARCHIVED: "bg-gray-100 text-gray-500",
   };

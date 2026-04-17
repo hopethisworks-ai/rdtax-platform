@@ -13,8 +13,8 @@ export default function EligibilityPage() {
       <section className="py-16 md:py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
+            <span className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-amber-600 rounded-full" />
               Free 2-Minute Quiz
             </span>
             <h1 className="text-4xl md:text-5xl font-normal text-slate-800 mb-4">
@@ -50,7 +50,7 @@ export default function EligibilityPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
+                className="bg-amber-700 hover:bg-amber-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
               >
                 Schedule Free Consultation
               </Link>
