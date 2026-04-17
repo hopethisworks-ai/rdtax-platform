@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const adminEmail = process.env.ADMIN_EMAIL ?? "admin@creditpath.com";
+    const adminEmail = process.env.ADMIN_EMAIL ?? "admin@alexanderblake.com";
     try { await sendUploadReceived(adminEmail, client.companyName, file.name); } catch(e) { console.error("[Email] upload alert failed:", e); }
     await notifyAdmins(
       "upload_received",

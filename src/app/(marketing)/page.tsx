@@ -3,9 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CreditPath | South Carolina R&D Tax Credit Specialists",
+  title: "Alexander & Blake | R&D Tax Credit Advisory — South Carolina",
   description:
-    "CreditPath helps South Carolina businesses claim R&D tax credits. Free assessment, no upfront cost, full audit defense. Average credit recovered: $50K–$300K.",
+    "Alexander & Blake is a dedicated R&D tax credit advisory firm serving South Carolina businesses. Rigorous methodology, full audit defense, and zero upfront cost. Typical engagements recover $50K–$300K in federal and state credits.",
 };
 
 /* ── Icon Components ── */
@@ -39,13 +39,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-                South Carolina R&amp;D Tax Credit Specialists
+                R&amp;D Tax Credit Advisory
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6">
-                Turn Your Innovation Into Tax Savings.
+                Rigorous R&amp;D Tax Credit Studies. Defensible Results.
               </h1>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
-                We identify, document, and defend R&amp;D tax credits for South Carolina businesses — so you get every dollar you&apos;re owed, with zero upfront cost.
+                Alexander &amp; Blake prepares IRS-compliant R&amp;D tax credit studies for South Carolina businesses. We identify every qualifying activity, maximize your credit, and provide full audit defense — with zero upfront cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/contact" className="bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/25">
@@ -74,7 +74,7 @@ export default function HomePage() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-slate-900 text-white rounded-xl p-5 shadow-xl">
                 <div className="text-3xl font-black">$50K–$300K</div>
-                <p className="text-slate-400 text-sm mt-1">Avg. Credit Recovered</p>
+                <p className="text-slate-400 text-sm mt-1">Typical Credit Recovery</p>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">Who We Help</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white mt-3">R&amp;D Credits for Every Stage</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white mt-3">Clients We Serve</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/contact" className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors group">
@@ -97,7 +97,7 @@ export default function HomePage() {
                 <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" /></svg>
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Businesses Claiming Credits</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-3">Established SC companies developing new products, processes, or software — we identify every qualifying activity and maximize your credit.</p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-3">Established SC companies developing new products, processes, or software. We identify every qualifying activity and prepare a defensible credit study.</p>
               <span className="inline-flex items-center text-emerald-400 text-sm font-semibold group-hover:underline">Get assessed <ArrowRight /></span>
             </Link>
             <Link href="/cpa-partners" className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors group">
@@ -128,7 +128,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">Our Process</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">From Discovery to Filing in 60 Days</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">A Disciplined Process. Discovery to Filing in 60 Days.</h2>
           </div>
           <div className="grid md:grid-cols-5 gap-6">
             {[
@@ -195,14 +195,14 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">Why CreditPath</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 mb-6">A Defensible Approach. Built for Your CPA.</h2>
+            <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest">Why Alexander &amp; Blake</span>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 mb-6">Precision Methodology. Built to Withstand Scrutiny.</h2>
             <div className="space-y-5">
               {[
-                { title: "Specialized Experience", desc: "We focus exclusively on R&D tax credits — not general tax prep. Deep specialization means higher-quality studies." },
-                { title: "Defensible Methodology", desc: "Every study follows IRS Audit Techniques Guidelines (ATG) and the four-part test. Built to withstand scrutiny." },
-                { title: "Streamlined Process", desc: "Secure portal, guided data collection, and a dedicated analyst. Minimal disruption to your operations." },
-                { title: "CPA-Friendly Delivery", desc: "Deliverables are designed for your CPA — Form 6765 support, contemporaneous documentation, and filing coordination." },
+                { title: "Exclusive R&D Focus", desc: "We do not prepare tax returns. We prepare R&D credit studies — exclusively. That singular focus produces a higher standard of work." },
+                { title: "ATG-Compliant Documentation", desc: "Every engagement follows IRS Audit Techniques Guidelines and the four-part test. Our studies are built for examination, not just filing." },
+                { title: "Minimal Client Disruption", desc: "Secure portal, guided data collection, and a dedicated analyst. We extract the information we need without consuming your team's time." },
+                { title: "Seamless CPA Integration", desc: "Form 6765 support, contemporaneous documentation, and direct filing coordination with your CPA. Designed for their workflow, not ours." },
               ].map((item) => (
                 <div key={item.title} className="flex gap-3">
                   <div className="flex-shrink-0 mt-1"><CheckIcon className="w-5 h-5 text-emerald-600" /></div>
@@ -229,8 +229,8 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">Results</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-3">What R&amp;D Credits Look Like in Practice</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">Illustrative outcomes based on typical SC engagements. Actual results vary by business.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-3">Representative Engagement Outcomes</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">Illustrative examples based on typical South Carolina engagements. Individual results depend on qualifying activities and expenses.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -263,11 +263,11 @@ export default function HomePage() {
           <div className="space-y-3">
             {[
               { q: "What activities qualify for the R&D tax credit?", a: "Any activity that involves developing new or improved products, processes, software, techniques, formulas, or inventions may qualify — even in traditional industries like manufacturing and food production. The IRS uses a four-part test: permitted purpose, technological in nature, elimination of uncertainty, and process of experimentation." },
-              { q: "How long does the process take?", a: "From initial discovery call to a completed credit study typically takes 60 days. The assessment itself takes about 30 minutes. Data collection is handled through our secure portal with minimal disruption to your team." },
-              { q: "What documentation is needed?", a: "We typically need payroll records, contractor invoices, project descriptions, and general ledger data. Our portal guides you through exactly what's needed, and our team handles the heavy lifting of organizing and analyzing the data." },
-              { q: "Do you work with CPA firms?", a: "Yes — CPA partnerships are a core part of our model. We handle the specialty R&D credit work while you maintain the client relationship. Our deliverables are designed for seamless CPA integration, including Form 6765 support and filing coordination." },
-              { q: "What states do you cover?", a: "We specialize in South Carolina, which offers additional state R&D credits that stack on top of the federal benefit. Our deep knowledge of SC industries, regulations, and the local business landscape allows us to maximize credits for SC-based companies." },
-              { q: "How much does it cost?", a: "Zero upfront cost. We work on a 20% contingency basis — we only earn a fee from credits we successfully identify. If we don't find qualifying credits, you owe nothing." },
+              { q: "How long does the process take?", a: "From initial consultation to a completed credit study typically takes 60 days. The complimentary assessment takes approximately 30 minutes. Data collection is managed through our secure portal with minimal disruption to your team." },
+              { q: "What documentation is required?", a: "We typically require payroll records, contractor invoices, project descriptions, and general ledger data. Our portal provides a guided document checklist, and our analysts manage the organization and analysis of all materials." },
+              { q: "Do you work with CPA firms?", a: "Yes — CPA partnerships are a core part of our practice. We serve as a dedicated specialty resource while the CPA maintains the client relationship. Our deliverables are designed for seamless integration, including Form 6765 support and direct filing coordination." },
+              { q: "What states do you serve?", a: "We focus on South Carolina, which offers additional state R&D credits that stack on top of the federal benefit. Our deep knowledge of SC industries, regulations, and the local business landscape enables us to maximize credit recovery for SC-based companies." },
+              { q: "What is the fee structure?", a: "We operate on a 20% contingency basis — our fee is calculated as a percentage of credits successfully identified. There are no upfront costs, retainers, or hourly fees. If we identify no qualifying credits, there is no charge." },
             ].map((faq) => (
               <details key={faq.q} className="bg-white rounded-xl p-5 cursor-pointer hover:shadow-md transition-shadow group border border-slate-100">
                 <summary className="flex items-center justify-between font-bold text-slate-900">
@@ -289,9 +289,9 @@ export default function HomePage() {
       <section className="py-16 px-6 bg-emerald-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
         <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Not Sure If You Qualify? Let&apos;s Review Your Facts.</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Request a Complimentary Assessment</h2>
           <p className="text-lg text-emerald-100 mb-8">
-            Free 30-minute assessment. No obligation, no upfront cost.
+            A 30-minute consultation to evaluate your eligibility, estimate your credit, and outline next steps. No obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-emerald-600 font-bold px-10 py-4 rounded-xl text-lg hover:bg-slate-50 transition-colors shadow-lg">

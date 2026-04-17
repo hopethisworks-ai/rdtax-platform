@@ -123,8 +123,8 @@ export default async function PortalReportsPage({ params }: { params: Promise<{ 
       <div className="mt-8 bg-slate-50 border border-slate-200 rounded-xl p-6">
         <h3 className="font-bold text-slate-900 mb-2">Need Help?</h3>
         <p className="text-sm text-slate-600">
-          If you have questions about your credit study or need additional documentation, contact your CreditPath analyst or email{" "}
-          <a href="mailto:support@creditpath.com" className="text-blue-600 hover:underline">support@creditpath.com</a>.
+          If you have questions about your credit study or need additional documentation, contact your Alexander &amp; Blake analyst or email{" "}
+          <a href="mailto:support@alexanderblake.com" className="text-blue-600 hover:underline">support@alexanderblake.com</a>.
         </p>
       </div>
     </div>

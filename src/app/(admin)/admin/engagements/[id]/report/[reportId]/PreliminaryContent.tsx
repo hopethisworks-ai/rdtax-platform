@@ -132,10 +132,10 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
       </section>
       <div className="bg-slate-800 rounded-2xl p-8 text-center">
         <h3 className="text-2xl font-black text-white mb-2">Ready to Claim Your Credit?</h3>
-        <p className="text-slate-300 mb-6">Contact CreditPath to begin your full credit study. Most engagements are completed in 45-60 days.</p>
+        <p className="text-slate-300 mb-6">Contact Alexander &amp; Blake to begin your full credit study. Most engagements are completed in 45-60 days.</p>
         <div className="inline-flex flex-col sm:flex-row gap-4 justify-center">
-          <div className="bg-blue-600 text-white font-bold px-8 py-3 rounded-xl">creditpath.com/contact</div>
-          <div className="bg-white/10 text-white font-semibold px-8 py-3 rounded-xl">South Carolina R&D Tax Specialists</div>
+          <div className="bg-blue-600 text-white font-bold px-8 py-3 rounded-xl">alexanderblake.com/contact</div>
+          <div className="bg-white/10 text-white font-semibold px-8 py-3 rounded-xl">South Carolina R&amp;D Tax Specialists</div>
         </div>
       </div>
       <div className="border-t border-slate-200 pt-6 mt-8">

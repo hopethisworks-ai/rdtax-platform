@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Industries We Serve | CreditPath R&D Tax Credit",
+  title: "Industries We Serve | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "R&D tax credits for manufacturing, software, engineering, biotech, food & beverage, and agriculture. CreditPath helps SC businesses in every industry claim their credits.",
+    "R&D tax credit studies for manufacturing, software, engineering, biotech, food & beverage, and agriculture. Alexander & Blake serves South Carolina businesses across every qualifying industry.",
 };
 
 export default function IndustriesPage() {
@@ -78,10 +78,10 @@ export default function IndustriesPage() {
             Industries We Serve
           </span>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
-            R&amp;D Happens Everywhere.
+            Qualifying R&amp;D Spans Every Industry.
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            You don&apos;t need a lab coat to qualify for the R&amp;D tax credit. If you&apos;re developing new or improved products, processes, or software, you likely qualify.
+            The R&amp;D tax credit is not limited to laboratories and pharmaceuticals. Any business developing new or improved products, processes, or software may qualify — across manufacturing, technology, engineering, and beyond.
           </p>
         </div>
       </section>

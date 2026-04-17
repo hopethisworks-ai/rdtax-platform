@@ -37,8 +37,8 @@ export default function ContactPage() {
           <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-8">
             <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
           </div>
-          <h2 className="text-4xl font-black text-slate-900 mb-4">We'll Be In Touch</h2>
-          <p className="text-slate-600 text-lg mb-10 leading-relaxed">We typically respond within one business day. In the meantime, you can estimate your credit or check your eligibility.</p>
+          <h2 className="text-4xl font-black text-slate-900 mb-4">Thank You for Your Inquiry</h2>
+          <p className="text-slate-600 text-lg mb-10 leading-relaxed">A member of our team will respond within one business day. In the meantime, you may estimate your credit or assess your eligibility.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/estimator" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl transition-colors">Calculate My Credit</Link>
             <Link href="/eligibility" className="bg-slate-100 border border-slate-200 text-slate-900 font-semibold px-8 py-3 rounded-xl hover:bg-slate-50 transition-colors">Check Eligibility</Link>
@@ -64,7 +64,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <span className="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Get In Touch</span>
-            <h1 className="text-3xl md:text-4xl font-black text-white">Let&apos;s Talk About Your R&amp;D Credit Opportunity</h1>
+            <h1 className="text-3xl md:text-4xl font-black text-white">Schedule a Consultation</h1>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
           {/* Left Column: Info */}
           <div>
-            <p className="text-slate-600 text-lg leading-relaxed mb-8">Schedule a free 30-minute consultation and we&apos;ll tell you exactly what your business qualifies for. No obligation, no upfront cost.</p>
+            <p className="text-slate-600 text-lg leading-relaxed mb-8">Request a complimentary 30-minute consultation. We will evaluate your eligibility, estimate your potential credit, and outline the engagement process. No obligation.</p>
 
             {/* Feature Rows */}
             <div className="space-y-8 mb-12">
@@ -81,8 +81,8 @@ export default function ContactPage() {
                   <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 text-base">30-Minute Free Assessment</p>
-                  <p className="text-slate-600 text-sm mt-1">We review your business and tell you exactly what you qualify for.</p>
+                  <p className="font-bold text-slate-900 text-base">30-Minute Complimentary Assessment</p>
+                  <p className="text-slate-600 text-sm mt-1">We evaluate your business activities and provide a preliminary eligibility determination.</p>
                 </div>
               </div>
 
@@ -91,8 +91,8 @@ export default function ContactPage() {
                   <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 text-base">No Upfront Cost</p>
-                  <p className="text-slate-600 text-sm mt-1">20% contingency only. If we do not find credits, you pay nothing.</p>
+                  <p className="font-bold text-slate-900 text-base">Contingency-Based Engagement</p>
+                  <p className="text-slate-600 text-sm mt-1">20% of credits recovered. No retainers, no hourly fees. If we identify no qualifying credits, there is no charge.</p>
                 </div>
               </div>
 
@@ -101,8 +101,8 @@ export default function ContactPage() {
                   <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 text-base">Response Within One Business Day</p>
-                  <p className="text-slate-600 text-sm mt-1">We respond to every inquiry within one business day.</p>
+                  <p className="font-bold text-slate-900 text-base">One Business Day Response</p>
+                  <p className="text-slate-600 text-sm mt-1">Every inquiry receives a response within one business day.</p>
                 </div>
               </div>
 
@@ -111,8 +111,8 @@ export default function ContactPage() {
                   <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 text-base">South Carolina Specialists</p>
-                  <p className="text-slate-600 text-sm mt-1">We serve SC businesses exclusively. We know your market.</p>
+                  <p className="font-bold text-slate-900 text-base">South Carolina Focus</p>
+                  <p className="text-slate-600 text-sm mt-1">Deep expertise in SC industries, state regulations, and the local business landscape.</p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
 
           {/* Right Column: Form */}
           <div className="bg-white border border-slate-200 rounded-2xl p-10 shadow-sm">
-            <h2 className="text-2xl font-black text-slate-900 mb-8">Schedule Your Free Consultation</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-8">Request a Consultation</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name & Company */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -212,7 +212,7 @@ export default function ContactPage() {
                 disabled={loading}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-8"
               >
-                {loading ? "Sending..." : "Schedule Free Consultation"}
+                {loading ? "Submitting..." : "Request Consultation"}
               </button>
 
               {/* Privacy Note */}

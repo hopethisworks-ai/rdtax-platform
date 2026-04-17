@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: "User not found" }, { status: 404 });
 
   const secret = generateSecret();
-  const otpauth = generateURI({ secret, label: user.email!, issuer: "CreditPath R&D" });
+  const otpauth = generateURI({ secret, label: user.email!, issuer: "Alexander & Blake R&D" });
   const qrDataUrl = await QRCode.toDataURL(otpauth);
 
   // Store secret temporarily (not yet enabled — user must verify first)

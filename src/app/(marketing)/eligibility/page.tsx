@@ -2,9 +2,9 @@ import Link from "next/link";
 import EligibilityQuiz from "@/components/EligibilityQuiz";
 
 export const metadata = {
-  title: "Am I Eligible for the R&D Tax Credit? | CreditPath",
+  title: "Eligibility Assessment | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "Take our free 2-minute quiz to find out if your South Carolina business qualifies for federal and state R&D tax credits. No obligation.",
+    "Complete a brief eligibility assessment to determine whether your South Carolina business qualifies for federal and state R&D tax credits. No obligation.",
 };
 
 export default function EligibilityPage() {
@@ -21,8 +21,7 @@ export default function EligibilityPage() {
               Does Your Business Qualify for R&amp;D Tax Credits?
             </h1>
             <p className="text-slate-500 text-lg">
-              Answer 5 quick questions and find out instantly. No obligation, no sales pitch — just
-              answers.
+              Answer five questions to receive an immediate preliminary assessment. No obligation, no commitment — just a clear answer.
             </p>
           </div>
           <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">

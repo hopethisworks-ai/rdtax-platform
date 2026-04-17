@@ -53,10 +53,10 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="px-5 py-5 border-b border-slate-100">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-              <span className="text-white font-bold text-xs tracking-tight">CP</span>
+              <span className="text-white font-bold text-xs tracking-tight">AB</span>
             </div>
             <div>
-              <div className="font-semibold text-slate-800 text-sm leading-tight">CreditPath</div>
+              <div className="font-semibold text-slate-800 text-sm leading-tight">Alexander &amp; Blake</div>
               <div className="text-xs text-slate-400 leading-tight">R&D Tax Platform</div>
             </div>
           </div>

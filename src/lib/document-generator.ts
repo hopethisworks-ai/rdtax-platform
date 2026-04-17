@@ -34,7 +34,7 @@ export type DocumentContext = {
   ruleVersion: { version: string; formVersion: string; taxYear: number };
 };
 
-const DISCLAIMER = "THIS DOCUMENT IS PREPARED BY CREDITPATH R&D AND IS INTENDED FOR USE BY THE CLIENT'S TAX COUNSEL IN PREPARING OR AMENDING FEDERAL AND STATE TAX RETURNS. IT DOES NOT CONSTITUTE LEGAL OR TAX ADVICE. ALL CREDIT DETERMINATIONS MUST BE REVIEWED BY QUALIFIED TAX COUNSEL BEFORE FILING.";
+const DISCLAIMER = "THIS DOCUMENT IS PREPARED BY ALEXANDER & BLAKE R&D AND IS INTENDED FOR USE BY THE CLIENT'S TAX COUNSEL IN PREPARING OR AMENDING FEDERAL AND STATE TAX RETURNS. IT DOES NOT CONSTITUTE LEGAL OR TAX ADVICE. ALL CREDIT DETERMINATIONS MUST BE REVIEWED BY QUALIFIED TAX COUNSEL BEFORE FILING.";
 
 function fmt(n: number | null | undefined): string {
   if (n == null) return "—";
@@ -56,7 +56,7 @@ export async function generatePreliminaryEstimatePdf(ctx: DocumentContext): Prom
 
   // Header bar
   page.drawRectangle({ x: 0, y: height - 80, width, height: 80, color: BLUE });
-  page.drawText("CreditPath R&D", { x: 40, y: height - 30, size: 18, font: boldFont, color: rgb(1,1,1) });
+  page.drawText("Alexander & Blake R&D", { x: 40, y: height - 30, size: 18, font: boldFont, color: rgb(1,1,1) });
   page.drawText("Preliminary R&D Tax Credit Estimate", { x: 40, y: height - 55, size: 12, font, color: rgb(0.8,0.9,1) });
 
   let y = height - 110;
@@ -154,7 +154,7 @@ export async function generateMethodologyMemoPdf(ctx: DocumentContext & {
   const MARGIN_BOTTOM = 100;
 
   page.drawRectangle({ x: 0, y: height - 80, width, height: 80, color: BLUE });
-  page.drawText("CreditPath R&D – Methodology Memorandum", { x: 40, y: height - 30, size: 14, font: boldFont, color: rgb(1,1,1) });
+  page.drawText("Alexander & Blake R&D – Methodology Memorandum", { x: 40, y: height - 30, size: 14, font: boldFont, color: rgb(1,1,1) });
   page.drawText(`${ctx.client.companyName} | Tax Year ${ctx.engagement.taxYear}`, { x: 40, y: height - 55, size: 10, font, color: rgb(0.8,0.9,1) });
 
   let y = height - 110;

@@ -3,9 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | CreditPath R&D Tax Credit",
+  title: "Services | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "Federal R&D credits, South Carolina state credits, amended returns, payroll tax offset, and full audit defense. CreditPath covers the full lifecycle of your R&D tax credit.",
+    "Federal R&D credit studies, South Carolina state credits, amended returns, payroll tax offset, and complete audit defense. Alexander & Blake manages the full lifecycle of your R&D tax credit engagement.",
 };
 
 /* ── Icon Components ── */
@@ -179,19 +179,18 @@ export default function ServicesPage() {
             Our Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-4">
-            Zero Upfront Cost. We Only Earn When You Do.
+            Aligned Incentives. No Upfront Cost.
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            We work on a contingency basis — 20% of credits successfully identified and recovered. If
-            we don&apos;t find qualifying credits, you owe nothing.
+            We operate on a contingency basis — 20% of credits successfully identified and recovered. If
+            we identify no qualifying credits, there is no charge.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left">
               <div className="text-3xl font-black text-emerald-400 mb-2">$0</div>
               <div className="text-white font-bold text-sm mb-2">Upfront Cost</div>
               <p className="text-slate-400 text-sm leading-relaxed">
-                No retainers, no hourly fees, no deposits. The assessment is free and the engagement
-                starts at zero cost.
+                No retainers, no hourly fees, no deposits. The initial assessment is complimentary and the engagement begins at zero cost.
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left">

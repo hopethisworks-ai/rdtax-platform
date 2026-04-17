@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
         status: "NEW",
       },
     });
-    const adminEmail = process.env.ADMIN_EMAIL ?? "admin@creditpath.com";
+    const adminEmail = process.env.ADMIN_EMAIL ?? "admin@alexanderblake.com";
       try { await sendNewLeadAlert(adminEmail, lead.id, lead.companyName); } catch(e) { console.error("[Email] lead alert failed:", e); }
       return NextResponse.json({ success: true });
   } catch {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import AssessmentForm from "@/components/AssessmentForm";
 
 export const metadata = {
-  title: "R&D Tax Credit for Software Companies in South Carolina | CreditPath",
+  title: "R&D Tax Credit for Software Companies in South Carolina | Alexander & Blake",
   description: "SC software and technology companies qualify for federal and state R&D tax credits on custom development, algorithms, platforms, and more. Get your free assessment.",
 };
 

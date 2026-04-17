@@ -2,7 +2,7 @@ import Link from "next/link";
 import AssessmentForm from "@/components/AssessmentForm";
 
 export const metadata = {
-  title: "R&D Tax Credit for Manufacturers in South Carolina | CreditPath",
+  title: "R&D Tax Credit for Manufacturers in South Carolina | Alexander & Blake",
   description: "SC manufacturers qualify for federal and state R&D tax credits on process improvements, new product development, tooling, and more. Get your free assessment today.",
 };
 

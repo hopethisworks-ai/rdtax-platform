@@ -24,9 +24,9 @@ export default function ForgotPasswordPage() {
         <div className="text-center mb-8">
           <Link href="/" className="flex items-center justify-center gap-2 mb-4">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">CP</span>
+              <span className="text-white font-bold text-sm">AB</span>
             </div>
-            <span className="font-bold text-lg">CreditPath</span>
+            <span className="font-bold text-lg">Alexander &amp; Blake</span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Reset Password</h1>
           <p className="text-gray-500 text-sm mt-1">Enter your email and we will send a reset link</p>

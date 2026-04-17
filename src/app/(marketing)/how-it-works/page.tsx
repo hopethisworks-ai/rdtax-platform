@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "How It Works | CreditPath R&D Tax Credit",
+  title: "Our Process | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "See exactly how CreditPath helps South Carolina businesses claim R&D tax credits — from free assessment to filed credit study in 60 days.",
+    "Alexander & Blake's disciplined five-step process takes South Carolina businesses from initial assessment to a filed, audit-ready credit study in 60 days.",
 };
 
 export default function HowItWorksPage() {
@@ -13,7 +13,7 @@ export default function HowItWorksPage() {
       number: "01",
       title: "Free Assessment",
       duration: "30 minutes",
-      desc: "We review your business on a free 30-minute call and tell you exactly what you qualify for. No obligation, no pressure.",
+      desc: "A complimentary 30-minute consultation to evaluate your business activities, assess eligibility, and provide a preliminary credit estimate.",
       items: [
         "Online credit estimator",
         "Free 30-min consultation call",
@@ -25,7 +25,7 @@ export default function HowItWorksPage() {
       number: "02",
       title: "Engagement Kickoff",
       duration: "1-2 days",
-      desc: "After signing the engagement letter, you receive secure portal access and a customized document checklist tailored to your business.",
+      desc: "Upon executing the engagement letter, you receive secure portal access and a document checklist tailored to your business and industry.",
       items: [
         "Signed engagement letter",
         "Secure client portal access",
@@ -37,7 +37,7 @@ export default function HowItWorksPage() {
       number: "03",
       title: "Data Collection",
       duration: "1-2 weeks",
-      desc: "Upload payroll, contractor, and project data through your secure portal. We guide you every step of the way.",
+      desc: "Upload payroll records, contractor agreements, and project data through our secure portal. Your dedicated analyst guides the process.",
       items: [
         "Payroll data upload",
         "Contractor agreements",
@@ -62,7 +62,7 @@ export default function HowItWorksPage() {
       number: "05",
       title: "Report and Filing",
       duration: "1 week",
-      desc: "You receive a complete audit-defense package. We coordinate with your CPA to file and stand behind every claim.",
+      desc: "You receive a comprehensive, audit-ready work product. We coordinate directly with your CPA for filing and provide full audit defense.",
       items: [
         "Executive summary report",
         "Project narratives",
@@ -86,11 +86,10 @@ export default function HowItWorksPage() {
                 The Process
               </span>
               <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
-                From Free Assessment to Filed Credit in 60 Days.
+                Assessment to Filed Credit Study in 60 Days.
               </h1>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
-                We handle everything — identification, documentation, calculation, filing, and audit
-                defense. Here is exactly what happens from the moment you reach out.
+                We manage the full engagement — activity identification, technical documentation, QRE calculation, filing coordination, and audit defense. Below is the process from initial consultation to delivery.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -231,7 +230,7 @@ export default function HowItWorksPage() {
               },
               {
                 title: "Secure Client Portal",
-                desc: "Upload documents, track engagement status, and communicate with your analyst — all through your secure CreditPath portal.",
+                desc: "Upload documents, track engagement status, and communicate with your analyst — all through your secure Alexander &amp; Blake portal.",
                 icon: (
                   <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -288,11 +287,10 @@ export default function HowItWorksPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
         <div className="relative max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-            Ready to Get Started?
+            Ready to Begin?
           </h2>
           <p className="text-lg text-emerald-100 mb-8">
-            The free assessment takes 30 minutes and costs nothing. We&apos;ll tell you exactly what
-            your business qualifies for.
+            The complimentary assessment takes 30 minutes. We evaluate your eligibility and provide a preliminary credit estimate at no cost.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

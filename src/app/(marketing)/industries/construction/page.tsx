@@ -2,7 +2,7 @@ import Link from "next/link";
 import AssessmentForm from "@/components/AssessmentForm";
 
 export const metadata = {
-  title: "R&D Tax Credit for Construction Companies in SC | CreditPath",
+  title: "R&D Tax Credit for Construction Companies in SC | Alexander & Blake",
   description: "SC construction and engineering firms qualify for federal and state R&D tax credits on innovative methods, structural design, and building technology. Get your free assessment.",
 };
 

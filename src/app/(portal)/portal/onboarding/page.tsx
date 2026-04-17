@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 const STEPS = [
   {
     id: "welcome",
-    title: "Welcome to CreditPath",
+    title: "Welcome to Alexander & Blake",
     description: "Let's walk you through how the R&D credit study process works and what we'll need from you.",
   },
   {
@@ -77,7 +77,7 @@ export default function OnboardingPage() {
                 <div className="text-2xl">✅</div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Your Dedicated Analyst</h3>
-                  <p className="text-sm text-slate-600 mt-1">A CreditPath analyst has been assigned to your engagement. They'll guide you through every step, review your documents, and prepare your final credit study.</p>
+                  <p className="text-sm text-slate-600 mt-1">An Alexander & Blake analyst has been assigned to your engagement. They'll guide you through every step, review your documents, and prepare your final credit study.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-4 bg-amber-50 rounded-xl border border-amber-100">

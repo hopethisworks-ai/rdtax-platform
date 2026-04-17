@@ -25,9 +25,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
             <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-sm">
-              <span className="text-white font-bold text-sm">CP</span>
+              <span className="text-white font-bold text-sm">AB</span>
             </div>
-            <span className="font-semibold text-gray-900 text-base hidden sm:inline">CreditPath</span>
+            <span className="font-semibold text-gray-900 text-base hidden sm:inline">Alexander &amp; Blake</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,7 +64,7 @@ export function Navbar() {
               </Link>
             )}
             <Link href="/contact" className="px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium hover:bg-emerald-700 transition-colors shadow-sm hover:shadow-md">
-              Get Free Assessment
+              Schedule Consultation
             </Link>
           </div>
 
@@ -112,7 +112,7 @@ export function Navbar() {
                 </Link>
               )}
               <Link href="/contact" onClick={() => setOpen(false)} className="px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium text-center hover:bg-emerald-700 transition-colors">
-                Get Free Assessment
+                Schedule Consultation
               </Link>
             </div>
           </div>

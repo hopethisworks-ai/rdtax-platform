@@ -108,10 +108,10 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
           <div className="flex justify-between items-start mb-8">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center">
-                <span className="text-white font-black text-sm">CP</span>
+                <span className="text-white font-black text-sm">AB</span>
               </div>
               <div>
-                <div className="font-black text-slate-900 text-lg">CreditPath</div>
+                <div className="font-black text-slate-900 text-lg">Alexander &amp; Blake</div>
                 <div className="text-xs text-slate-500">South Carolina R&D Tax Credit Specialists</div>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
             {client.companyName} qualifies for federal and South Carolina R&D tax credits under IRC Section 41 for tax year {eng.taxYear}. This credit study was prepared in accordance with the IRS Audit Technique Guide for the Research Tax Credit (ATG) and applicable Treasury Regulations under Treas. Reg. Sec. 1.41-4.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
-            CreditPath conducted interviews with key technical personnel, reviewed payroll records, contractor agreements, and project documentation. All {qualifiedProjects.length} qualified business components were evaluated under the four-part test as required by IRC Section 41(d). Employee time allocations were documented using contemporaneous records or reconstructed records consistent with Cohan v. Commissioner, 39 F.2d 540 (2d Cir. 1930) and Suder v. Commissioner, T.C. Memo 2014-201.
+            Alexander & Blake conducted interviews with key technical personnel, reviewed payroll records, contractor agreements, and project documentation. All {qualifiedProjects.length} qualified business components were evaluated under the four-part test as required by IRC Section 41(d). Employee time allocations were documented using contemporaneous records or reconstructed records consistent with Cohan v. Commissioner, 39 F.2d 540 (2d Cir. 1930) and Suder v. Commissioner, T.C. Memo 2014-201.
           </p>
           <p className="text-slate-600 leading-relaxed mb-6">
             Qualified research expenses of {fmt(serializedCalc?.totalQre)} were identified, consisting of {fmt(serializedCalc?.totalWageQre)} in wage expenses, {fmt(serializedCalc?.totalSupplyQre)} in supply expenses, and {fmt(serializedCalc?.totalContractorQre)} in contractor expenses. Using the {serializedCalc?.method === "ASC" ? "Alternative Simplified Credit method under IRC Section 41(c)(5)" : "Regular Credit method under IRC Section 41(c)(1)"}, the federal credit is {fmt(federalCredit)}. Stacked with the South Carolina research credit under SC Code Section 12-6-3375, the total combined credit available to {client.companyName} is {fmt(totalCredit)}.
@@ -578,7 +578,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
         <section className="mb-10">
           <h2 className="text-xl font-black text-slate-900 mb-4 pb-2 border-b-2 border-slate-200">IX. Excluded Items and Activities</h2>
           <p className="text-slate-600 text-sm mb-4">
-            The following activities were reviewed but excluded from the QRE base. Documentation of excluded items demonstrates that CreditPath applied a rigorous qualification standard and did not include activities that fail to meet the requirements of IRC Section 41(d).
+            The following activities were reviewed but excluded from the QRE base. Documentation of excluded items demonstrates that Alexander & Blake applied a rigorous qualification standard and did not include activities that fail to meet the requirements of IRC Section 41(d).
           </p>
           {excludedProjects.length > 0 ? (
             <table className="w-full text-sm border border-slate-200 rounded-lg overflow-hidden">
@@ -661,7 +661,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
 {/* IX-A. Interview Documentation */}
         <section className="mb-10">
           <h2 className="text-xl font-black text-slate-900 mb-4 pb-2 border-b-2 border-slate-200">IX-A. Interview Documentation Summary</h2>
-          <p className="text-slate-600 text-sm mb-4">CreditPath conducted interviews and reviewed documentation with the following qualified research personnel. All interviews were conducted in accordance with IRS Audit Technique Guide standards. Interview notes are retained in the CreditPath engagement file.</p>
+          <p className="text-slate-600 text-sm mb-4">Alexander & Blake conducted interviews and reviewed documentation with the following qualified research personnel. All interviews were conducted in accordance with IRS Audit Technique Guide standards. Interview notes are retained in the Alexander & Blake engagement file.</p>
           <table className="w-full text-sm border border-slate-200 rounded-lg overflow-hidden mb-4">
             <thead className="bg-slate-800">
               <tr>{["Employee","Title","Business Component","Documentation Method","Qualified %","Documentation Source"].map(h=><th key={h} className="px-3 py-3 text-left text-xs font-semibold text-white uppercase tracking-wide">{h}</th>)}</tr>
@@ -695,7 +695,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
               {category:"Technical Documentation",items:["Engineering design documents and specifications","Code repository commit history (GitHub/GitLab)","Test plans, test results, and QA records","Prototype and iteration documentation"]},
               {category:"Financial Records",items:["General ledger entries for R&D expenses","Contractor invoices and payment records","Supply purchase orders and receipts","Project cost center allocations"]},
               {category:"Contractor Documentation",items:["Signed contractor agreements","Statements of work and project scopes","IP ownership and rights assignments","Fairchild analysis worksheets"]},
-              {category:"CreditPath Engagement File",items:["Signed engagement letter","Employee interview notes and attestations","Business component qualification worksheets","Four-part test analysis for each component"]},
+              {category:"Alexander & Blake Engagement File",items:["Signed engagement letter","Employee interview notes and attestations","Business component qualification worksheets","Four-part test analysis for each component"]},
             ].map(group=>(
               <div key={group.category} className="border border-slate-200 rounded-xl p-4">
                 <h3 className="font-bold text-slate-800 text-xs uppercase tracking-wide mb-3 pb-2 border-b border-slate-100">{group.category}</h3>
@@ -714,7 +714,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <p className="text-xs font-bold text-blue-800 mb-2">Document Retention Notice</p>
-            <p className="text-xs text-blue-700 leading-relaxed">Pursuant to IRC Section 6001 and Treasury Regulation 1.6001-1, taxpayers must maintain records sufficient to establish the right to claim any credit. CreditPath recommends retaining all documentation for a minimum of seven (7) years from the date the return is filed, or three (3) years after any amended return, whichever is later.</p>
+            <p className="text-xs text-blue-700 leading-relaxed">Pursuant to IRC Section 6001 and Treasury Regulation 1.6001-1, taxpayers must maintain records sufficient to establish the right to claim any credit. Alexander & Blake recommends retaining all documentation for a minimum of seven (7) years from the date the return is filed, or three (3) years after any amended return, whichever is later.</p>
           </div>
         </section>
 
@@ -772,7 +772,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
         <section className="mb-10">
           <h2 className="text-xl font-black text-slate-900 mb-4 pb-2 border-b-2 border-slate-200">XII. Taxpayer Certification</h2>
           <div className="border-2 border-slate-300 rounded-xl p-6">
-            <p className="text-sm text-slate-600 mb-8 leading-relaxed">Under penalties of perjury, I declare that I have examined this research tax credit study and the supporting documentation, and to the best of my knowledge and belief, the information provided to CreditPath and contained herein is true, correct, and complete. I understand that this credit study will be used in connection with the preparation of a federal and state income tax return, and I accept responsibility for the accuracy of the underlying facts.</p>
+            <p className="text-sm text-slate-600 mb-8 leading-relaxed">Under penalties of perjury, I declare that I have examined this research tax credit study and the supporting documentation, and to the best of my knowledge and belief, the information provided to Alexander & Blake and contained herein is true, correct, and complete. I understand that this credit study will be used in connection with the preparation of a federal and state income tax return, and I accept responsibility for the accuracy of the underlying facts.</p>
             <div className="grid md:grid-cols-2 gap-8 mb-6">
               <div>
                 <div className="border-b-2 border-slate-400 mb-2 h-14"></div>
@@ -805,9 +805,9 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <p className="font-black text-slate-900 text-lg">CreditPath</p>
-                <p className="text-slate-500 text-sm">South Carolina R&D Tax Credit Specialists</p>
-                <p className="text-slate-400 text-xs mt-1">contact@creditpath.com | creditpath.com</p>
+                <p className="font-black text-slate-900 text-lg">Alexander &amp; Blake</p>
+                <p className="text-slate-500 text-sm">South Carolina R&amp;D Tax Credit Specialists</p>
+                <p className="text-slate-400 text-xs mt-1">contact@alexanderblake.com | alexanderblake.com</p>
               </div>
               <div className="text-right">
                 <p className="text-xs text-slate-500">Study Prepared: {today}</p>
@@ -816,12 +816,12 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
               </div>
             </div>
             <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-              CreditPath certifies that this research tax credit study was prepared in accordance with applicable provisions of the Internal Revenue Code, Treasury Regulations, and IRS guidance. This study reflects our professional judgment based on information provided by {client.companyName} and our independent research into the applicable law. We stand behind the positions taken in this study and will provide audit defense support in the event of an IRS examination.
+              Alexander & Blake certifies that this research tax credit study was prepared in accordance with applicable provisions of the Internal Revenue Code, Treasury Regulations, and IRS guidance. This study reflects our professional judgment based on information provided by {client.companyName} and our independent research into the applicable law. We stand behind the positions taken in this study and will provide audit defense support in the event of an IRS examination.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <div className="border-b-2 border-slate-400 mb-2 h-14"></div>
-                <p className="text-xs text-slate-500 uppercase tracking-wide">CreditPath Authorized Representative</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wide">Alexander &amp; Blake Authorized Representative</p>
               </div>
               <div>
                 <div className="border-b-2 border-slate-400 mb-2 h-14"></div>
@@ -833,9 +833,9 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
 
         <div className="border-t-2 border-slate-200 pt-6 mt-8">
           <p className="text-xs text-slate-400 leading-relaxed mb-2">
-            This report is confidential and was prepared solely for the use of {client.companyName} and their authorized tax advisors. Unauthorized disclosure or reproduction is prohibited. CreditPath assumes no responsibility for any reliance on this document by any party other than the intended recipient. This report does not constitute legal advice. The credit amounts shown are estimates based on current law and may be subject to adjustment upon IRS review.
+            This report is confidential and was prepared solely for the use of {client.companyName} and their authorized tax advisors. Unauthorized disclosure or reproduction is prohibited. Alexander & Blake assumes no responsibility for any reliance on this document by any party other than the intended recipient. This report does not constitute legal advice. The credit amounts shown are estimates based on current law and may be subject to adjustment upon IRS review.
           </p>
-          <p className="text-xs text-slate-400">CreditPath -- South Carolina R&D Tax Credit Specialists -- Report ID: {report.id.slice(-8).toUpperCase()} -- Prepared: {today}</p>
+          <p className="text-xs text-slate-400">Alexander & Blake -- South Carolina R&D Tax Credit Specialists -- Report ID: {report.id.slice(-8).toUpperCase()} -- Prepared: {today}</p>
         </div>
       </div>
     </div>

@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "South Carolina R&D Tax Credit | CreditPath",
+  title: "South Carolina R&D Tax Credit | Alexander & Blake Advisory",
   description:
-    "South Carolina businesses can claim a 5% state R&D tax credit stacked on top of the federal credit. CreditPath helps SC manufacturers, software companies, and contractors claim every dollar.",
+    "South Carolina offers a 5% state R&D tax credit that stacks on top of the federal credit. Alexander & Blake prepares audit-ready credit studies for SC manufacturers, software companies, and engineering firms.",
 };
 
 export default function SouthCarolinaPage() {
@@ -37,8 +37,7 @@ export default function SouthCarolinaPage() {
                 <span className="text-emerald-400">What Your Business Is Owed.</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                South Carolina offers a 5% R&amp;D tax credit on top of the federal credit. Most SC
-                businesses qualify and never claim a dollar. We fix that.
+                South Carolina offers a 5% R&amp;D tax credit on top of the federal credit. The majority of qualifying SC businesses have never claimed it. Alexander &amp; Blake changes that.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
