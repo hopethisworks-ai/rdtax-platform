@@ -77,7 +77,7 @@ export default function IndustriesPage() {
           <span className="inline-block bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
             Industries We Serve
           </span>
-          <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-normal text-white leading-tight mb-6">
             Qualifying R&amp;D Spans Every Industry.
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -131,7 +131,7 @@ export default function IndustriesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Qualifying Activities</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">What Counts as R&amp;D?</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">What Counts as R&amp;D?</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-stone-50 rounded-xl p-8 border-l-4 border-teal-600">
@@ -167,7 +167,7 @@ export default function IndustriesPage() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">Not Sure If You Qualify?</h2>
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">Not Sure If You Qualify?</h2>
           <p className="text-lg text-slate-500 mb-8">
             Get a free assessment — we&apos;ll tell you in 30 minutes.
           </p>

@@ -37,7 +37,7 @@ export default function ContactPage() {
           <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-8">
             <svg className="w-10 h-10 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
           </div>
-          <h2 className="text-4xl font-black text-slate-900 mb-4">Thank You for Your Inquiry</h2>
+          <h2 className="text-4xl font-normal text-slate-800 mb-4">Thank You for Your Inquiry</h2>
           <p className="text-slate-600 text-lg mb-10 leading-relaxed">A member of our team will respond within one business day. In the meantime, you may estimate your credit or assess your eligibility.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/estimator" className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-xl transition-colors">Calculate My Credit</Link>
@@ -64,7 +64,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <span className="inline-block bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Get In Touch</span>
-            <h1 className="text-3xl md:text-4xl font-black text-white">Schedule a Consultation</h1>
+            <h1 className="text-3xl md:text-4xl font-normal text-white">Schedule a Consultation</h1>
           </div>
         </div>
       </div>

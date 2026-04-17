@@ -44,7 +44,7 @@ export default function CpaPartnersPage() {
               <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
                 For Accounting Professionals
               </span>
-              <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
                 Add R&amp;D Tax Credits to Your Practice. Without Adding Complexity.
               </h1>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
@@ -112,7 +112,7 @@ export default function CpaPartnersPage() {
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Why Partner With Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
               We Work For You. Not Instead of You.
             </h2>
           </div>
@@ -198,7 +198,7 @@ export default function CpaPartnersPage() {
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               How It Works
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
               Simple Three-Step Process
             </h2>
           </div>
@@ -240,7 +240,7 @@ export default function CpaPartnersPage() {
               <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
                 Who Qualifies
               </span>
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 mb-4">
+              <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-4">
                 Which of Your Clients Should You Refer?
               </h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
@@ -296,7 +296,7 @@ export default function CpaPartnersPage() {
             <span className="text-teal-400 text-xs font-bold uppercase tracking-widest">
               Results
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-3 mb-3">
               What Our CPA Partners Are Seeing
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
@@ -353,7 +353,7 @@ export default function CpaPartnersPage() {
       <section id="partner-form" className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-black text-slate-800 mb-4">Become an Alexander &amp; Blake Partner</h2>
+            <h2 className="text-4xl font-normal text-slate-800 mb-4">Become an Alexander &amp; Blake Partner</h2>
             <p className="text-slate-500 text-lg">
               Tell us about your practice and we&apos;ll reach out to discuss the partnership. No
               commitment required.

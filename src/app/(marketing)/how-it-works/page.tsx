@@ -85,7 +85,7 @@ export default function HowItWorksPage() {
               <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
                 The Process
               </span>
-              <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
                 Assessment to Filed Credit Study in 60 Days.
               </h1>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
@@ -204,7 +204,7 @@ export default function HowItWorksPage() {
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               What You Get
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
               Everything Included. Nothing Extra.
             </h2>
           </div>
@@ -285,7 +285,7 @@ export default function HowItWorksPage() {
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">
             Ready to Begin?
           </h2>
           <p className="text-lg text-slate-500 mb-8">

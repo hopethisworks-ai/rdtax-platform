@@ -17,7 +17,7 @@ export default function AboutPage() {
               <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
                 About Us
               </span>
-              <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
                 A Singular Focus on R&amp;D Tax Credits.
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed">
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Our Mission</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 mb-5 leading-tight">Most Qualifying Businesses Never Claim a Dollar.</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-5 leading-tight">Most Qualifying Businesses Never Claim a Dollar.</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
               The R&amp;D tax credit has existed since 1981. Yet the vast majority of qualifying businesses never claim it — not because they lack eligibility, but because the process demands specialized expertise most firms do not maintain in-house.
             </p>
@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Why Alexander &amp; Blake</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">What Sets Us Apart</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">What Sets Us Apart</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
@@ -110,7 +110,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Our Process</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">How We Work</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">How We Work</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -132,7 +132,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">Request a Complimentary Assessment</h2>
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">Request a Complimentary Assessment</h2>
           <p className="text-lg text-slate-500 mb-8">
             A 30-minute consultation to evaluate your eligibility and outline a path to recovering your credits.
           </p>

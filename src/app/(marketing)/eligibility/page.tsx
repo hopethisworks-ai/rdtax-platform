@@ -17,7 +17,7 @@ export default function EligibilityPage() {
               <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
               Free 2-Minute Quiz
             </span>
-            <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-normal text-slate-800 mb-4">
               Does Your Business Qualify for R&amp;D Tax Credits?
             </h1>
             <p className="text-slate-500 text-lg">

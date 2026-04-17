@@ -100,7 +100,7 @@ export default function ServicesPage() {
             <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               What We Do
             </span>
-            <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
               Comprehensive R&amp;D Tax Credit Services
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
@@ -143,7 +143,7 @@ export default function ServicesPage() {
                 <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
                   {svc.subtitle}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-2 mb-4">
+                <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-2 mb-4">
                   {svc.title}
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-6">{svc.desc}</p>
@@ -178,7 +178,7 @@ export default function ServicesPage() {
           <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
             Our Pricing
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mt-3 mb-4">
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-4">
             Aligned Incentives. No Upfront Cost.
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -218,7 +218,7 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">
             Not Sure Which Services Apply to You?
           </h2>
           <p className="text-lg text-slate-500 mb-8">

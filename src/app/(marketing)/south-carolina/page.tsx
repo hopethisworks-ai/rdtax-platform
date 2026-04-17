@@ -32,7 +32,7 @@ export default function SouthCarolinaPage() {
                 <span className="w-1.5 h-1.5 bg-teal-400 rounded-full" />
                 South Carolina R&amp;D Tax Credit
               </span>
-              <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-normal text-white leading-tight mb-6">
                 The SC R&amp;D Tax Credit:{" "}
                 <span className="text-teal-400">What Your Business Is Owed.</span>
               </h1>
@@ -80,7 +80,7 @@ export default function SouthCarolinaPage() {
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Key Facts
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
               SC R&amp;D Tax Credit — What You Need to Know
             </h2>
           </div>
@@ -129,7 +129,7 @@ export default function SouthCarolinaPage() {
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Local Expertise
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
               SC Cities We Serve
             </h2>
           </div>
@@ -177,7 +177,7 @@ export default function SouthCarolinaPage() {
             <span className="text-teal-300 text-xs font-bold uppercase tracking-widest">
               Illustrative Example
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-6">
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-3 mb-6">
               SC Manufacturer Recovered Combined Credits
             </h2>
             <p className="text-teal-100 mb-8 leading-relaxed">
@@ -239,7 +239,7 @@ export default function SouthCarolinaPage() {
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">
               Common Questions
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
               Frequently Asked Questions
             </h2>
           </div>
@@ -293,7 +293,7 @@ export default function SouthCarolinaPage() {
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">
             Ready to Claim Your SC R&amp;D Credits?
           </h2>
           <p className="text-lg text-slate-500 mb-8">

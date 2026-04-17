@@ -34,46 +34,48 @@ export default function HomePage() {
           SECTION 1 — HERO
           Headline + subhead + dual CTA + proof strip
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-teal-50">
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-stone-50/50 to-teal-50/60">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(13,148,136,0.08),transparent)]" />
+        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block bg-teal-100 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+              <span className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200/60 text-teal-700 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+                <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
                 R&amp;D Tax Credit Advisory
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6">
-                Rigorous R&amp;D Tax Credit Studies. Defensible Results.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-slate-900 leading-[1.1] mb-8">
+                Rigorous R&amp;D Tax Credit Studies.{" "}
+                <span className="text-teal-700">Defensible Results.</span>
               </h1>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
+              <p className="text-lg text-slate-500 mb-10 leading-relaxed max-w-lg">
                 Alexander &amp; Blake prepares IRS-compliant R&amp;D tax credit studies for South Carolina businesses. We identify every qualifying activity, maximize your credit, and provide full audit defense — with zero upfront cost.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/contact" className="bg-teal-600 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/25">
-                  Get Free Assessment
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Link href="/contact" className="bg-teal-600 text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-teal-700 transition-all shadow-lg shadow-teal-600/20 hover:shadow-xl hover:shadow-teal-600/30">
+                  Schedule Consultation
                 </Link>
-                <Link href="/estimator" className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-teal-600 hover:text-teal-600 transition-colors">
+                <Link href="/estimator" className="border border-stone-300 text-slate-600 font-semibold px-8 py-4 rounded-lg text-center hover:border-teal-600 hover:text-teal-700 transition-all">
                   Estimate My Credit
                 </Link>
               </div>
-              {/* Proof strip */}
-              <div className="flex items-center gap-5 text-sm text-slate-500 flex-wrap">
-                <div className="flex items-center gap-1.5"><CheckCircleSmall /> No upfront cost</div>
-                <div className="flex items-center gap-1.5"><CheckCircleSmall /> Full audit defense</div>
-                <div className="flex items-center gap-1.5"><CheckCircleSmall /> 60-day turnaround</div>
+              <div className="flex items-center gap-6 text-sm text-slate-400 flex-wrap">
+                <div className="flex items-center gap-2"><CheckCircleSmall /> No upfront cost</div>
+                <div className="flex items-center gap-2"><CheckCircleSmall /> Full audit defense</div>
+                <div className="flex items-center gap-2"><CheckCircleSmall /> 60-day turnaround</div>
               </div>
             </div>
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                 <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
                   alt="Business professionals reviewing financial strategy"
                   width={800} height={550}
-                  className="object-cover w-full h-[400px] md:h-[480px]"
+                  className="object-cover w-full h-[400px] md:h-[500px]"
                   priority
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-slate-900 text-white rounded-xl p-5 shadow-xl">
-                <div className="text-3xl font-black">$50K–$300K</div>
+              <div className="absolute -bottom-6 -left-6 bg-white border border-stone-200 rounded-xl p-6 shadow-xl">
+                <div className="text-3xl font-serif text-slate-800">$50K–$300K</div>
                 <p className="text-slate-400 text-sm mt-1">Typical Credit Recovery</p>
               </div>
             </div>
@@ -89,7 +91,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Who We Help</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mt-3">Clients We Serve</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">Clients We Serve</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <Link href="/contact" className="bg-white border border-stone-200 rounded-2xl p-8 hover:shadow-lg transition-shadow group">
@@ -128,7 +130,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Our Process</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">A Disciplined Process. Discovery to Filing in 60 Days.</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">A Disciplined Process. Discovery to Filing in 60 Days.</h2>
           </div>
           <div className="grid md:grid-cols-5 gap-6">
             {[
@@ -157,7 +159,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">What We Do</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 mb-3">Comprehensive R&amp;D Tax Credit Services</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-3">Comprehensive R&amp;D Tax Credit Services</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               From initial identification through filing and audit defense — we cover the full lifecycle of your R&amp;D credit.
             </p>
@@ -196,7 +198,7 @@ export default function HomePage() {
           </div>
           <div>
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Why Alexander &amp; Blake</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 mb-6">Precision Methodology. Built to Withstand Scrutiny.</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-6">Precision Methodology. Built to Withstand Scrutiny.</h2>
             <div className="space-y-5">
               {[
                 { title: "Exclusive R&D Focus", desc: "We do not prepare tax returns. We prepare R&D credit studies — exclusively. That singular focus produces a higher standard of work." },
@@ -225,7 +227,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Results</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mt-3 mb-3">Representative Engagement Outcomes</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-3">Representative Engagement Outcomes</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">Illustrative examples based on typical South Carolina engagements. Individual results depend on qualifying activities and expenses.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -254,7 +256,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-teal-600 text-xs font-bold uppercase tracking-widest">Common Questions</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-3">
             {[
@@ -284,7 +286,7 @@ export default function HomePage() {
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-teal-50 border-t border-teal-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">Request a Complimentary Assessment</h2>
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">Request a Complimentary Assessment</h2>
           <p className="text-lg text-slate-500 mb-10">
             A 30-minute consultation to evaluate your eligibility, estimate your credit, and outline next steps. No obligation.
           </p>
