@@ -4,14 +4,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-400">
+    <footer className="bg-navy text-gray-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-amber-700 rounded-lg flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
                 <span className="text-white font-bold text-sm">AB</span>
               </div>
               <span className="font-semibold text-white text-base">Alexander &amp; Blake</span>
@@ -54,7 +54,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Divider and Copyright */}
-        <div className="pt-8 border-t border-gray-800">
+        <div className="pt-8 border-t border-white/10">
           <p className="text-xs text-gray-500 leading-relaxed">
             &copy; {currentYear} Alexander &amp; Blake. All rights reserved.
           </p>

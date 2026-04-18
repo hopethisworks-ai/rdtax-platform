@@ -69,8 +69,8 @@ export default async function CalculatePage({ params }: { params: Promise<{ id: 
       </div>
       <div className="flex justify-between items-start mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Run Credit Calculation</h1>
-          <p className="text-slate-500 text-sm mt-1">{engagement.client.companyName} - Tax Year {engagement.taxYear}</p>
+          <h1 className="text-2xl font-bold text-navy tracking-tight">Run Credit Calculation</h1>
+          <p className="text-secondary text-sm mt-1">{engagement.client.companyName} - Tax Year {engagement.taxYear}</p>
         </div>
         <span className="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium">
           {qualifiedProjects.length} qualified components
@@ -78,38 +78,38 @@ export default async function CalculatePage({ params }: { params: Promise<{ id: 
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 mb-8">
-        <div className="bg-white border border-slate-200 rounded-xl p-5">
-          <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">Total QRE</div>
-          <div className="text-3xl font-black text-slate-900">${totalQre.toLocaleString()}</div>
-          <div className="text-xs text-slate-400 mt-2">Wage: ${totalWageQre.toLocaleString()} - Supply: ${totalSupplyQre.toLocaleString()} - Contractor: ${totalContractorQre.toLocaleString()}</div>
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <div className="text-xs text-secondary uppercase tracking-wide mb-1">Total QRE</div>
+          <div className="text-3xl font-black text-navy">${totalQre.toLocaleString()}</div>
+          <div className="text-xs text-gray-400 mt-2">Wage: ${totalWageQre.toLocaleString()} - Supply: ${totalSupplyQre.toLocaleString()} - Contractor: ${totalContractorQre.toLocaleString()}</div>
         </div>
         <div className="bg-blue-600 border border-blue-600 rounded-xl p-5">
           <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">Est. Federal Credit</div>
           <div className="text-3xl font-black text-white">${Math.round(estimatedAsc).toLocaleString()}</div>
           <div className="text-xs text-blue-200 mt-2">{priorYearQres.length < 3 ? "ASC Fallback (6%)" : "ASC Method (14%)"}</div>
         </div>
-        <div className="bg-slate-900 border border-slate-900 rounded-xl p-5">
-          <div className="text-xs text-slate-400 uppercase tracking-wide mb-1">Est. SC State Credit</div>
+        <div className="bg-navy border border-navy rounded-xl p-5">
+          <div className="text-xs text-gray-400 uppercase tracking-wide mb-1">Est. SC State Credit</div>
           <div className="text-3xl font-black text-white">
             {operatesInSC ? `$${Math.round(estimatedSc).toLocaleString()}` : "N/A"}
           </div>
-          <div className="text-xs text-slate-400 mt-2">
+          <div className="text-xs text-gray-400 mt-2">
             {operatesInSC ? "5% of SC QREs (§12-6-3375)" : "Not enabled — set SC operations on client page"}
           </div>
         </div>
       </div>
 
       {qualifiedProjects.length === 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
-          <p className="text-amber-800 font-semibold">No qualified business components found.</p>
-          <p className="text-amber-700 text-sm mt-1">Go to Business Components and run the four-part test on your projects before calculating.</p>
-          <Link href={`/admin/engagements/${id}/projects`} className="inline-block mt-3 bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg text-sm">Go to Business Components</Link>
+        <div className="bg-surface border border-primary/20 rounded-xl p-6 mb-8">
+          <p className="text-primary font-semibold">No qualified business components found.</p>
+          <p className="text-primary text-sm mt-1">Go to Business Components and run the four-part test on your projects before calculating.</p>
+          <Link href={`/admin/engagements/${id}/projects`} className="inline-block mt-3 bg-primary text-white font-semibold px-4 py-2 rounded-lg text-sm">Go to Business Components</Link>
         </div>
       )}
 
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="font-bold text-slate-900 mb-4">QRE Breakdown</h2>
+        <div className="bg-white border border-gray-200 rounded-xl p-6">
+          <h2 className="font-bold text-navy mb-4">QRE Breakdown</h2>
           <div className="space-y-3">
             {qualifiedProjects.map(p => {
               const wQre = p.employees.reduce((s, e) => s + Number(e.qreAmount ?? 0), 0);
@@ -117,39 +117,39 @@ export default async function CalculatePage({ params }: { params: Promise<{ id: 
               const cQre = p.contractors.reduce((s, c) => s + Number(c.qualifiedAmount ?? 0), 0);
               const pTotal = wQre + sQre + cQre;
               return (
-                <div key={p.id} className="flex justify-between items-center py-2 border-b border-slate-100 last:border-0">
+                <div key={p.id} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
                   <div>
-                    <p className="text-sm font-medium text-slate-900">{p.name}</p>
-                    <p className="text-xs text-slate-400">{p.businessComponent} - W:${wQre.toLocaleString()} S:${sQre.toLocaleString()} C:${cQre.toLocaleString()}</p>
+                    <p className="text-sm font-medium text-navy">{p.name}</p>
+                    <p className="text-xs text-gray-400">{p.businessComponent} - W:${wQre.toLocaleString()} S:${sQre.toLocaleString()} C:${cQre.toLocaleString()}</p>
                   </div>
-                  <span className="font-bold text-slate-900 text-sm">${pTotal.toLocaleString()}</span>
+                  <span className="font-bold text-navy text-sm">${pTotal.toLocaleString()}</span>
                 </div>
               );
             })}
-            {qualifiedProjects.length === 0 && <p className="text-slate-400 text-sm">No qualified components</p>}
+            {qualifiedProjects.length === 0 && <p className="text-gray-400 text-sm">No qualified components</p>}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="font-bold text-slate-900 mb-4">Prior Year QREs (ASC Method)</h2>
+        <div className="bg-white border border-gray-200 rounded-xl p-6">
+          <h2 className="font-bold text-navy mb-4">Prior Year QREs (ASC Method)</h2>
           <div className="space-y-3 mb-4">
             {priorYearQres.map(q => (
-              <div key={q.id} className="flex justify-between py-2 border-b border-slate-100">
-                <span className="text-sm text-slate-600">Tax Year {q.taxYear}</span>
-                <span className="font-semibold text-slate-900 text-sm">${Number(q.qreAmount).toLocaleString()}</span>
+              <div key={q.id} className="flex justify-between py-2 border-b border-gray-100">
+                <span className="text-sm text-body-text">Tax Year {q.taxYear}</span>
+                <span className="font-semibold text-navy text-sm">${Number(q.qreAmount).toLocaleString()}</span>
               </div>
             ))}
           </div>
-          <div className="bg-slate-50 rounded-lg p-3">
+          <div className="bg-surface rounded-lg p-3">
             <div className="flex justify-between text-sm">
-              <span className="text-slate-600">3-Year Average</span>
-              <span className="font-bold text-slate-900">${Math.round(avgPrior3).toLocaleString()}</span>
+              <span className="text-body-text">3-Year Average</span>
+              <span className="font-bold text-navy">${Math.round(avgPrior3).toLocaleString()}</span>
             </div>
             <div className="flex justify-between text-sm mt-1">
-              <span className="text-slate-600">ASC Base (50% of avg)</span>
-              <span className="font-bold text-slate-900">${Math.round(ascBase).toLocaleString()}</span>
+              <span className="text-body-text">ASC Base (50% of avg)</span>
+              <span className="font-bold text-navy">${Math.round(ascBase).toLocaleString()}</span>
             </div>
             <div className="flex justify-between text-sm mt-1">
-              <span className="text-slate-600">Incremental QRE</span>
+              <span className="text-body-text">Incremental QRE</span>
               <span className="font-bold text-blue-600">${Math.round(ascIncremental).toLocaleString()}</span>
             </div>
           </div>

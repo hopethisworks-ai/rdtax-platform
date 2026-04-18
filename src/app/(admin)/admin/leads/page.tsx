@@ -18,7 +18,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
     CONTACTED: "bg-yellow-100 text-yellow-700",
     QUALIFIED: "bg-green-100 text-green-700",
     PROPOSAL_SENT: "bg-purple-100 text-purple-700",
-    SIGNED: "bg-amber-100 text-amber-800",
+    SIGNED: "bg-surface text-primary",
     LOST: "bg-red-100 text-red-700",
   };
 

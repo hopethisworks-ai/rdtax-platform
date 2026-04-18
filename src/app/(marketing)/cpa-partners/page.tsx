@@ -33,33 +33,33 @@ const ArrowRight = () => (
 
 export default function CpaPartnersPage() {
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-amber-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-surface">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+              <span className="inline-block bg-surface text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
                 For Accounting Professionals
               </span>
-              <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-normal text-navy leading-tight mb-6">
                 Add R&amp;D Tax Credits to Your Practice. Without Adding Complexity.
               </h1>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
+              <p className="text-lg text-body-text mb-8 leading-relaxed max-w-lg">
                 Alexander &amp; Blake serves as a dedicated specialty resource for your practice, delivering audit-ready R&amp;D tax credit studies to your clients. You retain the relationship. We handle the technical work.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="#partner-form"
-                  className="bg-amber-700 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-amber-800 transition-colors shadow-lg shadow-amber-700/25"
+                  className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
                 >
                   Become a Partner
                 </Link>
                 <Link
                   href="/how-it-works"
-                  className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-amber-700 hover:text-amber-700 transition-colors"
+                  className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors"
                 >
                   See How It Works
                 </Link>
@@ -82,23 +82,23 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           KEY STATS
       ═══════════════════════════════════════════ */}
-      <section className="py-10 px-6 bg-cream-200 border-y border-stone-200">
+      <section className="py-10 px-6 bg-surface border-y border-gray-200">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-3xl font-black text-slate-800 mb-1">$50K+</div>
-            <div className="text-slate-500 text-sm">Avg. credit per client</div>
+            <div className="text-3xl font-black text-navy mb-1">$50K+</div>
+            <div className="text-secondary text-sm">Avg. credit per client</div>
           </div>
           <div>
-            <div className="text-3xl font-black text-slate-800 mb-1">20%</div>
-            <div className="text-slate-500 text-sm">Contingency only</div>
+            <div className="text-3xl font-black text-navy mb-1">20%</div>
+            <div className="text-secondary text-sm">Contingency only</div>
           </div>
           <div>
-            <div className="text-3xl font-black text-slate-800 mb-1">60 days</div>
-            <div className="text-slate-500 text-sm">Assessment to filing</div>
+            <div className="text-3xl font-black text-navy mb-1">60 days</div>
+            <div className="text-secondary text-sm">Assessment to filing</div>
           </div>
           <div>
-            <div className="text-3xl font-black text-slate-800 mb-1">100%</div>
-            <div className="text-slate-500 text-sm">Audit defense included</div>
+            <div className="text-3xl font-black text-navy mb-1">100%</div>
+            <div className="text-secondary text-sm">Audit defense included</div>
           </div>
         </div>
       </section>
@@ -106,13 +106,13 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           WHY PARTNER
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-cream">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
               Why Partner With Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">
               We Work For You. Not Instead of You.
             </h2>
           </div>
@@ -122,7 +122,7 @@ export default function CpaPartnersPage() {
                 title: "Your Client, Your Relationship",
                 desc: "We never solicit your clients for other services. We function as an extension of your practice — a specialty resource, not a competitor.",
                 icon: (
-                  <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                   </svg>
                 ),
@@ -131,7 +131,7 @@ export default function CpaPartnersPage() {
                 title: "Complete Technical Execution",
                 desc: "R&D credit studies require deep technical documentation and IRS ATG compliance. We manage the entire process. You review and approve.",
                 icon: (
-                  <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                   </svg>
                 ),
@@ -140,7 +140,7 @@ export default function CpaPartnersPage() {
                 title: "Audit-Ready Documentation",
                 desc: "Every study is built to IRS ATG standards with full business component analysis, four-part test documentation, and funded research review.",
                 icon: (
-                  <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
                   </svg>
                 ),
@@ -149,7 +149,7 @@ export default function CpaPartnersPage() {
                 title: "No Risk to Your Clients",
                 desc: "Our fee is 20% of credits recovered — paid only when your client receives their credit. No upfront cost, no risk.",
                 icon: (
-                  <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
                 ),
@@ -158,7 +158,7 @@ export default function CpaPartnersPage() {
                 title: "Fast Turnaround",
                 desc: "From engagement kickoff to delivered credit study in 60 days. Your clients see results fast.",
                 icon: (
-                  <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
                 ),
@@ -167,7 +167,7 @@ export default function CpaPartnersPage() {
                 title: "South Carolina Focused",
                 desc: "We specialize in SC businesses and stack the federal credit with the SC state credit for maximum value.",
                 icon: (
-                  <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                   </svg>
@@ -176,13 +176,13 @@ export default function CpaPartnersPage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-cream-200 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow"
+                className="bg-surface border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
               >
-                <div className="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center mb-4">
                   {card.icon}
                 </div>
-                <h3 className="font-bold text-slate-900 mb-2">{card.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{card.desc}</p>
+                <h3 className="font-bold text-navy mb-2">{card.title}</h3>
+                <p className="text-body-text text-sm leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -192,13 +192,13 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           HOW IT WORKS — 3-step CPA flow
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-cream-200">
+      <section className="py-20 px-6 bg-surface">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
               How It Works
             </span>
-            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">
               Simple Three-Step Process
             </h2>
           </div>
@@ -220,10 +220,10 @@ export default function CpaPartnersPage() {
                 desc: "We deliver the complete credit study to you. You file Form 6765 with your client's return. Your client collects their credit. We provide full audit defense if the IRS ever questions it.",
               },
             ].map((step) => (
-              <div key={step.num} className="border-l-4 border-amber-700 pl-6">
-                <div className="text-amber-700 font-black text-lg mb-2">{step.num}</div>
-                <h3 className="font-bold text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              <div key={step.num} className="border-l-4 border-primary pl-6">
+                <div className="text-primary font-black text-lg mb-2">{step.num}</div>
+                <h3 className="font-bold text-navy mb-2">{step.title}</h3>
+                <p className="text-body-text text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -233,17 +233,17 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           WHO QUALIFIES — referral checklist
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-cream">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
+              <span className="text-primary text-xs font-bold uppercase tracking-widest">
                 Who Qualifies
               </span>
-              <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-4">
+              <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
                 Which of Your Clients Should You Refer?
               </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
+              <p className="text-body-text mb-6 leading-relaxed">
                 If your client answers yes to any of these, they likely qualify for the R&amp;D tax
                 credit. When in doubt, refer them — our free assessment takes 30 minutes.
               </p>
@@ -258,8 +258,8 @@ export default function CpaPartnersPage() {
                   "They are improving an existing product or process",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckIcon className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700 text-sm">{item}</span>
+                    <CheckIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-body-text text-sm">{item}</span>
                   </div>
                 ))}
               </div>
@@ -293,13 +293,13 @@ export default function CpaPartnersPage() {
         </div>
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-amber-500 text-xs font-bold uppercase tracking-widest">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
               Results
             </span>
             <h2 className="text-3xl md:text-4xl font-normal text-white mt-3 mb-3">
               What Our CPA Partners Are Seeing
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-secondary max-w-2xl mx-auto">
               Illustrative outcomes based on typical SC engagements. Actual results vary by client.
             </p>
           </div>
@@ -331,16 +331,16 @@ export default function CpaPartnersPage() {
                 key={study.type}
                 className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6"
               >
-                <div className="text-3xl font-black text-amber-500 mb-1">{study.amount}</div>
+                <div className="text-3xl font-black text-primary mb-1">{study.amount}</div>
                 <div className="text-white font-bold text-sm mb-3">{study.type}</div>
-                <p className="text-slate-400 text-sm leading-relaxed mb-3">{study.detail}</p>
+                <p className="text-secondary text-sm leading-relaxed mb-3">{study.detail}</p>
                 <span className="inline-block bg-white/10 text-slate-300 text-xs font-medium px-2 py-1 rounded">
                   {study.period}
                 </span>
               </div>
             ))}
           </div>
-          <p className="text-center text-slate-500 text-xs mt-6">
+          <p className="text-center text-secondary text-xs mt-6">
             These examples are illustrative and based on typical engagement profiles. Individual results
             depend on qualifying activities, expenses, and tax situation.
           </p>
@@ -350,11 +350,11 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           PARTNER FORM
       ═══════════════════════════════════════════ */}
-      <section id="partner-form" className="py-20 px-6 bg-amber-50 border-t border-amber-100">
+      <section id="partner-form" className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-normal text-slate-800 mb-4">Become an Alexander &amp; Blake Partner</h2>
-            <p className="text-slate-500 text-lg">
+            <h2 className="text-4xl font-normal text-navy mb-4">Become an Alexander &amp; Blake Partner</h2>
+            <p className="text-secondary text-lg">
               Tell us about your practice and we&apos;ll reach out to discuss the partnership. No
               commitment required.
             </p>

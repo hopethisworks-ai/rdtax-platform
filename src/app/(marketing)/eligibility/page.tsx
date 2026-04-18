@@ -9,54 +9,54 @@ export const metadata = {
 
 export default function EligibilityPage() {
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       <section className="py-16 md:py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-amber-600 rounded-full" />
+            <span className="inline-flex items-center gap-2 bg-surface border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full" />
               Free 2-Minute Quiz
             </span>
-            <h1 className="text-4xl md:text-5xl font-normal text-slate-800 mb-4">
+            <h1 className="text-4xl md:text-5xl font-normal text-navy mb-4">
               Does Your Business Qualify for R&amp;D Tax Credits?
             </h1>
-            <p className="text-slate-500 text-lg">
+            <p className="text-secondary text-lg">
               Answer five questions to receive an immediate preliminary assessment. No obligation, no commitment — just a clear answer.
             </p>
           </div>
-          <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
             <EligibilityQuiz />
           </div>
           <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-            <div className="bg-cream-200 rounded-xl p-4">
-              <div className="text-2xl font-black text-slate-900">2 min</div>
-              <div className="text-slate-500 text-xs mt-1">To complete</div>
+            <div className="bg-surface rounded-xl p-4">
+              <div className="text-2xl font-black text-navy">2 min</div>
+              <div className="text-secondary text-xs mt-1">To complete</div>
             </div>
-            <div className="bg-cream-200 rounded-xl p-4">
-              <div className="text-2xl font-black text-slate-900">Free</div>
-              <div className="text-slate-500 text-xs mt-1">No cost ever</div>
+            <div className="bg-surface rounded-xl p-4">
+              <div className="text-2xl font-black text-navy">Free</div>
+              <div className="text-secondary text-xs mt-1">No cost ever</div>
             </div>
-            <div className="bg-cream-200 rounded-xl p-4">
-              <div className="text-2xl font-black text-slate-900">Instant</div>
-              <div className="text-slate-500 text-xs mt-1">Results</div>
+            <div className="bg-surface rounded-xl p-4">
+              <div className="text-2xl font-black text-navy">Instant</div>
+              <div className="text-secondary text-xs mt-1">Results</div>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="mt-12 bg-cream-200 border border-slate-200 rounded-2xl p-8 text-center">
-            <p className="text-slate-700 text-sm font-medium mb-4">
+          <div className="mt-12 bg-surface border border-gray-200 rounded-2xl p-8 text-center">
+            <p className="text-body-text text-sm font-medium mb-4">
               Prefer to talk to someone? Get a free 30-minute assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="bg-amber-700 hover:bg-amber-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
+                className="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
               >
                 Schedule Free Consultation
               </Link>
               <Link
                 href="/estimator"
-                className="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-2.5 rounded-lg text-sm text-center hover:bg-cream-200 transition-colors"
+                className="bg-white border border-secondary/30 text-body-text font-semibold px-6 py-2.5 rounded-lg text-sm text-center hover:bg-surface transition-colors"
               >
                 Calculate My Credit
               </Link>

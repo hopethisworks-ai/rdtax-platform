@@ -136,34 +136,34 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-1">
-          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-            <div className="flex justify-between items-center px-4 py-3 border-b border-slate-100">
-              <h2 className="font-semibold text-slate-800 text-sm">Components ({projects.length})</h2>
+          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div className="flex justify-between items-center px-4 py-3 border-b border-gray-100">
+              <h2 className="font-semibold text-navy text-sm">Components ({projects.length})</h2>
               <button onClick={()=>setShowAdd(true)} className="text-xs bg-blue-600 text-white px-3 py-1.5 rounded-lg">+ Add</button>
             </div>
             {showAdd && (
-              <div className="p-4 bg-blue-50 border-b border-slate-200">
-                <input value={newName} onChange={e=>{setNewName(e.target.value)}} placeholder="Component name" className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm mb-2" />
-                <select value={newBC} onChange={e=>{setNewBC(e.target.value)}} className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm mb-2 text-slate-500">
+              <div className="p-4 bg-blue-50 border-b border-gray-200">
+                <input value={newName} onChange={e=>{setNewName(e.target.value)}} placeholder="Component name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-2" />
+                <select value={newBC} onChange={e=>{setNewBC(e.target.value)}} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-2 text-secondary">
                   <option value="">Select type</option>
                   {BC.map(bc=><option key={bc}>{bc}</option>)}
                 </select>
                 <div className="flex gap-2">
                   <button onClick={addProject} disabled={saving} className="flex-1 bg-blue-600 text-white text-xs py-2 rounded-lg disabled:opacity-50">Save</button>
-                  <button onClick={()=>setShowAdd(false)} className="flex-1 bg-white border border-slate-200 text-slate-600 text-xs py-2 rounded-lg">Cancel</button>
+                  <button onClick={()=>setShowAdd(false)} className="flex-1 bg-white border border-gray-200 text-body-text text-xs py-2 rounded-lg">Cancel</button>
                 </div>
               </div>
             )}
-            <div className="divide-y divide-slate-100">
-              {projects.length===0 && <div className="p-6 text-center text-slate-400 text-sm">No components yet.</div>}
+            <div className="divide-y divide-gray-100">
+              {projects.length===0 && <div className="p-6 text-center text-gray-400 text-sm">No components yet.</div>}
               {projects.map(p=>(
-                <div key={p.id} onClick={()=>setSelected(p)} className={"px-4 py-3 cursor-pointer hover:bg-slate-50 "+(selected && selected.id===p.id?"bg-blue-50 border-l-4 border-blue-600":"")}>
+                <div key={p.id} onClick={()=>setSelected(p)} className={"px-4 py-3 cursor-pointer hover:bg-surface "+(selected && selected.id===p.id?"bg-blue-50 border-l-4 border-blue-600":"")}>
                   <div className="flex justify-between items-start">
                     <div>
-                      <p className="font-medium text-slate-800 text-sm">{p.name}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{p.businessComponent??"No type"}</p>
+                      <p className="font-medium text-navy text-sm">{p.name}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{p.businessComponent??"No type"}</p>
                     </div>
-                    <span className={"text-xs px-2 py-0.5 rounded-full font-medium "+(p.qualified?"bg-green-100 text-green-700":p.fundedResearch?"bg-red-100 text-red-700":"bg-slate-100 text-slate-500")}>
+                    <span className={"text-xs px-2 py-0.5 rounded-full font-medium "+(p.qualified?"bg-green-100 text-green-700":p.fundedResearch?"bg-red-100 text-red-700":"bg-gray-100 text-secondary")}>
                       {p.fundedResearch?"Excluded":p.qualified?"Qualified":"Pending"}
                     </span>
                   </div>
@@ -174,37 +174,37 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
         </div>
         <div className="md:col-span-2">
           {!selected ? (
-            <div className="bg-white rounded-xl border border-slate-200 p-12 text-center">
-              <p className="text-slate-400">Select a component to view details</p>
+            <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
+              <p className="text-gray-400">Select a component to view details</p>
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="bg-white rounded-xl border border-slate-200 p-6">
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h2 className="font-bold text-slate-900 text-lg">{selected.name}</h2>
-                    <p className="text-slate-400 text-sm">{selected.businessComponent??"Type not set"}</p>
+                    <h2 className="font-bold text-navy text-lg">{selected.name}</h2>
+                    <p className="text-gray-400 text-sm">{selected.businessComponent??"Type not set"}</p>
                   </div>
                   <button onClick={()=>deleteProject(selected.id)} className="text-xs text-red-500 hover:text-red-700">Delete</button>
                 </div>
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="bg-slate-50 rounded-lg p-3"><div className="text-xs text-slate-500 mb-1">Total QRE</div><div className="font-black text-slate-900">${totalQre.toLocaleString()}</div></div>
-                  <div className="bg-slate-50 rounded-lg p-3"><div className="text-xs text-slate-500 mb-1">Four-Part Test</div><div className="font-black text-slate-900">{passCount}/4 passed</div></div>
-                  <div className="bg-slate-50 rounded-lg p-3"><div className="text-xs text-slate-500 mb-1">Wage QRE</div><div className="font-bold text-slate-700">${wageQre.toLocaleString()}</div></div>
-                  <div className="bg-slate-50 rounded-lg p-3"><div className="text-xs text-slate-500 mb-1">Contractor QRE</div><div className="font-bold text-slate-700">${contractorQre.toLocaleString()}</div></div>
+                  <div className="bg-surface rounded-lg p-3"><div className="text-xs text-secondary mb-1">Total QRE</div><div className="font-black text-navy">${totalQre.toLocaleString()}</div></div>
+                  <div className="bg-surface rounded-lg p-3"><div className="text-xs text-secondary mb-1">Four-Part Test</div><div className="font-black text-navy">{passCount}/4 passed</div></div>
+                  <div className="bg-surface rounded-lg p-3"><div className="text-xs text-secondary mb-1">Wage QRE</div><div className="font-bold text-navy">${wageQre.toLocaleString()}</div></div>
+                  <div className="bg-surface rounded-lg p-3"><div className="text-xs text-secondary mb-1">Contractor QRE</div><div className="font-bold text-navy">${contractorQre.toLocaleString()}</div></div>
                 </div>
                 <div className="space-y-2">
-                  <div className="py-2 border-b border-slate-100">
+                  <div className="py-2 border-b border-gray-100">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-slate-600">Internal Use Software</span>
-                      <button onClick={()=>updateProject(selected.id,{internalUseSoftware:!selected.internalUseSoftware})} className={"text-xs px-3 py-1 rounded-full font-medium "+(selected.internalUseSoftware?"bg-amber-100 text-amber-700":"bg-slate-100 text-slate-500")}>
+                      <span className="text-sm text-body-text">Internal Use Software</span>
+                      <button onClick={()=>updateProject(selected.id,{internalUseSoftware:!selected.internalUseSoftware})} className={"text-xs px-3 py-1 rounded-full font-medium "+(selected.internalUseSoftware?"bg-surface text-primary":"bg-gray-100 text-secondary")}>
                         {selected.internalUseSoftware?"Yes -- HToI applies":"No"}
                       </button>
                     </div>
                     {selected.internalUseSoftware && (
-                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-2">
-                        <p className="text-xs font-semibold text-amber-800 mb-1">Higher Threshold of Innovation Test (Tax and Accounting Software Corp, 2002)</p>
-                        <p className="text-xs text-amber-700 mb-3">All three prongs must be satisfied for IUS to qualify under IRC 41(d)(4)(E).</p>
+                      <div className="bg-surface border border-primary/20 rounded-lg p-3 mt-2">
+                        <p className="text-xs font-semibold text-primary mb-1">Higher Threshold of Innovation Test (Tax and Accounting Software Corp, 2002)</p>
+                        <p className="text-xs text-primary mb-3">All three prongs must be satisfied for IUS to qualify under IRC 41(d)(4)(E).</p>
                         {([
                           {key:"iusInnovative", label:"1. Innovative", desc:"Software would result in meaningful reduction in cost or improvement in speed that is substantial and economically significant"},
                           {key:"iusSignificantEconomicRisk", label:"2. Significant Economic Risk", desc:"Development involves substantial uncertainty as to whether adequate return on investment will be realized"},
@@ -212,14 +212,14 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                         ] as {key:string;label:string;desc:string}[]).map(({key,label,desc})=>{
                           const val = selected[key as keyof Project] as boolean|null;
                           return (
-                            <div key={key} className="flex items-start justify-between gap-3 py-2 border-b border-amber-200 last:border-0">
+                            <div key={key} className="flex items-start justify-between gap-3 py-2 border-b border-primary/20 last:border-0">
                               <div className="flex-1">
-                                <p className="text-xs font-semibold text-amber-900">{label}</p>
-                                <p className="text-xs text-amber-700 mt-0.5">{desc}</p>
+                                <p className="text-xs font-semibold text-primary">{label}</p>
+                                <p className="text-xs text-primary mt-0.5">{desc}</p>
                               </div>
                               <div className="flex gap-1 flex-shrink-0">
-                                <button onClick={()=>updateProject(selected.id,{[key]:true})} className={"text-xs px-2 py-1 rounded font-medium "+(val===true?"bg-green-600 text-white":"bg-white text-slate-500 border border-slate-200")}>Yes</button>
-                                <button onClick={()=>updateProject(selected.id,{[key]:false})} className={"text-xs px-2 py-1 rounded font-medium "+(val===false?"bg-red-600 text-white":"bg-white text-slate-500 border border-slate-200")}>No</button>
+                                <button onClick={()=>updateProject(selected.id,{[key]:true})} className={"text-xs px-2 py-1 rounded font-medium "+(val===true?"bg-green-600 text-white":"bg-white text-secondary border border-gray-200")}>Yes</button>
+                                <button onClick={()=>updateProject(selected.id,{[key]:false})} className={"text-xs px-2 py-1 rounded font-medium "+(val===false?"bg-red-600 text-white":"bg-white text-secondary border border-gray-200")}>No</button>
                               </div>
                             </div>
                           );
@@ -232,8 +232,8 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   </div>
                   <div className="py-2">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-slate-600">Funded Research</span>
-                      <button onClick={()=>updateProject(selected.id,{fundedResearch:!selected.fundedResearch})} className={"text-xs px-3 py-1 rounded-full font-medium "+(selected.fundedResearch?"bg-red-100 text-red-700":"bg-slate-100 text-slate-500")}>
+                      <span className="text-sm text-body-text">Funded Research</span>
+                      <button onClick={()=>updateProject(selected.id,{fundedResearch:!selected.fundedResearch})} className={"text-xs px-3 py-1 rounded-full font-medium "+(selected.fundedResearch?"bg-red-100 text-red-700":"bg-gray-100 text-secondary")}>
                         {selected.fundedResearch?"Yes -- Excluded":"No"}
                       </button>
                     </div>
@@ -253,8 +253,8 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-6">
-                <h3 className="font-bold text-slate-900 mb-4">Four-Part Test</h3>
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-bold text-navy mb-4">Four-Part Test</h3>
                 <div className="space-y-3">
                   {([
                     {key:"permittedPurpose", label:"Permitted Purpose", desc:"Intended to develop new or improve existing functionality, performance, reliability, or quality"},
@@ -264,14 +264,14 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   ] as {key:string;label:string;desc:string}[]).map(({key,label,desc})=>{
                     const val = selected[key as keyof Project] as boolean|null;
                     return (
-                      <div key={key} className="flex items-start justify-between gap-4 py-3 border-b border-slate-100 last:border-0">
+                      <div key={key} className="flex items-start justify-between gap-4 py-3 border-b border-gray-100 last:border-0">
                         <div className="flex-1">
-                          <p className="font-medium text-slate-900 text-sm">{label}</p>
-                          <p className="text-slate-400 text-xs mt-0.5 leading-relaxed">{desc}</p>
+                          <p className="font-medium text-navy text-sm">{label}</p>
+                          <p className="text-gray-400 text-xs mt-0.5 leading-relaxed">{desc}</p>
                         </div>
                         <div className="flex gap-2 flex-shrink-0">
-                          <button onClick={()=>updateProject(selected.id,{[key]:true})} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(val===true?"bg-green-600 text-white":"bg-slate-100 text-slate-500")}>Pass</button>
-                          <button onClick={()=>updateProject(selected.id,{[key]:false})} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(val===false?"bg-red-600 text-white":"bg-slate-100 text-slate-500")}>Fail</button>
+                          <button onClick={()=>updateProject(selected.id,{[key]:true})} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(val===true?"bg-green-600 text-white":"bg-gray-100 text-secondary")}>Pass</button>
+                          <button onClick={()=>updateProject(selected.id,{[key]:false})} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(val===false?"bg-red-600 text-white":"bg-gray-100 text-secondary")}>Fail</button>
                         </div>
                       </div>
                     );
@@ -281,18 +281,18 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   Update Qualification Status
                 </button>
                 {passCount < 4 && !selected.fundedResearch && (
-                  <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4">
-                    <p className="text-xs font-semibold text-amber-800 mb-1">Shrink-Back Rule (United Stationers, 1999 / Trinity Industries, 2010)</p>
-                    <p className="text-xs text-amber-700 mb-3">This component failed the four-part test. Consider whether a more specific sub-component qualifies. The shrink-back rule requires narrowing to the most specific level that passes the four-part test.</p>
+                  <div className="mt-4 bg-surface border border-primary/20 rounded-xl p-4">
+                    <p className="text-xs font-semibold text-primary mb-1">Shrink-Back Rule (United Stationers, 1999 / Trinity Industries, 2010)</p>
+                    <p className="text-xs text-primary mb-3">This component failed the four-part test. Consider whether a more specific sub-component qualifies. The shrink-back rule requires narrowing to the most specific level that passes the four-part test.</p>
                     {!showShrinkBack ? (
-                      <button onClick={()=>setShowShrinkBack(true)} className="w-full bg-amber-600 text-white font-semibold py-2 rounded-lg text-xs">Apply Shrink-Back -- Create Sub-Component</button>
+                      <button onClick={()=>setShowShrinkBack(true)} className="w-full bg-primary text-white font-semibold py-2 rounded-lg text-xs">Apply Shrink-Back -- Create Sub-Component</button>
                     ) : (
                       <div className="space-y-2">
-                        <input value={shrinkBackName} onChange={e=>{setShrinkBackName(e.target.value)}} placeholder="Sub-component name" className="w-full border border-amber-300 rounded-lg px-3 py-2 text-xs" />
-                        <textarea value={shrinkBackNarrative} onChange={e=>{setShrinkBackNarrative(e.target.value)}} placeholder="Why does shrink-back apply?" rows={2} className="w-full border border-amber-300 rounded-lg px-3 py-2 text-xs resize-none" />
+                        <input value={shrinkBackName} onChange={e=>{setShrinkBackName(e.target.value)}} placeholder="Sub-component name" className="w-full border border-primary/30 rounded-lg px-3 py-2 text-xs" />
+                        <textarea value={shrinkBackNarrative} onChange={e=>{setShrinkBackNarrative(e.target.value)}} placeholder="Why does shrink-back apply?" rows={2} className="w-full border border-primary/30 rounded-lg px-3 py-2 text-xs resize-none" />
                         <div className="flex gap-2">
-                          <button onClick={applyShrinkBack} className="flex-1 bg-amber-600 text-white font-semibold py-2 rounded-lg text-xs">Create Sub-Component</button>
-                          <button onClick={()=>setShowShrinkBack(false)} className="flex-1 bg-white border border-amber-300 text-amber-700 font-semibold py-2 rounded-lg text-xs">Cancel</button>
+                          <button onClick={applyShrinkBack} className="flex-1 bg-primary text-white font-semibold py-2 rounded-lg text-xs">Create Sub-Component</button>
+                          <button onClick={()=>setShowShrinkBack(false)} className="flex-1 bg-white border border-primary/30 text-primary font-semibold py-2 rounded-lg text-xs">Cancel</button>
                         </div>
                       </div>
                     )}
@@ -305,42 +305,42 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   </div>
                 )}
                 {selected.parentProjectId && (
-                  <div className="mt-3 bg-slate-50 border border-slate-200 rounded-lg p-3">
-                    <p className="text-xs font-semibold text-slate-600">Sub-Component (Shrink-Back)</p>
-                    <p className="text-xs text-slate-500 mt-1">This is a narrowed sub-component created after applying the shrink-back rule.</p>
+                  <div className="mt-3 bg-surface border border-gray-200 rounded-lg p-3">
+                    <p className="text-xs font-semibold text-body-text">Sub-Component (Shrink-Back)</p>
+                    <p className="text-xs text-secondary mt-1">This is a narrowed sub-component created after applying the shrink-back rule.</p>
                   </div>
                 )}
               </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-6">
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="font-bold text-slate-900">Assign Resources</h3>
-                  <button onClick={loadResources} className="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg hover:bg-slate-200">
+                  <h3 className="font-bold text-navy">Assign Resources</h3>
+                  <button onClick={loadResources} className="text-xs bg-gray-100 text-body-text px-3 py-1.5 rounded-lg hover:bg-gray-200">
                     {loadingEmps?"Loading...":"Load Resources"}
                   </button>
                 </div>
                 {allEmps.length>0 && (
                   <div className="space-y-2 mb-4">
-                    <h4 className="font-semibold text-slate-700 text-xs uppercase tracking-wide">Employees</h4>
+                    <h4 className="font-semibold text-navy text-xs uppercase tracking-wide">Employees</h4>
                     {allEmps.map(emp=>{
                       const isAssigned = emp.projectId===selected.id;
                       return (
                         <div key={emp.id}>
-                          <div className={"flex items-center justify-between p-3 rounded-lg border "+(isAssigned?"border-blue-200 bg-blue-50":"border-slate-200")}>
+                          <div className={"flex items-center justify-between p-3 rounded-lg border "+(isAssigned?"border-blue-200 bg-blue-50":"border-gray-200")}>
                             <div>
-                              <p className="text-sm font-medium text-slate-900">{emp.name}</p>
-                              <p className="text-xs text-slate-400">{emp.title??"No title"} - ${Number(emp.compensation).toLocaleString()}</p>
+                              <p className="text-sm font-medium text-navy">{emp.name}</p>
+                              <p className="text-xs text-gray-400">{emp.title??"No title"} - ${Number(emp.compensation).toLocaleString()}</p>
                               {isAssigned && <p className="text-xs text-blue-600 font-medium">QRE: ${Number(emp.qreAmount??0).toLocaleString()}</p>}
                               {isAssigned && emp.methodologyBasis && <p className="text-xs text-green-600">Method: {emp.methodologyBasis}</p>}
                             </div>
                             <div className="flex items-center gap-2">
                               {isAssigned && (
                                 <div className="flex items-center gap-1">
-                                  <input type="number" min="0" max="100" defaultValue={Math.round(Number(emp.qualifiedActivityPct??0)*100)} onBlur={e=>assignEmployee(emp.id,selected.id,Number(e.target.value)/100)} className="w-16 border border-slate-200 rounded px-2 py-1 text-xs text-center" />
-                                  <span className="text-xs text-slate-400">%</span>
+                                  <input type="number" min="0" max="100" defaultValue={Math.round(Number(emp.qualifiedActivityPct??0)*100)} onBlur={e=>assignEmployee(emp.id,selected.id,Number(e.target.value)/100)} className="w-16 border border-gray-200 rounded px-2 py-1 text-xs text-center" />
+                                  <span className="text-xs text-gray-400">%</span>
                                 </div>
                               )}
                               {isAssigned && (
-                                <button onClick={()=>setCohanEmp(cohanEmp===emp.id?null:emp.id)} className="text-xs px-2 py-1.5 rounded-lg font-medium bg-amber-100 text-amber-700">Cohan</button>
+                                <button onClick={()=>setCohanEmp(cohanEmp===emp.id?null:emp.id)} className="text-xs px-2 py-1.5 rounded-lg font-medium bg-surface text-primary">Cohan</button>
                               )}
                               <button onClick={()=>assignEmployee(emp.id,isAssigned?null:selected.id,isAssigned?0:0.5)} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(isAssigned?"bg-red-100 text-red-700":"bg-blue-600 text-white")}>
                                 {isAssigned?"Remove":"Assign"}
@@ -348,13 +348,13 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                             </div>
                           </div>
                           {isAssigned && cohanEmp===emp.id && (
-                            <div className="border border-amber-200 rounded-lg p-3 bg-amber-50 mt-1">
-                              <p className="text-xs font-semibold text-amber-800 mb-1">Cohan Documentation (Cohan v. Comm. 1930, Suder v. Comm. 2014)</p>
-                              <p className="text-xs text-amber-700 mb-2">Document the credible basis for this time allocation. Courts accept reasonable estimates when a credible basis exists and is documented. (Ekman v. Comm. 1999)</p>
+                            <div className="border border-primary/20 rounded-lg p-3 bg-surface mt-1">
+                              <p className="text-xs font-semibold text-primary mb-1">Cohan Documentation (Cohan v. Comm. 1930, Suder v. Comm. 2014)</p>
+                              <p className="text-xs text-primary mb-2">Document the credible basis for this time allocation. Courts accept reasonable estimates when a credible basis exists and is documented. (Ekman v. Comm. 1999)</p>
                               <div className="space-y-2">
                                 <div>
-                                  <label className="block text-xs font-semibold text-amber-900 mb-1">Methodology Basis</label>
-                                  <select defaultValue={emp.methodologyBasis??""} onChange={e=>{fetch("/api/employees/"+emp.id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({methodologyBasis:e.target.value})}).then(r=>r.json()).then(u=>setAllEmps(prev=>prev.map(em=>em.id===emp.id?{...em,...u}:em)));}} className="w-full border border-amber-300 rounded-lg px-3 py-1.5 text-xs bg-white">
+                                  <label className="block text-xs font-semibold text-primary mb-1">Methodology Basis</label>
+                                  <select defaultValue={emp.methodologyBasis??""} onChange={e=>{fetch("/api/employees/"+emp.id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({methodologyBasis:e.target.value})}).then(r=>r.json()).then(u=>setAllEmps(prev=>prev.map(em=>em.id===emp.id?{...em,...u}:em)));}} className="w-full border border-primary/30 rounded-lg px-3 py-1.5 text-xs bg-white">
                                     <option value="">Select methodology</option>
                                     <option value="time-tracking">Time Tracking -- Employee tracked actual hours</option>
                                     <option value="project-estimate">Project Estimate -- Manager estimated R&D time</option>
@@ -363,8 +363,8 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                                   </select>
                                 </div>
                                 <div>
-                                  <label className="block text-xs font-semibold text-amber-900 mb-1">Credible Basis Narrative</label>
-                                  <textarea defaultValue={emp.supportSource??""} onBlur={e=>{fetch("/api/employees/"+emp.id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({supportSource:e.target.value})}).then(r=>r.json()).then(u=>setAllEmps(prev=>prev.map(em=>em.id===emp.id?{...em,...u}:em)));}} placeholder="Describe the credible basis. Example: Employee maintained weekly time logs showing 85% of time on Project X development." rows={3} className="w-full border border-amber-300 rounded-lg px-3 py-2 text-xs bg-white resize-none" />
+                                  <label className="block text-xs font-semibold text-primary mb-1">Credible Basis Narrative</label>
+                                  <textarea defaultValue={emp.supportSource??""} onBlur={e=>{fetch("/api/employees/"+emp.id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({supportSource:e.target.value})}).then(r=>r.json()).then(u=>setAllEmps(prev=>prev.map(em=>em.id===emp.id?{...em,...u}:em)));}} placeholder="Describe the credible basis. Example: Employee maintained weekly time logs showing 85% of time on Project X development." rows={3} className="w-full border border-primary/30 rounded-lg px-3 py-2 text-xs bg-white resize-none" />
                                 </div>
                                 {!emp.methodologyBasis && <div className="bg-red-50 border border-red-200 rounded p-2"><p className="text-xs text-red-700 font-semibold">No methodology -- audit risk</p></div>}
                                 {emp.methodologyBasis && emp.supportSource && <div className="bg-green-50 border border-green-200 rounded p-2"><p className="text-xs text-green-700 font-semibold">Cohan documentation complete</p></div>}
@@ -377,16 +377,16 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   </div>
                 )}
                 {allContractors.length>0 && (
-                  <div className="mt-4 pt-4 border-t border-slate-100">
-                    <h4 className="font-semibold text-slate-700 text-xs uppercase tracking-wide mb-2">Contractors</h4>
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <h4 className="font-semibold text-navy text-xs uppercase tracking-wide mb-2">Contractors</h4>
                     <div className="space-y-2">
                       {allContractors.map(con=>{
                         const isAssigned = con.projectId===selected.id;
                         return (
-                          <div key={con.id} className={"flex items-center justify-between p-3 rounded-lg border "+(isAssigned?"border-blue-200 bg-blue-50":"border-slate-200")}>
+                          <div key={con.id} className={"flex items-center justify-between p-3 rounded-lg border "+(isAssigned?"border-blue-200 bg-blue-50":"border-gray-200")}>
                             <div>
-                              <p className="text-sm font-medium text-slate-900">{con.vendorName}</p>
-                              <p className="text-xs text-slate-400">Amount: ${Number(con.amount).toLocaleString()} - QRE: ${Number(con.qualifiedAmount??0).toLocaleString()}</p>
+                              <p className="text-sm font-medium text-navy">{con.vendorName}</p>
+                              <p className="text-xs text-gray-400">Amount: ${Number(con.amount).toLocaleString()} - QRE: ${Number(con.qualifiedAmount??0).toLocaleString()}</p>
                               {con.fundedResearchFlag && <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full">Funded Research</span>}
                               {con.qualifiedFlag && <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Qualified</span>}
                             </div>
@@ -394,7 +394,7 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                               <button onClick={async()=>{const res=await fetch("/api/contractors/"+con.id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({projectId:isAssigned?null:selected.id})});if(res.ok){const u=await res.json();setAllContractors(prev=>prev.map(c=>c.id===con.id?{...c,...u}:c));}}} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(isAssigned?"bg-red-100 text-red-700":"bg-blue-600 text-white")}>
                                 {isAssigned?"Remove":"Assign"}
                               </button>
-                              <button onClick={()=>setFairchildCon(con)} className="text-xs px-2 py-1.5 rounded-lg font-medium bg-slate-100 text-slate-600 hover:bg-blue-50 hover:text-blue-600">Fairchild</button>
+                              <button onClick={()=>setFairchildCon(con)} className="text-xs px-2 py-1.5 rounded-lg font-medium bg-gray-100 text-body-text hover:bg-blue-50 hover:text-blue-600">Fairchild</button>
                             </div>
                           </div>
                         );
@@ -403,16 +403,16 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                   </div>
                 )}
                 {allSupplies.length>0 && (
-                  <div className="mt-4 pt-4 border-t border-slate-100">
-                    <h4 className="font-semibold text-slate-700 text-xs uppercase tracking-wide mb-2">Supplies</h4>
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <h4 className="font-semibold text-navy text-xs uppercase tracking-wide mb-2">Supplies</h4>
                     <div className="space-y-2">
                       {allSupplies.map(sup=>{
                         const isAssigned = sup.projectId===selected.id;
                         return (
-                          <div key={sup.id} className={"flex items-center justify-between p-3 rounded-lg border "+(isAssigned?"border-blue-200 bg-blue-50":"border-slate-200")}>
+                          <div key={sup.id} className={"flex items-center justify-between p-3 rounded-lg border "+(isAssigned?"border-blue-200 bg-blue-50":"border-gray-200")}>
                             <div>
-                              <p className="text-sm font-medium text-slate-900">{sup.description}</p>
-                              <p className="text-xs text-slate-400">Amount: ${Number(sup.amount).toLocaleString()} - {sup.qualified?"Qualified":"Pending"}</p>
+                              <p className="text-sm font-medium text-navy">{sup.description}</p>
+                              <p className="text-xs text-gray-400">Amount: ${Number(sup.amount).toLocaleString()} - {sup.qualified?"Qualified":"Pending"}</p>
                             </div>
                             <button onClick={async()=>{const res=await fetch("/api/supplies/"+sup.id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({projectId:isAssigned?null:selected.id})});if(res.ok){const u=await res.json();setAllSupplies(prev=>prev.map(s=>s.id===sup.id?{...s,...u}:s));}}} className={"text-xs px-3 py-1.5 rounded-lg font-medium "+(isAssigned?"bg-red-100 text-red-700":"bg-blue-600 text-white")}>
                               {isAssigned?"Remove":"Assign"}
@@ -423,15 +423,15 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                     </div>
                   </div>
                 )}
-                <div className="pt-4 border-t border-slate-100 space-y-2 mt-4">
-                  <div className="flex justify-between py-1"><span className="text-sm text-slate-600">Wage QRE ({selected.employees.length} emp)</span><span className="font-semibold text-slate-900 text-sm">${wageQre.toLocaleString()}</span></div>
-                  <div className="flex justify-between py-1"><span className="text-sm text-slate-600">Supply QRE</span><span className="font-semibold text-slate-900 text-sm">${supplyQre.toLocaleString()}</span></div>
-                  <div className="flex justify-between py-1"><span className="text-sm text-slate-600">Contractor QRE</span><span className="font-semibold text-slate-900 text-sm">${contractorQre.toLocaleString()}</span></div>
-                  <div className="flex justify-between py-2 border-t border-slate-200"><span className="font-bold text-slate-900 text-sm">Total QRE</span><span className="font-black text-blue-600">${totalQre.toLocaleString()}</span></div>
+                <div className="pt-4 border-t border-gray-100 space-y-2 mt-4">
+                  <div className="flex justify-between py-1"><span className="text-sm text-body-text">Wage QRE ({selected.employees.length} emp)</span><span className="font-semibold text-navy text-sm">${wageQre.toLocaleString()}</span></div>
+                  <div className="flex justify-between py-1"><span className="text-sm text-body-text">Supply QRE</span><span className="font-semibold text-navy text-sm">${supplyQre.toLocaleString()}</span></div>
+                  <div className="flex justify-between py-1"><span className="text-sm text-body-text">Contractor QRE</span><span className="font-semibold text-navy text-sm">${contractorQre.toLocaleString()}</span></div>
+                  <div className="flex justify-between py-2 border-t border-gray-200"><span className="font-bold text-navy text-sm">Total QRE</span><span className="font-black text-blue-600">${totalQre.toLocaleString()}</span></div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-6">
-                <h3 className="font-bold text-slate-900 mb-4">Documentation Narratives</h3>
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-bold text-navy mb-4">Documentation Narratives</h3>
                 <div className="space-y-4">
                   {([
                     {key:"uncertaintyNarrative", label:"Uncertainty Narrative", placeholder:"Describe the technical uncertainty that existed at the start of this project. (Cohan v. Comm., 1930)"},
@@ -439,8 +439,8 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                     {key:"experimentationNarrative", label:"Experimentation Narrative", placeholder:"Describe the systematic process used to evaluate alternatives. (Suder v. Comm., 2014)"},
                   ] as {key:string;label:string;placeholder:string}[]).map(({key,label,placeholder})=>(
                     <div key={key}>
-                      <label className="block text-sm font-semibold text-slate-700 mb-1">{label}</label>
-                      <textarea defaultValue={(selected[key as keyof Project] as string)??""} onBlur={e=>updateProject(selected.id,{[key]:e.target.value})} placeholder={placeholder} rows={3} className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                      <label className="block text-sm font-semibold text-navy mb-1">{label}</label>
+                      <textarea defaultValue={(selected[key as keyof Project] as string)??""} onBlur={e=>updateProject(selected.id,{[key]:e.target.value})} placeholder={placeholder} rows={3} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
                     </div>
                   ))}
                 </div>
@@ -452,12 +452,12 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
       {fairchildCon && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
-            <div className="flex justify-between items-start p-6 border-b border-slate-200">
+            <div className="flex justify-between items-start p-6 border-b border-gray-200">
               <div>
-                <h2 className="font-black text-slate-900 text-lg">Fairchild Funded Research Analysis</h2>
-                <p className="text-slate-500 text-sm mt-1">{fairchildCon.vendorName} -- ${Number(fairchildCon.amount).toLocaleString()}</p>
+                <h2 className="font-black text-navy text-lg">Fairchild Funded Research Analysis</h2>
+                <p className="text-secondary text-sm mt-1">{fairchildCon.vendorName} -- ${Number(fairchildCon.amount).toLocaleString()}</p>
               </div>
-              <button onClick={()=>setFairchildCon(null)} className="text-slate-400 hover:text-slate-600 text-2xl font-bold leading-none">x</button>
+              <button onClick={()=>setFairchildCon(null)} className="text-gray-400 hover:text-body-text text-2xl font-bold leading-none">x</button>
             </div>
             <div className="p-6">
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
@@ -474,20 +474,20 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                 ] as {key:string;label:string;desc:string;positive:string;negative:string}[]).map(({key,label,desc,positive,negative})=>{
                   const val = fairchildCon[key as keyof Contractor] as boolean|null;
                   return (
-                    <div key={key} className="border border-slate-200 rounded-xl p-4">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">{label}</p>
-                      <p className="text-slate-500 text-xs mb-3">{desc}</p>
+                    <div key={key} className="border border-gray-200 rounded-xl p-4">
+                      <p className="font-semibold text-navy text-sm mb-1">{label}</p>
+                      <p className="text-secondary text-xs mb-3">{desc}</p>
                       <div className="flex gap-2">
-                        <button onClick={()=>updateContractor(fairchildCon.id,{[key]:true})} className={"flex-1 text-xs py-2 px-3 rounded-lg font-medium border "+(val===true?"bg-green-600 text-white border-green-600":"bg-white text-slate-600 border-slate-200")}>{positive}</button>
-                        <button onClick={()=>updateContractor(fairchildCon.id,{[key]:false})} className={"flex-1 text-xs py-2 px-3 rounded-lg font-medium border "+(val===false?"bg-red-600 text-white border-red-600":"bg-white text-slate-600 border-slate-200")}>{negative}</button>
+                        <button onClick={()=>updateContractor(fairchildCon.id,{[key]:true})} className={"flex-1 text-xs py-2 px-3 rounded-lg font-medium border "+(val===true?"bg-green-600 text-white border-green-600":"bg-white text-body-text border-gray-200")}>{positive}</button>
+                        <button onClick={()=>updateContractor(fairchildCon.id,{[key]:false})} className={"flex-1 text-xs py-2 px-3 rounded-lg font-medium border "+(val===false?"bg-red-600 text-white border-red-600":"bg-white text-body-text border-gray-200")}>{negative}</button>
                       </div>
                     </div>
                   );
                 })}
               </div>
               <div className="mt-4">
-                <label className="block text-sm font-semibold text-slate-700 mb-1">Contract Review Notes</label>
-                <textarea defaultValue={fairchildCon.contractReviewNotes??""} onBlur={e=>updateContractor(fairchildCon.id,{contractReviewNotes:e.target.value,contractReviewComplete:true})} placeholder="Document your funded research analysis here..." rows={3} className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                <label className="block text-sm font-semibold text-navy mb-1">Contract Review Notes</label>
+                <textarea defaultValue={fairchildCon.contractReviewNotes??""} onBlur={e=>updateContractor(fairchildCon.id,{contractReviewNotes:e.target.value,contractReviewComplete:true})} placeholder="Document your funded research analysis here..." rows={3} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
               </div>
               <div className="mt-4 p-4 rounded-xl border-2 border-dashed">
                 {(()=>{
@@ -507,7 +507,7 @@ export default function ProjectsClient({ engagementId, initialProjects }:{ engag
                       <button onClick={()=>{updateContractor(fairchildCon.id,{fundedResearchFlag:false,qualifiedFlag:true});setFairchildCon(null);}} className="mt-3 bg-green-600 text-white font-semibold px-4 py-2 rounded-lg text-sm">Mark as Qualified</button>
                     </div>
                   );
-                  return <p className="text-center text-slate-500 text-sm">Answer the questions above to determine qualification.</p>;
+                  return <p className="text-center text-secondary text-sm">Answer the questions above to determine qualification.</p>;
                 })()}
               </div>
             </div>

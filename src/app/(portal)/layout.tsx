@@ -22,7 +22,7 @@ export default async function PortalLayout({ children }: { children: React.React
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center gap-8">
               <Link href="/portal" className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-amber-700 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">AB</span>
                 </div>
                 <span className="font-bold text-sm text-gray-900">Client Portal</span>

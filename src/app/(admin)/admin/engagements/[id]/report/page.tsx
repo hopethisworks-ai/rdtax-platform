@@ -30,17 +30,17 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
       <EngagementNav id={id} />
       <div className="mb-6 flex items-center gap-3">
         <Link href={`/admin/engagements/${id}`} className="text-sm text-blue-600 hover:underline">Back to Engagement</Link>
-        <span className="text-slate-300">/</span>
-        <span className="text-sm text-slate-500">Report</span>
+        <span className="text-gray-300">/</span>
+        <span className="text-sm text-secondary">Report</span>
       </div>
       <div className="flex justify-between items-start mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">{eng.client.companyName}</h1>
-          <p className="text-slate-500 mt-1">Tax Year {eng.taxYear} -- Credit Study Report</p>
+          <h1 className="text-2xl font-bold text-navy">{eng.client.companyName}</h1>
+          <p className="text-secondary mt-1">Tax Year {eng.taxYear} -- Credit Study Report</p>
         </div>
         {!calc && (
-          <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2">
-            <p className="text-amber-700 text-sm font-medium">Run calculation before generating report</p>
+          <div className="bg-surface border border-primary/20 rounded-lg px-4 py-2">
+            <p className="text-primary text-sm font-medium">Run calculation before generating report</p>
           </div>
         )}
       </div>
@@ -58,58 +58,58 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             <p className="text-xs text-purple-600 font-semibold uppercase tracking-wide">SC Credit</p>
             <p className="text-2xl font-black text-purple-900 mt-1">${Number(calc.scAllowedCredit ?? 0).toLocaleString()}</p>
           </div>
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
-            <p className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Method</p>
-            <p className="text-2xl font-black text-slate-900 mt-1">{calc.method}</p>
+          <div className="bg-surface border border-gray-200 rounded-xl p-4">
+            <p className="text-xs text-body-text font-semibold uppercase tracking-wide">Method</p>
+            <p className="text-2xl font-black text-navy mt-1">{calc.method}</p>
           </div>
         </div>
       )}
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="font-bold text-slate-900 mb-4">Generate New Report</h2>
+        <div className="bg-white border border-gray-200 rounded-xl p-6">
+          <h2 className="font-bold text-navy mb-4">Generate New Report</h2>
           {calc ? (
             <ReportGenerator engagementId={id} calculationId={calc.id} clientName={eng.client.companyName} taxYear={eng.taxYear} />
           ) : (
             <div className="text-center py-8">
-              <p className="text-slate-400 text-sm mb-4">No calculation found. Run a calculation first.</p>
+              <p className="text-gray-400 text-sm mb-4">No calculation found. Run a calculation first.</p>
               <Link href={`/admin/engagements/${id}/calculate`} className="bg-blue-600 text-white font-semibold px-6 py-2.5 rounded-lg text-sm">Run Calculation</Link>
             </div>
           )}
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="font-bold text-slate-900 mb-4">Report History ({eng.reports.length})</h2>
+        <div className="bg-white border border-gray-200 rounded-xl p-6">
+          <h2 className="font-bold text-navy mb-4">Report History ({eng.reports.length})</h2>
           {eng.reports.length === 0 ? (
-            <p className="text-slate-400 text-sm text-center py-8">No reports generated yet.</p>
+            <p className="text-gray-400 text-sm text-center py-8">No reports generated yet.</p>
           ) : (
             <div className="space-y-3">
               {eng.reports.map(r => (
-                <div key={r.id} className="border border-slate-100 rounded-lg p-4">
+                <div key={r.id} className="border border-gray-100 rounded-lg p-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <p className="font-semibold text-slate-900 text-sm">{r.title}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{r.reportType.replace(/_/g," ")} -- v{r.version}</p>
-                      <p className="text-xs text-slate-400">{new Date(r.createdAt).toLocaleDateString()}</p>
+                      <p className="font-semibold text-navy text-sm">{r.title}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{r.reportType.replace(/_/g," ")} -- v{r.version}</p>
+                      <p className="text-xs text-gray-400">{new Date(r.createdAt).toLocaleDateString()}</p>
                     </div>
                     <div className="flex flex-col items-end gap-1">
                       {r.publishedAt ? (
                         <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Published</span>
                       ) : (
-                        <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium">Draft</span>
+                        <span className="text-xs bg-surface text-primary px-2 py-0.5 rounded-full font-medium">Draft</span>
                       )}
                       <Link href={`/admin/engagements/${id}/report/${r.id}`} className="text-xs text-blue-600 hover:underline mt-1 block">View Report</Link>
                     </div>
                   </div>
-                  {r.notes && <p className="text-xs text-slate-500 mt-2">{r.notes}</p>}
+                  {r.notes && <p className="text-xs text-secondary mt-2">{r.notes}</p>}
                 </div>
               ))}
             </div>
           )}
         </div>
       </div>
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
-        <h2 className="font-bold text-slate-900 mb-4">Qualified Business Components ({eng.projects.length})</h2>
+      <div className="bg-white border border-gray-200 rounded-xl p-6">
+        <h2 className="font-bold text-navy mb-4">Qualified Business Components ({eng.projects.length})</h2>
         {eng.projects.length === 0 ? (
-          <p className="text-slate-400 text-sm">No qualified components yet. Complete the business component analysis first.</p>
+          <p className="text-gray-400 text-sm">No qualified components yet. Complete the business component analysis first.</p>
         ) : (
           <div className="space-y-3">
             {eng.projects.map(p => {
@@ -118,14 +118,14 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
               const contractorQre = p.contractors.reduce((s,c) => s + Number(c.qualifiedAmount ?? 0), 0);
               const total = wageQre + supplyQre + contractorQre;
               return (
-                <div key={p.id} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
+                <div key={p.id} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
                   <div>
-                    <p className="font-medium text-slate-900 text-sm">{p.name}</p>
-                    <p className="text-xs text-slate-400">{p.businessComponent ?? "No type"}</p>
+                    <p className="font-medium text-navy text-sm">{p.name}</p>
+                    <p className="text-xs text-gray-400">{p.businessComponent ?? "No type"}</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-bold text-slate-900 text-sm">${total.toLocaleString()}</p>
-                    <p className="text-xs text-slate-400">QRE</p>
+                    <p className="font-bold text-navy text-sm">${total.toLocaleString()}</p>
+                    <p className="text-xs text-gray-400">QRE</p>
                   </div>
                 </div>
               );

@@ -13,20 +13,15 @@ const config: Config = {
         serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       colors: {
-        brand: {
-          50: "#fffbeb",
-          100: "#fef3c7",
-          500: "#b45309",
-          600: "#92400e",
-          700: "#78350f",
-          900: "#451a03",
+        navy: "#102A43",
+        "body-text": "#243B53",
+        primary: {
+          DEFAULT: "#2C7A7B",
+          light: "#E6FFFA",
+          dark: "#225F60",
         },
-        cream: {
-          DEFAULT: "#FAF8F5",
-          50: "#FDFCFA",
-          100: "#FAF8F5",
-          200: "#F5F0EB",
-        },
+        secondary: "#486581",
+        surface: "#F5F7FA",
       },
     },
   },

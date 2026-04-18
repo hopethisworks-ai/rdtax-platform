@@ -90,33 +90,33 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-amber-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-surface">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-surface text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               What We Do
             </span>
-            <h1 className="text-4xl md:text-5xl font-normal text-slate-800 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-normal text-navy leading-tight mb-6">
               Comprehensive R&amp;D Tax Credit Services
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
+            <p className="text-lg text-body-text leading-relaxed max-w-2xl mb-8">
               From initial identification through filing and audit defense — we cover the full
               lifecycle of your R&amp;D tax credit. Federal, state, current year, and amended returns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-amber-700 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-amber-800 transition-colors shadow-lg shadow-amber-700/25"
+                className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
               >
                 Get Free Assessment
               </Link>
               <Link
                 href="/how-it-works"
-                className="border-2 border-slate-300 text-slate-700 font-bold px-8 py-4 rounded-xl text-center hover:border-amber-700 hover:text-amber-700 transition-colors"
+                className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors"
               >
                 See Our Process
               </Link>
@@ -131,7 +131,7 @@ export default function ServicesPage() {
       {services.map((svc, i) => (
         <section
           key={svc.title}
-          className={`py-20 px-6 ${i % 2 === 0 ? "bg-cream" : "bg-cream-200"}`}
+          className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-surface"}`}
         >
           <div className="max-w-6xl mx-auto">
             <div
@@ -140,18 +140,18 @@ export default function ServicesPage() {
               }`}
             >
               <div>
-                <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
+                <span className="text-primary text-xs font-bold uppercase tracking-widest">
                   {svc.subtitle}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-2 mb-4">
+                <h2 className="text-3xl md:text-4xl font-normal text-navy mt-2 mb-4">
                   {svc.title}
                 </h2>
-                <p className="text-slate-600 leading-relaxed mb-6">{svc.desc}</p>
+                <p className="text-body-text leading-relaxed mb-6">{svc.desc}</p>
                 <div className="space-y-3">
                   {svc.items.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckIcon className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700 text-sm">{item}</span>
+                      <CheckIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-body-text text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -173,38 +173,38 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           PRICING MODEL
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-cream-200 border-y border-stone-200">
+      <section className="py-20 px-6 bg-surface border-y border-gray-200">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">
             Our Pricing
           </span>
-          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3 mb-4">
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
             Aligned Incentives. No Upfront Cost.
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
             We operate on a contingency basis — 20% of credits successfully identified and recovered. If
             we identify no qualifying credits, there is no charge.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-amber-700 mb-2">$0</div>
-              <div className="text-slate-800 font-bold text-sm mb-2">Upfront Cost</div>
-              <p className="text-slate-500 text-sm leading-relaxed">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
+              <div className="text-3xl font-black text-primary mb-2">$0</div>
+              <div className="text-navy font-bold text-sm mb-2">Upfront Cost</div>
+              <p className="text-secondary text-sm leading-relaxed">
                 No retainers, no hourly fees, no deposits. The initial assessment is complimentary and the engagement begins at zero cost.
               </p>
             </div>
-            <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-amber-700 mb-2">20%</div>
-              <div className="text-slate-800 font-bold text-sm mb-2">Contingency Fee</div>
-              <p className="text-slate-500 text-sm leading-relaxed">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
+              <div className="text-3xl font-black text-primary mb-2">20%</div>
+              <div className="text-navy font-bold text-sm mb-2">Contingency Fee</div>
+              <p className="text-secondary text-sm leading-relaxed">
                 We earn 20% of the credits we identify. Paid only after your credit is filed and
                 approved. Our incentives are aligned with yours.
               </p>
             </div>
-            <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-amber-700 mb-2">100%</div>
-              <div className="text-slate-800 font-bold text-sm mb-2">Audit Defense</div>
-              <p className="text-slate-500 text-sm leading-relaxed">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
+              <div className="text-3xl font-black text-primary mb-2">100%</div>
+              <div className="text-navy font-bold text-sm mb-2">Audit Defense</div>
+              <p className="text-secondary text-sm leading-relaxed">
                 Full IRS audit representation is included with every credit study at no additional
                 cost. We stand behind our work.
               </p>
@@ -216,25 +216,25 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-amber-50 border-t border-amber-100">
+      <section className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">
             Not Sure Which Services Apply to You?
           </h2>
-          <p className="text-lg text-slate-500 mb-8">
+          <p className="text-lg text-secondary mb-8">
             Our free 30-minute assessment covers everything. We&apos;ll identify exactly which credits
             and services apply to your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-amber-700 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-amber-800 transition-colors shadow-md"
+              className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
             >
               Schedule Free Assessment
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-stone-300 text-slate-700 font-bold px-10 py-4 rounded-xl text-lg hover:border-amber-700 hover:text-amber-700 transition-colors"
+              className="border-2 border-secondary/30 text-body-text font-bold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
             >
               Estimate My Credit
             </Link>

@@ -8,18 +8,18 @@ export const metadata = {
 
 export default function ManufacturingPage() {
   return (
-    <div className="bg-cream">
-      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-amber-950 to-slate-900">
+    <div className="bg-white">
+      <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-slate-900 via-navy to-slate-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-amber-600/20 border border-amber-500/30 text-amber-200 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary-light text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-surface0 rounded-full"></span>
               Manufacturing Industry
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">SC Manufacturers Qualify for <span className="text-amber-500">Significant R&D Credits.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">SC Manufacturers Qualify for <span className="text-primary">Significant R&D Credits.</span></h1>
             <p className="text-lg text-slate-300 mb-8">If your team improves processes, develops new products, or solves engineering problems, you are likely leaving thousands in unclaimed tax credits on the table every year.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/estimator" className="bg-amber-700 text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
+              <Link href="/estimator" className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
               <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Free Consultation</Link>
             </div>
           </div>
@@ -29,8 +29,8 @@ export default function ManufacturingPage() {
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-slate-900">What Manufacturing Activities Qualify?</h2>
-            <p className="text-slate-500 mt-3 text-lg">You may be surprised how much of your everyday work qualifies</p>
+            <h2 className="text-4xl font-black text-navy">What Manufacturing Activities Qualify?</h2>
+            <p className="text-secondary mt-3 text-lg">You may be surprised how much of your everyday work qualifies</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -41,9 +41,9 @@ export default function ManufacturingPage() {
               { title: "Materials Testing", desc: "Testing new materials, compounds, or formulations to determine suitability for manufacturing applications." },
               { title: "Quality Engineering", desc: "Developing new quality control methodologies, testing protocols, and inspection systems to meet tighter tolerances." },
             ].map((item) => (
-              <div key={item.title} className="bg-white border border-slate-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 className="font-bold text-navy mb-2">{item.title}</h3>
+                <p className="text-secondary text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -52,30 +52,30 @@ export default function ManufacturingPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-black text-slate-900 mb-6">Real Results for SC Manufacturers</h2>
-            <p className="text-slate-600 mb-8 leading-relaxed">A Spartanburg-area manufacturer had filed taxes for 8 years without ever claiming R&D credits. After a free assessment, we identified $1.2M in qualifying research expenses and recovered $197,000 in combined federal and SC state credits.</p>
+            <h2 className="text-4xl font-black text-navy mb-6">Real Results for SC Manufacturers</h2>
+            <p className="text-body-text mb-8 leading-relaxed">A Spartanburg-area manufacturer had filed taxes for 8 years without ever claiming R&D credits. After a free assessment, we identified $1.2M in qualifying research expenses and recovered $197,000 in combined federal and SC state credits.</p>
             <div className="space-y-3">
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Industry</span><span className="font-bold text-slate-900 text-sm">Automotive Parts Manufacturing</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Location</span><span className="font-bold text-slate-900 text-sm">Spartanburg, SC</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Qualifying Expenses</span><span className="font-bold text-slate-900 text-sm">$1,200,000</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">Federal Credit</span><span className="font-bold text-slate-900 text-sm">$137,000</span></div>
-              <div className="flex justify-between py-3 border-b border-slate-200"><span className="text-slate-500 text-sm">SC State Credit</span><span className="font-bold text-slate-900 text-sm">$60,000</span></div>
-              <div className="flex justify-between py-3"><span className="text-slate-900 font-bold text-sm">Total Recovered</span><span className="font-black text-amber-700 text-xl">$197,000</span></div>
+              <div className="flex justify-between py-3 border-b border-gray-200"><span className="text-secondary text-sm">Industry</span><span className="font-bold text-navy text-sm">Automotive Parts Manufacturing</span></div>
+              <div className="flex justify-between py-3 border-b border-gray-200"><span className="text-secondary text-sm">Location</span><span className="font-bold text-navy text-sm">Spartanburg, SC</span></div>
+              <div className="flex justify-between py-3 border-b border-gray-200"><span className="text-secondary text-sm">Qualifying Expenses</span><span className="font-bold text-navy text-sm">$1,200,000</span></div>
+              <div className="flex justify-between py-3 border-b border-gray-200"><span className="text-secondary text-sm">Federal Credit</span><span className="font-bold text-navy text-sm">$137,000</span></div>
+              <div className="flex justify-between py-3 border-b border-gray-200"><span className="text-secondary text-sm">SC State Credit</span><span className="font-bold text-navy text-sm">$60,000</span></div>
+              <div className="flex justify-between py-3"><span className="text-navy font-bold text-sm">Total Recovered</span><span className="font-black text-primary text-xl">$197,000</span></div>
             </div>
           </div>
           <div className="space-y-4">
-            <h3 className="text-2xl font-black text-slate-900">Frequently Asked Questions</h3>
-            <details className="border border-slate-200 rounded-xl overflow-hidden">
-              <summary className="px-6 py-4 font-semibold text-slate-900 cursor-pointer hover:bg-slate-50">Does my manufacturing company qualify?</summary>
-              <div className="px-6 pb-4 text-slate-600 text-sm">If your engineers or technicians spend time solving technical problems, developing new processes, or improving existing products, you almost certainly qualify. Most manufacturers are surprised by how much qualifies.</div>
+            <h3 className="text-2xl font-black text-navy">Frequently Asked Questions</h3>
+            <details className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="px-6 py-4 font-semibold text-navy cursor-pointer hover:bg-slate-50">Does my manufacturing company qualify?</summary>
+              <div className="px-6 pb-4 text-body-text text-sm">If your engineers or technicians spend time solving technical problems, developing new processes, or improving existing products, you almost certainly qualify. Most manufacturers are surprised by how much qualifies.</div>
             </details>
-            <details className="border border-slate-200 rounded-xl overflow-hidden">
-              <summary className="px-6 py-4 font-semibold text-slate-900 cursor-pointer hover:bg-slate-50">What records do I need?</summary>
-              <div className="px-6 pb-4 text-slate-600 text-sm">Payroll records, project documentation, engineering notes, test results, and contractor invoices are the most common. We help you identify and organize what you already have.</div>
+            <details className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="px-6 py-4 font-semibold text-navy cursor-pointer hover:bg-slate-50">What records do I need?</summary>
+              <div className="px-6 pb-4 text-body-text text-sm">Payroll records, project documentation, engineering notes, test results, and contractor invoices are the most common. We help you identify and organize what you already have.</div>
             </details>
-            <details className="border border-slate-200 rounded-xl overflow-hidden">
-              <summary className="px-6 py-4 font-semibold text-slate-900 cursor-pointer hover:bg-slate-50">How far back can I claim?</summary>
-              <div className="px-6 pb-4 text-slate-600 text-sm">You can typically file amended returns going back 3 years for federal credits and up to the statute of limitations for SC state credits, meaning you may recover credits for years you never claimed.</div>
+            <details className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="px-6 py-4 font-semibold text-navy cursor-pointer hover:bg-slate-50">How far back can I claim?</summary>
+              <div className="px-6 pb-4 text-body-text text-sm">You can typically file amended returns going back 3 years for federal credits and up to the statute of limitations for SC state credits, meaning you may recover credits for years you never claimed.</div>
             </details>
           </div>
         </div>
@@ -83,9 +83,9 @@ export default function ManufacturingPage() {
       <section className="py-20 px-6 bg-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-black text-white mb-4">Get Your Free Manufacturing R&D Assessment</h2>
-          <p className="text-slate-400 text-lg mb-10">Find out exactly what your manufacturing company qualifies for. No upfront cost. No obligation.</p>
+          <p className="text-secondary text-lg mb-10">Find out exactly what your manufacturing company qualifies for. No upfront cost. No obligation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-amber-700 text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
+            <Link href="/estimator" className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
             <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Call</Link>
           </div>
         </div>

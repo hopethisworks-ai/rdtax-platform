@@ -81,16 +81,16 @@ export default function RunButton({ engagementId, entityType, fundedResearchCont
     <div className="bg-green-50 border border-green-200 rounded-xl p-6 mt-6">
       <h2 className="font-bold text-green-900 text-lg mb-4">Calculation Complete</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-        <div className="bg-white rounded-xl p-4 text-center border border-slate-200">
-          <div className="text-xs text-slate-500 mb-1">Total QRE</div>
-          <div className="text-xl font-black text-slate-900">${Number(result.totalQre ?? 0).toLocaleString()}</div>
+        <div className="bg-white rounded-xl p-4 text-center border border-gray-200">
+          <div className="text-xs text-secondary mb-1">Total QRE</div>
+          <div className="text-xl font-black text-navy">${Number(result.totalQre ?? 0).toLocaleString()}</div>
         </div>
         <div className="bg-blue-600 rounded-xl p-4 text-center">
           <div className="text-xs text-blue-200 mb-1">Gross Federal Credit</div>
           <div className="text-xl font-black text-white">${Number(result.grossCredit ?? 0).toLocaleString()}</div>
         </div>
-        <div className="bg-slate-900 rounded-xl p-4 text-center">
-          <div className="text-xs text-slate-400 mb-1">Net Federal Credit</div>
+        <div className="bg-navy rounded-xl p-4 text-center">
+          <div className="text-xs text-gray-400 mb-1">Net Federal Credit</div>
           <div className="text-xl font-black text-white">${Number(result.reducedCredit ?? 0).toLocaleString()}</div>
         </div>
         <div className="bg-green-600 rounded-xl p-4 text-center">
@@ -98,23 +98,23 @@ export default function RunButton({ engagementId, entityType, fundedResearchCont
           <div className="text-xl font-black text-white">${Number(result.scAllowedCredit ?? 0).toLocaleString()}</div>
         </div>
       </div>
-      <div className="bg-white rounded-lg p-4 border border-slate-200">
-        <div className="flex justify-between py-1 border-b border-slate-100">
-          <span className="text-slate-600 text-sm">Method</span>
-          <span className="font-bold text-slate-900 text-sm">{String(result.method)}</span>
+      <div className="bg-white rounded-lg p-4 border border-gray-200">
+        <div className="flex justify-between py-1 border-b border-gray-100">
+          <span className="text-body-text text-sm">Method</span>
+          <span className="font-bold text-navy text-sm">{String(result.method)}</span>
         </div>
         {!!result.c280cElectionMade && (
-          <div className="flex justify-between py-1 border-b border-slate-100">
-            <span className="text-slate-600 text-sm">280C Rate Applied</span>
-            <span className="font-medium text-slate-900 text-sm">{Number(result.c280cRate ?? 21).toFixed(0)}%</span>
+          <div className="flex justify-between py-1 border-b border-gray-100">
+            <span className="text-body-text text-sm">280C Rate Applied</span>
+            <span className="font-medium text-navy text-sm">{Number(result.c280cRate ?? 21).toFixed(0)}%</span>
           </div>
         )}
-        <div className="flex justify-between py-1 border-b border-slate-100">
-          <span className="text-slate-600 text-sm">SC Credit Applied</span>
-          <span className="font-medium text-slate-900 text-sm">{Number(result.scAllowedCredit ?? 0) > 0 ? "Yes" : "No"}</span>
+        <div className="flex justify-between py-1 border-b border-gray-100">
+          <span className="text-body-text text-sm">SC Credit Applied</span>
+          <span className="font-medium text-navy text-sm">{Number(result.scAllowedCredit ?? 0) > 0 ? "Yes" : "No"}</span>
         </div>
         <div className="flex justify-between py-2 mt-1">
-          <span className="font-bold text-slate-900">Total Federal + SC</span>
+          <span className="font-bold text-navy">Total Federal + SC</span>
           <span className="font-black text-blue-600 text-xl">
             ${(Number(result.reducedCredit ?? 0) + Number(result.scAllowedCredit ?? 0)).toLocaleString()}
           </span>
@@ -134,15 +134,15 @@ export default function RunButton({ engagementId, entityType, fundedResearchCont
 
   // ── Form state ───────────────────────────────────────────────────────────────
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-6 mt-6 space-y-6">
-      <h2 className="font-bold text-slate-900">Calculation Settings</h2>
+    <div className="bg-white border border-gray-200 rounded-xl p-6 mt-6 space-y-6">
+      <h2 className="font-bold text-navy">Calculation Settings</h2>
 
       {/* SC Credit Toggle — first thing the analyst sees */}
-      <div className="border border-slate-200 rounded-xl p-4 bg-slate-50">
+      <div className="border border-gray-200 rounded-xl p-4 bg-surface">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-800">South Carolina R&amp;D Credit (§12-6-3375)</p>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-sm font-semibold text-navy">South Carolina R&amp;D Credit (§12-6-3375)</p>
+            <p className="text-xs text-secondary mt-0.5">
               {operatesInSC
                 ? "SC credit will be calculated at 5% of SC-sourced QREs, capped at 50% of SC tax liability."
                 : "Toggle on if this company has qualifying R&D activity in South Carolina."}
@@ -154,7 +154,7 @@ export default function RunButton({ engagementId, entityType, fundedResearchCont
             aria-checked={operatesInSC}
             onClick={() => setOperatesInSC(v => !v)}
             className={`relative inline-flex h-6 w-11 flex-shrink-0 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              operatesInSC ? "bg-blue-600" : "bg-slate-300"
+              operatesInSC ? "bg-blue-600" : "bg-gray-300"
             }`}
           >
             <span
@@ -175,61 +175,61 @@ export default function RunButton({ engagementId, entityType, fundedResearchCont
       {/* Method + 280C */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-2">Credit Method</label>
+          <label className="block text-sm font-semibold text-navy mb-2">Credit Method</label>
           <div className="space-y-2">
-            <label className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg cursor-pointer">
+            <label className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer">
               <input type="radio" name="m" value="ASC" checked={method === "ASC"} onChange={e => setMethod(e.target.value)} />
               <div>
-                <div className="font-medium text-slate-900 text-sm">ASC Method (Recommended)</div>
-                <div className="text-slate-400 text-xs">14% of incremental QREs above 50% of 3yr average</div>
+                <div className="font-medium text-navy text-sm">ASC Method (Recommended)</div>
+                <div className="text-gray-400 text-xs">14% of incremental QREs above 50% of 3yr average</div>
               </div>
             </label>
-            <label className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg cursor-pointer">
+            <label className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer">
               <input type="radio" name="m" value="REGULAR" checked={method === "REGULAR"} onChange={e => setMethod(e.target.value)} />
               <div>
-                <div className="font-medium text-slate-900 text-sm">Regular Method</div>
-                <div className="text-slate-400 text-xs">20% of incremental QREs above fixed base</div>
+                <div className="font-medium text-navy text-sm">Regular Method</div>
+                <div className="text-gray-400 text-xs">20% of incremental QREs above fixed base</div>
               </div>
             </label>
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-2">Section 280C Election</label>
-          <label className="flex items-start gap-3 p-4 border border-slate-200 rounded-lg cursor-pointer">
+          <label className="block text-sm font-semibold text-navy mb-2">Section 280C Election</label>
+          <label className="flex items-start gap-3 p-4 border border-gray-200 rounded-lg cursor-pointer">
             <input type="checkbox" checked={c280c} onChange={e => setC280c(e.target.checked)} className="mt-0.5" />
             <div>
-              <div className="font-medium text-slate-900 text-sm">Make 280C Election</div>
-              <div className="text-slate-400 text-xs mt-0.5">
+              <div className="font-medium text-navy text-sm">Make 280C Election</div>
+              <div className="text-gray-400 text-xs mt-0.5">
                 Reduces credit by the applicable tax rate but allows full R&D expense deduction.
               </div>
             </div>
           </label>
 
           {c280c && (
-            <div className="mt-3 p-4 border border-slate-200 rounded-lg bg-slate-50">
+            <div className="mt-3 p-4 border border-gray-200 rounded-lg bg-surface">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide">Entity Type</span>
-                <span className="text-sm font-medium text-slate-800">{entityType}</span>
+                <span className="text-xs font-semibold text-body-text uppercase tracking-wide">Entity Type</span>
+                <span className="text-sm font-medium text-navy">{entityType}</span>
               </div>
               {passThrough ? (
                 <>
-                  <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded p-2 mb-3">
+                  <p className="text-xs text-primary bg-surface border border-primary/20 rounded p-2 mb-3">
                     <strong>Pass-through entity:</strong> Enter the owner&apos;s applicable marginal tax rate.
                   </p>
-                  <label className="block text-xs font-semibold text-slate-600 mb-1">Applicable Marginal Rate (%)</label>
+                  <label className="block text-xs font-semibold text-body-text mb-1">Applicable Marginal Rate (%)</label>
                   <div className="flex items-center gap-2">
                     <input
                       type="number" min={1} max={50} step={0.1}
                       value={c280cRate} onChange={e => setC280cRate(e.target.value)}
                       placeholder="e.g. 37"
-                      className="w-28 border border-slate-300 rounded px-2 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                      className="w-28 border border-gray-300 rounded px-2 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                     />
-                    <span className="text-sm text-slate-500">%</span>
+                    <span className="text-sm text-secondary">%</span>
                   </div>
                 </>
               ) : (
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-body-text">
                   C-Corp rate of <strong>21%</strong> will be applied (IRC §280C(c)(2)).
                 </p>
               )}
@@ -240,31 +240,31 @@ export default function RunButton({ engagementId, entityType, fundedResearchCont
 
       {/* Funded-research acknowledgment */}
       {hasFundedResearch && (
-        <div className="border border-amber-300 bg-amber-50 rounded-xl p-5">
+        <div className="border border-primary/30 bg-surface rounded-xl p-5">
           <div className="flex items-start gap-3 mb-4">
-            <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
             </svg>
             <div>
-              <p className="text-sm font-bold text-amber-800">Funded-Research Contractor Review Required</p>
-              <p className="text-xs text-amber-700 mt-1">
+              <p className="text-sm font-bold text-primary">Funded-Research Contractor Review Required</p>
+              <p className="text-xs text-primary mt-1">
                 Per IRC §41(b)(3), confirm economic risk and substantial rights retained for each contractor below.
               </p>
             </div>
           </div>
           <div className="space-y-2">
             {fundedResearchContractors.map(c => (
-              <label key={c.id} className="flex items-start gap-3 p-3 bg-white border border-amber-200 rounded-lg cursor-pointer">
-                <input type="checkbox" checked={frAcknowledged.has(c.id)} onChange={() => toggleFr(c.id)} className="mt-0.5 accent-amber-600" />
+              <label key={c.id} className="flex items-start gap-3 p-3 bg-white border border-primary/20 rounded-lg cursor-pointer">
+                <input type="checkbox" checked={frAcknowledged.has(c.id)} onChange={() => toggleFr(c.id)} className="mt-0.5 accent-primary" />
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-slate-800">{c.vendorName}</p>
-                  <p className="text-xs text-slate-500">${c.amount.toLocaleString()} — taxpayer bore economic risk and retained substantial rights.</p>
+                  <p className="text-sm font-semibold text-navy">{c.vendorName}</p>
+                  <p className="text-xs text-secondary">${c.amount.toLocaleString()} — taxpayer bore economic risk and retained substantial rights.</p>
                 </div>
               </label>
             ))}
           </div>
           {!allFrAcknowledged && (
-            <p className="text-xs text-amber-700 mt-3 font-medium">
+            <p className="text-xs text-primary mt-3 font-medium">
               {fundedResearchContractors.length - frAcknowledged.size} contractor(s) still need acknowledgment.
             </p>
           )}

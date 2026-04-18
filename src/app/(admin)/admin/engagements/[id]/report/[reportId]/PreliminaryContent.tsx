@@ -73,8 +73,8 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
         </div>
       </section>
       <section className="mb-10">
-        <h2 className="text-xl font-black text-slate-900 mb-4 pb-2 border-b-2 border-slate-200">Qualifying Activities Identified</h2>
-        <p className="text-slate-600 text-sm mb-4">Based on our initial assessment, the following activities at {clientName} appear to qualify for the R&D tax credit under IRC Section 41. A complete credit study will document and substantiate each activity.</p>
+        <h2 className="text-xl font-black text-navy mb-4 pb-2 border-b-2 border-gray-200">Qualifying Activities Identified</h2>
+        <p className="text-body-text text-sm mb-4">Based on our initial assessment, the following activities at {clientName} appear to qualify for the R&D tax credit under IRC Section 41. A complete credit study will document and substantiate each activity.</p>
         {qualifiedComponents.length > 0 ? (
           <div className="space-y-3 mb-6">
             {qualifiedComponents.map(p => {
@@ -83,14 +83,14 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
                 p.contractors.reduce((s,c)=>s+Number(c.qualifiedAmount??0),0);
               const passCount = [p.permittedPurpose, p.technologicalInformation, p.processOfExperimentation, p.qualifiedResearch].filter(Boolean).length;
               return (
-                <div key={p.id} className="flex items-center justify-between p-4 border border-slate-200 rounded-xl bg-slate-50">
+                <div key={p.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-xl bg-surface">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900 text-sm">{p.name}</p>
-                      <p className="text-xs text-slate-500">{p.businessComponent ?? "Business Component"} -- {passCount}/4 four-part test prongs satisfied</p>
+                      <p className="font-semibold text-navy text-sm">{p.name}</p>
+                      <p className="text-xs text-secondary">{p.businessComponent ?? "Business Component"} -- {passCount}/4 four-part test prongs satisfied</p>
                     </div>
                   </div>
                   {total > 0 && <p className="font-black text-blue-700">{fmt(total)}</p>}
@@ -99,47 +99,47 @@ export default function PreliminaryContent({ clientName, taxYear, calc, projects
             })}
           </div>
         ) : (
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
-            <p className="text-sm text-amber-700">No qualified business components have been identified yet. Complete the business component analysis to populate this section with the client&apos;s specific qualifying activities.</p>
+          <div className="bg-surface border border-primary/20 rounded-lg p-4 mb-6">
+            <p className="text-sm text-primary">No qualified business components have been identified yet. Complete the business component analysis to populate this section with the client&apos;s specific qualifying activities.</p>
           </div>
         )}
       </section>
       <section className="mb-10">
-        <h2 className="text-xl font-black text-slate-900 mb-4 pb-2 border-b-2 border-slate-200">Next Steps</h2>
+        <h2 className="text-xl font-black text-navy mb-4 pb-2 border-b-2 border-gray-200">Next Steps</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <div className="border border-slate-200 rounded-xl p-5 text-center">
+          <div className="border border-gray-200 rounded-xl p-5 text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
               <span className="text-blue-700 font-black text-lg">1</span>
             </div>
-            <h3 className="font-bold text-slate-900 mb-2">Sign Engagement Letter</h3>
-            <p className="text-slate-500 text-xs">20% contingency fee -- paid only when your credit is recovered. No upfront cost.</p>
+            <h3 className="font-bold text-navy mb-2">Sign Engagement Letter</h3>
+            <p className="text-secondary text-xs">20% contingency fee -- paid only when your credit is recovered. No upfront cost.</p>
           </div>
-          <div className="border border-slate-200 rounded-xl p-5 text-center">
+          <div className="border border-gray-200 rounded-xl p-5 text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
               <span className="text-blue-700 font-black text-lg">2</span>
             </div>
-            <h3 className="font-bold text-slate-900 mb-2">Document Activities</h3>
-            <p className="text-slate-500 text-xs">We collect payroll data, contractor agreements, and technical narratives through our secure portal.</p>
+            <h3 className="font-bold text-navy mb-2">Document Activities</h3>
+            <p className="text-secondary text-xs">We collect payroll data, contractor agreements, and technical narratives through our secure portal.</p>
           </div>
-          <div className="border border-slate-200 rounded-xl p-5 text-center">
+          <div className="border border-gray-200 rounded-xl p-5 text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
               <span className="text-blue-700 font-black text-lg">3</span>
             </div>
-            <h3 className="font-bold text-slate-900 mb-2">File and Collect</h3>
-            <p className="text-slate-500 text-xs">Your CPA files Form 6765 with your return. You collect your credit within 60 days.</p>
+            <h3 className="font-bold text-navy mb-2">File and Collect</h3>
+            <p className="text-secondary text-xs">Your CPA files Form 6765 with your return. You collect your credit within 60 days.</p>
           </div>
         </div>
       </section>
-      <div className="bg-slate-800 rounded-2xl p-8 text-center">
+      <div className="bg-navy rounded-2xl p-8 text-center">
         <h3 className="text-2xl font-black text-white mb-2">Ready to Claim Your Credit?</h3>
-        <p className="text-slate-300 mb-6">Contact Alexander &amp; Blake to begin your full credit study. Most engagements are completed in 45-60 days.</p>
+        <p className="text-gray-300 mb-6">Contact Alexander &amp; Blake to begin your full credit study. Most engagements are completed in 45-60 days.</p>
         <div className="inline-flex flex-col sm:flex-row gap-4 justify-center">
           <div className="bg-blue-600 text-white font-bold px-8 py-3 rounded-xl">alexanderblake.com/contact</div>
           <div className="bg-white/10 text-white font-semibold px-8 py-3 rounded-xl">South Carolina R&amp;D Tax Specialists</div>
         </div>
       </div>
-      <div className="border-t border-slate-200 pt-6 mt-8">
-        <p className="text-xs text-slate-400 leading-relaxed">This preliminary estimate is based on an initial assessment and is subject to change upon full documentation and analysis. Actual credits may be higher or lower depending on final qualified research expense calculations. This document does not constitute tax advice. Consult with your tax advisor regarding the application of these credits.</p>
+      <div className="border-t border-gray-200 pt-6 mt-8">
+        <p className="text-xs text-gray-400 leading-relaxed">This preliminary estimate is based on an initial assessment and is subject to change upon full documentation and analysis. Actual credits may be higher or lower depending on final qualified research expense calculations. This document does not constitute tax advice. Consult with your tax advisor regarding the application of these credits.</p>
       </div>
     </>
   );

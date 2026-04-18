@@ -59,7 +59,7 @@ export default function IndustriesPage() {
   };
 
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       {/* Hero Section with background image */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -74,7 +74,7 @@ export default function IndustriesPage() {
           <div className="absolute inset-0 bg-slate-800/70" />
         </div>
         <div className="relative max-w-4xl mx-auto px-6 py-20 text-center">
-          <span className="inline-block bg-amber-600/20 text-amber-200 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+          <span className="inline-block bg-primary/20 text-primary-light text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
             Industries We Serve
           </span>
           <h1 className="text-4xl md:text-5xl font-normal text-white leading-tight mb-6">
@@ -87,13 +87,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Cards Section */}
-      <section className="py-20 px-6 bg-cream-200">
+      <section className="py-20 px-6 bg-surface">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow group"
+                className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow group"
               >
                 <div className="relative h-44 overflow-hidden">
                   <Image
@@ -105,18 +105,18 @@ export default function IndustriesPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4">{industry.name}</h3>
+                  <h3 className="text-lg font-bold text-navy mb-4">{industry.name}</h3>
                   <ul className="space-y-2 mb-5">
                     {industry.activities.map((activity) => (
                       <li key={activity} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-600 text-sm">{activity}</span>
+                        <span className="text-body-text text-sm">{activity}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact" className="inline-flex items-center text-amber-700 font-semibold text-sm hover:text-amber-800 transition-colors">
+                  <Link href="/contact" className="inline-flex items-center text-primary font-semibold text-sm hover:text-primary transition-colors">
                     Get assessed →
                   </Link>
                 </div>
@@ -127,35 +127,35 @@ export default function IndustriesPage() {
       </section>
 
       {/* Qualification Section */}
-      <section className="py-20 px-6 bg-cream">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">Qualifying Activities</span>
-            <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mt-3">What Counts as R&amp;D?</h2>
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">Qualifying Activities</span>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">What Counts as R&amp;D?</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-cream-200 rounded-xl p-8 border-l-4 border-amber-700">
-              <h3 className="text-xl font-bold text-slate-900 mb-5">New or Improved Products</h3>
+            <div className="bg-surface rounded-xl p-8 border-l-4 border-primary">
+              <h3 className="text-xl font-bold text-navy mb-5">New or Improved Products</h3>
               <ul className="space-y-3">
                 {qualifications.products.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-slate-700 text-sm">{item}</span>
+                    <span className="text-body-text text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-cream-200 rounded-xl p-8 border-l-4 border-amber-700">
-              <h3 className="text-xl font-bold text-slate-900 mb-5">New or Improved Processes</h3>
+            <div className="bg-surface rounded-xl p-8 border-l-4 border-primary">
+              <h3 className="text-xl font-bold text-navy mb-5">New or Improved Processes</h3>
               <ul className="space-y-3">
                 {qualifications.processes.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-slate-700 text-sm">{item}</span>
+                    <span className="text-body-text text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -165,13 +165,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-amber-50 border-t border-amber-100">
+      <section className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-normal text-slate-800 mb-4">Not Sure If You Qualify?</h2>
-          <p className="text-lg text-slate-500 mb-8">
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">Not Sure If You Qualify?</h2>
+          <p className="text-lg text-secondary mb-8">
             Get a free assessment — we&apos;ll tell you in 30 minutes.
           </p>
-          <Link href="/contact" className="inline-block bg-amber-700 text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-amber-800 transition-colors shadow-md">
+          <Link href="/contact" className="inline-block bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md">
             Get Free Assessment →
           </Link>
         </div>
