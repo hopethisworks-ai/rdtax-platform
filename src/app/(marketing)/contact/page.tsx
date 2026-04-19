@@ -40,8 +40,8 @@ export default function ContactPage() {
           <h2 className="text-4xl font-normal text-navy mb-4">Thank You for Your Inquiry</h2>
           <p className="text-body-text text-lg mb-10 leading-relaxed">A member of our team will respond within one business day. In the meantime, you may estimate your credit or assess your eligibility.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3 rounded-xl transition-colors">Calculate My Credit</Link>
-            <Link href="/eligibility" className="bg-gray-100 border border-gray-200 text-navy font-semibold px-8 py-3 rounded-xl hover:bg-surface transition-colors">Check Eligibility</Link>
+            <Link href="/estimator" className="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3 rounded-xl transition-colors">Estimate Your Credit</Link>
+            <Link href="/eligibility" className="bg-gray-100 border border-gray-200 text-navy font-semibold px-8 py-3 rounded-xl hover:bg-surface transition-colors">Evaluate Eligibility</Link>
           </div>
         </div>
       </div>
@@ -121,8 +121,8 @@ export default function ContactPage() {
             <div className="bg-surface border border-gray-200 rounded-2xl p-8">
               <p className="text-body-text text-sm font-medium mb-5">Not ready to talk? Start with a free estimate.</p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/estimator" className="bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-2.5 rounded-lg text-sm text-center transition-colors">Calculate My Credit</Link>
-                <Link href="/eligibility" className="bg-white border border-secondary/30 text-navy font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-surface transition-colors">Check Eligibility</Link>
+                <Link href="/estimator" className="bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-2.5 rounded-lg text-sm text-center transition-colors">Estimate Your Credit</Link>
+                <Link href="/eligibility" className="bg-white border border-secondary/30 text-navy font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-surface transition-colors">Evaluate Eligibility</Link>
               </div>
             </div>
           </div>

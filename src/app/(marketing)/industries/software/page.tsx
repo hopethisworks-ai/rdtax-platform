@@ -19,8 +19,8 @@ export default function SoftwarePage() {
             <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Your Code Is Worth <span className="text-primary">More Than You Think.</span></h1>
             <p className="text-lg text-slate-300 mb-8">Software companies routinely miss out on R&D tax credits for work they are already doing — custom development, new algorithms, platform building, and internal tools all qualify.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/estimator" className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Calculate My Credit</Link>
-              <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Free Consultation</Link>
+              <Link href="/estimator" className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Estimate Your Credit</Link>
+              <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center">Schedule a Consultation</Link>
             </div>
           </div>
           <AssessmentForm />
@@ -85,8 +85,8 @@ export default function SoftwarePage() {
           <h2 className="text-4xl font-black text-white mb-4">Get Your Free Software R&D Assessment</h2>
           <p className="text-secondary text-lg mb-10">Find out how much your development work qualifies for. No upfront cost. No obligation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimator" className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg">Calculate My Credit</Link>
-            <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Call</Link>
+            <Link href="/estimator" className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg">Estimate Your Credit</Link>
+            <Link href="/contact" className="bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg">Schedule a Consultation</Link>
           </div>
         </div>
       </section>
