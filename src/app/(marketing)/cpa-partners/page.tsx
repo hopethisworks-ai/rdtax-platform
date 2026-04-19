@@ -283,8 +283,8 @@ export default function CpaPartnersPage() {
       <section className="py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80"
-            alt="Business handshake partnership"
+            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=80"
+            alt="Professional consulting session"
             width={1400}
             height={800}
             className="object-cover w-full h-full"

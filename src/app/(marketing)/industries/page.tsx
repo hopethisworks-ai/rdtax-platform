@@ -64,8 +64,8 @@ export default function IndustriesPage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=1400&q=80"
-            alt="Team collaborating on technical project"
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80"
+            alt="Technology and innovation abstract"
             width={1400}
             height={600}
             className="object-cover w-full h-full"

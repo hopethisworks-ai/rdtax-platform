@@ -42,8 +42,8 @@ export default function ServicesPage() {
         "Coordination with SC Department of Revenue",
         "Deep knowledge of SC industry landscape",
       ],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
-      imageAlt: "Charleston, South Carolina waterfront",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      imageAlt: "South Carolina business skyline",
     },
     {
       title: "Amended Returns",
