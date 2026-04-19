@@ -169,10 +169,10 @@ export default function IndustriesPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">Not Sure If You Qualify?</h2>
           <p className="text-lg text-secondary mb-8">
-            Get a free assessment — we&apos;ll tell you in 30 minutes.
+            A brief consultation to evaluate your qualifying activities and outline what a well-supported engagement would look like.
           </p>
-          <Link href="/contact" className="inline-block bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md">
-            Get Free Assessment →
+          <Link href="/contact" className="inline-block bg-primary text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md">
+            Schedule a Consultation →
           </Link>
         </div>
       </section>

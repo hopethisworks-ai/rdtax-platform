@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "Federal R&D credit studies, South Carolina state credits, amended returns, payroll tax offset, and complete audit defense. Alexander & Blake manages the full lifecycle of your R&D tax credit engagement.",
+    "Federal R&D credit studies, South Carolina state credits, amended returns, payroll tax offset, and ongoing audit support. Alexander & Blake provides full-lifecycle R&D tax credit advisory.",
 };
 
 /* ── Icon Components ── */
@@ -101,18 +101,17 @@ export default function ServicesPage() {
               What We Do
             </span>
             <h1 className="text-4xl md:text-5xl font-normal text-navy leading-tight mb-6">
-              Comprehensive R&amp;D Tax Credit Services
+              Full-Lifecycle R&amp;D Tax Credit Advisory
             </h1>
             <p className="text-lg text-body-text leading-relaxed max-w-2xl mb-8">
-              From initial identification through filing and audit defense — we cover the full
-              lifecycle of your R&amp;D tax credit. Federal, state, current year, and amended returns.
+              From initial identification through filing and ongoing support — we manage the complete R&amp;D tax credit engagement with care and precision. Federal, state, current year, and amended returns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
               >
-                Get Free Assessment
+                Schedule a Consultation
               </Link>
               <Link
                 href="/how-it-works"
@@ -179,11 +178,10 @@ export default function ServicesPage() {
             Our Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
-            Aligned Incentives. No Upfront Cost.
+            Aligned Incentives. Clear Terms.
           </h2>
           <p className="text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-            We operate on a contingency basis — 20% of credits successfully identified and recovered. If
-            we identify no qualifying credits, there is no charge.
+            We operate on a contingency basis — our fee is calculated as a percentage of credits successfully identified. If we identify no qualifying credits, there is no charge.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
@@ -219,24 +217,23 @@ export default function ServicesPage() {
       <section className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">
-            Not Sure Which Services Apply to You?
+            Not Sure Which Services Apply?
           </h2>
           <p className="text-lg text-secondary mb-8">
-            Our free 30-minute assessment covers everything. We&apos;ll identify exactly which credits
-            and services apply to your business.
+            A brief consultation covers everything. We&apos;ll help you understand which credits and services are relevant to your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
+              className="bg-primary text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
             >
-              Schedule Free Assessment
+              Schedule a Consultation
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-secondary/30 text-body-text font-bold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
+              className="border border-secondary/30 text-body-text font-semibold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
             >
-              Estimate My Credit
+              Estimate Your Credit
             </Link>
           </div>
         </div>

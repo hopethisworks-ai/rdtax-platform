@@ -22,7 +22,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
-              A dedicated R&amp;D tax credit advisory firm serving South Carolina. Rigorous methodology, defensible documentation, and complete audit defense.
+              A specialist advisory firm helping innovative South Carolina businesses identify, document, and support R&amp;D tax credits with precision and confidence.
             </p>
           </div>
 
