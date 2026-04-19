@@ -20,13 +20,13 @@ export default function ServicesPage() {
     {
       title: "Federal R&D Tax Credit",
       subtitle: "IRC Section 41",
-      desc: "The federal Research and Experimentation Tax Credit supports companies investing in innovation. We prepare complete credit studies with careful engineering analysis, QRE calculations, and structured documentation designed for clarity and review.",
+      desc: "We prepare federal R&D tax credit studies for businesses engaged in qualified research activity. Each study includes qualification analysis, QRE calculations, method review, and filing support materials prepared with clarity and care.",
       items: [
-        "Four-part test analysis for every qualifying activity",
+        "Four-part test analysis by activity",
         "Wage, contractor, and supply QRE calculations",
-        "ASC vs. Regular Credit method comparison",
-        "Form 6765 preparation and filing support",
-        "Complete project narratives and methodology memo",
+        "ASC and Regular Credit method review",
+        "Form 6765 support and CPA coordination",
+        "Project narratives and methodology summary",
       ],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       imageAlt: "Financial analysis on computer screens",
@@ -34,13 +34,12 @@ export default function ServicesPage() {
     {
       title: "South Carolina State Credits",
       subtitle: "SC Code Section 12-6-3415",
-      desc: "South Carolina offers an additional R&D tax credit that can be coordinated alongside the federal benefit. We identify and document both credits simultaneously as part of every qualifying engagement.",
+      desc: "For qualifying South Carolina businesses, we coordinate the federal credit alongside the additional state credit as part of one integrated engagement.",
       items: [
-        "SC state credit identification and documentation",
-        "Federal + state credit coordination strategy",
-        "SC-specific regulatory compliance",
-        "Coordination with SC Department of Revenue",
-        "Deep knowledge of SC industry landscape",
+        "State credit identification and support",
+        "Federal and state coordination",
+        "Filing support aligned with your CPA",
+        "Familiarity with South Carolina industries and credit planning",
       ],
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
       imageAlt: "South Carolina business skyline",
@@ -48,13 +47,13 @@ export default function ServicesPage() {
     {
       title: "Amended Returns",
       subtitle: "3-Year Lookback",
-      desc: "If your business has not previously claimed the credit, up to three years of open tax returns may be eligible for amended filing. We review prior periods and prepare the documentation needed to support those claims.",
+      desc: "If the credit has not been claimed previously, we review open tax years and prepare the support needed for amended filings where appropriate.",
       items: [
-        "Analysis of up to 3 prior open tax years",
-        "Amended return preparation (Form 1040-X or 1120-X)",
-        "Historical QRE reconstruction from existing records",
-        "Coordination with your CPA for multi-year filing",
-        "Audit defense for all amended claims",
+        "Review of open prior-year periods",
+        "Historical QRE reconstruction from available records",
+        "Amended filing support",
+        "Coordination with your CPA across tax years",
+        "Audit support included",
       ],
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
       imageAlt: "Financial documents and calculator",
@@ -62,27 +61,27 @@ export default function ServicesPage() {
     {
       title: "Payroll Tax Offset",
       subtitle: "PATH Act — Up to $500K/year",
-      desc: "Qualifying small businesses and startups can apply R&D credits against payroll taxes instead of income taxes — even if you have no income tax liability. This applies to businesses with less than $5M in gross receipts and fewer than 5 years of revenue.",
+      desc: "Certain early-stage businesses may be able to apply R&D credits against payroll taxes rather than income taxes. We assess eligibility and prepare the necessary calculations and support.",
       items: [
-        "PATH Act qualification assessment",
-        "Payroll tax offset calculation (Form 8974)",
-        "Up to $500,000 per year in payroll tax savings",
-        "Ideal for pre-revenue and early-stage companies",
-        "Quarterly payroll tax offset coordination",
+        "PATH Act eligibility review",
+        "Form 8974 support",
+        "Up to $500,000 annual payroll offset potential",
+        "Especially relevant for early-stage and pre-profit companies",
+        "Coordination with payroll and tax filing process",
       ],
       image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
       imageAlt: "Startup team collaborating",
     },
     {
-      title: "Audit Defense",
+      title: "Ongoing Support",
       subtitle: "Included with Every Study",
-      desc: "Every credit study we prepare includes ongoing audit support at no additional cost. Our documentation is structured from day one with the expectation that it may be reviewed — following IRS Audit Techniques Guidelines and organized for examination.",
+      desc: "Every study we prepare includes ongoing support if the credit is later reviewed. Our documentation is organized from the outset with review in mind, and we remain available to assist the client and their advisors with follow-up questions and supporting materials.",
       items: [
-        "ATG-compliant documentation methodology",
-        "Full representation before the IRS",
-        "Contemporaneous documentation support",
-        "Business component analysis and four-part test records",
-        "Resolution through appeals if necessary",
+        "Documentation organized for review",
+        "Contemporaneous support and project records",
+        "Business component and four-part test support",
+        "Coordination with the client and CPA during follow-up",
+        "Ongoing assistance at no additional cost",
       ],
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
       imageAlt: "Professional reviewing legal documents",
@@ -104,7 +103,7 @@ export default function ServicesPage() {
               Full-Lifecycle R&amp;D Tax Credit Advisory
             </h1>
             <p className="text-lg text-body-text leading-relaxed max-w-2xl mb-8">
-              From initial identification through filing and ongoing support — we manage the complete R&amp;D tax credit engagement with care and precision. Federal, state, current year, and amended returns.
+              From initial evaluation through filing support, we manage the full R&amp;D tax credit engagement with care, clarity, and structured documentation — including federal credits, South Carolina credits, current-year claims, and amended returns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -181,28 +180,25 @@ export default function ServicesPage() {
             Aligned Incentives. Clear Terms.
           </h2>
           <p className="text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-            We operate on a contingency basis — our fee is calculated as a percentage of credits successfully identified. If we identify no qualifying credits, there is no charge.
+            Alexander &amp; Blake typically works on a contingency basis. We explain scope, timing, and fee terms clearly at the start of each engagement so clients understand exactly how the process works.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-primary mb-2">$0</div>
-              <div className="text-navy font-bold text-sm mb-2">Upfront Cost</div>
+              <div className="text-navy font-bold text-sm mb-2">No Upfront Retainer</div>
               <p className="text-secondary text-sm leading-relaxed">
-                No retainers, no hourly fees, no deposits. The initial consultation is complimentary and the engagement begins at zero cost.
+                There is no retainer or deposit to begin the engagement. The initial consultation is complimentary.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-primary mb-2">20%</div>
-              <div className="text-navy font-bold text-sm mb-2">Contingency Fee</div>
+              <div className="text-navy font-bold text-sm mb-2">Contingency-Based Fee</div>
               <p className="text-secondary text-sm leading-relaxed">
-                Our fee is calculated as a percentage of credits identified. Paid only after your credit is filed. Our incentives are aligned with yours.
+                Our fee is typically based on a percentage of credits identified, paid after filing. We discuss terms clearly before beginning any work.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
-              <div className="text-3xl font-black text-primary mb-2">100%</div>
-              <div className="text-navy font-bold text-sm mb-2">Audit Support</div>
+              <div className="text-navy font-bold text-sm mb-2">Audit Support Included</div>
               <p className="text-secondary text-sm leading-relaxed">
-                Ongoing audit support is included with every credit study at no additional cost. We stand behind the work we prepare.
+                Ongoing support is included with every study at no additional cost. We remain available to assist if questions arise later.
               </p>
             </div>
           </div>
@@ -215,10 +211,10 @@ export default function ServicesPage() {
       <section className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">
-            Not Sure Which Services Apply?
+            Not Sure Where to Start?
           </h2>
           <p className="text-lg text-secondary mb-8">
-            A brief consultation covers everything. We&apos;ll help you understand which credits and services are relevant to your business.
+            A brief consultation can help determine which credits, filing paths, and support needs may be relevant to your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

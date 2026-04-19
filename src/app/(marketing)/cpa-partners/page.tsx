@@ -45,10 +45,10 @@ export default function CpaPartnersPage() {
                 For Accounting Professionals
               </span>
               <h1 className="text-4xl md:text-5xl font-normal text-navy leading-tight mb-6">
-                A Dedicated R&amp;D Tax Credit Resource for Your Practice.
+                A Specialist R&amp;D Credit Resource for Your Firm
               </h1>
               <p className="text-lg text-body-text mb-8 leading-relaxed max-w-lg">
-                Alexander &amp; Blake serves as a specialty advisory partner for accounting firms — preparing well-supported R&amp;D tax credit studies, clear documentation, and coordinated filing support. You maintain the client relationship. We handle the technical work.
+                Alexander &amp; Blake works alongside accounting firms that want a reliable specialist partner for R&amp;D tax credit studies and related documentation. You maintain the client relationship. We handle the specialty work and coordinate closely throughout the engagement.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -114,7 +114,7 @@ export default function CpaPartnersPage() {
               },
               {
                 title: "Documentation Built for Review",
-                desc: "Every study is prepared with structured project narratives, four-part test documentation, and thorough financial substantiation — organized for clarity and built for examination.",
+                desc: "Every study is prepared with structured project narratives, four-part test documentation, and thorough financial substantiation — organized for clarity and prepared with review in mind.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
@@ -122,8 +122,8 @@ export default function CpaPartnersPage() {
                 ),
               },
               {
-                title: "Contingency Engagement Model",
-                desc: "Our fee is calculated as a percentage of credits identified — paid only after the credit is filed. There is no upfront cost to the client or to your firm.",
+                title: "Clear Engagement Economics",
+                desc: "Our fee is typically contingency-based and paid after filing, with no upfront cost to your firm or your client in most engagements.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -131,8 +131,8 @@ export default function CpaPartnersPage() {
                 ),
               },
               {
-                title: "Efficient Process",
-                desc: "From engagement kickoff to a completed credit study in approximately 60 days — organized and delivered with minimal disruption to your client.",
+                title: "Organized Delivery",
+                desc: "We run a structured process designed to minimize disruption, provide visibility throughout the engagement, and deliver the completed study on a practical timeline.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -193,7 +193,7 @@ export default function CpaPartnersPage() {
               {
                 num: "03",
                 title: "You File with Confidence",
-                desc: "We deliver the completed credit study and Form 6765 support to you. You file with your client's return. Ongoing audit support is included with every engagement at no additional cost.",
+                desc: "We deliver the completed study, supporting schedules, and Form 6765 materials to your team for filing coordination. Ongoing support is included if questions arise later.",
               },
             ].map((step) => (
               <div key={step.num} className="border-l-4 border-primary pl-6">
@@ -253,6 +253,23 @@ export default function CpaPartnersPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          WHAT WE NEED FROM THE CPA
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">
+            Your Role
+          </span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
+            What We Need From the CPA
+          </h2>
+          <p className="text-body-text leading-relaxed max-w-2xl mx-auto">
+            In most engagements, we ask the CPA to help confirm filing posture, prior-year credit history, and any relevant return details. We handle the specialty R&amp;D work so your team does not need to build an internal process from scratch.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           RESULTS — illustrative case studies
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 relative overflow-hidden">
@@ -275,7 +292,7 @@ export default function CpaPartnersPage() {
               Representative Partner Engagement Outcomes
             </h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              Illustrative outcomes based on typical SC engagements. Actual results vary by client.
+              Illustrative examples based on representative South Carolina engagements. Actual outcomes depend on the client&apos;s facts, qualifying activities, expenses, and filing posture.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
