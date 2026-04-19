@@ -80,40 +80,16 @@ export default function CpaPartnersPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          KEY STATS
-      ═══════════════════════════════════════════ */}
-      <section className="py-10 px-6 bg-surface border-y border-gray-200">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-3xl font-black text-navy mb-1">$50K+</div>
-            <div className="text-secondary text-sm">Avg. credit per client</div>
-          </div>
-          <div>
-            <div className="text-3xl font-black text-navy mb-1">20%</div>
-            <div className="text-secondary text-sm">Contingency only</div>
-          </div>
-          <div>
-            <div className="text-3xl font-black text-navy mb-1">60 days</div>
-            <div className="text-secondary text-sm">Assessment to filing</div>
-          </div>
-          <div>
-            <div className="text-3xl font-black text-navy mb-1">100%</div>
-            <div className="text-secondary text-sm">Audit defense included</div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
           WHY PARTNER
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-primary text-xs font-bold uppercase tracking-widest">
-              Why Partner With Us
+              How We Work Together
             </span>
             <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">
-              We Work For You. Not Instead of You.
+              Specialist Support for Trusted Advisors.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -146,8 +122,8 @@ export default function CpaPartnersPage() {
                 ),
               },
               {
-                title: "No Risk to Your Clients",
-                desc: "Our fee is 20% of credits recovered — paid only when your client receives their credit. No upfront cost, no risk.",
+                title: "Contingency Engagement Model",
+                desc: "Our fee is calculated as a percentage of credits identified — paid only after the credit is filed. There is no upfront cost to the client or to your firm.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -199,25 +175,25 @@ export default function CpaPartnersPage() {
               How It Works
             </span>
             <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">
-              Simple Three-Step Process
+              A Straightforward Engagement Process
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 num: "01",
-                title: "You Identify a Client",
-                desc: "Think about which clients are manufacturers, software companies, contractors, or engineers. If they are doing something new or improved — they likely qualify. Refer them to us for a free assessment.",
+                title: "You Identify an Opportunity",
+                desc: "Consider which clients may have qualifying activities — product development, process improvement, software engineering, or technical design work. We can help evaluate whether an engagement makes sense.",
               },
               {
                 num: "02",
-                title: "We Do the Work",
-                desc: "We conduct the assessment, collect data through our secure portal, run the credit study, and prepare complete IRS-compliant documentation. We keep you informed throughout.",
+                title: "We Prepare the Study",
+                desc: "We conduct technical interviews, collect financial data through our secure portal, and prepare a complete credit study with structured documentation. You receive visibility throughout the engagement.",
               },
               {
                 num: "03",
-                title: "You File, Client Collects",
-                desc: "We deliver the complete credit study to you. You file Form 6765 with your client's return. Your client collects their credit. We provide full audit defense if the IRS ever questions it.",
+                title: "You File with Confidence",
+                desc: "We deliver the completed credit study and Form 6765 support to you. You file with your client's return. Ongoing audit support is included with every engagement at no additional cost.",
               },
             ].map((step) => (
               <div key={step.num} className="border-l-4 border-primary pl-6">
@@ -241,11 +217,10 @@ export default function CpaPartnersPage() {
                 Who Qualifies
               </span>
               <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
-                Which of Your Clients Should You Refer?
+                Which Clients May Have Qualifying Activities?
               </h2>
               <p className="text-body-text mb-6 leading-relaxed">
-                If your client answers yes to any of these, they likely qualify for the R&amp;D tax
-                credit. When in doubt, refer them — our free assessment takes 30 minutes.
+                If any of the following describe a client&apos;s business, there is a reasonable chance qualifying R&amp;D activities exist. We are happy to evaluate and advise — the initial conversation is complimentary.
               </p>
               <div className="space-y-3">
                 {[
@@ -297,7 +272,7 @@ export default function CpaPartnersPage() {
               Results
             </span>
             <h2 className="text-3xl md:text-4xl font-normal text-white mt-3 mb-3">
-              What Our CPA Partners Are Seeing
+              Representative Partner Engagement Outcomes
             </h2>
             <p className="text-secondary max-w-2xl mx-auto">
               Illustrative outcomes based on typical SC engagements. Actual results vary by client.
@@ -323,7 +298,7 @@ export default function CpaPartnersPage() {
                 amount: "$63K",
                 type: "SC Engineering Firm",
                 detail:
-                  "Current year credit on structural engineering and design work. Completed in 45 days with full audit defense documentation.",
+                  "Current year credit on structural engineering and design work. Study completed and delivered in 45 days with structured documentation.",
                 period: "Current year",
               },
             ].map((study) => (
@@ -353,10 +328,9 @@ export default function CpaPartnersPage() {
       <section id="partner-form" className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-normal text-navy mb-4">Become an Alexander &amp; Blake Partner</h2>
+            <h2 className="text-4xl font-normal text-navy mb-4">Start a Conversation</h2>
             <p className="text-secondary text-lg">
-              Tell us about your practice and we&apos;ll reach out to discuss the partnership. No
-              commitment required.
+              Tell us about your practice and we&apos;ll reach out to discuss how we might work together. No commitment required.
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 shadow-xl">

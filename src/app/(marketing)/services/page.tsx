@@ -20,7 +20,7 @@ export default function ServicesPage() {
     {
       title: "Federal R&D Tax Credit",
       subtitle: "IRC Section 41",
-      desc: "The federal Research and Experimentation Tax Credit rewards companies investing in innovation. We prepare complete credit studies with engineering analysis, QRE calculations, and IRS-compliant documentation.",
+      desc: "The federal Research and Experimentation Tax Credit supports companies investing in innovation. We prepare complete credit studies with careful engineering analysis, QRE calculations, and structured documentation designed for clarity and review.",
       items: [
         "Four-part test analysis for every qualifying activity",
         "Wage, contractor, and supply QRE calculations",
@@ -34,10 +34,10 @@ export default function ServicesPage() {
     {
       title: "South Carolina State Credits",
       subtitle: "SC Code Section 12-6-3415",
-      desc: "South Carolina offers an additional R&D tax credit that stacks on top of the federal benefit. We identify and document both credits simultaneously, maximizing your total recovery.",
+      desc: "South Carolina offers an additional R&D tax credit that can be coordinated alongside the federal benefit. We identify and document both credits simultaneously as part of every qualifying engagement.",
       items: [
         "SC state credit identification and documentation",
-        "Federal + state credit stacking strategy",
+        "Federal + state credit coordination strategy",
         "SC-specific regulatory compliance",
         "Coordination with SC Department of Revenue",
         "Deep knowledge of SC industry landscape",
@@ -48,7 +48,7 @@ export default function ServicesPage() {
     {
       title: "Amended Returns",
       subtitle: "3-Year Lookback",
-      desc: "Never claimed the R&D credit before? You may have up to three years of open tax returns eligible for amended filing. We identify and recover credits from prior years you already left behind.",
+      desc: "If your business has not previously claimed the credit, up to three years of open tax returns may be eligible for amended filing. We review prior periods and prepare the documentation needed to support those claims.",
       items: [
         "Analysis of up to 3 prior open tax years",
         "Amended return preparation (Form 1040-X or 1120-X)",
@@ -76,7 +76,7 @@ export default function ServicesPage() {
     {
       title: "Audit Defense",
       subtitle: "Included with Every Study",
-      desc: "Every credit study we prepare includes full IRS audit defense at no additional cost. Our documentation is built from day one to withstand scrutiny — following IRS Audit Techniques Guidelines (ATG) standards.",
+      desc: "Every credit study we prepare includes ongoing audit support at no additional cost. Our documentation is structured from day one with the expectation that it may be reviewed — following IRS Audit Techniques Guidelines and organized for examination.",
       items: [
         "ATG-compliant documentation methodology",
         "Full representation before the IRS",
@@ -175,7 +175,7 @@ export default function ServicesPage() {
       <section className="py-20 px-6 bg-surface border-y border-gray-200">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-primary text-xs font-bold uppercase tracking-widest">
-            Our Pricing
+            Engagement Model
           </span>
           <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
             Aligned Incentives. Clear Terms.
@@ -188,23 +188,21 @@ export default function ServicesPage() {
               <div className="text-3xl font-black text-primary mb-2">$0</div>
               <div className="text-navy font-bold text-sm mb-2">Upfront Cost</div>
               <p className="text-secondary text-sm leading-relaxed">
-                No retainers, no hourly fees, no deposits. The initial assessment is complimentary and the engagement begins at zero cost.
+                No retainers, no hourly fees, no deposits. The initial consultation is complimentary and the engagement begins at zero cost.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
               <div className="text-3xl font-black text-primary mb-2">20%</div>
               <div className="text-navy font-bold text-sm mb-2">Contingency Fee</div>
               <p className="text-secondary text-sm leading-relaxed">
-                We earn 20% of the credits we identify. Paid only after your credit is filed and
-                approved. Our incentives are aligned with yours.
+                Our fee is calculated as a percentage of credits identified. Paid only after your credit is filed. Our incentives are aligned with yours.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
               <div className="text-3xl font-black text-primary mb-2">100%</div>
-              <div className="text-navy font-bold text-sm mb-2">Audit Defense</div>
+              <div className="text-navy font-bold text-sm mb-2">Audit Support</div>
               <p className="text-secondary text-sm leading-relaxed">
-                Full IRS audit representation is included with every credit study at no additional
-                cost. We stand behind our work.
+                Ongoing audit support is included with every credit study at no additional cost. We stand behind the work we prepare.
               </p>
             </div>
           </div>
