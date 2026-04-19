@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Logo Options — Alexander &amp; Blake</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; background: #f5f7fa; padding: 40px; }
+    h1 { color: #102A43; font-size: 28px; margin-bottom: 8px; }
+    p.sub { color: #486581; margin-bottom: 40px; }
+    .section { margin-bottom: 48px; }
+    .section h2 { color: #243B53; font-size: 18px; margin-bottom: 16px; font-weight: 600; }
+    .card { background: white; border-radius: 16px; padding: 40px; border: 1px solid #e2e8f0; margin-bottom: 16px; }
+    .card.dark { background: #102A43; }
+    .logo-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    img { max-height: 120px; }
+    img.full { max-height: 60px; }
+    .label { color: #486581; font-size: 13px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Alexander &amp; Blake — Logo Options</h1>
+  <p class="sub">Three variants for your brand. All use your navy (#102A43) and teal (#2C7A7B) palette.</p>
+
+  <div class="section">
+    <h2>1. Monogram Mark</h2>
+    <div class="card">
+      <div class="logo-row">
+        <div>
+          <img src="logo-monogram.svg" alt="Monogram" style="width: 80px; height: 80px;">
+          <div class="label">80px</div>
+        </div>
+        <div>
+          <img src="logo-monogram.svg" alt="Monogram" style="width: 48px; height: 48px;">
+          <div class="label">48px (navbar size)</div>
+        </div>
+        <div>
+          <img src="logo-monogram.svg" alt="Monogram" style="width: 32px; height: 32px;">
+          <div class="label">32px (favicon)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>2. Full Logo (for light backgrounds)</h2>
+    <div class="card">
+      <img src="logo-full.svg" alt="Full logo" class="full" style="width: 320px;">
+      <div class="label">Navbar / header usage</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Full Logo — Light Variant (for dark backgrounds)</h2>
+    <div class="card dark">
+      <img src="logo-light.svg" alt="Full logo light" class="full" style="width: 320px;">
+      <div class="label" style="color: rgba(255,255,255,0.4);">Footer / dark section usage</div>
+    </div>
+  </div>
+</body>
+</html>

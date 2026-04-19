@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background rounded square -->
+  <rect width="120" height="120" rx="24" fill="#102A43"/>
+  <!-- Subtle teal accent bar at bottom -->
+  <rect x="0" y="108" width="120" height="12" rx="0" fill="#2C7A7B" opacity="0.9"/>
+  <rect x="0" y="108" width="120" height="12" rx="0" fill="#102A43" opacity="0.0"/>
+  <!-- Clip bottom corners to match rounded rect -->
+  <clipPath id="clip">
+    <rect width="120" height="120" rx="24"/>
+  </clipPath>
+  <rect x="0" y="108" width="120" height="12" fill="#2C7A7B" clip-path="url(#clip)"/>
+  <!-- Letter A -->
+  <text x="28" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="400" fill="white" letter-spacing="-2">A</text>
+  <!-- Letter B -->
+  <text x="62" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="400" fill="#2C7A7B" letter-spacing="-2">B</text>
+</svg>
