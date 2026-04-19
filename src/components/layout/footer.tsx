@@ -35,6 +35,7 @@ export function Footer() {
               <li><Link href="/industries" className="text-gray-400 hover:text-white transition-colors">Industries</Link></li>
               <li><Link href="/estimator" className="text-gray-400 hover:text-white transition-colors">Credit Estimator</Link></li>
               <li><Link href="/eligibility" className="text-gray-400 hover:text-white transition-colors">Eligibility Assessment</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
             </ul>
           </div>
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata = {
   title: "South Carolina R&D Tax Credit | Alexander & Blake Advisory",
   description:
-    "South Carolina offers a 5% state R&D tax credit that stacks on top of the federal credit. Alexander & Blake prepares audit-ready credit studies for SC manufacturers, software companies, and engineering firms.",
+    "South Carolina offers a 5% state R&D tax credit that can be coordinated alongside the federal credit. Alexander & Blake prepares well-supported credit studies for SC businesses across every qualifying industry.",
 };
 
 export default function SouthCarolinaPage() {
@@ -33,24 +33,24 @@ export default function SouthCarolinaPage() {
                 South Carolina R&amp;D Tax Credit
               </span>
               <h1 className="text-4xl md:text-5xl font-normal text-white leading-tight mb-6">
-                The SC R&amp;D Tax Credit:{" "}
-                <span className="text-primary">What Your Business Is Owed.</span>
+                The South Carolina{" "}
+                <span className="text-primary">R&amp;D Tax Credit.</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                South Carolina offers a 5% R&amp;D tax credit on top of the federal credit. The majority of qualifying SC businesses have never claimed it. Alexander &amp; Blake changes that.
+                South Carolina offers a 5% R&amp;D tax credit that can be coordinated alongside the federal benefit. Many qualifying SC businesses have never claimed it. Alexander &amp; Blake can help you evaluate whether this credit applies to your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/estimator"
-                  className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center hover:bg-primary-dark transition-colors"
+                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg text-center hover:bg-primary-dark transition-colors"
                 >
-                  Calculate My Credit
+                  Estimate Your Credit
                 </Link>
                 <Link
                   href="/contact"
                   className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center hover:bg-white/20 transition-colors"
                 >
-                  Free Consultation
+                  Schedule a Consultation
                 </Link>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function SouthCarolinaPage() {
                 { stat: "5%", label: "SC State Credit Rate on Qualifying Expenses" },
                 { stat: "10 yrs", label: "Credit Carryforward Period" },
                 { stat: "50%", label: "Max Credit vs SC Tax Liability" },
-                { stat: "Federal+", label: "Stack With Federal Credit for Max Recovery" },
+                { stat: "Federal+", label: "Coordinate With Federal Credit" },
               ].map((item) => (
                 <div key={item.stat} className="bg-white/10 rounded-xl p-6 border border-white/10">
                   <div className="text-3xl font-black text-white mb-1">{item.stat}</div>
@@ -208,22 +208,22 @@ export default function SouthCarolinaPage() {
             </p>
           </div>
           <div className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl p-8 text-center">
-            <h3 className="text-white font-bold text-lg mb-4">See What You Could Recover</h3>
+            <h3 className="text-white font-bold text-lg mb-4">Explore Your Credit Potential</h3>
             <p className="text-primary-light text-sm mb-6">
-              Get a free estimate in under 2 minutes — no obligation, no upfront cost.
+              A brief estimate to help you understand what credits may be available — no obligation.
             </p>
             <div className="flex flex-col gap-3">
               <Link
                 href="/estimator"
-                className="bg-white text-primary font-bold px-8 py-4 rounded-xl text-center hover:bg-surface transition-colors"
+                className="bg-white text-primary font-semibold px-8 py-4 rounded-xl text-center hover:bg-surface transition-colors"
               >
-                Calculate My Credit
+                Estimate Your Credit
               </Link>
               <Link
                 href="/contact"
-                className="border-2 border-white/30 text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-white/10 transition-colors"
+                className="border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-white/10 transition-colors"
               >
-                Schedule a Call
+                Schedule a Consultation
               </Link>
             </div>
           </div>
@@ -294,24 +294,23 @@ export default function SouthCarolinaPage() {
       <section className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">
-            Ready to Claim Your SC R&amp;D Credits?
+            Evaluate Your South Carolina R&amp;D Credits
           </h2>
           <p className="text-lg text-secondary mb-8">
-            Free assessment from South Carolina&apos;s R&amp;D tax credit specialists. No upfront
-            cost. No obligation.
+            A complimentary consultation to review your qualifying activities and outline what a well-supported SC credit engagement would look like. No obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
+              className="bg-primary text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
             >
-              Schedule Free Assessment
+              Schedule a Consultation
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-secondary/30 text-body-text font-bold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
+              className="border border-secondary/30 text-body-text font-semibold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
             >
-              Estimate My Credit
+              Estimate Your Credit
             </Link>
           </div>
         </div>

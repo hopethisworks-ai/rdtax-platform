@@ -4,16 +4,16 @@ import Image from "next/image";
 export const metadata = {
   title: "Our Process | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "Alexander & Blake's disciplined five-step process takes South Carolina businesses from initial assessment to a filed, audit-ready credit study in 60 days.",
+    "Alexander & Blake's structured five-step process takes South Carolina businesses from initial conversation to a carefully prepared, well-supported credit study.",
 };
 
 export default function HowItWorksPage() {
   const steps = [
     {
       number: "01",
-      title: "Free Assessment",
+      title: "Initial Conversation",
       duration: "30 minutes",
-      desc: "A complimentary 30-minute consultation to evaluate your business activities, assess eligibility, and provide a preliminary credit estimate.",
+      desc: "A complimentary consultation to understand your business, review potential qualifying activities, and discuss what a well-supported engagement would look like.",
       items: [
         "Online credit estimator",
         "Free 30-min consultation call",
@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
       number: "04",
       title: "Credit Analysis",
       duration: "2-3 weeks",
-      desc: "Our analysts map your data to qualifying activities, apply IRS criteria, and calculate your maximum allowable credit.",
+      desc: "Our team maps your data to qualifying activities, applies IRS criteria, and prepares a thorough credit calculation with supporting documentation.",
       items: [
         "Business component mapping",
         "Four-part test analysis",
@@ -62,7 +62,7 @@ export default function HowItWorksPage() {
       number: "05",
       title: "Report and Filing",
       duration: "1 week",
-      desc: "You receive a comprehensive, audit-ready work product. We coordinate directly with your CPA for filing and provide full audit defense.",
+      desc: "You receive a carefully prepared credit study with complete documentation. We coordinate directly with your CPA for filing and provide ongoing audit support.",
       items: [
         "Executive summary report",
         "Project narratives",
@@ -86,23 +86,23 @@ export default function HowItWorksPage() {
                 The Process
               </span>
               <h1 className="text-4xl md:text-5xl font-normal text-navy leading-tight mb-6">
-                Assessment to Filed Credit Study in 60 Days.
+                A Structured Process. From Conversation to Completed Study.
               </h1>
               <p className="text-lg text-body-text mb-8 leading-relaxed max-w-lg">
-                We manage the full engagement — activity identification, technical documentation, QRE calculation, filing coordination, and audit defense. Below is the process from initial consultation to delivery.
+                We manage the full engagement — activity identification, technical documentation, credit calculation, coordinated filing, and ongoing audit support. Here is how the process works from initial conversation to delivery.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
                 >
-                  Get Free Assessment
+                  Schedule a Consultation
                 </Link>
                 <Link
                   href="/estimator"
-                  className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors"
+                  className="border border-secondary/30 text-body-text font-semibold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors"
                 >
-                  Estimate My Credit
+                  Estimate Your Credit
                 </Link>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function HowItWorksPage() {
               What You Get
             </span>
             <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">
-              Everything Included. Nothing Extra.
+              What the Engagement Includes
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -220,8 +220,8 @@ export default function HowItWorksPage() {
                 ),
               },
               {
-                title: "Full Audit Defense",
-                desc: "If the IRS ever questions your credit, we defend it. Our documentation is built from day one to withstand scrutiny.",
+                title: "Ongoing Audit Support",
+                desc: "If the IRS ever reviews your credit, we provide full representation. Our documentation is prepared from day one with the expectation that it may be examined.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
@@ -248,7 +248,7 @@ export default function HowItWorksPage() {
               },
               {
                 title: "Federal and SC Credits",
-                desc: "We claim both the federal and SC state credit simultaneously, stacking them for maximum total recovery.",
+                desc: "We identify and document both the federal and SC state credit simultaneously, coordinating them for comprehensive benefit.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" />
@@ -286,23 +286,23 @@ export default function HowItWorksPage() {
       <section className="py-20 px-6 bg-surface border-t border-primary/20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">
-            Ready to Begin?
+            Ready to Get Started?
           </h2>
           <p className="text-lg text-secondary mb-8">
-            The complimentary assessment takes 30 minutes. We evaluate your eligibility and provide a preliminary credit estimate at no cost.
+            The initial consultation is complimentary and takes about 30 minutes. We&apos;ll review your business, evaluate potential qualifying activities, and outline what a well-supported engagement would look like.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-primary text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
+              className="bg-primary text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
             >
-              Schedule Free Assessment
+              Schedule a Consultation
             </Link>
             <Link
               href="/estimator"
-              className="border-2 border-secondary/30 text-body-text font-bold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
+              className="border border-secondary/30 text-body-text font-semibold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
             >
-              Estimate My Credit
+              Estimate Your Credit
             </Link>
           </div>
         </div>

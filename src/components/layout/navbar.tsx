@@ -40,6 +40,9 @@ export function Navbar() {
             <Link href="/services" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
               Services
             </Link>
+            <Link href="/how-it-works" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
+              Process
+            </Link>
             <Link href="/industries" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
               Industries
             </Link>
@@ -49,7 +52,7 @@ export function Navbar() {
             <Link href="/about" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
               About
             </Link>
-            <Link href="/#faq" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
+            <Link href="/faq" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
               FAQ
             </Link>
             <Link href="/contact" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
@@ -59,17 +62,13 @@ export function Navbar() {
 
           {/* Desktop Right Actions */}
           <div className="hidden md:flex items-center gap-4">
-            {session ? (
-              <Link href="/portal" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
-                Portal
-              </Link>
-            ) : (
-              <Link href="/login" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
-                Sign In
+            {session && (
+              <Link href="/portal" className="text-gray-500 hover:text-gray-300 text-xs font-medium transition-colors">
+                Client Portal
               </Link>
             )}
             <Link href="/contact" className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary-dark transition-colors shadow-sm hover:shadow-md">
-              Schedule Consultation
+              Schedule a Consultation
             </Link>
           </div>
 
@@ -91,6 +90,9 @@ export function Navbar() {
             <Link href="/services" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               Services
             </Link>
+            <Link href="/how-it-works" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
+              Process
+            </Link>
             <Link href="/industries" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               Industries
             </Link>
@@ -100,24 +102,20 @@ export function Navbar() {
             <Link href="/about" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               About
             </Link>
-            <Link href="/#faq" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
+            <Link href="/faq" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               FAQ
             </Link>
             <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               Contact
             </Link>
             <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
-              {session ? (
-                <Link href="/portal" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium">
-                  Portal
-                </Link>
-              ) : (
-                <Link href="/login" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium">
-                  Sign In
+              {session && (
+                <Link href="/portal" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-500 hover:text-gray-300 text-xs font-medium">
+                  Client Portal
                 </Link>
               )}
               <Link href="/contact" onClick={() => setOpen(false)} className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium text-center hover:bg-primary-dark transition-colors">
-                Schedule Consultation
+                Schedule a Consultation
               </Link>
             </div>
           </div>
