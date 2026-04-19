@@ -230,7 +230,7 @@ export default function HowItWorksPage() {
               },
               {
                 title: "Secure Client Portal",
-                desc: "Upload documents, track engagement status, and communicate with your analyst — all through your secure Alexander &amp; Blake portal.",
+                desc: "Upload documents, track engagement status, and communicate with your analyst — all through your secure Alexander & Blake portal.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
