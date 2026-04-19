@@ -10,11 +10,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-sm">AB</span>
+            <div className="flex items-center gap-3 mb-4">
+              <svg width="32" height="32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="120" height="120" rx="24" fill="#2C7A7B"/>
+                <text x="28" y="82" fontFamily="Georgia, serif" fontSize="58" fontWeight="400" fill="white" letterSpacing="-2">A</text>
+                <text x="62" y="82" fontFamily="Georgia, serif" fontSize="58" fontWeight="400" fill="rgba(255,255,255,0.7)" letterSpacing="-2">B</text>
+              </svg>
+              <div className="flex flex-col">
+                <span className="font-serif text-white text-base leading-tight tracking-wide">Alexander <span className="text-primary-light">&amp;</span> Blake</span>
+                <span className="text-[10px] text-gray-400 tracking-[0.15em] uppercase leading-tight">R&amp;D Tax Credit Advisory</span>
               </div>
-              <span className="font-semibold text-white text-base">Alexander &amp; Blake</span>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
               A dedicated R&amp;D tax credit advisory firm serving South Carolina. Rigorous methodology, defensible documentation, and complete audit defense.
