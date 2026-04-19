@@ -106,8 +106,8 @@ export default function EstimatorPage() {
                 </svg>
                 Your Estimate Is Ready
               </div>
-              <h1 className="text-4xl font-black text-navy mb-3">
-                Your Estimated R&amp;D Tax Credit
+              <h1 className="text-4xl font-normal text-navy mb-3">
+                Your Preliminary Credit Estimate
               </h1>
               <p className="text-secondary text-lg">
                 Based on the financial information you provided
@@ -136,7 +136,7 @@ export default function EstimatorPage() {
                   {fmt(result.estimateHigh + result.scCreditHigh)}
                 </div>
                 <p className="text-secondary text-xs mt-2">
-                  Stack both credits for maximum recovery
+                  Federal and state credits coordinated together
                 </p>
               </div>
             )}
@@ -147,25 +147,24 @@ export default function EstimatorPage() {
               <p className="text-primary text-xs leading-relaxed">{result.disclaimer}</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
-              <h2 className="text-xl font-black text-navy mb-2">
-                Ready to Claim Your Credits?
+              <h2 className="text-xl font-bold text-navy mb-2">
+                Interested in a Detailed Study?
               </h2>
               <p className="text-secondary text-sm mb-6">
-                Schedule a free 30-minute consultation and we will walk you through exactly how to
-                claim your credits. No upfront cost — our fee is 20% of what we recover.
+                This estimate is a starting point. A detailed credit study will refine these numbers based on a thorough review of your qualifying activities, financial data, and documentation. The initial consultation is complimentary.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-primary-dark transition-colors"
+                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-primary-dark transition-colors"
                 >
-                  Schedule Free Consultation
+                  Schedule a Consultation
                 </Link>
                 <Link
                   href="/eligibility"
                   className="bg-slate-50 border border-gray-200 text-body-text font-semibold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-slate-100 transition-colors"
                 >
-                  Check Eligibility
+                  Evaluate Eligibility
                 </Link>
               </div>
             </div>
@@ -194,13 +193,13 @@ export default function EstimatorPage() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-primary font-semibold text-sm uppercase tracking-widest mb-3 block">
-              Free R&amp;D Credit Calculator
+              Credit Estimator
             </span>
-            <h1 className="text-4xl font-black text-navy mb-3">
-              How Much Could You Recover?
+            <h1 className="text-4xl font-normal text-navy mb-3">
+              Estimate Your R&amp;D Tax Credit
             </h1>
             <p className="text-secondary text-lg">
-              Get a preliminary estimate in under 2 minutes. No account required.
+              A preliminary estimate based on your financial information. This is a starting point — not a final determination. A detailed credit study will refine these numbers.
             </p>
           </div>
           <div className="bg-surface border border-primary/20 rounded-xl p-4 mb-8 flex items-start gap-3">
@@ -208,10 +207,9 @@ export default function EstimatorPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5h.01" />
             </svg>
             <div>
-              <p className="text-navy font-semibold text-sm">SC businesses get more</p>
+              <p className="text-navy font-semibold text-sm">South Carolina businesses may benefit from both credits</p>
               <p className="text-primary text-xs">
-                South Carolina businesses can stack the federal credit with an additional 5% SC state
-                credit. Select SC as your state to see your full estimate.
+                South Carolina offers an additional 5% state R&amp;D credit that can be coordinated alongside the federal benefit. Select SC as your state to see a combined estimate.
               </p>
             </div>
           </div>
@@ -412,7 +410,7 @@ export default function EstimatorPage() {
               disabled={loading}
               className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50"
             >
-              {loading ? "Calculating Your Estimate..." : "Calculate My R&D Credit"}
+              {loading ? "Preparing Your Estimate..." : "Get Preliminary Estimate"}
             </button>
             <p className="text-xs text-secondary text-center">
               Your information is never sold or shared. This estimate does not constitute tax advice.

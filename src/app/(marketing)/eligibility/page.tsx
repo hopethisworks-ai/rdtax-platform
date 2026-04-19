@@ -45,20 +45,20 @@ export default function EligibilityPage() {
           {/* CTA */}
           <div className="mt-12 bg-surface border border-gray-200 rounded-2xl p-8 text-center">
             <p className="text-body-text text-sm font-medium mb-4">
-              Prefer to talk to someone? Get a free 30-minute assessment.
+              Prefer to speak with someone directly? The initial consultation is complimentary.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
                 className="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2.5 rounded-lg text-sm text-center transition-colors"
               >
-                Schedule Free Consultation
+                Schedule a Consultation
               </Link>
               <Link
                 href="/estimator"
                 className="bg-white border border-secondary/30 text-body-text font-semibold px-6 py-2.5 rounded-lg text-sm text-center hover:bg-surface transition-colors"
               >
-                Calculate My Credit
+                Estimate Your Credit
               </Link>
             </div>
           </div>
