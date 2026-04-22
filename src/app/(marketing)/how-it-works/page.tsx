@@ -124,7 +124,7 @@ export default function HowItWorksPage() {
           KEY STATS BAR
       ═══════════════════════════════════════════ */}
       <section className="py-10 px-6 bg-surface border-y border-gray-200">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
           <div>
             <div className="text-3xl font-black text-navy mb-1">30 min</div>
             <div className="text-secondary text-sm">Free assessment call</div>

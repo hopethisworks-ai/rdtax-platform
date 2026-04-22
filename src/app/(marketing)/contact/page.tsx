@@ -69,7 +69,7 @@ export default function ContactPage() {
         </div>
       </div>
       <div className="pt-12 pb-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-20 items-start">
           {/* Left Column: Info */}
           <div>
             <p className="text-body-text text-lg leading-relaxed mb-8">Request a complimentary 30-minute consultation. We will evaluate your eligibility, estimate your potential credit, and outline the engagement process. No obligation.</p>

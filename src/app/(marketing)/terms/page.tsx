@@ -1,7 +1,7 @@
 export default function TermsPage() {
   return (
-    <div className="py-20 max-w-3xl mx-auto px-4">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1>
+    <div className="py-12 md:py-20 max-w-3xl mx-auto px-6">
+      <h1 className="text-3xl md:text-4xl font-bold text-navy mb-6 md:mb-8">Terms of Service</h1>
       <div className="prose prose-gray">
         <p className="text-gray-600 mb-4">Effective Date: January 1, 2025</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">

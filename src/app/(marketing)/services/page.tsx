@@ -160,7 +160,7 @@ export default function ServicesPage() {
                   alt={svc.imageAlt}
                   width={800}
                   height={600}
-                  className="object-cover w-full h-[360px]"
+                  className="object-cover w-full h-[240px] sm:h-[300px] md:h-[360px]"
                 />
               </div>
             </div>

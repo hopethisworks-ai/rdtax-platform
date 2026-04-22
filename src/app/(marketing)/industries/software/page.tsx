@@ -16,7 +16,7 @@ export default function SoftwarePage() {
               <span className="w-1.5 h-1.5 bg-surface0 rounded-full"></span>
               Software and Technology Industry
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Your Code Is Worth <span className="text-primary">More Than You Think.</span></h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">Your Code Is Worth <span className="text-primary">More Than You Think.</span></h1>
             <p className="text-lg text-slate-300 mb-8">Software companies routinely miss out on R&D tax credits for work they are already doing — custom development, new algorithms, platform building, and internal tools all qualify.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/estimator" className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Estimate Your Credit</Link>

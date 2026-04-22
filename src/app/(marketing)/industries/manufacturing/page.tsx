@@ -16,7 +16,7 @@ export default function ManufacturingPage() {
               <span className="w-1.5 h-1.5 bg-surface0 rounded-full"></span>
               Manufacturing Industry
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">SC Manufacturers Qualify for <span className="text-primary">Significant R&D Credits.</span></h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">SC Manufacturers Qualify for <span className="text-primary">Significant R&D Credits.</span></h1>
             <p className="text-lg text-slate-300 mb-8">If your team improves processes, develops new products, or solves engineering problems, you are likely leaving thousands in unclaimed tax credits on the table every year.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/estimator" className="bg-primary text-white font-bold px-8 py-4 rounded-xl text-lg text-center">Estimate Your Credit</Link>

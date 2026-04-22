@@ -66,7 +66,7 @@ export default function HomePage() {
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
                   alt="Business professionals reviewing financial strategy"
                   width={800} height={550}
-                  className="object-cover w-full h-[400px] md:h-[500px]"
+                  className="object-cover w-full h-[280px] sm:h-[360px] md:h-[500px]"
                   priority
                 />
               </div>

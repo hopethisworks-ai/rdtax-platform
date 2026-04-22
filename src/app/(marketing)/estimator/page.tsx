@@ -117,7 +117,7 @@ export default function EstimatorPage() {
               <p className="text-primary-light text-sm font-semibold uppercase tracking-widest mb-3">
                 Federal R&amp;D Tax Credit Estimate
               </p>
-              <div className="text-6xl font-black text-white mb-2">
+              <div className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-2">
                 {fmt(result.estimateLow)} – {fmt(result.estimateHigh)}
               </div>
               {result.scCreditHigh > 0 && (
@@ -168,7 +168,7 @@ export default function EstimatorPage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
               <div className="bg-slate-50 rounded-xl p-4">
                 <div className="font-black text-navy">20%</div>
                 <div className="text-secondary text-xs mt-1">Contingency fee only</div>
@@ -392,7 +392,7 @@ export default function EstimatorPage() {
                     id="prior"
                     checked={form.priorCreditClaimed}
                     onChange={(e) => setForm({ ...form, priorCreditClaimed: e.target.checked })}
-                    className="w-4 h-4 text-primary rounded"
+                    className="w-5 h-5 text-primary rounded cursor-pointer"
                   />
                   <label htmlFor="prior" className="text-sm text-body-text">
                     We have claimed the R&amp;D tax credit in a prior year
