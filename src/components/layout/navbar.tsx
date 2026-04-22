@@ -31,9 +31,9 @@ export function Navbar() {
               {/* B letter */}
               <path d="M68 30h16c4 0 7 1 9 3s3 5 3 8c0 4-2 7-5 9 4 2 6 5 6 10 0 4-1 7-4 9s-6 3-10 3H68V30zm8 18h8c2 0 3-0.5 4-2s2-3 2-5-1-3-2-4-2-2-4-2h-8v13zm0 20h10c2 0 4-1 5-2s2-3 2-5-1-4-2-5-3-2-5-2H76v14z" fill="rgba(255,255,255,0.7)"/>
             </svg>
-            <div className="hidden sm:flex flex-col">
-              <span className="font-serif text-white text-base leading-tight tracking-wide">Alexander <span className="text-primary-light">&amp;</span> Blake</span>
-              <span className="text-[10px] text-gray-400 tracking-[0.15em] uppercase leading-tight">R&amp;D Tax Credit Advisory</span>
+            <div className="flex flex-col">
+              <span className="font-serif text-white text-sm sm:text-base leading-tight tracking-wide">Alexander <span className="text-primary-light">&amp;</span> Blake</span>
+              <span className="hidden sm:block text-[10px] text-gray-400 tracking-[0.15em] uppercase leading-tight">R&amp;D Tax Credit Advisory</span>
             </div>
           </Link>
 
