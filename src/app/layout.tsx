@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Alexander & Blake",
   },
   description:
-    "Alexander & Blake is a specialist advisory firm helping innovative South Carolina businesses identify, document, and support R&D tax credits with precision and confidence.",
+    "Alexander & Blake is a specialist advisory firm helping innovative South Carolina businesses identify qualifying R&D activities, prepare structured credit studies, and coordinate CPA-ready filing support.",
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",

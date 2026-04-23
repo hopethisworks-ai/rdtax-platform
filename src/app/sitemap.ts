@@ -18,6 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/eligibility", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/estimator", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/south-carolina", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/methodology", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
   ];
 
   return routes.map((route) => ({

@@ -20,14 +20,17 @@ export default function EligibilityPage() {
             <h1 className="text-4xl md:text-5xl font-normal text-navy mb-4">
               Does Your Business Qualify for R&amp;D Tax Credits?
             </h1>
-            <p className="text-secondary text-lg">
-              Answer five questions to receive an immediate preliminary assessment. No obligation, no commitment — just a clear answer.
+            <p className="text-secondary text-lg mb-3">
+              Answer five questions to receive an immediate preliminary assessment. No obligation, no commitment — just a clear starting point.
+            </p>
+            <p className="text-secondary text-sm">
+              This is a preliminary screen only. No records are required and no information is stored unless you choose to continue.
             </p>
           </div>
           <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
             <EligibilityQuiz />
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-4 text-center">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
             <div className="bg-surface rounded-xl p-4">
               <div className="text-2xl font-black text-navy">2 min</div>
               <div className="text-secondary text-xs mt-1">To complete</div>
@@ -42,10 +45,11 @@ export default function EligibilityPage() {
             </div>
           </div>
 
-          {/* CTA */}
+          {/* Next Steps */}
           <div className="mt-12 bg-surface border border-gray-200 rounded-2xl p-8 text-center">
-            <p className="text-body-text text-sm font-medium mb-4">
-              Prefer to speak with someone directly? The initial consultation is complimentary.
+            <h3 className="font-bold text-navy mb-2">What To Do Next</h3>
+            <p className="text-body-text text-sm mb-4">
+              Based on your result, you can estimate your potential credit or speak directly with our team. The initial consultation is complimentary, with no obligation and no records required.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

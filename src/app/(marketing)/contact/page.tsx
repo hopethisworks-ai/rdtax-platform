@@ -72,54 +72,69 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-20 items-start">
           {/* Left Column: Info */}
           <div>
-            <p className="text-body-text text-lg leading-relaxed mb-8">Request a complimentary 30-minute consultation. We will evaluate your eligibility, estimate your potential credit, and outline the engagement process. No obligation.</p>
+            {/* What Happens Next */}
+            <div className="mb-10">
+              <h2 className="text-xl font-bold text-navy mb-4">What Happens Next</h2>
+              <div className="space-y-4">
+                {[
+                  { num: "1", text: "We review your inquiry within one business day" },
+                  { num: "2", text: "We schedule a short complimentary consultation" },
+                  { num: "3", text: "We provide an initial eligibility view based on your activities" },
+                  { num: "4", text: "If there appears to be fit, we outline scope and document needs" },
+                ].map((step) => (
+                  <div key={step.num} className="flex items-start gap-3">
+                    <div className="w-7 h-7 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">{step.num}</div>
+                    <p className="text-body-text text-sm mt-0.5">{step.text}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-secondary text-xs mt-4 italic">Sensitive records are requested only after initial fit is established and are handled through our secure portal.</p>
+            </div>
+
+            {/* Who This Is Best For */}
+            <div className="mb-10">
+              <h2 className="text-xl font-bold text-navy mb-4">This Is a Good Fit If You</h2>
+              <div className="space-y-2">
+                {[
+                  "Invest in product development, process improvement, or software",
+                  "Have 5 or more employees engaged in technical work",
+                  "Operate in South Carolina or have SC-based operations",
+                  "Want a structured, documented approach to claiming R&D credits",
+                  "Are a CPA looking for a specialist R&D credit resource",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <span className="text-body-text text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Feature Rows */}
-            <div className="space-y-8 mb-12">
+            <div className="space-y-6 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-surface rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div className="w-10 h-10 bg-surface rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-navy text-base">30-Minute Complimentary Assessment</p>
-                  <p className="text-body-text text-sm mt-1">We evaluate your business activities and provide a preliminary eligibility determination.</p>
+                  <p className="font-bold text-navy text-sm">Contingency-Based — 20% of Credits Identified</p>
+                  <p className="text-body-text text-xs mt-1">No retainers, no hourly fees. If we identify no qualifying credits, there is no charge.</p>
                 </div>
               </div>
-
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-surface rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div className="w-10 h-10 bg-surface rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-navy text-base">Contingency-Based Engagement</p>
-                  <p className="text-body-text text-sm mt-1">20% of credits recovered. No retainers, no hourly fees. If we identify no qualifying credits, there is no charge.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-surface rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                </div>
-                <div>
-                  <p className="font-bold text-navy text-base">One Business Day Response</p>
-                  <p className="text-body-text text-sm mt-1">Every inquiry receives a response within one business day.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-surface rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </div>
-                <div>
-                  <p className="font-bold text-navy text-base">South Carolina Focus</p>
-                  <p className="text-body-text text-sm mt-1">Deep expertise in SC industries, state regulations, and the local business landscape.</p>
+                  <p className="font-bold text-navy text-sm">South Carolina Specialist</p>
+                  <p className="text-body-text text-xs mt-1">Federal and SC state credits coordinated together for maximum benefit.</p>
                 </div>
               </div>
             </div>
 
             {/* Bottom Card */}
-            <div className="bg-surface border border-gray-200 rounded-2xl p-8">
-              <p className="text-body-text text-sm font-medium mb-5">Not ready to talk? Start with a free estimate.</p>
+            <div className="bg-surface border border-gray-200 rounded-2xl p-6">
+              <p className="text-body-text text-sm font-medium mb-4">Not ready to talk? Start with a free estimate.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/estimator" className="bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-2.5 rounded-lg text-sm text-center transition-colors">Estimate Your Credit</Link>
                 <Link href="/eligibility" className="bg-white border border-secondary/30 text-navy font-semibold px-5 py-2.5 rounded-lg text-sm text-center hover:bg-surface transition-colors">Evaluate Eligibility</Link>
@@ -216,7 +231,18 @@ export default function ContactPage() {
               </button>
 
               {/* Privacy Note */}
-              <p className="text-xs text-secondary text-center">We respond within one business day. Your information is never sold or shared.</p>
+              <p className="text-xs text-secondary text-center mb-4">We respond within one business day. Your information is never sold or shared.</p>
+
+              {/* Trust Footer */}
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-secondary">
+                <span>No obligation</span>
+                <span className="text-gray-300">·</span>
+                <span>No retainer required</span>
+                <span className="text-gray-300">·</span>
+                <span>Secure data handling</span>
+                <span className="text-gray-300">·</span>
+                <span>CPA coordination available</span>
+              </div>
             </form>
           </div>
         </div>

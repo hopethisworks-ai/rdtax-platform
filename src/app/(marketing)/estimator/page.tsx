@@ -416,6 +416,27 @@ export default function EstimatorPage() {
               Your information is never sold or shared. This estimate does not constitute tax advice.
             </p>
           </form>
+
+          {/* Reassurance Block */}
+          <div className="mt-10 bg-surface border border-gray-200 rounded-xl p-6">
+            <h3 className="font-bold text-navy text-sm mb-4">What Happens After This Estimate</h3>
+            <div className="space-y-3 mb-4">
+              {[
+                "This is a preliminary estimate only — your final credit depends on a detailed study of qualifying activities and expenses",
+                "There is no obligation attached to this estimate",
+                "If the estimate suggests meaningful credit potential, you can schedule a complimentary consultation to discuss a detailed study",
+                "Your information is handled securely and never shared with third parties",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                  <span className="text-body-text text-xs leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+            <Link href="/contact" className="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2.5 rounded-lg text-sm transition-colors">
+              Schedule a Consultation
+            </Link>
+          </div>
         </div>
       </div>
     </div>

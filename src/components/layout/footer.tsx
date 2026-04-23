@@ -22,7 +22,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
-              A specialist advisory firm helping innovative South Carolina businesses identify, document, and support R&amp;D tax credits with precision and confidence.
+              A specialist advisory firm helping innovative South Carolina businesses identify qualifying R&amp;D activities, prepare structured credit studies, and coordinate CPA-ready filing support.
             </p>
           </div>
 
@@ -46,6 +46,7 @@ export function Footer() {
               <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/cpa-partners" className="text-gray-400 hover:text-white transition-colors">CPA Partners</Link></li>
+              <li><Link href="/methodology" className="text-gray-400 hover:text-white transition-colors">Methodology</Link></li>
             </ul>
           </div>
 

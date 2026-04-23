@@ -6,7 +6,7 @@ export function StructuredData() {
     "@type": "ProfessionalService",
     name: "Alexander & Blake",
     description:
-      "Specialist R&D tax credit advisory firm helping innovative South Carolina businesses identify, document, and support R&D tax credits with precision and confidence.",
+      "Specialist R&D tax credit advisory firm helping innovative South Carolina businesses identify qualifying R&D activities, prepare structured credit studies, and coordinate CPA-ready filing support.",
     url: siteUrl,
     areaServed: {
       "@type": "State",

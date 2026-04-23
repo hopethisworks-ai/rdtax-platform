@@ -253,89 +253,165 @@ export default function CpaPartnersPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHAT WE NEED FROM THE CPA
+          WE HANDLE / CPA HANDLES SPLIT
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-surface">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-primary text-xs font-bold uppercase tracking-widest">
-            Your Role
-          </span>
-          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-4">
-            What We Need From the CPA
-          </h2>
-          <p className="text-body-text leading-relaxed max-w-2xl mx-auto">
-            In most engagements, we ask the CPA to help confirm filing posture, prior-year credit history, and any relevant return details. We handle the specialty R&amp;D work so your team does not need to build an internal process from scratch.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
+              Clear Division of Work
+            </span>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">
+              We Handle the Specialty Work. You Handle the Relationship.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white border border-gray-200 rounded-xl p-8">
+              <div className="text-primary font-black text-sm uppercase tracking-widest mb-4">Alexander &amp; Blake Handles</div>
+              <div className="space-y-3">
+                {[
+                  "Technical interviews and qualifying activity identification",
+                  "Business component mapping and four-part test documentation",
+                  "QRE calculations and financial substantiation",
+                  "Project narratives and methodology memo",
+                  "Form 6765 support and filing-ready schedules",
+                  "Post-filing audit support and correspondence",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-body-text text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-xl p-8">
+              <div className="text-navy font-black text-sm uppercase tracking-widest mb-4">Your Firm Handles</div>
+              <div className="space-y-3">
+                {[
+                  "Client relationship and communication",
+                  "Confirmation of filing posture and prior-year credit history",
+                  "Review of completed study package",
+                  "Integration of Form 6765 into the return",
+                  "Filing the return with the credit claim",
+                  "Ongoing client advisory relationship",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <CheckIcon className="w-4 h-4 text-navy flex-shrink-0 mt-0.5" />
+                    <span className="text-body-text text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          RESULTS — illustrative case studies
+          WHY FIRMS REFER
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=80"
-            alt="Professional consulting session"
-            width={1400}
-            height={800}
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-slate-800/80" />
-        </div>
-        <div className="relative max-w-6xl mx-auto">
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-primary text-xs font-bold uppercase tracking-widest">
-              Results
+              Why Firms Refer
             </span>
-            <h2 className="text-3xl md:text-4xl font-normal text-white mt-3 mb-3">
-              Representative Partner Engagement Outcomes
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">
+              A Reliable Specialist Resource
             </h2>
-            <p className="text-secondary max-w-2xl mx-auto">
-              Illustrative examples based on representative South Carolina engagements. Actual outcomes depend on the client&apos;s facts, qualifying activities, expenses, and filing posture.
-            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {[
-              {
-                amount: "$87K",
-                type: "SC Manufacturing Client",
-                detail:
-                  "Federal and SC state credits combined. Client had never claimed the credit before. CPA referred after noticing process development activity.",
-                period: "Current year",
-              },
-              {
-                amount: "$142K",
-                type: "SC Software Company",
-                detail:
-                  "Three years of amended returns plus current year. Client thought only pharmaceutical companies qualified.",
-                period: "3-year lookback",
-              },
-              {
-                amount: "$63K",
-                type: "SC Engineering Firm",
-                detail:
-                  "Current year credit on structural engineering and design work. Study completed and delivered in 45 days with structured documentation.",
-                period: "Current year",
-              },
-            ].map((study) => (
-              <div
-                key={study.type}
-                className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6"
-              >
-                <div className="text-3xl font-black text-primary mb-1">{study.amount}</div>
-                <div className="text-white font-bold text-sm mb-3">{study.type}</div>
-                <p className="text-secondary text-sm leading-relaxed mb-3">{study.detail}</p>
-                <span className="inline-block bg-white/10 text-slate-300 text-xs font-medium px-2 py-1 rounded">
-                  {study.period}
-                </span>
+              { title: "No In-House Build Required", desc: "R&D credit work requires specialized technical and financial expertise. We handle it so your team doesn't need to build an internal process from scratch." },
+              { title: "Structured Documentation", desc: "Every study includes organized project narratives, QRE schedules, methodology memos, and four-part test documentation — prepared for your review." },
+              { title: "No Client Poaching", desc: "We never solicit your clients for other services. We function as an extension of your practice — a specialty resource, not a competitor." },
+              { title: "Full Visibility", desc: "You receive visibility throughout the engagement and a complete study package at completion. No surprises." },
+              { title: "Post-Filing Support", desc: "If questions arise after filing, we handle audit correspondence and provide documentation support at no additional cost." },
+              { title: "Contingency Economics", desc: "No upfront cost to your firm or your client. Our fee is contingency-based and paid after filing." },
+            ].map((item) => (
+              <div key={item.title} className="border-l-2 border-primary/30 pl-6 py-1">
+                <h3 className="font-bold text-navy mb-1">{item.title}</h3>
+                <p className="text-body-text text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-secondary text-xs mt-6">
-            These examples are illustrative and based on typical engagement profiles. Individual results
-            depend on qualifying activities, expenses, and tax situation.
-          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CASE STUDIES
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
+              Partner Engagement Examples
+            </span>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">
+              Representative Partner Engagements
+            </h2>
+            <p className="text-secondary max-w-2xl mx-auto">
+              Anonymized examples based on actual CPA-referred engagements. Details have been generalized to protect confidentiality.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                industry: "SC Manufacturer",
+                size: "22 employees · Current year",
+                amount: "$87K",
+                details: [
+                  "CPA referred after noticing process development activity during tax prep",
+                  "Identified qualifying custom tooling and process-improvement work",
+                  "Built wage and supply support schedules with project-level allocation",
+                  "Coordinated federal and SC state credit filing with CPA",
+                  "Delivered complete study package with audit support included",
+                ],
+              },
+              {
+                industry: "SC Software Company",
+                size: "40 engineers · 3-year lookback + current",
+                amount: "$142K",
+                details: [
+                  "Client had never claimed — CPA knew they might qualify but lacked specialist capacity",
+                  "Identified qualifying custom development and platform engineering work",
+                  "Reviewed three open tax years plus current year",
+                  "Prepared business-component mapping across 12 qualifying projects",
+                  "Coordinated amended return filing through the referring CPA",
+                ],
+              },
+              {
+                industry: "SC Engineering Firm",
+                size: "15 employees · Current year",
+                amount: "$63K",
+                details: [
+                  "CPA introduced the engagement during annual planning meeting",
+                  "Qualifying activities in structural design, simulation, and prototyping",
+                  "Completed technical interviews in two sessions",
+                  "Study completed and delivered to CPA in 45 days",
+                  "Federal and SC state credit coordinated in a single filing package",
+                ],
+              },
+            ].map((study) => (
+              <div key={study.industry} className="bg-white border border-gray-200 rounded-2xl p-8">
+                <div className="flex items-baseline justify-between mb-4">
+                  <div>
+                    <div className="text-navy font-bold">{study.industry}</div>
+                    <div className="text-secondary text-xs">{study.size}</div>
+                  </div>
+                  <div className="text-2xl font-black text-primary">{study.amount}</div>
+                </div>
+                <div className="space-y-2">
+                  {study.details.map((detail) => (
+                    <div key={detail} className="flex items-start gap-2">
+                      <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-body-text text-xs leading-relaxed">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-secondary text-xs mt-8">Based on representative engagement profiles. Individual results depend on qualifying activities, expenses, and tax situation.</p>
         </div>
       </section>
 
@@ -352,6 +428,20 @@ export default function CpaPartnersPage() {
           </div>
           <div className="bg-white rounded-2xl p-8 shadow-xl">
             <CpaPartnerForm />
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-xs text-secondary">
+            <span className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
+              Encrypted data handling
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+              Secure client portal
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" /></svg>
+              Role-based access controls
+            </span>
           </div>
         </div>
       </section>
