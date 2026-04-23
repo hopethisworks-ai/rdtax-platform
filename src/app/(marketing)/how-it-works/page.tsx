@@ -106,13 +106,13 @@ export default function HowItWorksPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
               <Image
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80"
-                alt="Team reviewing project timeline on whiteboard"
-                width={800}
-                height={550}
-                className="object-cover w-full h-[400px] md:h-[480px]"
+                src="/visuals/process-timeline.svg"
+                alt="Alexander & Blake engagement timeline — from complimentary consultation through CPA delivery in approximately 60 days"
+                width={560}
+                height={480}
+                className="w-full h-auto"
                 priority
               />
             </div>

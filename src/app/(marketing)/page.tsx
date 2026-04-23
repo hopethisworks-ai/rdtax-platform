@@ -69,10 +69,10 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                  alt="Business professionals reviewing financial strategy"
-                  width={800} height={550}
-                  className="object-cover w-full h-[280px] sm:h-[360px] md:h-[500px]"
+                  src="/visuals/hero-process.svg"
+                  alt="Alexander & Blake credit study process — from eligibility assessment through delivered study package with project narratives, QRE schedules, and Form 6765 support"
+                  width={560} height={440}
+                  className="w-full h-auto"
                   priority
                 />
               </div>
@@ -152,12 +152,12 @@ export default function HomePage() {
       ═══════════════════════════════════════════ */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5">
             <Image
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
-              alt="Professional reviewing financial documents"
-              width={800} height={600}
-              className="object-cover w-full h-[280px] sm:h-[340px] md:h-[380px]"
+              src="/visuals/deliverable-preview.svg"
+              alt="Alexander & Blake credit study deliverable package — executive summary, project narratives, QRE schedules, methodology memo, and Form 6765 support"
+              width={560} height={420}
+              className="w-full h-auto"
             />
           </div>
           <div>

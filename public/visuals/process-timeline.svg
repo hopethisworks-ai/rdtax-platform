@@ -1,0 +1,82 @@
+<svg viewBox="0 0 560 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="480" rx="16" fill="#102A43"/>
+  <rect width="560" height="480" rx="16" fill="url(#procGrad)" opacity="0.3"/>
+
+  <!-- Subtle dot grid -->
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="0.8" fill="rgba(255,255,255,0.05)"/>
+  </pattern>
+  <rect width="560" height="480" fill="url(#dots)"/>
+
+  <!-- Header -->
+  <text x="280" y="38" fill="rgba(255,255,255,0.35)" font-family="system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="2" text-anchor="middle">ENGAGEMENT TIMELINE</text>
+
+  <!-- Vertical timeline line -->
+  <line x1="80" y1="60" x2="80" y2="450" stroke="#2C7A7B" stroke-width="2" opacity="0.3"/>
+
+  <!-- Step 1 -->
+  <circle cx="80" cy="85" r="14" fill="#2C7A7B"/>
+  <text x="80" y="89" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">01</text>
+  <text x="110" y="80" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Complimentary Consultation</text>
+  <text x="110" y="96" fill="rgba(255,255,255,0.5)" font-family="system-ui, sans-serif" font-size="10">30-minute assessment · Eligibility review · No obligation</text>
+
+  <!-- Time badge -->
+  <rect x="420" y="72" width="70" height="22" rx="11" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="455" y="87" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Day 1</text>
+
+  <!-- Connector -->
+  <line x1="80" y1="105" x2="80" y2="150" stroke="#2C7A7B" stroke-width="2" opacity="0.15"/>
+
+  <!-- Step 2 -->
+  <circle cx="80" cy="160" r="14" fill="#2C7A7B"/>
+  <text x="80" y="164" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
+  <text x="110" y="155" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Engagement &amp; Portal Setup</text>
+  <text x="110" y="171" fill="rgba(255,255,255,0.5)" font-family="system-ui, sans-serif" font-size="10">Engagement letter · Secure portal access · Document checklist</text>
+
+  <rect x="420" y="147" width="70" height="22" rx="11" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="455" y="162" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Week 1</text>
+
+  <line x1="80" y1="180" x2="80" y2="225" stroke="#2C7A7B" stroke-width="2" opacity="0.15"/>
+
+  <!-- Step 3 -->
+  <circle cx="80" cy="235" r="14" fill="#2C7A7B"/>
+  <text x="80" y="239" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">03</text>
+  <text x="110" y="230" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Technical Interviews &amp; Data Collection</text>
+  <text x="110" y="246" fill="rgba(255,255,255,0.5)" font-family="system-ui, sans-serif" font-size="10">Guided interviews · Activity documentation · Financial data gathering</text>
+
+  <rect x="420" y="222" width="90" height="22" rx="11" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="465" y="237" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Weeks 2–4</text>
+
+  <line x1="80" y1="255" x2="80" y2="300" stroke="#2C7A7B" stroke-width="2" opacity="0.15"/>
+
+  <!-- Step 4 -->
+  <circle cx="80" cy="310" r="14" fill="#2C7A7B"/>
+  <text x="80" y="314" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">04</text>
+  <text x="110" y="305" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Credit Study Preparation</text>
+  <text x="110" y="321" fill="rgba(255,255,255,0.5)" font-family="system-ui, sans-serif" font-size="10">QRE analysis · Project narratives · Methodology memo · Review</text>
+
+  <rect x="420" y="297" width="90" height="22" rx="11" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="465" y="312" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Weeks 4–7</text>
+
+  <line x1="80" y1="330" x2="80" y2="375" stroke="#2C7A7B" stroke-width="2" opacity="0.15"/>
+
+  <!-- Step 5 -->
+  <circle cx="80" cy="385" r="14" fill="#2C7A7B"/>
+  <text x="80" y="389" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">05</text>
+  <text x="110" y="380" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">CPA Delivery &amp; Filing Support</text>
+  <text x="110" y="396" fill="rgba(255,255,255,0.5)" font-family="system-ui, sans-serif" font-size="10">Study package delivery · Form 6765 · CPA coordination · Audit support</text>
+
+  <rect x="420" y="372" width="90" height="22" rx="11" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="465" y="387" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Weeks 7–9</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="40" y="430" width="480" height="32" rx="8" fill="rgba(44,122,123,0.12)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="280" y="450" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">~60 days from consultation to completed study · Audit support included at no additional cost</text>
+
+  <defs>
+    <linearGradient id="procGrad" x1="0" y1="0" x2="560" y2="480">
+      <stop offset="0%" stop-color="#2C7A7B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#102A43" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,83 @@
+<svg viewBox="0 0 560 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="420" rx="16" fill="#F5F7FA"/>
+
+  <!-- Title -->
+  <text x="280" y="34" fill="#102A43" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">CPA Partnership Workflow</text>
+  <rect x="200" y="42" width="160" height="2" rx="1" fill="#2C7A7B" opacity="0.3"/>
+
+  <!-- Left column: CPA Firm -->
+  <rect x="28" y="62" width="200" height="330" rx="10" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="28" y="62" width="200" height="38" rx="10" fill="#102A43"/>
+  <rect x="28" y="90" width="200" height="10" fill="#102A43"/>
+  <text x="128" y="86" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Your Firm</text>
+
+  <!-- CPA tasks -->
+  <circle cx="56" cy="128" r="10" fill="rgba(16,42,67,0.08)"/>
+  <text x="56" y="132" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">1</text>
+  <text x="76" y="125" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Identify opportunity</text>
+  <text x="76" y="137" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Refer client to A&amp;B</text>
+
+  <circle cx="56" cy="178" r="10" fill="rgba(16,42,67,0.08)"/>
+  <text x="56" y="182" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">2</text>
+  <text x="76" y="175" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Confirm filing posture</text>
+  <text x="76" y="187" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Prior credits &amp; return details</text>
+
+  <circle cx="56" cy="228" r="10" fill="rgba(16,42,67,0.08)"/>
+  <text x="56" y="232" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">3</text>
+  <text x="76" y="225" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Review study package</text>
+  <text x="76" y="237" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">QRE, narratives, methodology</text>
+
+  <circle cx="56" cy="278" r="10" fill="rgba(16,42,67,0.08)"/>
+  <text x="56" y="282" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">4</text>
+  <text x="76" y="275" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">File the return</text>
+  <text x="76" y="287" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Integrate Form 6765</text>
+
+  <!-- Maintain relationship badge -->
+  <rect x="48" y="320" width="160" height="28" rx="6" fill="rgba(16,42,67,0.06)" stroke="#102A43" stroke-width="0.5"/>
+  <text x="128" y="338" fill="#102A43" font-family="system-ui, sans-serif" font-size="8" font-weight="600" text-anchor="middle">You keep the client relationship</text>
+
+  <!-- Right column: Alexander & Blake -->
+  <rect x="332" y="62" width="200" height="330" rx="10" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="332" y="62" width="200" height="38" rx="10" fill="#2C7A7B"/>
+  <rect x="332" y="90" width="200" height="10" fill="#2C7A7B"/>
+  <text x="432" y="86" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Alexander &amp; Blake</text>
+
+  <!-- A&B tasks -->
+  <circle cx="360" cy="128" r="10" fill="rgba(44,122,123,0.12)"/>
+  <text x="360" y="132" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">1</text>
+  <text x="380" y="125" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Evaluate eligibility</text>
+  <text x="380" y="137" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Four-part test assessment</text>
+
+  <circle cx="360" cy="178" r="10" fill="rgba(44,122,123,0.12)"/>
+  <text x="360" y="182" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">2</text>
+  <text x="380" y="175" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Conduct interviews</text>
+  <text x="380" y="187" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Technical documentation</text>
+
+  <circle cx="360" cy="228" r="10" fill="rgba(44,122,123,0.12)"/>
+  <text x="360" y="232" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">3</text>
+  <text x="380" y="225" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Prepare credit study</text>
+  <text x="380" y="237" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Narratives, QRE, methodology</text>
+
+  <circle cx="360" cy="278" r="10" fill="rgba(44,122,123,0.12)"/>
+  <text x="360" y="282" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">4</text>
+  <text x="380" y="275" fill="#102A43" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Deliver &amp; support</text>
+  <text x="380" y="287" fill="#64748B" font-family="system-ui, sans-serif" font-size="8">Filing support + audit defense</text>
+
+  <!-- We handle the specialty work badge -->
+  <rect x="352" y="320" width="160" height="28" rx="6" fill="rgba(44,122,123,0.1)" stroke="#2C7A7B" stroke-width="0.5"/>
+  <text x="432" y="338" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="8" font-weight="600" text-anchor="middle">We handle the specialty work</text>
+
+  <!-- Coordination arrows (center) -->
+  <path d="M 236 128 L 324 128" stroke="#2C7A7B" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <path d="M 236 178 L 324 178" stroke="#2C7A7B" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <path d="M 324 228 L 236 228" stroke="#2C7A7B" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <polygon points="236,225 230,228 236,231" fill="#2C7A7B" opacity="0.5"/>
+  <path d="M 324 278 L 236 278" stroke="#2C7A7B" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+
+  <!-- Center label -->
+  <rect x="248" y="360" width="64" height="20" rx="10" fill="#2C7A7B"/>
+  <text x="280" y="374" fill="white" font-family="system-ui, sans-serif" font-size="8" font-weight="600" text-anchor="middle">Coordinated</text>
+
+  <!-- Vertical connection line -->
+  <line x1="280" y1="300" x2="280" y2="360" stroke="#2C7A7B" stroke-width="1" stroke-dasharray="3 3" opacity="0.3"/>
+</svg>

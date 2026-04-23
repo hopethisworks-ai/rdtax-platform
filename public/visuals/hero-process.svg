@@ -1,0 +1,106 @@
+<svg viewBox="0 0 560 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="560" height="440" rx="16" fill="#102A43"/>
+  <rect width="560" height="440" rx="16" fill="url(#heroGrad)" opacity="0.4"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="560" height="440" fill="url(#grid)"/>
+
+  <!-- Title bar -->
+  <rect x="24" y="20" width="512" height="36" rx="6" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="44" cy="38" r="5" fill="#2C7A7B"/>
+  <circle cx="60" cy="38" r="5" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="76" cy="38" r="5" fill="rgba(255,255,255,0.15)"/>
+  <text x="140" y="43" fill="rgba(255,255,255,0.4)" font-family="system-ui, sans-serif" font-size="11" font-weight="500">R&amp;D Tax Credit Study — Alexander &amp; Blake</text>
+
+  <!-- Step 1: Assessment -->
+  <rect x="32" y="76" width="150" height="90" rx="10" fill="rgba(44,122,123,0.15)" stroke="#2C7A7B" stroke-width="1.5"/>
+  <text x="52" y="97" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="700" letter-spacing="1">STEP 01</text>
+  <text x="52" y="116" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Eligibility</text>
+  <text x="52" y="132" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Assessment</text>
+  <text x="52" y="152" fill="rgba(255,255,255,0.45)" font-family="system-ui, sans-serif" font-size="9">Four-part test review</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 190 121 L 210 121" stroke="#2C7A7B" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="210,117 218,121 210,125" fill="#2C7A7B"/>
+
+  <!-- Step 2: Interviews -->
+  <rect x="224" y="76" width="150" height="90" rx="10" fill="rgba(44,122,123,0.15)" stroke="#2C7A7B" stroke-width="1.5"/>
+  <text x="244" y="97" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="700" letter-spacing="1">STEP 02</text>
+  <text x="244" y="116" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Technical</text>
+  <text x="244" y="132" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Interviews</text>
+  <text x="244" y="152" fill="rgba(255,255,255,0.45)" font-family="system-ui, sans-serif" font-size="9">Activity documentation</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 382 121 L 402 121" stroke="#2C7A7B" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="402,117 410,121 402,125" fill="#2C7A7B"/>
+
+  <!-- Step 3: Analysis -->
+  <rect x="416" y="76" width="120" height="90" rx="10" fill="rgba(44,122,123,0.15)" stroke="#2C7A7B" stroke-width="1.5"/>
+  <text x="436" y="97" fill="#2C7A7B" font-family="system-ui, sans-serif" font-size="9" font-weight="700" letter-spacing="1">STEP 03</text>
+  <text x="436" y="116" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">QRE</text>
+  <text x="436" y="132" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Analysis</text>
+  <text x="436" y="152" fill="rgba(255,255,255,0.45)" font-family="system-ui, sans-serif" font-size="9">Wage &amp; expense calc</text>
+
+  <!-- Down arrow from Step 3 -->
+  <path d="M 476 174 L 476 194" stroke="#2C7A7B" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="472,194 476,202 480,194" fill="#2C7A7B"/>
+
+  <!-- Deliverable Package (central visual) -->
+  <rect x="32" y="200" width="496" height="210" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="52" y="226" fill="rgba(255,255,255,0.35)" font-family="system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="1.5">DELIVERED CREDIT STUDY PACKAGE</text>
+
+  <!-- Document cards -->
+  <!-- Executive Summary -->
+  <rect x="52" y="244" width="140" height="72" rx="8" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="1"/>
+  <rect x="64" y="256" width="50" height="4" rx="2" fill="#2C7A7B"/>
+  <rect x="64" y="265" width="110" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+  <rect x="64" y="273" width="90" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="64" y="281" width="100" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+  <text x="64" y="303" fill="rgba(255,255,255,0.6)" font-family="system-ui, sans-serif" font-size="9" font-weight="500">Executive Summary</text>
+
+  <!-- Project Narratives -->
+  <rect x="210" y="244" width="140" height="72" rx="8" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="1"/>
+  <rect x="222" y="256" width="50" height="4" rx="2" fill="#2C7A7B"/>
+  <rect x="222" y="265" width="110" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+  <rect x="222" y="273" width="95" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="222" y="281" width="105" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+  <text x="222" y="303" fill="rgba(255,255,255,0.6)" font-family="system-ui, sans-serif" font-size="9" font-weight="500">Project Narratives</text>
+
+  <!-- QRE Schedules -->
+  <rect x="368" y="244" width="140" height="72" rx="8" fill="rgba(44,122,123,0.2)" stroke="#2C7A7B" stroke-width="1"/>
+  <rect x="380" y="256" width="50" height="4" rx="2" fill="#2C7A7B"/>
+  <!-- Table-like lines for QRE -->
+  <rect x="380" y="265" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+  <rect x="440" y="265" width="40" height="3" rx="1.5" fill="#2C7A7B" opacity="0.5"/>
+  <rect x="380" y="273" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="440" y="273" width="35" height="3" rx="1.5" fill="#2C7A7B" opacity="0.4"/>
+  <rect x="380" y="281" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="440" y="281" width="45" height="3" rx="1.5" fill="#2C7A7B" opacity="0.4"/>
+  <text x="380" y="303" fill="rgba(255,255,255,0.6)" font-family="system-ui, sans-serif" font-size="9" font-weight="500">QRE Schedules</text>
+
+  <!-- Bottom row -->
+  <!-- Methodology Memo -->
+  <rect x="52" y="328" width="230" height="60" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="68" y="342" width="40" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="68" y="351" width="190" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="68" y="359" width="160" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+  <text x="68" y="378" fill="rgba(255,255,255,0.45)" font-family="system-ui, sans-serif" font-size="9" font-weight="500">Methodology Memo</text>
+
+  <!-- Form 6765 Support -->
+  <rect x="300" y="328" width="208" height="60" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="316" y="342" width="40" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="316" y="351" width="170" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="316" y="359" width="140" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+  <text x="316" y="378" fill="rgba(255,255,255,0.45)" font-family="system-ui, sans-serif" font-size="9" font-weight="500">Form 6765 &amp; Filing Support</text>
+
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="560" y2="440">
+      <stop offset="0%" stop-color="#2C7A7B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#102A43" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

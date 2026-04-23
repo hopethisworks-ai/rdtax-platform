@@ -65,13 +65,13 @@ export default function CpaPartnersPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
               <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
-                alt="Accountants collaborating over financial documents"
-                width={800}
-                height={550}
-                className="object-cover w-full h-[400px] md:h-[480px]"
+                src="/visuals/cpa-workflow.svg"
+                alt="CPA partnership workflow — your firm handles the client relationship, Alexander & Blake handles the specialty R&D credit study work"
+                width={560}
+                height={420}
+                className="w-full h-auto"
                 priority
               />
             </div>
