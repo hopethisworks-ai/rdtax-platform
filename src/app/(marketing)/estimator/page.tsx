@@ -336,7 +336,7 @@ export default function EstimatorPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
                   <label className="block text-sm font-semibold text-body-text mb-1">
-                    Annual US Payroll *
+                    Annual US Payroll (W-2 Wages) *
                   </label>
                   <div className="relative">
                     <span className="absolute left-4 top-3 text-secondary text-sm">$</span>
@@ -350,7 +350,7 @@ export default function EstimatorPage() {
                       className="w-full border border-gray-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
-                  <p className="text-secondary text-xs mt-1">Total wages paid to US employees</p>
+                  <p className="text-secondary text-xs mt-1">Total W-2 wages paid to US employees in the most recent tax year</p>
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-body-text mb-1">
@@ -367,7 +367,7 @@ export default function EstimatorPage() {
                       className="w-full border border-gray-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
-                  <p className="text-secondary text-xs mt-1">R&amp;D-related contractor costs</p>
+                  <p className="text-secondary text-xs mt-1">Payments to outside contractors for qualifying technical work</p>
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-body-text mb-1">
@@ -384,7 +384,7 @@ export default function EstimatorPage() {
                       className="w-full border border-gray-200 rounded-lg pl-8 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
-                  <p className="text-secondary text-xs mt-1">Materials used in R&amp;D activities</p>
+                  <p className="text-secondary text-xs mt-1">Raw materials, components, and supplies consumed in R&amp;D activities</p>
                 </div>
                 <div className="sm:col-span-2 flex items-center gap-3 bg-slate-50 rounded-lg p-4">
                   <input

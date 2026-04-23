@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -39,27 +41,30 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            <Link href="/services" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              Services
-            </Link>
-            <Link href="/how-it-works" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              Process
-            </Link>
-            <Link href="/industries" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              Industries
-            </Link>
-            <Link href="/cpa-partners" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              CPA Partners
-            </Link>
-            <Link href="/about" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              About
-            </Link>
-            <Link href="/faq" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              FAQ
-            </Link>
-            <Link href="/contact" className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors rounded-md hover:bg-white/10">
-              Contact
-            </Link>
+            {[
+              { href: "/services", label: "Services" },
+              { href: "/how-it-works", label: "Process" },
+              { href: "/industries", label: "Industries" },
+              { href: "/cpa-partners", label: "CPA Partners" },
+              { href: "/about", label: "About" },
+              { href: "/south-carolina", label: "SC Credits" },
+              { href: "/contact", label: "Contact" },
+            ].map((link) => {
+              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+                    isActive
+                      ? "text-white bg-white/15"
+                      : "text-gray-300 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop Right Actions */}
@@ -103,6 +108,9 @@ export function Navbar() {
             </Link>
             <Link href="/about" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               About
+            </Link>
+            <Link href="/south-carolina" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
+              SC Credits
             </Link>
             <Link href="/faq" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               FAQ

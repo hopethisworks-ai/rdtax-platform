@@ -103,7 +103,7 @@ export default function ServicesPage() {
               Full-Lifecycle R&amp;D Tax Credit Advisory
             </h1>
             <p className="text-lg text-body-text leading-relaxed max-w-2xl mb-8">
-              From initial evaluation through filing support, we manage the full R&amp;D tax credit engagement with care, clarity, and structured documentation — including federal credits, South Carolina credits, current-year claims, and amended returns.
+              From initial evaluation through filing support, we manage the full R&amp;D tax credit study process with structured documentation and CPA-coordinated filing support — including federal credits, South Carolina credits, current-year claims, and amended returns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

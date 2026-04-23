@@ -22,14 +22,26 @@ export const metadata: Metadata = {
     siteName: "Alexander & Blake",
     title: "Alexander & Blake | R&D Tax Credit Advisory",
     description:
-      "Specialist R&D tax credit advisory for South Carolina businesses. Carefully prepared credit studies, structured documentation, and ongoing support.",
+      "Specialist R&D tax credit advisory for South Carolina businesses. Structured credit studies, CPA-coordinated filing, and ongoing audit support.",
     url: siteUrl,
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Alexander & Blake — R&D Tax Credit Advisory",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Alexander & Blake | R&D Tax Credit Advisory",
     description:
-      "Specialist R&D tax credit advisory for South Carolina businesses. Carefully prepared credit studies, structured documentation, and ongoing support.",
+      "Specialist R&D tax credit advisory for South Carolina businesses. Structured credit studies, CPA-coordinated filing, and ongoing audit support.",
+    images: [`${siteUrl}/og-image.png`],
+  },
+  other: {
+    "theme-color": "#102A43",
   },
   robots: {
     index: true,

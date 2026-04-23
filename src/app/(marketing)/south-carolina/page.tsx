@@ -297,7 +297,7 @@ export default function SouthCarolinaPage() {
             Evaluate Your South Carolina R&amp;D Credits
           </h2>
           <p className="text-lg text-secondary mb-8">
-            A complimentary consultation to review your qualifying activities and outline what a well-supported SC credit engagement would look like. No obligation.
+            A complimentary consultation to review your qualifying activities and outline what a well-supported SC credit study would include. No obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
