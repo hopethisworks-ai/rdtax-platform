@@ -1,16 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
   <!-- Background rounded square -->
-  <rect width="120" height="120" rx="24" fill="#102A43"/>
-  <!-- Subtle teal accent bar at bottom -->
-  <rect x="0" y="108" width="120" height="12" rx="0" fill="#2C7A7B" opacity="0.9"/>
-  <rect x="0" y="108" width="120" height="12" rx="0" fill="#102A43" opacity="0.0"/>
-  <!-- Clip bottom corners to match rounded rect -->
-  <clipPath id="clip">
-    <rect width="120" height="120" rx="24"/>
-  </clipPath>
-  <rect x="0" y="108" width="120" height="12" fill="#2C7A7B" clip-path="url(#clip)"/>
+  <rect width="120" height="120" rx="24" fill="#2C7A7B"/>
   <!-- Letter A -->
-  <text x="28" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="400" fill="white" letter-spacing="-2">A</text>
+  <path d="M28 82L44 30h8l16 52h-8l-4-14H40l-4 14h-8zm14-22h12l-6-22-6 22z" fill="white"/>
   <!-- Letter B -->
-  <text x="62" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="400" fill="#2C7A7B" letter-spacing="-2">B</text>
+  <path d="M68 30h16c4 0 7 1 9 3s3 5 3 8c0 4-2 7-5 9 4 2 6 5 6 10 0 4-1 7-4 9s-6 3-10 3H68V30zm8 18h8c2 0 3-0.5 4-2s2-3 2-5-1-3-2-4-2-2-4-2h-8v13zm0 20h10c2 0 4-1 5-2s2-3 2-5-1-4-2-5-3-2-5-2H76v14z" fill="rgba(255,255,255,0.7)"/>
 </svg>
