@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { sendEstimatorAlert } from "@/lib/email";
 
 const EstimatorSchema = z.object({
   companyName: z.string().min(1),
@@ -76,6 +77,25 @@ export async function POST(req: NextRequest) {
     },
   });
   await prisma.estimatorRun.update({ where: { id: run.id }, data: { leadId: lead.id } });
+
+  // Send admin email alert
+  const adminEmail = process.env.ADMIN_EMAIL ?? "partnerships@alexanderandblake.com";
+  await sendEstimatorAlert(adminEmail, {
+    companyName: d.companyName,
+    contactName: d.contactName,
+    email: d.email,
+    phone: d.phone,
+    industry: d.industry,
+    state: d.state,
+    annualPayroll: d.annualPayroll,
+    contractorSpend: d.contractorSpend,
+    supplySpend: d.supplySpend,
+    estimateLow: creditLow,
+    estimateHigh: creditHigh,
+    scCreditLow,
+    scCreditHigh,
+    leadId: lead.id,
+  }).catch(console.error);
 
   return NextResponse.json({
     estimateLow: creditLow,
