@@ -64,7 +64,7 @@ export default function FAQPage() {
         },
         {
           q: "What happens if we're audited?",
-          a: "Every credit study we prepare includes ongoing audit support at no additional cost. Our documentation is structured from day one with the expectation that it may be reviewed. If the IRS examines your credit, we provide full representation and work toward resolution on your behalf.",
+          a: "If the IRS or state reviews the credit, we support your CPA or authorized representative by providing documentation, workpapers, response support, and technical study materials related to the credit study we prepared.",
         },
       ],
     },
@@ -106,7 +106,7 @@ export default function FAQPage() {
         },
         {
           q: "How do you protect client data?",
-          a: "Client data is encrypted at rest and in transit, exchanged through our secure portal, and protected by role-based access controls. Engagement records are retained for seven years to support audit defense. See our Data Security page for details.",
+          a: "Client data is encrypted at rest and in transit, exchanged through our secure portal, and protected by role-based access controls. Engagement records are retained for seven years to support examination support. See our Data Security page for details.",
         },
       ],
     },
@@ -124,6 +124,10 @@ export default function FAQPage() {
         {
           q: "What industries in South Carolina typically qualify?",
           a: "We work with SC businesses across manufacturing, software and technology, engineering and architecture, life sciences, food and beverage, agriculture, and construction. Any company engaged in developing or improving products, processes, or software may have qualifying activities worth evaluating.",
+        },
+        {
+          q: "Can Alexander & Blake speak directly with the IRS or state agency?",
+          a: "We may assist with technical documentation and response preparation, but any direct representation before tax authorities should be handled by the taxpayer's CPA, enrolled agent, attorney, or other authorized representative.",
         },
       ],
     },

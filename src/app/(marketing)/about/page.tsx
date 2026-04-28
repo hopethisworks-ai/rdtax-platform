@@ -54,6 +54,24 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          LEADERSHIP
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Leadership</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-4 mb-6 leading-tight">
+            Leadership
+          </h2>
+          <div className="border-l-2 border-primary/30 pl-6">
+            <h3 className="font-bold text-navy mb-2">D.G. — Managing Director</h3>
+            <p className="text-body-text text-sm leading-relaxed">
+              Former national R&amp;D credit consultant with experience supporting eligibility analysis, technical interviews, QRE modeling, project narratives, methodology documentation, and CPA-ready study preparation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           2. HOW ENGAGEMENTS ARE RUN
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-surface">
@@ -74,7 +92,7 @@ export default function AboutPage() {
               { step: "05", title: "Project Narratives", desc: "Detailed written narratives for each qualifying project, documenting the technical uncertainty, process of experimentation, and technological information relied upon." },
               { step: "06", title: "Methodology Memo", desc: "A comprehensive memo documenting the credit computation method, assumptions, allocation approach, and the basis for each position taken." },
               { step: "07", title: "CPA Coordination", desc: "We deliver the completed study package to your CPA or qualified tax professional and coordinate directly on filing posture, Form 6765, and return integration." },
-              { step: "08", title: "Post-Filing Support", desc: "Ongoing audit support at no additional cost — including documentation, correspondence, and resolution support if questions arise after filing." },
+              { step: "08", title: "Post-Filing Support", desc: "Ongoing examination support at no additional cost — including documentation, correspondence, and resolution support if questions arise after filing." },
             ].map((item) => (
               <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6">
                 <div className="text-primary text-xs font-black uppercase tracking-widest mb-2">Step {item.step}</div>
@@ -107,7 +125,7 @@ export default function AboutPage() {
               "Four-part test documentation for each qualifying activity",
               "Form 6765 support and filing-ready schedules",
               "CPA coordination materials and filing guidance",
-              "Ongoing audit support documentation and representation",
+              "Post-filing examination support materials and CPA coordination",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <CheckIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />

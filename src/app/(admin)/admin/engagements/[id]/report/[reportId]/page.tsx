@@ -816,7 +816,7 @@ export default async function ReportViewPage({ params }: { params: Promise<{ id:
               </div>
             </div>
             <p className="text-sm text-body-text mb-6 leading-relaxed">
-              Alexander & Blake certifies that this research tax credit study was prepared in accordance with applicable provisions of the Internal Revenue Code, Treasury Regulations, and IRS guidance. This study reflects our professional judgment based on information provided by {client.companyName} and our independent research into the applicable law. We stand behind the positions taken in this study and will provide audit defense support in the event of an IRS examination.
+              Alexander & Blake certifies that this research tax credit study was prepared in accordance with applicable provisions of the Internal Revenue Code, Treasury Regulations, and IRS guidance. This study reflects our professional judgment based on information provided by {client.companyName} and our independent research into the applicable law. We stand behind the positions taken in this study and will provide examination support in the event of an IRS examination.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

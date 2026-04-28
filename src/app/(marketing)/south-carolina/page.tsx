@@ -31,7 +31,7 @@ export default function SouthCarolinaPage() {
                 <span className="text-primary-light">One Coordinated Study.</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                South Carolina offers a 5% state R&amp;D tax credit on top of the federal benefit. Alexander &amp; Blake prepares both credits through a single, coordinated engagement — so your business captures the full value without going through two disconnected processes.
+                South Carolina may provide an additional 5% state R&amp;D credit for qualifying SC research expenses, subject to state rules, limitations, and CPA review. Alexander &amp; Blake prepares both credits through a single, coordinated engagement — so your business captures the full value without going through two disconnected processes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -458,6 +458,32 @@ export default function SouthCarolinaPage() {
             <p className="text-body-text text-sm leading-relaxed">
               Your CPA or qualified tax professional should confirm final filing posture, state limitations, carryforward treatment, and return integration.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          SC FILING SUPPORT
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">State Credit Support</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-8">
+            SC Filing Support Includes
+          </h2>
+          <div className="space-y-3">
+            {[
+              "SC QRE schedule",
+              "TC-18 support",
+              "Federal/SC reconciliation",
+              "Carryforward support",
+              "CPA filing notes",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-body-text text-sm">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

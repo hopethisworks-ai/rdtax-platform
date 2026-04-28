@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-bold mt-8 mb-3">Information We Collect</h2>
         <p className="text-gray-600">We collect contact information you provide (name, email, company) and financial data you upload through the secure portal. All uploaded financial data is encrypted at rest and in transit.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">How We Use Your Information</h2>
-        <p className="text-gray-600">Your information is used solely to provide R&D tax credit consulting services. We do not sell or share your data with third parties except as required to deliver services (e.g., secure storage, email delivery).</p>
+        <p className="text-gray-600">Your information is used solely to provide R&D tax credit consulting services. We do not sell client data. We may share limited information with service providers necessary to operate the website, secure portal, email delivery, analytics, or engagement support.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Third-Party Service Providers</h2>
         <p className="text-gray-600">Alexander &amp; Blake may use third-party service providers for hosting, email delivery, file storage, and analytics. All providers are evaluated for security and data handling practices.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Data Storage Location</h2>
@@ -15,9 +15,9 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-bold mt-8 mb-3">Data Security</h2>
         <p className="text-gray-600">All data is encrypted at rest using AES-256. File access requires signed URLs that expire within 15 minutes. Role-based access controls ensure that client data is isolated from other clients.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Data Retention</h2>
-        <p className="text-gray-600">Engagement records are retained for 7 years from the tax year of the engagement to support potential audit defense. You may request deletion of non-engagement data at any time.</p>
+        <p className="text-gray-600">Engagement records are retained for 7 years from the tax year of the engagement to support potential examination support needs. You may request deletion of non-engagement data at any time.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Data Deletion Requests</h2>
-        <p className="text-gray-600">Clients may request deletion of their data by contacting <a href="mailto:partnerships@alexanderandblake.com" className="text-primary hover:underline">partnerships@alexanderandblake.com</a>. Engagement records required for audit defense may be retained for the applicable retention period.</p>
+        <p className="text-gray-600">Clients may request deletion of their data by contacting <a href="mailto:partnerships@alexanderandblake.com" className="text-primary hover:underline">partnerships@alexanderandblake.com</a>. Engagement records required for examination support may be retained for the applicable retention period.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Engagement Records vs. Contact Records</h2>
         <p className="text-gray-600">Contact form submissions and estimator results are retained as lead records. Engagement records — including financial data, project documentation, and study materials — are subject to the 7-year retention policy.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Incident Response</h2>

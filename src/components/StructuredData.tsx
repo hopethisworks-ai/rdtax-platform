@@ -19,7 +19,7 @@ export function StructuredData() {
       "South Carolina State R&D Tax Credits",
       "Amended Return Preparation",
       "Payroll Tax Offset",
-      "Audit Support",
+      "Examination Support",
     ],
     knowsAbout: [
       "IRC Section 41",
@@ -109,7 +109,7 @@ export function StructuredData() {
         name: "What happens if I am audited after claiming the R&D tax credit?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Every Alexander & Blake credit study includes ongoing audit support at no additional cost. This includes documentation support, examiner correspondence, technical representation in meetings, and resolution support. Our studies are prepared with the expectation that they may be examined.",
+          text: "Every Alexander & Blake credit study includes ongoing examination support at no additional cost. This includes documentation support, correspondence support, technical documentation support, and resolution support. We support your CPA or authorized representative with workpapers, narratives, schedules, response support, and technical documentation related to the study we prepared.",
         },
       },
       {

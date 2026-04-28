@@ -205,6 +205,86 @@ export default function IndustriesPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          QUALIFYING WORK EXAMPLES BY INDUSTRY
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">Industry-Specific Examples</span>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3">Qualifying Work by Industry</h2>
+            <p className="text-secondary max-w-2xl mx-auto mt-3">
+              Below are specific examples of work that typically qualifies under the four-part test in key industries.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Manufacturing */}
+            <div className="bg-surface rounded-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-navy mb-5">Examples of Qualifying Work in Manufacturing</h3>
+              <ul className="space-y-3">
+                {[
+                  "CNC programming for new part geometry",
+                  "Custom tooling and die design",
+                  "Scrap reduction testing",
+                  "Automation integration",
+                  "Material substitution trials",
+                  "Production process parameter testing",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-body-text text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Software */}
+            <div className="bg-surface rounded-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-navy mb-5">Examples of Qualifying Work in Software</h3>
+              <ul className="space-y-3">
+                {[
+                  "API architecture design",
+                  "Database performance optimization",
+                  "Algorithm development",
+                  "Cloud scalability engineering",
+                  "Security architecture",
+                  "Platform integration with technical uncertainty",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-body-text text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* What Usually Does Not Qualify */}
+          <div className="mt-12 bg-gray-50 rounded-xl p-8 border border-gray-200 max-w-2xl mx-auto">
+            <h3 className="text-lg font-bold text-navy mb-4">What Usually Does Not Qualify</h3>
+            <ul className="space-y-3">
+              {[
+                "Routine production or manufacturing",
+                "Cosmetic changes",
+                "Market research",
+                "Standard quality control without experimentation",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-body-text text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 border-t border-gray-100">

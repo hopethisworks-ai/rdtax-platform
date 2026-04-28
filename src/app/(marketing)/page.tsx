@@ -58,7 +58,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                  Audit support included
+                  Examination support included
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
@@ -104,7 +104,7 @@ export default function HomePage() {
           </div>
           <div className="flex items-center gap-2">
             <ShieldIcon />
-            <span>Audit support included</span>
+            <span>Examination support included</span>
           </div>
         </div>
       </section>
@@ -197,6 +197,11 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8">
+              <Link href="/sample-deliverables" className="inline-flex items-center border border-primary text-primary font-semibold px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-all">
+                View Sample Deliverables
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -216,7 +221,7 @@ export default function HomePage() {
               { num: "02", title: "Eligibility Review", desc: "We analyze your activities against the IRS four-part test to confirm qualification and identify the scope of the engagement.", icon: <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg> },
               { num: "03", title: "Interviews & Data", desc: "Guided technical interviews with your team and organized data collection through our secure portal — designed to minimize disruption.", icon: <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg> },
               { num: "04", title: "Study & Documentation", desc: "Complete credit study with project narratives, QRE calculations, methodology memo, and structured documentation — organized for review.", icon: <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg> },
-              { num: "05", title: "Filing & Support", desc: "Coordinated delivery to your CPA with Form 6765 support, ongoing audit defense, and post-filing assistance at no additional cost.", icon: <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg> },
+              { num: "05", title: "Filing & Support", desc: "Coordinated delivery to your CPA with Form 6765 support, ongoing examination support, and post-filing assistance at no additional cost.", icon: <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg> },
             ].map((step) => (
               <div key={step.num}>
                 <div className="w-11 h-11 bg-white rounded-xl flex items-center justify-center mb-4 border border-gray-200">{step.icon}</div>
@@ -250,7 +255,7 @@ export default function HomePage() {
             </div>
             <div className="bg-surface rounded-xl p-6">
               <div className="text-primary font-black text-sm mb-2">We Support</div>
-              <p className="text-body-text text-sm leading-relaxed">Ongoing audit defense, correspondence support, and documentation at no additional cost.</p>
+              <p className="text-body-text text-sm leading-relaxed">Ongoing examination support, correspondence support, and documentation at no additional cost.</p>
             </div>
           </div>
         </div>
@@ -283,9 +288,9 @@ export default function HomePage() {
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
               <div className="text-3xl font-black text-primary mb-2">100%</div>
-              <div className="text-navy font-bold text-sm mb-2">Audit Support</div>
+              <div className="text-navy font-bold text-sm mb-2">Examination Support</div>
               <p className="text-secondary text-sm leading-relaxed">
-                Ongoing audit support is included with every credit study at no additional cost. We stand behind the work we prepare.
+                Ongoing examination support is included with every credit study at no additional cost. We stand behind the work we prepare.
               </p>
             </div>
           </div>
@@ -315,7 +320,7 @@ export default function HomePage() {
                   "Built wage and supply support schedules with project-level allocation",
                   "Prepared project narratives documenting uncertainty and experimentation for each qualifying activity",
                   "Coordinated federal and SC state credit filing with the client's CPA",
-                  "Delivered complete study package with audit support included",
+                  "Delivered complete study package with examination support included",
                 ],
               },
               {
@@ -384,7 +389,7 @@ export default function HomePage() {
               { label: "Encrypted in transit and at rest", icon: <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg> },
               { label: "Secure client portal for file exchange", icon: <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25Z" /></svg> },
               { label: "Role-based access controls", icon: <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" /></svg> },
-              { label: "Records retained for audit defense", icon: <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg> },
+              { label: "Records retained for examination support", icon: <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg> },
             ].map((item) => (
               <div key={item.label} className="text-center">
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 border border-gray-200">{item.icon}</div>
@@ -418,7 +423,7 @@ export default function HomePage() {
               { q: "When are sensitive documents requested?", a: "Sensitive financial records are requested only after initial eligibility is established and the engagement scope is defined. All documents are exchanged through our secure client portal with encryption at rest and in transit." },
               { q: "Do you replace our CPA?", a: "No. We prepare the credit study and support package. Your CPA or qualified tax professional reviews filing posture and files the return." },
               { q: "Are you a CPA firm or law firm?", a: "No. Alexander & Blake is a specialty R&D credit advisory firm. We do not provide legal or tax advice and do not file returns." },
-              { q: "How do you protect client data?", a: "Client data is encrypted at rest and in transit, exchanged through our secure portal, and protected by role-based access controls. Engagement records are retained for seven years to support audit defense. See our Data Security page for details." },
+              { q: "How do you protect client data?", a: "Client data is encrypted at rest and in transit, exchanged through our secure portal, and protected by role-based access controls. Engagement records are retained for seven years to support examination support. See our Data Security page for details." },
             ].map((faq) => (
               <details key={faq.q} className="bg-surface rounded-xl p-5 cursor-pointer hover:shadow-md transition-shadow group border border-gray-100">
                 <summary className="flex items-center justify-between font-bold text-navy">

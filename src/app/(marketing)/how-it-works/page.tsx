@@ -62,13 +62,13 @@ export default function HowItWorksPage() {
       number: "05",
       title: "Report and Filing",
       duration: "1 week",
-      desc: "You receive a carefully prepared credit study with complete documentation. We coordinate directly with your CPA for filing and provide ongoing audit support.",
+      desc: "You receive a carefully prepared credit study with complete documentation. We coordinate directly with your CPA for filing and provide ongoing examination support.",
       items: [
         "Executive summary report",
         "Project narratives",
         "Methodology memo",
         "Form 6765 preparation",
-        "Full audit defense coverage",
+        "Post-filing examination support",
       ],
     },
   ];
@@ -89,7 +89,7 @@ export default function HowItWorksPage() {
                 A Structured Process. From Conversation to Completed Study.
               </h1>
               <p className="text-lg text-body-text mb-8 leading-relaxed max-w-lg">
-                We manage the full engagement — activity identification, technical documentation, credit calculation, coordinated filing, and ongoing audit support. Here is how the process works from initial conversation to delivery.
+                We manage the full engagement — activity identification, technical documentation, credit calculation, coordinated filing, and ongoing examination support. Here is how the process works from initial conversation to delivery.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -131,7 +131,7 @@ export default function HowItWorksPage() {
           </div>
           <div>
             <div className="text-3xl font-black text-navy mb-1">60 days</div>
-            <div className="text-secondary text-sm">Average to filing</div>
+            <div className="text-secondary text-sm">Typical study timeline</div>
           </div>
           <div>
             <div className="text-3xl font-black text-navy mb-1">20%</div>
@@ -139,7 +139,7 @@ export default function HowItWorksPage() {
           </div>
           <div>
             <div className="text-3xl font-black text-navy mb-1">100%</div>
-            <div className="text-secondary text-sm">Audit defense included</div>
+            <div className="text-secondary text-sm">Examination support included</div>
           </div>
         </div>
       </section>
@@ -220,8 +220,8 @@ export default function HowItWorksPage() {
                 ),
               },
               {
-                title: "Ongoing Audit Support",
-                desc: "If the IRS ever reviews your credit, we provide full representation. Our documentation is prepared from day one with the expectation that it may be examined.",
+                title: "Ongoing Examination Support",
+                desc: "If the IRS ever reviews your credit, we support your CPA or authorized representative with workpapers, narratives, schedules, response support, and technical documentation related to the study we prepared.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />

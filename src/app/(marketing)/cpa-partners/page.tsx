@@ -278,7 +278,7 @@ export default function CpaPartnersPage() {
                   "QRE calculations and financial substantiation",
                   "Project narratives and methodology memo",
                   "Form 6765 support and filing-ready schedules",
-                  "Post-filing audit support and correspondence",
+                  "Post-filing examination support and correspondence",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
@@ -475,7 +475,7 @@ export default function CpaPartnersPage() {
                   "Identified qualifying custom tooling and process-improvement work",
                   "Built wage and supply support schedules with project-level allocation",
                   "Coordinated federal and SC state credit filing with CPA",
-                  "Delivered complete study package with audit support included",
+                  "Delivered complete study package with examination support included",
                 ],
               },
               {

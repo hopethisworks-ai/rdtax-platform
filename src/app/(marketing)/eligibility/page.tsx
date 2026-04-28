@@ -37,7 +37,7 @@ export default function EligibilityPage() {
             </div>
             <div className="bg-surface rounded-xl p-4">
               <div className="text-2xl font-black text-navy">Free</div>
-              <div className="text-secondary text-xs mt-1">No cost ever</div>
+              <div className="text-secondary text-xs mt-1">Free assessment — no cost to complete</div>
             </div>
             <div className="bg-surface rounded-xl p-4">
               <div className="text-2xl font-black text-navy">Instant</div>

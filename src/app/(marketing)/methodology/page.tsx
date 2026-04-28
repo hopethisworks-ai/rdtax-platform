@@ -188,22 +188,22 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      {/* AUDIT SUPPORT */}
+      {/* EXAMINATION SUPPORT */}
       <section className="py-20 px-6 bg-surface">
         <div className="max-w-4xl mx-auto">
-          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Audit Support</span>
+          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Examination Support</span>
           <h2 className="text-3xl md:text-4xl font-normal text-navy mt-4 mb-4 leading-tight">
-            What audit support includes.
+            What examination support includes.
           </h2>
           <p className="text-body-text leading-relaxed mb-8">
-            Every engagement includes ongoing audit support at no additional cost. If the credit claim is reviewed, we provide documentation, correspondence support, and resolution assistance.
+            Every engagement includes ongoing examination support at no additional cost. If the credit claim is reviewed, we support the credit documentation by providing workpapers, narratives, schedules, and technical materials to your CPA or authorized representative.
           </p>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              { title: "Documentation Support", desc: "We provide all original work papers, narratives, schedules, and methodology documentation to support the credit position." },
-              { title: "Examiner Correspondence", desc: "We draft responses to IRS or state inquiries, including information document requests and technical position papers." },
-              { title: "Technical Representation", desc: "We participate in examiner meetings and technical discussions as needed to defend the credit position." },
-              { title: "Resolution Support", desc: "If adjustments are proposed, we work with the CPA to evaluate options and support an informed resolution." },
+              { title: "Documentation Support", desc: "We provide all original work papers, narratives, schedules, and methodology documentation to support the credit documentation." },
+              { title: "Correspondence Support", desc: "We assist your CPA or authorized representative by drafting response materials for IRS or state inquiries, including information document requests and technical position papers." },
+              { title: "Technical Documentation Support", desc: "We assist with technical documentation for CPA or representative meetings and provide detailed explanations of study methodology and qualifying activities." },
+              { title: "Adjustment Review Support", desc: "If adjustments are proposed, we work with the CPA to evaluate options and provide supporting documentation for an informed resolution." },
             ].map((item) => (
               <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-6">
                 <h3 className="font-bold text-navy mb-2">{item.title}</h3>

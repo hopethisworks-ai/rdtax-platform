@@ -27,10 +27,12 @@ export default function TermsPage() {
         <p className="text-gray-600">We maintain strict confidentiality of all client financial data and engagement details. We will not disclose engagement details without your written consent except as required by law.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Limitation of Liability</h2>
         <p className="text-gray-600">Our liability is limited to fees paid for the specific engagement. We are not liable for tax assessments, penalties, or interest resulting from IRS examination of credits we document.</p>
-        <h2 className="text-xl font-bold mt-8 mb-3">Scope of Audit Support</h2>
-        <p className="text-gray-600">Audit support includes assistance with IRS or state correspondence, documentation review, and response preparation related to the R&amp;D credit study. It does not include legal representation.</p>
+        <h2 className="text-xl font-bold mt-8 mb-3">Scope of Examination Support</h2>
+        <p className="text-gray-600">Examination support includes assistance with IRS or state correspondence, documentation review, and response preparation related to the R&amp;D credit study. It does not include legal representation.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Third-Party Links</h2>
         <p className="text-gray-600">This site may contain links to third-party websites. Alexander &amp; Blake is not responsible for the content or privacy practices of external sites.</p>
+        <h2 className="text-xl font-bold mt-8 mb-3">No Representation Before Taxing Authorities</h2>
+        <p className="text-gray-600">Nothing on this site should be interpreted as an offer to represent taxpayers before the IRS or any state taxing authority.</p>
         <h2 className="text-xl font-bold mt-8 mb-3">Governing Law</h2>
         <p className="text-gray-600">These terms are governed by the laws of the State of South Carolina.</p>
       </div>

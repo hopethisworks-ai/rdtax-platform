@@ -127,7 +127,7 @@ export default function DataSecurityPage() {
             Data retention policy.
           </h2>
           <p className="text-body-text leading-relaxed">
-            Engagement records are retained for 7 years to support audit defense and ongoing examination support. This retention period aligns with the IRS statute of limitations for credit claims. Records can be deleted upon written request after the engagement has concluded.
+            Engagement records are retained for 7 years to support ongoing examination support. This retention period aligns with the IRS statute of limitations for credit claims. Certain non-engagement records may be deleted upon request. Engagement records needed for examination support, legal compliance, or contractual obligations may be retained for the applicable retention period.
           </p>
         </div>
       </section>

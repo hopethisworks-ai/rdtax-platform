@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services | Alexander & Blake — R&D Tax Credit Advisory",
   description:
-    "Federal R&D credit studies, South Carolina state credits, amended returns, payroll tax offset, and ongoing audit support. Alexander & Blake provides full-lifecycle R&D tax credit advisory.",
+    "Federal R&D credit studies, South Carolina state credits, amended returns, payroll tax offset, and ongoing examination support. Alexander & Blake provides full-lifecycle R&D tax credit advisory.",
 };
 
 /* ── Icon Components ── */
@@ -53,7 +53,7 @@ export default function ServicesPage() {
         "Historical QRE reconstruction from available records",
         "Amended filing support",
         "Coordination with your CPA across tax years",
-        "Audit support included",
+        "Examination support included in coordination with your CPA or authorized tax representative",
       ],
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
       imageAlt: "Financial documents and calculator",
@@ -196,11 +196,41 @@ export default function ServicesPage() {
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-left">
-              <div className="text-navy font-bold text-sm mb-2">Audit Support Included</div>
+              <div className="text-navy font-bold text-sm mb-2">Examination Support Included</div>
               <p className="text-secondary text-sm leading-relaxed">
                 Ongoing support is included with every study at no additional cost. We remain available to assist if questions arise later.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          WHAT WE DO NOT DO
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">
+            Scope Clarity
+          </span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-8">
+            What We Do Not Do
+          </h2>
+          <div className="space-y-4">
+            {[
+              "We do not file tax returns",
+              "We do not replace your CPA",
+              "We do not provide legal advice",
+              "We do not guarantee a credit amount",
+              "We do not include unsupported activities",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span className="text-body-text text-sm">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

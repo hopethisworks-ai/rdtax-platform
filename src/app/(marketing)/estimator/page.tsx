@@ -179,7 +179,7 @@ export default function EstimatorPage() {
               </div>
               <div className="bg-slate-50 rounded-xl p-4">
                 <div className="font-black text-navy">100%</div>
-                <div className="text-secondary text-xs mt-1">Audit defense</div>
+                <div className="text-secondary text-xs mt-1">Examination support</div>
               </div>
             </div>
           </div>

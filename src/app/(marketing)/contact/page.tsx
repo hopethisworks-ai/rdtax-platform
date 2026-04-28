@@ -157,7 +157,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-bold text-navy text-sm">South Carolina Specialist</p>
-                  <p className="text-body-text text-xs mt-1">Federal and SC state credits coordinated together for maximum benefit.</p>
+                  <p className="text-body-text text-xs mt-1">Federal and SC credits coordinated through one structured study process.</p>
                 </div>
               </div>
             </div>
@@ -261,7 +261,10 @@ export default function ContactPage() {
               </button>
 
               {/* Privacy Note */}
-              <p className="text-xs text-secondary text-center mb-4">We respond within one business day. Your information is never sold or shared.</p>
+              <p className="text-xs text-secondary text-center mb-2">We respond within one business day. Your information is never sold or shared.</p>
+              <p className="text-xs text-center mb-4">
+                <Link href="/cpa-partners" className="text-primary hover:underline font-medium">CPA firm? Request the Partner Kit instead.</Link>
+              </p>
 
               {/* Trust Footer */}
               <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-secondary">
