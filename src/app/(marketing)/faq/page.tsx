@@ -22,7 +22,7 @@ export default function FAQPage() {
         },
         {
           q: "What if we've never claimed the credit before?",
-          a: "Many businesses that qualify have never claimed the credit — either because they weren't aware of it or assumed it didn't apply to their industry. If you have open tax returns from the past three years, we can evaluate whether amended returns may be appropriate to recover credits from prior periods.",
+          a: "Many businesses that qualify have never claimed the credit — either because they weren't aware of it or assumed it didn't apply to their industry. If you have open tax years from the past three years, we can evaluate those periods and prepare the study materials your CPA or qualified tax professional may use to support amended filings where appropriate.",
         },
         {
           q: "Do startups or pre-revenue companies qualify?",
@@ -78,6 +78,35 @@ export default function FAQPage() {
         {
           q: "Can CPA firms partner with Alexander & Blake?",
           a: "Absolutely. We work with accounting firms across South Carolina as a specialty advisory partner. You maintain the client relationship, and we handle the technical R&D credit work — from initial assessment through documentation and filing support. There is no cost to the CPA firm, and the engagement operates on a contingency basis with the client.",
+        },
+        {
+          q: "Do you replace our CPA?",
+          a: "No. We prepare the credit study and support package. Your CPA or qualified tax professional reviews filing posture and files the return.",
+        },
+        {
+          q: "What happens if our CPA disagrees with a position?",
+          a: "We coordinate with the CPA to review facts, assumptions, and documentation. Final filing posture belongs to the taxpayer and their tax professional.",
+        },
+      ],
+    },
+    {
+      heading: "About Alexander & Blake",
+      faqs: [
+        {
+          q: "Are you a CPA firm or law firm?",
+          a: "No. Alexander & Blake is a specialty R&D credit advisory firm. We do not provide legal or tax advice and do not file returns.",
+        },
+        {
+          q: "How do you handle weak or unsupported activities?",
+          a: "We screen activities for supportability and may exclude or flag activities that lack technical uncertainty, experimentation, or reliable financial support. Our internal quality-control process reviews each claimed activity before delivery.",
+        },
+        {
+          q: "Do you provide a sample report before engagement?",
+          a: "Yes. CPA firms and prospective clients may request a sample study package outline. Visit our Sample Deliverables page for an overview of what a completed study includes.",
+        },
+        {
+          q: "How do you protect client data?",
+          a: "Client data is encrypted at rest and in transit, exchanged through our secure portal, and protected by role-based access controls. Engagement records are retained for seven years to support audit defense. See our Data Security page for details.",
         },
       ],
     },

@@ -110,6 +110,21 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          OUR BACKGROUND
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">Our Background</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-6">
+            National-Firm R&amp;D Credit Experience. South Carolina Focus.
+          </h2>
+          <p className="text-body-text leading-relaxed max-w-3xl mx-auto">
+            Alexander &amp; Blake was founded by a former R&amp;D tax credit consultant with experience at national advisory firms including Aprio and alliantgroup. Our work is built around structured eligibility analysis, technical interviews, QRE modeling, business component documentation, project narratives, and CPA-ready study preparation.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           SECTION 2 — WHO WE WORK WITH
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-surface">
@@ -284,8 +299,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-primary text-xs font-bold uppercase tracking-widest">Engagement Examples</span>
-            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">Representative Engagements</h2>
-            <p className="text-secondary max-w-2xl mx-auto">Anonymized examples based on actual South Carolina engagement profiles. Details have been generalized to protect client confidentiality.</p>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">Illustrative Engagement Profiles</h2>
+            <p className="text-secondary max-w-2xl mx-auto">Illustrative examples based on common R&amp;D credit engagement profiles. These examples are hypothetical and provided for educational purposes only. Individual results depend on qualifying activities, expenses, documentation, tax posture, and CPA review.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -311,10 +326,10 @@ export default function HomePage() {
                 details: [
                   "Client had never claimed the credit — believed only pharmaceutical companies qualified",
                   "Identified qualifying custom development, algorithm design, and platform engineering work",
-                  "Reviewed three open tax years plus current year for amended and current-year filing",
+                  "Evaluated three open tax years plus current year and prepared study materials for CPA-coordinated amended filings",
                   "Prepared business-component mapping across 12 qualifying software projects",
                   "Built QRE schedules with contractor and wage detail for each tax year",
-                  "Coordinated amended return filing through the client's CPA",
+                  "Prepared study materials for the client's CPA to support amended filings",
                 ],
               },
               {
@@ -351,7 +366,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="text-center text-secondary text-xs mt-8">These examples are based on representative engagement profiles. Individual results depend on qualifying activities, expenses, and tax situation.</p>
+          <p className="text-center text-secondary text-xs mt-8">Illustrative examples based on common R&amp;D credit engagement profiles. These examples are hypothetical and provided for educational purposes only. Individual results depend on qualifying activities, expenses, documentation, tax posture, and CPA review.</p>
         </div>
       </section>
 
@@ -401,6 +416,9 @@ export default function HomePage() {
               { q: "What states do you serve?", a: "We focus on South Carolina, where an additional state R&D credit can be coordinated alongside the federal benefit. Our understanding of SC industries, regulations, and the local business landscape allows us to provide more focused and relevant support." },
               { q: "What is the fee structure?", a: "We operate on a contingency basis — our fee is calculated as a percentage of credits successfully identified. There are no upfront costs, retainers, or hourly fees. If we identify no qualifying credits, there is no charge." },
               { q: "When are sensitive documents requested?", a: "Sensitive financial records are requested only after initial eligibility is established and the engagement scope is defined. All documents are exchanged through our secure client portal with encryption at rest and in transit." },
+              { q: "Do you replace our CPA?", a: "No. We prepare the credit study and support package. Your CPA or qualified tax professional reviews filing posture and files the return." },
+              { q: "Are you a CPA firm or law firm?", a: "No. Alexander & Blake is a specialty R&D credit advisory firm. We do not provide legal or tax advice and do not file returns." },
+              { q: "How do you protect client data?", a: "Client data is encrypted at rest and in transit, exchanged through our secure portal, and protected by role-based access controls. Engagement records are retained for seven years to support audit defense. See our Data Security page for details." },
             ].map((faq) => (
               <details key={faq.q} className="bg-surface rounded-xl p-5 cursor-pointer hover:shadow-md transition-shadow group border border-gray-100">
                 <summary className="flex items-center justify-between font-bold text-navy">

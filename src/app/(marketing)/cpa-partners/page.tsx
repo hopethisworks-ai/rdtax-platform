@@ -50,6 +50,9 @@ export default function CpaPartnersPage() {
               <p className="text-lg text-body-text mb-8 leading-relaxed max-w-lg">
                 Alexander &amp; Blake works alongside accounting firms that want a reliable specialist partner for R&amp;D tax credit studies and related documentation. You maintain the client relationship. We handle the specialty work and coordinate closely throughout the engagement.
               </p>
+              <p className="text-body-text text-sm leading-relaxed mb-8 max-w-lg border-l-2 border-primary/30 pl-4">
+                Alexander &amp; Blake was founded by a former R&amp;D credit consultant with national advisory firm experience, including Aprio and alliantgroup. Our process is designed for CPA review: structured eligibility analysis, documented QRE methodology, clear workpapers, and filing-ready support schedules.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="#partner-form"
@@ -338,19 +341,127 @@ export default function CpaPartnersPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          CASE STUDIES
+          NO-POACHING COMMITMENT
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-surface">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white border-l-4 border-primary rounded-xl p-8 shadow-md">
+            <h3 className="text-xl font-bold text-navy mb-3">Your Client Relationship Stays Protected</h3>
+            <p className="text-body-text leading-relaxed">
+              Alexander &amp; Blake does not cross-sell unrelated services, solicit referred clients outside the agreed R&amp;D credit engagement, or position itself as the client&apos;s tax preparer. We support the R&amp;D credit study process while your firm remains the client&apos;s primary tax advisor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CPA PARTNER KIT
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
+              Partner Resources
+            </span>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">
+              Review Our CPA Partner Kit Before Referring a Client
+            </h2>
+            <p className="text-body-text max-w-3xl mx-auto">
+              We make it easy for accounting firms to evaluate our process before introducing a client. Upon request, we can provide a partner kit with sample materials, engagement workflow, documentation standards, and a sample study package outline.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+            {[
+              "CPA partner overview",
+              "Sample study package outline",
+              "Sample QRE schedule format",
+              "Sample project narrative",
+              "Engagement workflow",
+              "Client introduction email template",
+              "Documentation request checklist",
+              "Data security overview",
+              "Fee structure summary",
+              "No-client-solicitation commitment",
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-surface border border-gray-200 rounded-xl p-4 flex items-start gap-3"
+              >
+                <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-body-text text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25 group"
+            >
+              Request CPA Partner Kit
+              <ArrowRight />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          WHAT WE SCREEN OUT
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest">
+              Credit Discipline
+            </span>
+            <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">
+              What We Screen Out
+            </h2>
+            <p className="text-body-text max-w-2xl mx-auto">
+              A strong R&amp;D credit study is not just about identifying qualifying work. It is also about excluding activities that are not supportable.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              "Routine production",
+              "Cosmetic or aesthetic changes",
+              "Market research and surveys",
+              "Sales and customer support time",
+              "General management and administration",
+              "Unsupported time estimates",
+              "Non-technical uncertainty",
+              "Standard quality control without experimentation",
+              "Work outside the eligible tax year",
+              "Contractor costs without scope support",
+              "Funded research where the taxpayer lacks substantial rights",
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-white border border-gray-200 rounded-xl p-4 flex items-start gap-3"
+              >
+                <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                <span className="text-body-text text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CASE STUDIES
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-surface border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-primary text-xs font-bold uppercase tracking-widest">
               Partner Engagement Examples
             </span>
             <h2 className="text-3xl md:text-4xl font-normal text-navy mt-3 mb-3">
-              Representative Partner Engagements
+              Illustrative Engagement Profiles
             </h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              Anonymized examples based on actual CPA-referred engagements. Details have been generalized to protect confidentiality.
+              Illustrative examples based on common R&amp;D credit engagement profiles. These examples are hypothetical and provided for educational purposes only. Individual results depend on qualifying activities, expenses, documentation, tax posture, and CPA review.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -376,7 +487,7 @@ export default function CpaPartnersPage() {
                   "Identified qualifying custom development and platform engineering work",
                   "Reviewed three open tax years plus current year",
                   "Prepared business-component mapping across 12 qualifying projects",
-                  "Coordinated amended return filing through the referring CPA",
+                  "Prepared study materials for the referring CPA to support amended filings",
                 ],
               },
               {
@@ -411,7 +522,7 @@ export default function CpaPartnersPage() {
               </div>
             ))}
           </div>
-          <p className="text-center text-secondary text-xs mt-8">Based on representative engagement profiles. Individual results depend on qualifying activities, expenses, and tax situation.</p>
+          <p className="text-center text-secondary text-xs mt-8">Illustrative examples based on common R&amp;D credit engagement profiles. These examples are hypothetical and provided for educational purposes only. Individual results depend on qualifying activities, expenses, documentation, tax posture, and CPA review.</p>
         </div>
       </section>
 

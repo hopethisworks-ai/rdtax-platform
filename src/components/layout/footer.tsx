@@ -26,15 +26,14 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Services Column */}
+          {/* Resources Column */}
           <div>
-            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wide">Services</h3>
+            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wide">Resources</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/services" className="text-gray-400 hover:text-white transition-colors">All Services</Link></li>
-              <li><Link href="/how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link href="/industries" className="text-gray-400 hover:text-white transition-colors">Industries</Link></li>
               <li><Link href="/estimator" className="text-gray-400 hover:text-white transition-colors">Credit Estimator</Link></li>
               <li><Link href="/eligibility" className="text-gray-400 hover:text-white transition-colors">Eligibility Assessment</Link></li>
+              <li><Link href="/sample-deliverables" className="text-gray-400 hover:text-white transition-colors">Sample Deliverables</Link></li>
+              <li><Link href="/how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</Link></li>
               <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
             </ul>
           </div>
@@ -43,10 +42,11 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wide">Company</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link href="/cpa-partners" className="text-gray-400 hover:text-white transition-colors">CPA Partners</Link></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
               <li><Link href="/methodology" className="text-gray-400 hover:text-white transition-colors">Methodology</Link></li>
+              <li><Link href="/cpa-partners" className="text-gray-400 hover:text-white transition-colors">CPA Partners</Link></li>
+              <li><Link href="/data-security" className="text-gray-400 hover:text-white transition-colors">Data Security</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 

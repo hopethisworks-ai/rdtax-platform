@@ -68,6 +68,16 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      {/* No Sensitive Records Section */}
+      <div className="py-10 px-6 bg-surface border-b border-gray-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-normal text-navy mb-4">No Sensitive Records Required for the First Conversation</h2>
+          <p className="text-body-text leading-relaxed text-sm">
+            The first conversation is used to understand your business, activities, and potential fit. Payroll records, tax returns, GL detail, and contractor invoices are not requested until an engagement scope is defined.
+          </p>
+        </div>
+      </div>
+
       <div className="pt-12 pb-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-20 items-start">
           {/* Left Column: Info */}
@@ -104,6 +114,26 @@ export default function ContactPage() {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <span className="text-body-text text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* What to Include */}
+            <div className="mb-10">
+              <h2 className="text-xl font-bold text-navy mb-4">What to Include in Your Message</h2>
+              <div className="space-y-2">
+                {[
+                  "Industry",
+                  "Number of employees",
+                  "Type of technical work performed",
+                  "Whether you have claimed the credit before",
+                  "Whether you have a CPA involved",
+                  "Whether the business has South Carolina operations",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                     <span className="text-body-text text-sm">{item}</span>
                   </div>
                 ))}
@@ -244,6 +274,43 @@ export default function ContactPage() {
                 <span>CPA coordination available</span>
               </div>
             </form>
+          </div>
+        </div>
+
+        {/* Business Credibility */}
+        <div className="max-w-6xl mx-auto mt-12">
+          <div className="bg-surface border border-gray-200 rounded-2xl p-8">
+            <h3 className="text-lg font-bold text-navy mb-6 text-center">Contact Information</h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 border border-gray-200">
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <p className="text-navy font-semibold text-sm mb-1">Email</p>
+                <a href="mailto:partnerships@alexanderandblake.com" className="text-primary text-xs hover:underline">partnerships@alexanderandblake.com</a>
+              </div>
+              <div>
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 border border-gray-200">
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <p className="text-navy font-semibold text-sm mb-1">Location</p>
+                <p className="text-body-text text-xs">South Carolina</p>
+              </div>
+              <div>
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 border border-gray-200">
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <p className="text-navy font-semibold text-sm mb-1">Response Time</p>
+                <p className="text-body-text text-xs">Typically within one business day</p>
+              </div>
+              <div>
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 border border-gray-200">
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                </div>
+                <p className="text-navy font-semibold text-sm mb-1">LinkedIn</p>
+                <a href="https://www.linkedin.com/company/alexander-and-blake" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:underline">Alexander &amp; Blake</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

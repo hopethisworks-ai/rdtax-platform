@@ -214,6 +214,110 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* QUALITY CONTROL */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Quality Assurance</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-4 mb-4 leading-tight">
+            Internal Quality Control Before Delivery
+          </h2>
+          <p className="text-body-text leading-relaxed mb-8">
+            Before a study package is delivered, each engagement is reviewed against a defined quality-control checklist designed to confirm that qualification, computation, documentation, and CPA delivery materials are complete.
+          </p>
+          <div className="space-y-3">
+            {[
+              "Each claimed activity is tied to a defined business component",
+              "Each business component is evaluated under the four-part test",
+              "Technical uncertainty is documented at the project level",
+              "Experimentation is clearly described",
+              "Wage QREs are tied to employees, roles, and allocation methodology",
+              "Contractor QREs are reviewed for scope and 65% inclusion treatment",
+              "Supply QREs are tied to qualifying activities and supporting records",
+              "Federal and SC credit calculations are reconciled",
+              "Exclusions are documented",
+              "Form 6765 support schedules are prepared",
+              "SC Schedule TC-18 support is prepared when applicable",
+              "Assumptions and limitations are disclosed",
+              "CPA delivery package is complete",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-body-text text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RISK REVIEW */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-4xl mx-auto">
+          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Risk Assessment</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-4 mb-4 leading-tight">
+            Issue Identification &amp; Risk Review
+          </h2>
+          <p className="text-body-text leading-relaxed mb-8">
+            Not every potential activity is treated the same. During each engagement, Alexander &amp; Blake identifies items that may require additional support, CPA discussion, or exclusion from the final claim.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Strong support",
+                desc: "Clear business component, documented uncertainty, documented experimentation, reliable financial support.",
+              },
+              {
+                title: "Moderate support",
+                desc: "Qualifying facts appear present, but allocations or documentation require additional support or CPA discussion.",
+              },
+              {
+                title: "Excluded or deferred",
+                desc: "Unsupported estimates, routine production, non-technical uncertainty, sales/admin time, general quality control, or activities outside the credit period.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 className="font-bold text-navy mb-2">{item.title}</h3>
+                <p className="text-body-text text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE SCREEN OUT */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Credit Discipline</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-4 mb-4 leading-tight">
+            What We Screen Out
+          </h2>
+          <p className="text-body-text leading-relaxed mb-8">
+            A strong R&amp;D credit study is not just about identifying qualifying work. It is also about excluding activities that are not supportable.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              "Routine production",
+              "Cosmetic or aesthetic changes",
+              "Market research and surveys",
+              "Sales and customer support time",
+              "General management and administration",
+              "Unsupported time estimates",
+              "Non-technical uncertainty",
+              "Standard quality control without experimentation",
+              "Work outside the eligible tax year",
+              "Contractor costs without scope support",
+              "Funded research where the taxpayer lacks substantial rights",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 bg-surface rounded-lg p-4">
+                <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                <span className="text-body-text text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 px-6 border-t border-gray-200">
         <div className="max-w-3xl mx-auto text-center">

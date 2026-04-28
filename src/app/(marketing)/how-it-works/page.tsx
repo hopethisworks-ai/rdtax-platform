@@ -257,7 +257,7 @@ export default function HowItWorksPage() {
               },
               {
                 title: "Amended Returns",
-                desc: "If you have not claimed credits in prior years, we can file amended returns going back 3 years to recover credits you already missed.",
+                desc: "If you have not claimed credits in prior years, we can evaluate open tax years and prepare the study materials your CPA or qualified tax professional may use to support amended filings where appropriate.",
                 icon: (
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />

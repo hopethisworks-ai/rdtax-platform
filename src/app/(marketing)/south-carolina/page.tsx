@@ -173,7 +173,7 @@ export default function SouthCarolinaPage() {
               How the coordinated credit works in practice.
             </h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              Anonymized examples showing the federal → SC state → CPA filing coordination pattern that defines our SC engagements.
+              Illustrative examples based on common R&amp;D credit engagement profiles. These examples are hypothetical and provided for educational purposes only. Individual results depend on qualifying activities, expenses, documentation, tax posture, and CPA review.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -258,7 +258,7 @@ export default function SouthCarolinaPage() {
                   <div className="space-y-1.5">
                     {[
                       "Qualifying custom platform development, API engineering, and algorithm design work",
-                      "Three open tax years reviewed plus current year for amended and current-year filing",
+                      "Three open tax years evaluated plus current year — study materials prepared for CPA-coordinated filings",
                       "Business-component mapping across 9 qualifying software projects",
                     ].map((item) => (
                       <div key={item} className="flex items-start gap-2">
@@ -286,7 +286,7 @@ export default function SouthCarolinaPage() {
                   <div className="text-xs font-bold text-primary uppercase tracking-widest mb-2">CPA Filing Support Delivered</div>
                   <div className="space-y-1.5">
                     {[
-                      "Coordinated amended return filing for three prior years plus current-year claim",
+                      "Prepared study materials for three prior years plus current-year claim to support CPA-coordinated amended filings",
                       "CPA received study package with federal and SC schedules for each tax year",
                     ].map((item) => (
                       <div key={item} className="flex items-start gap-2">
@@ -299,7 +299,7 @@ export default function SouthCarolinaPage() {
               </div>
             </div>
           </div>
-          <p className="text-center text-secondary text-xs mt-8">Anonymized examples based on representative SC engagement profiles. Individual results depend on qualifying activities, expenses, and tax situation.</p>
+          <p className="text-center text-secondary text-xs mt-8">Illustrative examples based on common R&amp;D credit engagement profiles. These examples are hypothetical and provided for educational purposes only. Individual results depend on qualifying activities, expenses, documentation, tax posture, and CPA review.</p>
         </div>
       </section>
 
@@ -330,7 +330,7 @@ export default function SouthCarolinaPage() {
               },
               {
                 q: "Can I claim both federal and state?",
-                a: "Yes. SC businesses can claim both the federal R&D credit (up to 20% of QREs) AND the SC state credit (5% of SC QREs) on the same qualifying expenses. Alexander & Blake coordinates both through a single study.",
+                a: "Yes. SC businesses may be able to claim both a federal R&D credit and a South Carolina R&D credit on qualifying research expenses, subject to federal and state rules, limitations, and CPA review. Alexander & Blake coordinates both through a single study.",
               },
               {
                 q: "What about unused credit?",
@@ -346,6 +346,11 @@ export default function SouthCarolinaPage() {
                 <p className="text-body-text text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-8 bg-primary/5 border border-primary/20 rounded-xl p-5">
+            <p className="text-primary text-sm leading-relaxed">
+              State credit availability, limitation rules, carryforward treatment, and filing requirements should be confirmed by the taxpayer&apos;s CPA or qualified tax professional based on the taxpayer&apos;s specific facts and filing posture.
+            </p>
           </div>
         </div>
       </section>
@@ -412,7 +417,7 @@ export default function SouthCarolinaPage() {
               },
               {
                 q: "Can I file amended returns to claim past SC credits?",
-                a: "Yes. If you did not originally claim the SC R&D credit, you can file an amended return within the statute of limitations — often going back 3 years. Alexander & Blake coordinates both federal and SC amended filings through a single engagement.",
+                a: "Yes. If you did not originally claim the SC R&D credit, there may be open tax years within the statute of limitations. Alexander & Blake can evaluate those periods and prepare the study materials your CPA or qualified tax professional may use to support amended filings where appropriate.",
               },
               {
                 q: "Does Alexander & Blake handle both credits or just one?",
@@ -420,7 +425,7 @@ export default function SouthCarolinaPage() {
               },
               {
                 q: "How does the SC credit interact with federal amended returns?",
-                a: "When amending prior-year federal returns to claim R&D credits, we simultaneously prepare the SC state credit documentation for the same tax years. Your CPA receives coordinated filing support for both.",
+                a: "When prior-year federal returns are being amended to claim R&D credits, we prepare the SC state credit documentation for the same tax years alongside the federal study. Your CPA receives coordinated study materials and filing support for both.",
               },
               {
                 q: "What industries qualify in South Carolina?",
@@ -445,9 +450,22 @@ export default function SouthCarolinaPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          CPA REMINDER
+      ═══════════════════════════════════════════ */}
+      <section className="px-6 pb-0 pt-12 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-surface border border-gray-200 rounded-xl p-6 text-center">
+            <p className="text-body-text text-sm leading-relaxed">
+              Your CPA or qualified tax professional should confirm final filing posture, state limitations, carryforward treatment, and return integration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white border-t border-gray-200">
+      <section className="py-20 px-6 bg-white border-t-0">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-navy mb-4">
             Evaluate Your South Carolina R&amp;D Credits

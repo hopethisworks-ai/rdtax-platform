@@ -75,7 +75,7 @@ export default function ManufacturingPage() {
             </details>
             <details className="border border-gray-200 rounded-xl overflow-hidden">
               <summary className="px-6 py-4 font-semibold text-navy cursor-pointer hover:bg-slate-50">How far back can I claim?</summary>
-              <div className="px-6 pb-4 text-body-text text-sm">You can typically file amended returns going back 3 years for federal credits and up to the statute of limitations for SC state credits, meaning you may recover credits for years you never claimed.</div>
+              <div className="px-6 pb-4 text-body-text text-sm">Open tax years going back 3 years for federal credits and up to the statute of limitations for SC state credits may be eligible for review. We can evaluate those periods and prepare the study materials your CPA or qualified tax professional may use to support amended filings where appropriate.</div>
             </details>
           </div>
         </div>

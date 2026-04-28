@@ -202,6 +202,12 @@ export default function EstimatorPage() {
               A preliminary estimate based on your financial information. This is a starting point — not a final determination. A detailed credit study will refine these numbers.
             </p>
           </div>
+          <div className="bg-surface border border-gray-200 rounded-xl p-6 mb-8">
+            <h3 className="font-bold text-navy text-sm mb-2">How This Estimate Works</h3>
+            <p className="text-body-text text-xs leading-relaxed">
+              This estimator provides a preliminary range only. It does not determine eligibility, does not replace a credit study, and does not account for all tax limitations, base-period calculations, controlled group issues, 280C considerations, prior-year credit history, or CPA filing posture.
+            </p>
+          </div>
           <div className="bg-surface border border-primary/20 rounded-xl p-4 mb-8 flex items-start gap-3">
             <svg className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5h.01" />
@@ -414,6 +420,9 @@ export default function EstimatorPage() {
             </button>
             <p className="text-xs text-secondary text-center">
               Your information is never sold or shared. This estimate does not constitute tax advice.
+            </p>
+            <p className="text-xs text-secondary text-center mt-3 leading-relaxed">
+              Final credit amounts depend on qualified activities, qualified research expenses, credit method, tax liability, prior-year filings, state limitations, documentation, and CPA review.
             </p>
           </form>
 

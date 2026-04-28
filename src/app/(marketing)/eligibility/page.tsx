@@ -65,6 +65,46 @@ export default function EligibilityPage() {
             </div>
           </div>
 
+          {/* What Qualifies / What Doesn't */}
+          <div className="mt-10 grid sm:grid-cols-2 gap-6">
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <h3 className="font-bold text-navy mb-4">What Makes an Activity More Likely to Qualify</h3>
+              <div className="space-y-3">
+                {[
+                  "Technical uncertainty at the start of the work",
+                  "Evaluation of alternatives",
+                  "Testing, modeling, prototyping, iteration, or simulation",
+                  "Engineering, computer science, biological science, or physical science basis",
+                  "Development or improvement of a product, process, software, formula, technique, or invention",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <span className="text-body-text text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <h3 className="font-bold text-navy mb-4">What Usually Does Not Qualify</h3>
+              <div className="space-y-3">
+                {[
+                  "Routine production or manufacturing",
+                  "Cosmetic or aesthetic changes",
+                  "Market research and surveys",
+                  "Sales and customer support",
+                  "General management and administration",
+                  "Standard quality control without experimentation",
+                  "Work outside the eligible tax year",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                    <span className="text-body-text text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Next Steps */}
           <div className="mt-8 bg-surface border border-gray-200 rounded-2xl p-8 text-center">
             <h3 className="font-bold text-navy mb-2">What To Do Next</h3>

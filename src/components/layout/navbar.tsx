@@ -43,10 +43,9 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-1">
             {[
               { href: "/services", label: "Services" },
-              { href: "/how-it-works", label: "Process" },
-              { href: "/industries", label: "Industries" },
+              { href: "/methodology", label: "Methodology" },
               { href: "/cpa-partners", label: "CPA Partners" },
-              { href: "/about", label: "About" },
+              { href: "/industries", label: "Industries" },
               { href: "/south-carolina", label: "SC Credits" },
               { href: "/contact", label: "Contact" },
             ].map((link) => {
@@ -97,23 +96,17 @@ export function Navbar() {
             <Link href="/services" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               Services
             </Link>
-            <Link href="/how-it-works" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
-              Process
-            </Link>
-            <Link href="/industries" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
-              Industries
+            <Link href="/methodology" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
+              Methodology
             </Link>
             <Link href="/cpa-partners" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               CPA Partners
             </Link>
-            <Link href="/about" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
-              About
+            <Link href="/industries" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
+              Industries
             </Link>
             <Link href="/south-carolina" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               SC Credits
-            </Link>
-            <Link href="/faq" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
-              FAQ
             </Link>
             <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               Contact

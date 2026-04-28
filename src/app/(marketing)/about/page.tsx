@@ -34,6 +34,26 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          FOUNDER BACKGROUND
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 px-6 bg-surface">
+        <div className="max-w-3xl mx-auto">
+          <span className="text-primary text-xs font-semibold uppercase tracking-widest">Our Background</span>
+          <h2 className="text-3xl md:text-4xl font-normal text-navy mt-4 mb-6 leading-tight">
+            Founded on National R&amp;D Credit Experience
+          </h2>
+          <div className="space-y-5 text-body-text leading-relaxed">
+            <p>
+              Alexander &amp; Blake was founded by a former R&amp;D tax credit consultant with experience at national advisory firms including Aprio and alliantgroup. That experience includes eligibility analysis, technical interviews, business component mapping, QRE modeling, project narratives, methodology documentation, and CPA-ready study preparation for companies across manufacturing, software, engineering, construction, and process-improvement environments.
+            </p>
+            <p>
+              The firm was created to bring national-firm R&amp;D credit discipline to South Carolina businesses and CPA firms through a focused, documentation-first advisory model.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           2. HOW ENGAGEMENTS ARE RUN
       ═══════════════════════════════════════════ */}
       <section className="py-20 px-6 bg-surface">
