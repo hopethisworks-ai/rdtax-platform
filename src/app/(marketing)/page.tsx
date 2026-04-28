@@ -41,13 +41,14 @@ export default function HomePage() {
                 <span className="text-primary">Built for Review.</span>
               </h1>
               <p className="text-lg text-secondary mb-10 leading-relaxed max-w-lg">
-                Alexander &amp; Blake helps innovative South Carolina businesses identify qualifying R&amp;D activities, build organized documentation, and coordinate CPA-ready filing support — so you can claim with confidence.
+                <span className="hidden sm:inline">Alexander &amp; Blake helps innovative South Carolina businesses identify qualifying R&amp;D activities, build organized documentation, and coordinate CPA-ready filing support — so you can claim with confidence.</span>
+                <span className="sm:hidden">We help SC businesses identify qualifying R&amp;D activities and build CPA-ready credit studies — so you can claim with confidence.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link href="/contact" className="bg-primary text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30">
+                <Link href="/contact" className="bg-primary text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 min-h-[48px] flex items-center justify-center">
                   Schedule a Consultation
                 </Link>
-                <Link href="/estimator" className="border border-secondary/30 text-body-text font-semibold px-8 py-4 rounded-lg text-center hover:border-primary hover:text-primary transition-all">
+                <Link href="/estimator" className="border border-secondary/30 text-body-text font-semibold px-8 py-4 rounded-lg text-center hover:border-primary hover:text-primary transition-all min-h-[48px] flex items-center justify-center">
                   Estimate Your Credit
                 </Link>
               </div>
@@ -85,7 +86,7 @@ export default function HomePage() {
           TRUST STRIP
       ═══════════════════════════════════════════ */}
       <section className="py-6 px-6 bg-navy">
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-white/80">
+        <div className="trust-strip max-w-6xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-white/80">
           <div className="flex items-center gap-2">
             <ShieldIcon />
             <span>Specialist R&amp;D credit focus</span>

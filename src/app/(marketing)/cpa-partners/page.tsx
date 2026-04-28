@@ -48,7 +48,8 @@ export default function CpaPartnersPage() {
                 A Specialist R&amp;D Credit Resource for Your Firm
               </h1>
               <p className="text-lg text-body-text mb-8 leading-relaxed max-w-lg">
-                Alexander &amp; Blake works alongside accounting firms that want a reliable specialist partner for R&amp;D tax credit studies and related documentation. You maintain the client relationship. We handle the specialty work and coordinate closely throughout the engagement.
+                <span className="hidden sm:inline">Alexander &amp; Blake works alongside accounting firms that want a reliable specialist partner for R&amp;D tax credit studies and related documentation. You maintain the client relationship. We handle the specialty work and coordinate closely throughout the engagement.</span>
+                <span className="sm:hidden">We partner with accounting firms as a specialist R&amp;D credit resource. You keep the client relationship — we handle the study.</span>
               </p>
               <p className="text-body-text text-sm leading-relaxed mb-8 max-w-lg border-l-2 border-primary/30 pl-4">
                 Alexander &amp; Blake was founded by a former R&amp;D credit consultant with national advisory firm experience, including Aprio and alliantgroup. Our process is designed for CPA review: structured eligibility analysis, documented QRE methodology, clear workpapers, and filing-ready support schedules.
@@ -56,13 +57,13 @@ export default function CpaPartnersPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="#partner-form"
-                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25 min-h-[48px] flex items-center justify-center"
                 >
                   Explore a Partnership
                 </Link>
                 <Link
                   href="/how-it-works"
-                  className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors"
+                  className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors min-h-[48px] flex items-center justify-center"
                 >
                   See How It Works
                 </Link>
@@ -80,6 +81,22 @@ export default function CpaPartnersPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Mobile-only quick link to Partner Kit */}
+      <section className="md:hidden py-6 px-4 bg-surface border-b border-gray-200">
+        <Link
+          href="#partner-kit"
+          className="flex items-center justify-between bg-white border border-gray-200 rounded-xl p-4 shadow-sm"
+        >
+          <div>
+            <p className="text-navy font-bold text-sm">CPA Partner Kit Available</p>
+            <p className="text-secondary text-xs">Sample materials, workflow, and documentation standards</p>
+          </div>
+          <svg className="w-5 h-5 text-primary flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </Link>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -328,7 +345,7 @@ export default function CpaPartnersPage() {
               { title: "Structured Documentation", desc: "Every study includes organized project narratives, QRE schedules, methodology memos, and four-part test documentation — prepared for your review." },
               { title: "No Client Poaching", desc: "We never solicit your clients for other services. We function as an extension of your practice — a specialty resource, not a competitor." },
               { title: "Full Visibility", desc: "You receive visibility throughout the engagement and a complete study package at completion. No surprises." },
-              { title: "Post-Filing Support", desc: "If questions arise after filing, we handle audit correspondence and provide documentation support at no additional cost." },
+              { title: "Post-Filing Support", desc: "If questions arise after filing, we provide examination correspondence support and documentation at no additional cost." },
               { title: "Contingency Economics", desc: "No upfront cost to your firm or your client. Our fee is contingency-based and paid after filing." },
             ].map((item) => (
               <div key={item.title} className="border-l-2 border-primary/30 pl-6 py-1">
@@ -357,7 +374,7 @@ export default function CpaPartnersPage() {
       {/* ═══════════════════════════════════════════
           CPA PARTNER KIT
       ═══════════════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white">
+      <section id="partner-kit" className="py-20 px-6 bg-white scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-primary text-xs font-bold uppercase tracking-widest">

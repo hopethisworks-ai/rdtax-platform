@@ -31,18 +31,19 @@ export default function SouthCarolinaPage() {
                 <span className="text-primary-light">One Coordinated Study.</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                South Carolina may provide an additional 5% state R&amp;D credit for qualifying SC research expenses, subject to state rules, limitations, and CPA review. Alexander &amp; Blake prepares both credits through a single, coordinated engagement — so your business captures the full value without going through two disconnected processes.
+                <span className="hidden sm:inline">South Carolina may provide an additional 5% state R&amp;D credit for qualifying SC research expenses, subject to state rules, limitations, and CPA review. Alexander &amp; Blake prepares both credits through a single, coordinated engagement — so your business captures the full value without going through two disconnected processes.</span>
+                <span className="sm:hidden">SC offers an additional 5% state R&amp;D credit. We prepare both federal and state credits through one coordinated engagement.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/estimator"
-                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg text-center hover:bg-primary-dark transition-colors"
+                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg text-center hover:bg-primary-dark transition-colors min-h-[48px] flex items-center justify-center"
                 >
                   Estimate Your Credit
                 </Link>
                 <Link
                   href="/contact"
-                  className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center hover:bg-white/20 transition-colors"
+                  className="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg text-center hover:bg-white/20 transition-colors min-h-[48px] flex items-center justify-center"
                 >
                   Schedule a Consultation
                 </Link>

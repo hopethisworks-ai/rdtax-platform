@@ -156,13 +156,13 @@ export default function EstimatorPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-primary-dark transition-colors"
+                  className="min-h-[48px] flex items-center justify-center bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-primary-dark transition-colors"
                 >
                   Schedule a Consultation
                 </Link>
                 <Link
                   href="/eligibility"
-                  className="bg-slate-50 border border-gray-200 text-body-text font-semibold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-slate-100 transition-colors"
+                  className="min-h-[48px] flex items-center justify-center bg-slate-50 border border-gray-200 text-body-text font-semibold px-8 py-4 rounded-xl text-lg text-center flex-1 hover:bg-slate-100 transition-colors"
                 >
                   Evaluate Eligibility
                 </Link>
@@ -414,7 +414,7 @@ export default function EstimatorPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50"
+              className="w-full min-h-[48px] flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl text-lg transition-colors disabled:opacity-50"
             >
               {loading ? "Preparing Your Estimate..." : "Get Preliminary Estimate"}
             </button>

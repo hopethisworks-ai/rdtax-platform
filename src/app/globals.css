@@ -39,3 +39,79 @@
     @apply w-full;
   }
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE OVERRIDES
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Typography scaling for mobile */
+  h1 {
+    font-size: 34px !important;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    font-size: 26px !important;
+    line-height: 1.15;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+
+  /* All CTA buttons: full-width and touch-friendly */
+  .mobile-cta,
+  section a[href="/contact"],
+  section a[href="/estimator"],
+  section a[href="/cpa-partners"] {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* Remove excessive padding on mobile sections */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Grid overrides: force single column on mobile */
+  .grid.md\:grid-cols-2,
+  .grid.md\:grid-cols-3,
+  .grid.md\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Reduce section vertical padding on mobile */
+  section[class*="py-20"] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  section[class*="py-24"] {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* Add bottom padding for sticky CTA clearance */
+  main {
+    padding-bottom: 80px;
+  }
+
+  /* Trust strip: horizontal scroll instead of wrap */
+  .trust-strip {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 24px !important;
+  }
+  .trust-strip > div {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* Footer: tighter on mobile */
+  footer .grid {
+    gap: 32px !important;
+  }
+}

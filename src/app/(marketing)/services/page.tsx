@@ -103,18 +103,19 @@ export default function ServicesPage() {
               Full-Lifecycle R&amp;D Tax Credit Advisory
             </h1>
             <p className="text-lg text-body-text leading-relaxed max-w-2xl mb-8">
-              From initial evaluation through filing support, we manage the full R&amp;D tax credit study process with structured documentation and CPA-coordinated filing support — including federal credits, South Carolina credits, current-year claims, and amended returns.
+              <span className="hidden sm:inline">From initial evaluation through filing support, we manage the full R&amp;D tax credit study process with structured documentation and CPA-coordinated filing support — including federal credits, South Carolina credits, current-year claims, and amended returns.</span>
+              <span className="sm:hidden">Full-lifecycle R&amp;D credit advisory — federal, SC state, current-year, and amended returns with CPA-ready documentation.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                className="bg-primary text-white font-semibold px-8 py-4 rounded-xl text-center hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25 min-h-[48px] flex items-center justify-center"
               >
                 Schedule a Consultation
               </Link>
               <Link
                 href="/how-it-works"
-                className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors"
+                className="border-2 border-secondary/30 text-body-text font-bold px-8 py-4 rounded-xl text-center hover:border-primary hover:text-primary transition-colors min-h-[48px] flex items-center justify-center"
               >
                 See Our Process
               </Link>

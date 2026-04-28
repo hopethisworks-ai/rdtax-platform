@@ -17,7 +17,8 @@ export default function SampleDeliverablesPage() {
             See How Our R&amp;D Credit Study Packages Are Organized.
           </h1>
           <p className="text-body-text text-lg leading-relaxed">
-            Each engagement produces a structured work product designed for CPA review and examination support. Below is an outline of what a completed study package typically includes.
+            <span className="hidden sm:inline">Each engagement produces a structured work product designed for CPA review and examination support. Below is an outline of what a completed study package typically includes.</span>
+            <span className="sm:hidden">See what a completed R&amp;D credit study package includes, from executive summary to filing support.</span>
           </p>
         </div>
       </section>
@@ -87,8 +88,9 @@ export default function SampleDeliverablesPage() {
           <p className="text-body-text leading-relaxed mb-8">
             The business component map organizes qualifying activities at the project level, linking technical detail to expense categories.
           </p>
+          <div className="overflow-x-auto -mx-6 px-6">
           <div className="bg-white border border-gray-200 rounded-xl overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-sm min-w-[700px]">
               <thead>
                 <tr className="border-b border-gray-200 bg-gray-50">
                   <th className="text-left text-navy font-semibold px-4 py-3">Business Component</th>
@@ -126,6 +128,7 @@ export default function SampleDeliverablesPage() {
                 </tr>
               </tbody>
             </table>
+          </div>
           </div>
           <p className="text-body-text text-xs mt-4 italic">
             Sample data shown for illustration purposes only.

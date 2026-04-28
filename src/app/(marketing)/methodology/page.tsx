@@ -23,7 +23,8 @@ export default function MethodologyPage() {
             How we conduct R&amp;D credit studies.
           </h1>
           <p className="text-body-text text-lg leading-relaxed">
-            Every Alexander &amp; Blake engagement follows a structured methodology designed for thoroughness, defensibility, and CPA coordination. This page documents the process, standards, and deliverables that define our work.
+            <span className="hidden sm:inline">Every Alexander &amp; Blake engagement follows a structured methodology designed for thoroughness, defensibility, and CPA coordination. This page documents the process, standards, and deliverables that define our work.</span>
+            <span className="sm:hidden">Our engagements follow a structured methodology built for defensibility and CPA coordination. Here is how we work.</span>
           </p>
         </div>
       </section>

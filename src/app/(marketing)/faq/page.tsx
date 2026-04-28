@@ -192,13 +192,13 @@ export default function FAQPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-primary text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md"
+              className="bg-primary text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-primary-dark transition-colors shadow-md min-h-[48px] flex items-center justify-center"
             >
               Schedule a Consultation
             </Link>
             <Link
               href="/eligibility"
-              className="border border-secondary/30 text-body-text font-semibold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors"
+              className="border border-secondary/30 text-body-text font-semibold px-10 py-4 rounded-xl text-lg hover:border-primary hover:text-primary transition-colors min-h-[48px] flex items-center justify-center"
             >
               Evaluate Eligibility
             </Link>

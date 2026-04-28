@@ -111,14 +111,17 @@ export function Navbar() {
             <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-colors">
               Contact
             </Link>
-            <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
               {session && (
                 <Link href="/portal" onClick={() => setOpen(false)} className="px-3 py-2 text-gray-500 hover:text-gray-300 text-xs font-medium">
                   Client Portal
                 </Link>
               )}
-              <Link href="/contact" onClick={() => setOpen(false)} className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium text-center hover:bg-primary-dark transition-colors">
+              <Link href="/contact" onClick={() => setOpen(false)} className="w-full bg-primary text-white rounded-lg text-sm font-semibold text-center hover:bg-primary-dark transition-colors min-h-[48px] flex items-center justify-center">
                 Schedule a Consultation
+              </Link>
+              <Link href="/estimator" onClick={() => setOpen(false)} className="w-full border border-white/20 text-white rounded-lg text-sm font-semibold text-center hover:bg-white/10 transition-colors min-h-[48px] flex items-center justify-center">
+                Estimate Your Credit
               </Link>
             </div>
           </div>
